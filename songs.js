@@ -2209,6 +2209,10 @@ const SONGS = [
   {"id":2208,"title":"Ima Sugu Hoshii","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"/songs/Koda Kumi - Ima Sugu Hoshii (2006) (+K)/Koda Kumi - Ima Sugu Hoshii (CO).jpg","duet":false},
   {"id":2209,"title":"Malibu","artist":"Hole","language":"English","genre":null,"year":null,"cover":"/songs/Hole - Malibu/malibu.jpg","duet":false}]
 
-
+SONGS.sort((x, y) => {
+  const byArtist = (x.artist ?? "").localeCompare(y.artist ?? "", undefined, { sensitivity: "base" });
+  if (byArtist !== 0) return byArtist;
+  return (x.title ?? "").localeCompare(y.title ?? "", undefined, { sensitivity: "base" });
+});
 
 window.SONGS = SONGS;
