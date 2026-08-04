@@ -1,0 +1,131 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gallery {
+    flex: 0 0 80%;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.filter {
+    flex: 0 0 20%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-group-50 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.small-label {
+    display: block;
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+}
+
+.song {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #444;
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.song .footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.song .footer img {
+    height: 30px;
+}
+
+.thumbnail {
+    width: 100%;
+    object-fit: cover;
+}
+
+.pagination {
+    padding-top: 1px;
+}
+
+.results {
+    text-align: right;
+}
+
+input, select {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    width: 90%;
+}
+
+input:focus, select:focus {
+    outline: none;
+    background-color: #666;
+}
+
+button {
+    padding: 10px 11px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    --margin-top: 10px; 
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
