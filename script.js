@@ -17,6 +17,10 @@ function fetchLanguages() {
   const languageFilter = document.getElementById('languageFilter');
   const languagesAvailable = new Set();
   languageFilter.innerHTML = '';
+  const nullOption = document.createElement('option');
+  nullOption.value = '';
+  nullOption.textContent = '-';
+  languageFilter.appendChild(nullOption);
   SONGS.forEach(song => {
     const lang = song.language;
     if (SKIPPABLE_LANGUAGES.includes(lang)) return;
@@ -29,10 +33,6 @@ function fetchLanguages() {
     languageFilter.appendChild(option);
     languagesAvailable.add(value);
   });
-  const nullOption = document.createElement('option');
-  nullOption.value = '';
-  nullOption.textContent = '-';
-  languageFilter.appendChild(nullOption);
 }
 
 
