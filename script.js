@@ -21,7 +21,7 @@ function fetchLanguages() {
     const lang = song.language;
     if (SKIPPABLE_LANGUAGES.includes(lang)) return;
     const mapped = LANGUAGES.find(item => item.query.includes(lang));
-    const value = mapped ? mapped.query : lang; // SIEMPRE string
+    const value = mapped ? mapped.query : lang;
     if (languagesAvailable.has(value)) return;
     const option = document.createElement('option');
     option.value = value;
@@ -29,6 +29,10 @@ function fetchLanguages() {
     languageFilter.appendChild(option);
     languagesAvailable.add(value);
   });
+  const nullOption = document.createElement('option');
+  nullOption.value = '';
+  nullOption.textContent = '-';
+  languageFilter.appendChild(nullOption);
 }
 
 
