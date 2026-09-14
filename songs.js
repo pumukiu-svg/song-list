@@ -1,4 +1,22295 @@
-const SONGS = [{"id":1,"title":"Smells like teen spirit","artist":"Nirvana","language":"English","genre":"Rock","year":"1991","cover":"","duet":false},{"id":2,"title":"Noelia","artist":"Nino Bravo","language":"Español","genre":"Pop","year":"1972","cover":"","duet":false},{"id":3,"title":"DADDY! DADDY! DO! (TV)","artist":"Masayuki Suzuki ft. Airi Suzuki","language":"Japanese","genre":null,"year":"2020","cover":"","duet":false},{"id":4,"title":"Hyakka ryouran (TV)","artist":"Lilas Ikuta","language":"Japanese","genre":"J-pop","year":"2025","cover":"","duet":false},{"id":5,"title":"Hymn for the weekend","artist":"Coldplay ft. Beyoncé","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":6,"title":"Gangnam Style","artist":"Psy","language":"Korean","genre":"K-Pop","year":"2012","cover":"","duet":false},{"id":7,"title":"Brown Eyed Girl","artist":"Van Morrison","language":"English","genre":null,"year":"1967","cover":"","duet":false},{"id":8,"title":"Get Along (TV)","artist":"Megumi Hayashibara & Masami Okui","language":"Japanese","genre":"Anime","year":"1995","cover":"","duet":false},{"id":9,"title":"Get Along (TV)","artist":"Megumi Hayashibara & Masami Okui","language":"Japanese","genre":"Anime","year":"1995","cover":"","duet":true},{"id":10,"title":"Cabecera","artist":"Pokémon","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":11,"title":"Limit Break x Survivor (TV)","artist":"Kiyoshi Hikawa","language":"Japanese","genre":"Anime","year":"2017","cover":"","duet":false},{"id":12,"title":"Imagination (TV)","artist":"SPYAIR","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":13,"title":"I'm Slave 4 U","artist":"Britney Spears","language":"English","genre":"Pop","year":"2001","cover":"","duet":false},{"id":14,"title":"The bard's song (In the forest)","artist":"Blind Guardian","language":"English","genre":"Power Metal","year":"2003","cover":"","duet":false},{"id":15,"title":"Savior","artist":"Rise Against","language":"English","genre":"Melodic Hardcore","year":"2008","cover":"","duet":false},{"id":16,"title":"Video killed the radio star","artist":"Buggles","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":17,"title":"Roadhouse blues","artist":"The Doors","language":"English","genre":"Rock","year":"1970","cover":"","duet":false},{"id":18,"title":"God is a woman","artist":"Ariana Grande","language":"English","genre":null,"year":"2018","cover":"","duet":false},{"id":19,"title":"Summercat","artist":"Billie the Vision & the Dancers","language":"English","genre":"Anuncios TV","year":"2004","cover":"","duet":false},{"id":20,"title":"Live forever","artist":"Oasis","language":"English","genre":"Britpop","year":"1994","cover":"","duet":false},{"id":21,"title":"Nada que perder","artist":"Pignoise","language":"Español","genre":null,"year":"2006","cover":"","duet":false},{"id":22,"title":"Be Prepared","artist":"Disney's The Lion King","language":"English","genre":"Soundtrack","year":"1994","cover":"","duet":false},{"id":23,"title":"Pride","artist":"High and mighty color","language":"Japanese","genre":"Anime","year":"2005","cover":"","duet":false},{"id":24,"title":"Vino tinto","artist":"Estopa","language":"Español","genre":null,"year":"2001","cover":"","duet":false},{"id":25,"title":"Hurricane","artist":"30 Seconds to Mars","language":"English","genre":"Rock","year":null,"cover":"","duet":false},{"id":26,"title":"Renai Circulation (TV)","artist":"Kana Hanazawa","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":27,"title":"El gato que esta triste y azul","artist":"Roberto Carlos","language":"Español","genre":"Other","year":"1979","cover":"","duet":false},{"id":28,"title":"Deseos de cosas imposibles","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2003","cover":"","duet":false},{"id":29,"title":"God knows","artist":"Aya Hirano","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":30,"title":"Quiero tener tu presencia","artist":"Seguridad Social","language":"Español","genre":"Rock","year":"1993","cover":"","duet":false},{"id":31,"title":"7 Rings","artist":"Ariana Grande","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":32,"title":"Cant Hold Us","artist":"Macklemore & Ryan Lewis feat. Ray Dalton","language":"English","genre":"Hip-Hop & Rap","year":"2013","cover":"","duet":false},{"id":33,"title":"Que te quería","artist":"La Quinta Estación","language":"Español","genre":"Pop","year":"2009","cover":"","duet":false},{"id":34,"title":"Made You Look","artist":"Meghan Trainor","language":"English","genre":"Pop","year":"2022","cover":"","duet":false},{"id":35,"title":"Garabatos","artist":"Fito y Fitipaldis","language":"Español","genre":"Pop","year":"2014","cover":"","duet":false},{"id":36,"title":"Devil came to me","artist":"Dover","language":"English","genre":"Rock","year":"1997","cover":"","duet":false},{"id":37,"title":"Again (versión corta)","artist":"YUI","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":38,"title":"Malos pensamientos","artist":"La Fuga","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":39,"title":"Master of puppets","artist":"Metallica","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":40,"title":"Cómo hemos cambiado","artist":"Presuntos Implicados","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":41,"title":"Bye Bye Yesterday (TV)","artist":"3-nen E-gumi Utatan","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":42,"title":"Rain (TV)","artist":"SID","language":"Japanese","genre":"Anime","year":"2010","cover":"","duet":false},{"id":43,"title":"Sonne","artist":"Rammstein","language":"German","genre":"Industrial metal","year":"2001","cover":"","duet":false},{"id":44,"title":"Everybody's Changing","artist":"Keane","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":45,"title":"QUESTION (TV)","artist":"3-nen E-gumi Utatan","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":46,"title":"READY STEADY GO (TV)","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":47,"title":"Bailando","artist":"Alaska y los Pegamoides","language":"Español","genre":"Pop","year":"1982","cover":"","duet":false},{"id":48,"title":"Sale el sol","artist":"Shakira","language":"Español","genre":"Pop","year":"2011","cover":"","duet":false},{"id":49,"title":"Can't Stop The Feeling!","artist":"Justin Timberlake","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":50,"title":"Lonely Day","artist":"System of a Down","language":"English","genre":null,"year":"2005","cover":"","duet":false},{"id":51,"title":"Bling-Bang-Bang-Born (TV)","artist":"Creepy Nuts","language":"Japanese","genre":null,"year":"2024","cover":"","duet":false},{"id":52,"title":"Not gonna get us","artist":"t.A.T.u.","language":"English","genre":null,"year":"2003","cover":"","duet":false},{"id":53,"title":"Show yourself","artist":"Frozen II","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":54,"title":"Pienso en aquella tarde","artist":"Pereza","language":"Español","genre":"Rock","year":"2002","cover":"","duet":false},{"id":55,"title":"Si a Arabia tú vas","artist":"Aladdín","language":"Español","genre":"Soundtrack","year":"1992","cover":"","duet":false},{"id":56,"title":"P'aquí, p'allá","artist":"La Fuga","language":"Español","genre":null,"year":"2001","cover":"","duet":false},{"id":57,"title":"Way Down We Go","artist":"Kaleo","language":"English","genre":"Rock","year":"2016","cover":"","duet":false},{"id":58,"title":"Fuego","artist":"Eleni Foureira","language":"English","genre":"Eurovision","year":"2018","cover":"","duet":false},{"id":59,"title":"Something Just Like This","artist":"The Chainsmokers ft. Coldplay","language":"English","genre":"Dance & Electronic","year":"2017","cover":"","duet":false},{"id":60,"title":"Missing","artist":"Everything but the girl","language":"English","genre":"","year":null,"cover":"","duet":false},{"id":61,"title":"Summer Nights","artist":"Grease (John Travolta & Olivia Newton-John)","language":"English","genre":"Musical","year":"1978","cover":"","duet":false},{"id":62,"title":"Sweet Dreams","artist":"Marilyn Manson","language":"English","genre":null,"year":"1995","cover":"","duet":false},{"id":63,"title":"Promesas que no valen nada","artist":"Los Piratas","language":"Español","genre":"Rock","year":"1995","cover":"","duet":false},{"id":64,"title":"Escuela de calor","artist":"Radio Futura","language":"Español","genre":null,"year":"1984","cover":"","duet":false},{"id":65,"title":"Pon tus sueños a jugar","artist":"Marta Sánchez, David Bustamante, Niña Pastori, Montserrat Caballé y Raphael","language":"Español","genre":"Villancico","year":"2013","cover":"","duet":false},{"id":66,"title":"Golden","artist":"HUNTR/X","language":"English","genre":null,"year":"2025","cover":"","duet":false},{"id":67,"title":"De ellos aprendí","artist":"David Rees","language":"Español","genre":null,"year":"2019","cover":"","duet":false},{"id":68,"title":"Fell In Love With A Girl","artist":"The White Stripes","language":"English","genre":"Rock","year":"2002","cover":"","duet":false},{"id":69,"title":"Tactics (TV)","artist":"The Yellow Monkey","language":"Japanese","genre":"Anime","year":"1996","cover":"","duet":false},{"id":70,"title":"Insoportable","artist":"El canto del loco","language":"Español","genre":"Pop Nacional","year":"2003","cover":"","duet":false},{"id":71,"title":"Sweet Child O´Mine","artist":"Guns N' Roses","language":"English","genre":"Rock","year":"1987","cover":"","duet":false},{"id":72,"title":"Por quererte","artist":"Efecto Mariposa","language":"Español","genre":"Pop Español","year":"2009","cover":"","duet":false},{"id":73,"title":"Problem","artist":"Ariana Grande feat. Iggy Azalea","language":"English","genre":"R&B","year":"2014","cover":"","duet":false},{"id":74,"title":"That's so true","artist":"Gracie Abrams","language":"English","genre":"Folk-Pop","year":"2024","cover":"","duet":false},{"id":75,"title":"Alive","artist":"Sia","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":76,"title":"Cabecera","artist":"Popitos (BSO D'Artacán y los tres Mosqueperros)","language":"Español","genre":"Dibujos animados","year":"1981","cover":"","duet":false},{"id":77,"title":"Delgadito","artist":"La Rabia del Milenio","language":"Español","genre":"Pop Nacional","year":"2000","cover":"","duet":false},{"id":78,"title":"Bang Bang","artist":"Nancy Sinatra","language":"English","genre":"Classic Rock","year":"1966","cover":"","duet":false},{"id":79,"title":"Wrecked","artist":"Imagine Dragons","language":"English","genre":"Pop","year":"2021","cover":"","duet":false},{"id":80,"title":"Cabecera","artist":"Campeones (Óliver y Benji)","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":81,"title":"We Are Never Ever Getting Back Together","artist":"Taylor Swift","language":"English","genre":null,"year":"2012","cover":"","duet":false},{"id":82,"title":"Hypnodancer","artist":"Little Big","language":"English","genre":"Electronic","year":null,"cover":"","duet":false},{"id":83,"title":"lull ~Soshite Bokura wa~ (TV)","artist":"Ray","language":"Japanese","genre":null,"year":"2013","cover":"","duet":false},{"id":84,"title":"Sorry","artist":"Justin Bieber","language":"English","genre":"Dance pop","year":"2015","cover":"","duet":false},{"id":85,"title":"Night Fever","artist":"Bee Gees","language":"English","genre":"Disco","year":"1977","cover":"","duet":false},{"id":86,"title":"Canción folk de la huelga de la central (inglés)","artist":"Los Simpson","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":87,"title":"Love removal machine","artist":"The Cult","language":"English","genre":"Hard Rock","year":"1987","cover":"","duet":false},{"id":88,"title":"Demons","artist":"Imagine Dragons","language":"English","genre":"Indie rock","year":"2013","cover":"","duet":false},{"id":89,"title":"Una foto en blanco y negro","artist":"El Canto del Loco","language":"Español","genre":"Pop Nacional","year":"2003","cover":"","duet":false},{"id":90,"title":"Nobody's home","artist":"Avril Lavigne","language":"English","genre":"Pop Internacional","year":"2004","cover":"","duet":false},{"id":91,"title":"Sapphire","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2025","cover":"","duet":false},{"id":92,"title":"La perla","artist":"ROSALÍA","language":"Español","genre":"Latin Music","year":"2025","cover":"","duet":false},{"id":93,"title":"Shunkan Sentimental","artist":"SCANDAL","language":"Japanese","genre":"Jpop","year":"2010","cover":"","duet":false},{"id":94,"title":"LET IT OUT (TV)","artist":"Miho Fukuhara","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":95,"title":"Super Shooter (TV)","artist":"Rip Slyme","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":96,"title":"¿Por qué no ser amigos?","artist":"Hombres G con Dani Martín","language":"Español","genre":"Rock","year":"2004","cover":"","duet":false},{"id":97,"title":"Dos Oruguitas","artist":"Sebastián Yatra","language":"Español","genre":null,"year":"2021","cover":"","duet":false},{"id":98,"title":"Hikari","artist":"Utada Hikaru","language":"Japanese","genre":"J-Pop","year":"2002","cover":"","duet":false},{"id":99,"title":"Pero me acuerdo","artist":"Christina Aguilera","language":"Español","genre":null,"year":"2000","cover":"","duet":false},{"id":100,"title":"Échame la culpa","artist":"Luis Fonsi y Demi Lovato","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":101,"title":"Échame la culpa","artist":"Luis Fonsi y Demi Lovato","language":"Español","genre":"Pop","year":"2017","cover":"","duet":true},{"id":102,"title":"Wherever You Are","artist":"ONE OK ROCK","language":"Japanese","genre":"Jrock","year":"2010","cover":"","duet":false},{"id":103,"title":"Redo (TV)","artist":"Konomi Suzuki","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":104,"title":"Echo de menos","artist":"Kiko Veneno","language":"Español","genre":"Rock","year":"1992","cover":"","duet":false},{"id":105,"title":"Heavy Starry Chain","artist":"Tommy Heavenly6","language":"Japanese","genre":"Jpop","year":"2007","cover":"","duet":false},{"id":106,"title":"Cuídate","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2000","cover":"","duet":false},{"id":107,"title":"Marieta","artist":"Javier Krahe","language":"Español","genre":null,"year":"1981","cover":"","duet":false},{"id":108,"title":"Like A Prayer","artist":"Madonna","language":"English","genre":"Pop","year":"1989","cover":"","duet":false},{"id":109,"title":"Rock You Like a Hurricane","artist":"Scorpions","language":"English","genre":null,"year":"1984","cover":"","duet":false},{"id":110,"title":"Bzrp Music Sessions, Vol. 53","artist":"Bizarrap & Shakira","language":"Español","genre":"Dance","year":"2023","cover":"","duet":false},{"id":111,"title":"The Zephyr Song","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock","year":"2002","cover":"","duet":false},{"id":112,"title":"Easy on me","artist":"Adele","language":"English","genre":"Ballad","year":"2021","cover":"","duet":false},{"id":113,"title":"Lágrimas desordenadas","artist":"Melendi","language":"Español","genre":"Pop","year":"2012","cover":"","duet":false},{"id":114,"title":"Ayo Technology","artist":"Milow","language":"English","genre":"Pop Rock","year":"2008","cover":"","duet":false},{"id":115,"title":"PIENSO EN TU MIRÁ (Cap.3 Celos)","artist":"ROSALÍA","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":116,"title":"Emocional","artist":"Dani Martín","language":"Español","genre":"Pop","year":"2014","cover":"","duet":false},{"id":117,"title":"Wait & Bleed","artist":"Slipknot","language":"English","genre":"Metal","year":"1999","cover":"","duet":false},{"id":118,"title":"Feel Good Inc.","artist":"Gorillaz","language":"English","genre":"Pop","year":"2005","cover":"","duet":false},{"id":119,"title":"Positions","artist":"Ariana Grande","language":"English","genre":null,"year":"2020","cover":"","duet":false},{"id":120,"title":"Run to the Hills","artist":"Iron Maiden","language":"English","genre":"Heavy Metal","year":"1982","cover":"","duet":false},{"id":121,"title":"We Are The Champions","artist":"Queen","language":"English","genre":"Rock","year":"1977","cover":"","duet":false},{"id":122,"title":"Starlight","artist":"Muse","language":"English","genre":"Rock Alternativo","year":"2006","cover":"","duet":false},{"id":123,"title":"El aire de la calle","artist":"Los delinqüentes","language":"Español","genre":"Flamenco","year":"2001","cover":"","duet":false},{"id":124,"title":"Paradise","artist":"Coldplay","language":"English","genre":null,"year":"2011","cover":"","duet":false},{"id":125,"title":"Pa' mi guerrera","artist":"Huecco","language":"Español","genre":null,"year":"2006","cover":"","duet":false},{"id":126,"title":"Hablando en plata","artist":"Melendi","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":127,"title":"Take My Breath","artist":"The Weeknd","language":"English","genre":"Pop","year":"2021","cover":"","duet":false},{"id":128,"title":"Out of Time","artist":"The Weeknd","language":"English","genre":"Pop","year":"2022","cover":"","duet":false},{"id":129,"title":"Complicated","artist":"Avril Lavigne","language":"Englisch","genre":null,"year":null,"cover":"","duet":false},{"id":130,"title":"Help!","artist":"The Beatles","language":"English","genre":"Pop","year":"1965","cover":"","duet":false},{"id":131,"title":"Dos mundos","artist":"Disney (BSO Tarzán)","language":"Español","genre":"Bandas sonoras","year":"1999","cover":"","duet":false},{"id":132,"title":"Salvation","artist":"The Cranberries","language":"English","genre":null,"year":"1996","cover":"","duet":false},{"id":133,"title":"Por fin","artist":"Pablo Alborán","language":"Español","genre":null,"year":"2014","cover":"","duet":false},{"id":134,"title":"Soledad","artist":"La oreja de Van Gogh","language":"Español","genre":"Pop","year":"2000","cover":"","duet":false},{"id":135,"title":"Teléfono","artist":"Aitana","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":136,"title":"Madrid","artist":"Pereza","language":"Español","genre":null,"year":"2005","cover":"","duet":false},{"id":137,"title":"Ki Ni Naru Aitsu (TV)","artist":"Motoko Kumai","language":"Japanese","genre":null,"year":"1999","cover":"","duet":false},{"id":138,"title":"The Man Who Can't Be Moved","artist":"The Script","language":"English","genre":null,"year":"2008","cover":"","duet":false},{"id":139,"title":"God Save The Queen","artist":"Sex Pistols","language":"English","genre":"Punk","year":"1977","cover":"","duet":false},{"id":140,"title":"Hasta que tu muerte nos separe","artist":"Mägo de Oz","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":141,"title":"Promises","artist":"Calvin Harris and Sam Smith","language":"English","genre":"Pop","year":"2018","cover":"","duet":false},{"id":142,"title":"Como yo te amo","artist":"Raphael","language":"Español","genre":"Unknown","year":"1980","cover":"","duet":false},{"id":143,"title":"Espresso","artist":"Sabrina Carpenter","language":"English","genre":"Synth Pop, Disco","year":"2024","cover":"","duet":false},{"id":144,"title":"La playa","artist":"La Oreja de Van Gogh","language":"Español","genre":null,"year":"2000","cover":"","duet":false},{"id":145,"title":"Drive By","artist":"Train","language":"English","genre":null,"year":"2012","cover":"","duet":false},{"id":146,"title":"Hikaru Nara (TV)","artist":"Goose house","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":147,"title":"Lose you to love me","artist":"Selena Gomez","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":148,"title":"Viajar Contigo","artist":"Alex Ubago","language":"Español","genre":null,"year":"2006","cover":"","duet":false},{"id":149,"title":"Preparaos","artist":"El rey león","language":"Español","genre":"OST","year":"1994","cover":"","duet":false},{"id":150,"title":"Sakuranbo","artist":"Ai Otsuka","language":"Japanese","genre":"J-pop","year":"2003","cover":"","duet":false},{"id":151,"title":"Hanamaru Pippi wa Yoiko Dake (TV)","artist":"AOP","language":"Japanese","genre":"Anime","year":"2015","cover":"","duet":false},{"id":152,"title":"Sin miedo a nada","artist":"Alex Ubago y Amaia Montero","language":"Español","genre":"Rock","year":"2001","cover":"","duet":true},{"id":153,"title":"Sin miedo a nada","artist":"Alex Ubago y Amaia Montero","language":"Español","genre":"Rock","year":"2001","cover":"","duet":false},{"id":154,"title":"7 Years","artist":"Lukas Graham","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":155,"title":"Pisando fuerte","artist":"Alejandro Sanz","language":"Español","genre":"Pop","year":"1991","cover":"","duet":false},{"id":156,"title":"Uragiri no Yuuyake (TV)","artist":"Theatre Brook","language":"Japanese","genre":"JRock","year":"2010","cover":"","duet":false},{"id":157,"title":"Te necesito","artist":"Amaral","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":158,"title":"I Will Survive","artist":"Gloria Gaynor","language":"English","genre":"Pop","year":"1979","cover":"","duet":false},{"id":159,"title":"Con la luna llena","artist":"Melendi","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":160,"title":"Nanairo Symphony (TV)","artist":"Coalamode","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":161,"title":"Break My Heart","artist":"Dua Lipa","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":162,"title":"UNO","artist":"Little Big","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":163,"title":"Melissa","artist":"Porno graffiti (BSO Full Metal Alchemist)","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":164,"title":"Vestido azul","artist":"La Oreja de Van Gogh","language":"Español","genre":null,"year":"2003","cover":"","duet":false},{"id":165,"title":"Mi nombre","artist":"Leire Martínez","language":"Español","genre":"Pop/Rock","year":"2025","cover":"","duet":false},{"id":166,"title":"In the end","artist":"Linkin Park","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":167,"title":"Birthday Eve","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2005","cover":"","duet":false},{"id":168,"title":"Birthday Eve (Karaoke)","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2005","cover":"","duet":false},{"id":169,"title":"Mon amour","artist":"Zzoilo y Aitana","language":"Español","genre":"Pop, rap","year":"2021","cover":"","duet":false},{"id":170,"title":"Mon amour","artist":"Zzoilo y Aitana","language":"Español","genre":"Pop, rap","year":"2021","cover":"","duet":true},{"id":171,"title":"Ain't My Fault","artist":"Zara Larsson","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":172,"title":"Night changes","artist":"One Direction","language":"English","genre":"Pop","year":null,"cover":"","duet":false},{"id":173,"title":"Sólo Se Vive Una Vez","artist":"Azucar Moreno","language":"Español","genre":null,"year":"1996","cover":"","duet":false},{"id":174,"title":"Tema de Bob Esponja (TV)","artist":"Bob Esponja","language":"Español","genre":null,"year":"2009","cover":"","duet":false},{"id":175,"title":"Soldadito marinero","artist":"Fito & Fitipaldis","language":"Español","genre":"Rock","year":"2003","cover":"","duet":false},{"id":176,"title":"Aproximación","artist":"Pereza","language":"Español","genre":"Pop","year":"2007","cover":"","duet":false},{"id":177,"title":"Loko","artist":"Mürfila","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":178,"title":"Lies","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":179,"title":"Nada es para siempre","artist":"Luis Fonsi","language":"Español","genre":null,"year":"2005","cover":"","duet":false},{"id":180,"title":"Girlfriend","artist":"Avril Lavigne","language":"English","genre":"Pop Rock","year":"2007","cover":"","duet":false},{"id":181,"title":"Sakura (TV)","artist":"NIRGILIS","language":"Japanese","genre":"Anime","year":"2005","cover":"","duet":false},{"id":182,"title":"Watashi wa Candy","artist":"Horie Mitsuko (BSO Candy Candy)","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":183,"title":"Under Pressure","artist":"Queen & David Bowie","language":"English","genre":"Rock","year":"1981","cover":"","duet":true},{"id":184,"title":"Under Pressure","artist":"Queen & David Bowie","language":"English","genre":null,"year":"1981","cover":"","duet":false},{"id":185,"title":"Mizérable","artist":"Gackt","language":"Japanese","genre":"J-pop","year":"1999","cover":"","duet":false},{"id":186,"title":"Rose (versión corta)","artist":"ANNA como NANA de Black Stones (BSO NANA)","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":187,"title":"Africa","artist":"Toto","language":"English","genre":"Pop","year":"1983","cover":"","duet":false},{"id":188,"title":"Noche en vela","artist":"Guaraná","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":189,"title":"Strongest (Alan Walker remix)","artist":"Ina Wroldsen","language":"English","genre":"Polka","year":"2020","cover":"","duet":false},{"id":190,"title":"Tanto la quería","artist":"Andy y Lucas","language":"Español","genre":null,"year":"2003","cover":"","duet":false},{"id":191,"title":"A sky full of stars","artist":"Coldplay","language":"English","genre":"Pop Rock","year":"2014","cover":"","duet":false},{"id":192,"title":"Kanashimi wo yasashisa ni (versión corta)","artist":"Little by little (BSO Naruto)","language":"Japanese","genre":"Anime","year":"2003","cover":"","duet":false},{"id":193,"title":"Toxic","artist":"Britney Spears","language":"English","genre":null,"year":"2003","cover":"","duet":false},{"id":194,"title":"Good Luck My Way","artist":"L'Arc~en~ciel","language":"Japanese","genre":"JRock","year":"2011","cover":"","duet":false},{"id":195,"title":"See you again","artist":"Wiz Khalifa ft. Charlie Puth","language":"English","genre":null,"year":"2015","cover":"","duet":false},{"id":196,"title":"Cabecera","artist":"Pinky y Cerebro","language":"Español","genre":"Dibujos animados","year":"1995","cover":"","duet":false},{"id":197,"title":"You Got It","artist":"Roy Orbison","language":"English","genre":"Pop","year":"1989","cover":"","duet":false},{"id":198,"title":"Cometas por el cielo","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2012","cover":"","duet":false},{"id":199,"title":"Renai Revolution 21","artist":"Morning Musume","language":"Japanese","genre":null,"year":"2000","cover":"","duet":false},{"id":200,"title":"American idiot","artist":"Green Day","language":"English","genre":null,"year":"2004","cover":"","duet":false},{"id":201,"title":"Ahora te puedes marchar","artist":"Luis Miguel","language":"Español","genre":"Pop","year":"1987","cover":"","duet":false},{"id":202,"title":"That Thing You Do","artist":"The Wonders","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":203,"title":"Stand By Me","artist":"Oasis","language":"English","genre":"Rock","year":"1997","cover":"","duet":false},{"id":204,"title":"Galway Girl","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":205,"title":"Guren no Yumiya (TV)","artist":"Linked Horizon","language":"Japanese","genre":null,"year":"2013","cover":"","duet":false},{"id":206,"title":"Príncipe Alí","artist":"Disney (BSO Aladdín)","language":"Español","genre":"Bandas sonoras","year":"1992","cover":"","duet":false},{"id":207,"title":"Lose Control","artist":"Teddy Swims","language":"English","genre":null,"year":"2023","cover":"","duet":false},{"id":208,"title":"We don't talk anymore","artist":"Charlie Puth & Selena Gomez","language":"English","genre":"Pop","year":"2016","cover":"","duet":true},{"id":209,"title":"We don't talk anymore","artist":"Charlie Puth & Selena Gomez","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":210,"title":"MAMIII","artist":"Becky G & Karol G","language":"Español","genre":"Reguetón","year":"2022","cover":"","duet":false},{"id":211,"title":"Everytime We Touch (Slow Version)","artist":"Cascada","language":"English","genre":"Pop","year":"2005","cover":"","duet":false},{"id":212,"title":"Wouldn't It Be Nice","artist":"Beach Boys","language":"English","genre":"Rock/Pop","year":"1965","cover":"","duet":false},{"id":213,"title":"God knows (TV)","artist":"Aya Hirano","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":214,"title":"I Want Out","artist":"Helloween","language":"English","genre":"Power Metal","year":"1988","cover":"","duet":false},{"id":215,"title":"Famous Last Words","artist":"My Chemical Romance","language":"English","genre":"Other","year":"2006","cover":"","duet":false},{"id":216,"title":"Hecho con tus sueños","artist":"Funambulista","language":"Español","genre":null,"year":"2014","cover":"","duet":false},{"id":217,"title":"CLOSER (TV)","artist":"Inoue Joe","language":"Japanese","genre":"Anime","year":"2008","cover":"","duet":false},{"id":218,"title":"Ojos así","artist":"Shakira","language":"Español","genre":"Other","year":"1998","cover":"","duet":false},{"id":219,"title":"I Want It That Way","artist":"Backstreet Boys","language":"English","genre":null,"year":"1999","cover":"","duet":false},{"id":220,"title":"Paparazzi","artist":"Lady GaGa","language":"English","genre":"Pop Internacional","year":"2009","cover":"","duet":false},{"id":221,"title":"Magia","artist":"Álvaro Soler","language":"Español","genre":"Pop","year":"2021","cover":"","duet":false},{"id":222,"title":"Highway To Hell","artist":"AC/DC","language":"English","genre":"Hard Rock","year":"1979","cover":"","duet":false},{"id":223,"title":"Superstar","artist":"Jamelia","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":224,"title":"Arrepentido","artist":"Sôber","language":"Español","genre":"Rock","year":"2002","cover":"","duet":false},{"id":225,"title":"Mr. Jones","artist":"Counting Crows","language":"English","genre":null,"year":"1993","cover":"","duet":false},{"id":226,"title":"Don't Go Breaking My Heart","artist":"Elton John & Kiki Dee","language":"English","genre":"Pop","year":"1976","cover":"","duet":false},{"id":227,"title":"Estrella","artist":"Despistaos","language":"Spanish","genre":"Rock","year":null,"cover":"","duet":false},{"id":228,"title":"PAPERMOON (TV)","artist":"Tommy heavenly6","language":"Japanese","genre":"Anime","year":"2008","cover":"","duet":false},{"id":229,"title":"Friends","artist":"Marshmello & Anne-Marie","language":"English","genre":"Pop","year":"2018","cover":"","duet":false},{"id":230,"title":"Changes","artist":"David Bowie","language":"English","genre":"Pop","year":"1972","cover":"","duet":false},{"id":231,"title":"I don't want to miss a thing","artist":"Aerosmith","language":"English","genre":null,"year":"1998","cover":"","duet":false},{"id":232,"title":"Plastic Love","artist":"Mariya Takeuchi","language":"Japanese","genre":"City pop","year":"1984","cover":"","duet":false},{"id":233,"title":"Papercut","artist":"Linkin Park","language":"English","genre":"Rock","year":"2000","cover":"","duet":true},{"id":234,"title":"Papercut","artist":"Linkin Park","language":"English","genre":"Rock","year":"2000","cover":"","duet":false},{"id":235,"title":"Drive My Car","artist":"The Beatles","language":"English","genre":"Pop","year":"1965","cover":"","duet":false},{"id":236,"title":"Killing In The Name","artist":"Rage Against The Machine","language":"English","genre":null,"year":"1992","cover":"","duet":false},{"id":237,"title":"Habits (Stay High)","artist":"Tove Lo","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":238,"title":"Dangerous Woman","artist":"Ariana Grande","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":239,"title":"Talk Dirty (Radio Edit)","artist":"Jason Derülo Feat. 2 Chainz","language":"English","genre":"General Pop Vocal","year":"2013","cover":"","duet":false},{"id":240,"title":"Killing Me","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"JRock","year":"2005","cover":"","duet":false},{"id":241,"title":"Lovegame","artist":"Lady GaGa","language":"English","genre":"Pop","year":"2009","cover":"","duet":false},{"id":242,"title":"GIRI GIRI (TV)","artist":"Masayuki Suzuki ft. Suu","language":"Japanese","genre":null,"year":"2022","cover":"","duet":false},{"id":243,"title":"The adventures of Rain Dance Maggie","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock Alternativo","year":"2011","cover":"","duet":false},{"id":244,"title":"Engel","artist":"Rammstein","language":"German","genre":null,"year":null,"cover":"","duet":false},{"id":245,"title":"Todo cambió","artist":"Camila","language":"Español","genre":null,"year":"2006","cover":"","duet":false},{"id":246,"title":"Tio Sam","artist":"Ska-P","language":"Spanish","genre":"Ska","year":null,"cover":"","duet":false},{"id":247,"title":"Someday (Karaoke)","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":248,"title":"Someday","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":249,"title":"My Way","artist":"Frank Sinatra","language":"English","genre":"Oldies","year":"1969","cover":"","duet":false},{"id":250,"title":"I'll Be There For You","artist":"The Rembrandts","language":"English","genre":null,"year":"1995","cover":"","duet":false},{"id":251,"title":"Vogue","artist":"Madonna","language":"English","genre":"Pop","year":"1990","cover":"","duet":false},{"id":252,"title":"Undo","artist":"Cool Joke","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":253,"title":"Pushing Me Away","artist":"Linkin Park","language":"English","genre":"Nu Metal","year":"2000","cover":"","duet":false},{"id":254,"title":"Beautiful People","artist":"Ed Sheeran ft. Khalid","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":255,"title":"Perfect","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":256,"title":"Boulevard of Broken Dreams","artist":"Green Day","language":"English","genre":"Rock Internacional","year":"2004","cover":"","duet":false},{"id":257,"title":"The NeverEnding Story","artist":"Limahl","language":"English","genre":"Pop","year":"1984","cover":"","duet":false},{"id":258,"title":"The NeverEnding Story","artist":"Limahl","language":"English","genre":"Pop","year":"1984","cover":"","duet":true},{"id":259,"title":"Santé","artist":"Stromae","language":"French","genre":"Pop","year":"2021","cover":"","duet":false},{"id":260,"title":"La bilirrubina","artist":"Juan Luis Guerra","language":"Español","genre":"Merengue","year":"1991","cover":"","duet":false},{"id":261,"title":"Volverá","artist":"El canto del loco","language":"Español","genre":"Pop","year":"2005","cover":"","duet":false},{"id":262,"title":"Eva María","artist":"Fórmula V","language":"Español","genre":null,"year":"1973","cover":"","duet":false},{"id":263,"title":"Buriki no dance","artist":"Ado","language":"Japanese","genre":null,"year":"2023","cover":"","duet":false},{"id":264,"title":"She looks so perfect","artist":"5 Seconds of Summer","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":265,"title":"I'm Outta Love","artist":"Anastacia","language":"English","genre":"Pop","year":"2000","cover":"","duet":false},{"id":266,"title":"KIRA","artist":"Ado","language":"Japanese","genre":"Jpop","year":"2026","cover":"","duet":false},{"id":267,"title":"Bajo el mar","artist":"Disney (BSO La sirenita)","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":268,"title":"Hoy","artist":"Gloria Estefan","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":269,"title":"Clint Eastwood","artist":"Gorillaz","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":270,"title":"Thunderstruck","artist":"AC/DC","language":"English","genre":"Hard Rock","year":"1990","cover":"","duet":false},{"id":271,"title":"Kanashimi ga Tomaranai","artist":"Anri","language":"Japanese","genre":"Jpop","year":"1983","cover":"","duet":false},{"id":272,"title":"Get this party started","artist":"Pink","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":273,"title":"Ave María","artist":"David Bisbal","language":"Español","genre":"Pop","year":"2002","cover":"","duet":false},{"id":274,"title":"Unwritten","artist":"Natasha Bedingfield","language":"English","genre":"Pop Rock","year":"2004","cover":"","duet":false},{"id":275,"title":"La gata bajo la lluvia","artist":"Rocío Dúrcal","language":"Español","genre":null,"year":"1981","cover":"","duet":false},{"id":276,"title":"Cuerpo triste","artist":"Estopa","language":"Español","genre":"Rumba catalana","year":"2008","cover":"","duet":false},{"id":277,"title":"Personal Jesus","artist":"Marilyn Manson","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":278,"title":"Kill this love","artist":"BLACKPINK","language":"Korean","genre":null,"year":"2019","cover":"","duet":false},{"id":279,"title":"Gracias por venir","artist":"Lina Morgan","language":"Español","genre":null,"year":"1976","cover":"","duet":false},{"id":280,"title":"El baúl de los recuerdos","artist":"Karina","language":"Español","genre":null,"year":"1969","cover":"","duet":false},{"id":281,"title":"La canción del pirata (parte I)","artist":"Tierra Santa","language":"Español","genre":"Power Metal","year":"2000","cover":"","duet":false},{"id":282,"title":"So Yesterday","artist":"Hilary Duff","language":"English","genre":"Pop","year":"2003","cover":"","duet":false},{"id":283,"title":"Fly Me to the Moon","artist":"Frank Sinatra","language":"English","genre":"Jazz","year":"1964","cover":"","duet":false},{"id":284,"title":"Satsugai (TV)","artist":"Detroit Metal City","language":"Japanese","genre":"Death Metal","year":"2008","cover":"","duet":false},{"id":285,"title":"Real Emotion (FFX-2 ver.)","artist":"SWEETBOX","language":"English","genre":"Pop","year":"2004","cover":"","duet":false},{"id":286,"title":"Gitana","artist":"Shakira","language":"Español","genre":"Pop","year":"2010","cover":"","duet":false},{"id":287,"title":"Can't help falling in love","artist":"Elvis Presley","language":"English","genre":"Ballad","year":"1961","cover":"","duet":false},{"id":288,"title":"Smooth Criminal [Moonwalker]","artist":"Michael Jackson","language":"English","genre":"Pop","year":"1987","cover":"","duet":false},{"id":289,"title":"SCOPE","artist":"Aimer","language":"Japanese","genre":"J-pop","year":"2025","cover":"","duet":false},{"id":290,"title":"Blue bird","artist":"Ikimono gakari","language":"Japanese","genre":"Anime","year":"2008","cover":"","duet":false},{"id":291,"title":"Rockabye ft. Sean Paul & Anne-Marie","artist":"Clean Bandit","language":"English","genre":"Pop","year":null,"cover":"","duet":false},{"id":292,"title":"Soda Pop","artist":"Saja Boys","language":"English","genre":null,"year":"2025","cover":"","duet":false},{"id":293,"title":"De cero a héroe","artist":"Hércules","language":"Spanish","genre":null,"year":"1997","cover":"","duet":false},{"id":294,"title":"Destripando la historia - Ares","artist":"Pascu y Rodri","language":"Spanish","genre":"AlternRock","year":"2021","cover":"","duet":false},{"id":295,"title":"Alma de blues","artist":"Presuntos Implicados","language":"Spanish","genre":"Pop","year":null,"cover":"","duet":false},{"id":296,"title":"Destripando la historia - Hades","artist":"Pascu y Rodri","language":"Spanish","genre":"Pop Rock","year":"2019","cover":"","duet":false},{"id":297,"title":"Anta nante (TV)","artist":"Riria","language":"Japanese","genre":"J-Pop","year":"2024","cover":"","duet":false},{"id":298,"title":"Canción de la huelga de la central","artist":"Los Simpson","language":"Spanish","genre":"Soundtrack","year":null,"cover":"","duet":false},{"id":299,"title":"Es un golfo","artist":"La dama y el vagabundo","language":"Español","genre":null,"year":"1955","cover":"","duet":false},{"id":300,"title":"Don't tell me","artist":"Avril Lavigne","language":"English","genre":"Pop Rock","year":null,"cover":"","duet":false},{"id":301,"title":"Give me a reason","artist":"Megumi Hayashibara (BSO Slayers Next (Reena y Gaudy))","language":"Japanese","genre":"Anime","year":null,"cover":"","duet":false},{"id":302,"title":"Destripando la historia - Horus","artist":"Pascu y Rodri","language":"Spanish","genre":"Pop","year":"2024","cover":"","duet":false},{"id":303,"title":"The Rumbling (TV)","artist":"SiM","language":"English","genre":"Metalcore","year":"2022","cover":"","duet":false},{"id":304,"title":"Destripando la historia - Blancanieves rusa","artist":"Pascu y Rodri","language":"Spanish","genre":null,"year":"2017","cover":"","duet":false},{"id":305,"title":"Hikari E (español)","artist":"One Piece","language":"Español","genre":"Anime","year":"2002","cover":"","duet":false},{"id":306,"title":"El sol no regresa","artist":"La Quinta Estación","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":307,"title":"Mayonaka no doa ~ Stay with me","artist":"Miki Matsubara","language":"Japanese","genre":"City pop","year":null,"cover":"","duet":true},{"id":308,"title":"Kimi wa rock wo kikanai","artist":"Aimyon","language":"Japanese","genre":"JPop","year":"2017","cover":"","duet":true},{"id":309,"title":"Sutekina kimi (TV)","artist":"Razz Ma Tazz","language":"Japanese","genre":"J-Pop","year":"1995","cover":"","duet":false},{"id":310,"title":"El Shaka de Virgo","artist":"Caballeros del reggaeton","language":"Spanish","genre":"Reggaeton","year":"2018","cover":"","duet":false},{"id":311,"title":"L'esercito del selfie","artist":"Takagi & Ketra feat. Lorenzo Fragola, Arisa","language":"Italian","genre":"Pop","year":"2017","cover":"","duet":false},{"id":312,"title":"Destripando la historia - Heimdal","artist":"Pascu y Rodri","language":"Spanish","genre":"Dance","year":"2023","cover":"","duet":false},{"id":313,"title":"Destripando la historia - Ra (Pollomán)","artist":"Pascu y Rodri","language":"Spanish","genre":"R&B","year":"2022","cover":"","duet":false},{"id":314,"title":"Chouzetsu☆Dynamic! (cover)","artist":"Dragon Ball Super","language":"Spanish","genre":"Anime","year":"2015","cover":"","duet":false},{"id":315,"title":"Marigold","artist":"Aimyon","language":"Japanese","genre":"Pop","year":null,"cover":"","duet":true},{"id":316,"title":"Destripando la historia - Thor","artist":"Pascu y Rodri","language":"Spanish","genre":null,"year":"2017","cover":"","duet":false},{"id":317,"title":"Destripando la historia - Apolo","artist":"Pascu y Rodri","language":"Spanish","genre":"Disco","year":"2026","cover":"","duet":false},{"id":318,"title":"Destripando la historia - Freyja","artist":"Pascu y Rodri","language":"Spanish","genre":"Glam Metal","year":"2020","cover":"","duet":false},{"id":319,"title":"Cruella De Vil","artist":"101 dálmatas","language":"Spanish","genre":"Jazz","year":"1961","cover":"","duet":false},{"id":320,"title":"Cruella De Vil","artist":"101 dalmatians","language":"English","genre":"Jazz","year":"1961","cover":"","duet":false},{"id":321,"title":"Los Nintendos","artist":"Soy tan sutil","language":"Spanish","genre":"Remix","year":"2013","cover":"","duet":false},{"id":322,"title":"Cabecera","artist":"Cosas de locos (Osomatsu-kun)","language":"Spanish","genre":"Blues","year":"1988","cover":"","duet":false},{"id":323,"title":"Destripando la historia - Ulises","artist":"Pascu y Rodri","language":"Spanish","genre":"Rock","year":"2025","cover":"","duet":false},{"id":324,"title":"BadBoy","artist":"Da FLOWers","language":"Spanish","genre":"Pop","year":null,"cover":"","duet":false},{"id":325,"title":"Take me to the beach","artist":"Imagine Dragons feat. Ado","language":"English","genre":"AlternRock","year":"2024","cover":"","duet":true},{"id":326,"title":"Take me to the beach","artist":"Imagine Dragons feat. Ado","language":"English","genre":"AlternRock","year":"2024","cover":"","duet":false},{"id":327,"title":"Fan de ti","artist":"Sidecars","language":"Spanish","genre":"Rock","year":null,"cover":"","duet":false},{"id":328,"title":"Q&A Recital! (TV)","artist":"Haruka Tomatsu (BSO Tonari no Kaibutsu-kun)","language":"Japanese","genre":"Pop","year":null,"cover":"","duet":false},{"id":329,"title":"Destripando la Historia - Mulán","artist":"Pascu y Rodri","language":"Spanish","genre":null,"year":"2018","cover":"","duet":false},{"id":330,"title":"Koi","artist":"Gen Hoshino","language":"Japanese","genre":null,"year":"2016","cover":"","duet":true},{"id":331,"title":"A whole new world (japonés)","artist":"Aladdin","language":"Japanese","genre":null,"year":"1992","cover":"","duet":true},{"id":332,"title":"Un mundo ideal (latino)","artist":"Aladdín","language":"Español","genre":null,"year":"1992","cover":"","duet":true},{"id":333,"title":"Un mundo ideal (latino)","artist":"Aladdín","language":"Español","genre":null,"year":"1992","cover":"","duet":false},{"id":334,"title":"Un mundo ideal (España)","artist":"Aladdín","language":"Español","genre":null,"year":"1992","cover":"","duet":true},{"id":335,"title":"Not today","artist":"Imagine Dragons","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":336,"title":"La boda del año","artist":"SUNO feat. Vikstroyer","language":"Spanish","genre":"Celtic Rock","year":"2024","cover":"","duet":false},{"id":337,"title":"You're welcome","artist":"Dwayne Johnson (BSO Moana/Vaiana)","language":"English","genre":"Soundtrack","year":"2016","cover":"","duet":false},{"id":338,"title":"De nada","artist":"Marc Ullod (BSO Vaiana)","language":"Spanish","genre":"Soundtrack","year":"2016","cover":"","duet":false},{"id":339,"title":"Yoru ni kakeru","artist":"YOASOBI","language":"Japanese","genre":"J-Pop","year":"2019","cover":"","duet":true},{"id":340,"title":"Bella","artist":"Disney - La bella y la bestia","language":"Spanish","genre":null,"year":"1991","cover":"","duet":false},{"id":341,"title":"Sora no aosa wo shiru hito yo","artist":"Aimyon","language":"Japanese","genre":"J-Pop","year":"2019","cover":"","duet":true},{"id":342,"title":"Heridas del rock & roll","artist":"Rulo y la Contrabanda","language":"Spanish","genre":"Rock","year":null,"cover":"","duet":false},{"id":343,"title":"Kaikai kitan (TV)","artist":"Eve","language":"Japanese","genre":"JPop","year":"2020","cover":"","duet":false},{"id":344,"title":"Broken","artist":"Seether feat. Amy Lee","language":"English","genre":"Metal","year":"2002","cover":"","duet":false},{"id":345,"title":"Bésala (español latinoamericano)","artist":"Disney (BSO La sirenita)","language":"Español","genre":null,"year":"1989","cover":"","duet":false},{"id":346,"title":"Gigantes","artist":"Miss Caffeina","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":347,"title":"Destripando la historia - Gilgamesh","artist":"Pascu y Rodri","language":"Spanish","genre":"Pop","year":"2021","cover":"","duet":false},{"id":348,"title":"Destripando la historia - Hestia","artist":"Pascu y Rodri","language":"Spanish","genre":"Pop","year":"2020","cover":"","duet":false},{"id":349,"title":"Dame yo! Dame yo! Dame yo!! (TV)","artist":"Hekiru Shiina (ED Yat Anshin!)","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":350,"title":"Destripando la historia - Loki","artist":"Pascu y Rodri","language":"Spanish","genre":"Rock","year":"2019","cover":"","duet":false},{"id":351,"title":"Tokyo Bon 2020","artist":"Namewee feat. Meu Ninomiya","language":"Japanese","genre":"Folk","year":null,"cover":"","duet":false},{"id":352,"title":"Destripando la historia - Juana de Arco","artist":"Pascu y Rodri","language":"Spanish","genre":"Pop","year":"2024","cover":"","duet":false},{"id":353,"title":"Destripando la historia - Satán","artist":"Pascu y Rodri","language":"Spanish","genre":"Rock","year":"2024","cover":"","duet":false},{"id":354,"title":"Destripando la Historia - Hera","artist":"Pascu y Rodri","language":"Spanish","genre":"Pop","year":"2020","cover":"","duet":false},{"id":355,"title":"Heaven (TV)","artist":"HIM (OP YAT Anshin!)","language":"Japanese","genre":"","year":null,"cover":"","duet":false},{"id":356,"title":"No se habla de Bruno","artist":"Encanto","language":"English","genre":null,"year":"2021","cover":"","duet":false},{"id":357,"title":"We don't talk about Bruno","artist":"Encanto","language":"English","genre":null,"year":"2021","cover":"","duet":false},{"id":358,"title":"Sonic Jesucristo azul","artist":"Venga Monjas","language":"Spanish","genre":"Pop","year":"2020","cover":"","duet":false},{"id":359,"title":"Destripando la historia - Cronos","artist":"Pascu y Rodri","language":"Spanish","genre":"AlternRock, R&BSoul","year":"2025","cover":"","duet":false},{"id":360,"title":"I See The Light","artist":"Mandy Moore & Zachary Levi","language":"English","genre":null,"year":"2010","cover":"","duet":true},{"id":361,"title":"Veo la luz","artist":"Disney - Carmen López y Tony Mateo (BSO Enredados)","language":"Español","genre":null,"year":"2010","cover":"","duet":true},{"id":362,"title":"I See The Light","artist":"Mandy Moore & Zachary Levi","language":"English","genre":null,"year":"2010","cover":"","duet":false},{"id":363,"title":"Kaibutsu","artist":"YOASOBI","language":"Japanese","genre":"JPop","year":"2021","cover":"","duet":true},{"id":364,"title":"Lost in Paradise (TV)","artist":"ALI feat. AKLO","language":"Japanese","genre":"Rock","year":"2020","cover":"","duet":false},{"id":365,"title":"Summertime","artist":"Cinnamons × Evening cinema","language":"Japanese","genre":"Pop","year":"2017","cover":"","duet":true},{"id":366,"title":"Summertime","artist":"Cinnamons × Evening cinema","language":"Japanese","genre":"Pop","year":"2017","cover":"","duet":true},{"id":367,"title":"Destripando la historia - Odín","artist":"Pascu y Rodri","language":"Spanish","genre":"Speed metal","year":"2020","cover":"","duet":false},{"id":368,"title":"Lum no love song (TV)","artist":"Urusei Yatsura - Yuko Matsutani","language":"Japanese","genre":"Pop","year":null,"cover":"","duet":false},{"id":369,"title":"Everything Burns","artist":"Ben Moody feat. Anastacia","language":"English","genre":null,"year":"2005","cover":"","duet":false},{"id":370,"title":"Mahou tte itte ii kana","artist":"Ken Hirai","language":"Japanese","genre":"Pop","year":null,"cover":"","duet":true},{"id":371,"title":"Yuuki ga areba (TV)","artist":"Kabuki Rocks","language":"Japanese","genre":"J-Rock","year":"1993","cover":"","duet":false},{"id":372,"title":"Destripando la historia - Artemisa","artist":"Pascu y Rodri","language":"Spanish","genre":"Punk Rock","year":"2022","cover":"","duet":false},{"id":373,"title":"Breaking Bad","artist":"Leiva","language":"Spanish","genre":"Pop","year":null,"cover":"","duet":false},{"id":374,"title":"El canario","artist":"No me pises que llevo chanclas","language":"Spanish","genre":"Agropop","year":null,"cover":"","duet":false},{"id":375,"title":"Takane no Hanako-san","artist":"back number","language":"Japanese","genre":"Pop","year":"2014","cover":"","duet":true},{"id":376,"title":"Señor Burns","artist":"Los Simpson","language":"English","genre":"Latin Jazz","year":"1996","cover":"","duet":false},{"id":377,"title":"Pegasus Fantasy (español)","artist":"Joaquín Paz","language":"Spanish","genre":null,"year":"1986","cover":"","duet":false},{"id":378,"title":"How long","artist":"Charlie Puth","language":"English","genre":"Pop;Dance;Funk","year":"2017","cover":"","duet":false},{"id":379,"title":"Kaibutsu (TV)","artist":"YOASOBI","language":"Japanese","genre":"JPop","year":"2021","cover":"","duet":false},{"id":380,"title":"Another day of sun","artist":"La La Land","language":"English","genre":"Musical","year":null,"cover":"","duet":false},{"id":381,"title":"Douse shinu nara","artist":"Aimyon","language":"Japanese","genre":"J-Pop","year":"2015","cover":"","duet":true},{"id":382,"title":"Con valor","artist":"Disney (Mulán)","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":383,"title":"I'll Make A Man Out Of You","artist":"Disney (Mulan)","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":384,"title":"Toushi wo moyase","artist":"Disney (Mulan)","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":385,"title":"Cuándo mi vida va a comenzar","artist":"Disney - Carmen López (BSO Enredados)","language":"Español","genre":null,"year":"2010","cover":"","duet":false},{"id":386,"title":"When Will My Life Begin","artist":"Mandy Moore","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":387,"title":"Destripando la historia - Afrodita","artist":"Pascu y Rodri","language":"Spanish","genre":"Electronic","year":"2021","cover":"","duet":false},{"id":388,"title":"El fin del mundo","artist":"La La Love You feat. Olaya Pedrayes","language":"Spanish","genre":"Pop","year":"2019","cover":"","duet":false},{"id":389,"title":"Sola no estás","artist":"Dragon Ball GT","language":"Spanish","genre":"Unknown","year":null,"cover":"","duet":false},{"id":390,"title":"Let It Go","artist":"Takako Matsu","language":"Japanese","genre":"Soundtrack","year":"2013","cover":"","duet":false},{"id":391,"title":"Let It Go","artist":"Idina Menzel","language":"English","genre":"Soundtrack","year":"2013","cover":"","duet":false},{"id":392,"title":"Suéltalo","artist":"Gisela","language":"Spanish","genre":"Soundtrack","year":"2013","cover":"","duet":false},{"id":393,"title":"Comentarios reales de ovres desesperados","artist":"El Cuadro de Honor","language":"Spanish","genre":"Trap","year":"2020","cover":"","duet":false},{"id":394,"title":"Scramble (versión corta)","artist":"Yuri Horie y Unscandal (BSO School Rumble)","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":395,"title":"Scramble (versión corta)","artist":"El Duende en la Escalera (BSO School Rumble)","language":"Español","genre":"Anime","year":"2004","cover":"","duet":false},{"id":396,"title":"Una isla muy chachi","artist":"Hora de aventuras","language":"Spanish","genre":"Blues","year":null,"cover":"","duet":false},{"id":397,"title":"Tacones rojos","artist":"Sebastián Yatra","language":"Spanish","genre":"Pop","year":"2021","cover":"","duet":false},{"id":398,"title":"Kokorobosoina (TV)","artist":"Urusei Yatsura - Helen Sasano","language":"Japanese","genre":"Pop","year":null,"cover":"","duet":false},{"id":399,"title":"Mayores","artist":"Becky G feat. Bad Bunny","language":"Spanish","genre":"Pop","year":"2017","cover":"","duet":false},{"id":400,"title":"Destripando la historia - Atenea","artist":"Pascu y Rodri","language":"Spanish","genre":"Dance","year":"2023","cover":"","duet":false},{"id":401,"title":"Kakumei douchuu (On the way) (TV)","artist":"Aina the End","language":"Japanese","genre":"2025","year":null,"cover":"","duet":false},{"id":402,"title":"Cabecera","artist":"Patoaventuras","language":"Español","genre":"Disney","year":"1988","cover":"","duet":false},{"id":403,"title":"I've got a dream","artist":"Tangled","language":"English","genre":"Soundtrack","year":"2011","cover":"","duet":false},{"id":404,"title":"Mi sueño es","artist":"Carmen López, Toni Mateo y otros","language":"Español","genre":"Soundtrack","year":"2011","cover":"","duet":false},{"id":405,"title":"Destripando la historia - Thanos","artist":"Pascu y Rodri","language":"Spanish","genre":null,"year":"2018","cover":"","duet":false},{"id":406,"title":"Destripando la historia - Diosa Isis","artist":"Pascu y Rodri","language":"Spanish","genre":"Disco Funk","year":"2023","cover":"","duet":false},{"id":407,"title":"Ella","artist":"Viceversa","language":"Spanish","genre":"Pop","year":"1992","cover":"","duet":false},{"id":408,"title":"Brillante","artist":"Eduardo Bosch (BSO Vaiana)","language":"Spanish","genre":null,"year":"2016","cover":"","duet":false},{"id":409,"title":"Shiny","artist":"Jemaine Clement (BSO Moana/Vaiana)","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":410,"title":"Meteoros de Pegaso","artist":"Caballeros del reggaeton","language":"Spanish","genre":"Reggaeton","year":"2020","cover":"","duet":false},{"id":411,"title":"Macaulay Culkin","artist":"Ladilla Rusa","language":"Spanish","genre":"Rumba bakala","year":"2017","cover":"","duet":false},{"id":412,"title":"Destripando la historia - Baldur","artist":"Pascu y Rodri","language":"Spanish","genre":"AlternRock","year":"2022","cover":"","duet":false},{"id":413,"title":"Cabecera","artist":"Pepper Ann","language":"Spanish","genre":"Pop","year":"1997","cover":"","duet":false},{"id":414,"title":"Destripando la historia - Shiva","artist":"Pascu y Rodri","language":"Spanish","genre":"R&B/Soul","year":"2024","cover":"","duet":false},{"id":415,"title":"Dragon Ball - Tema de cierre","artist":"Manolita Domínguez","language":"Spanish","genre":null,"year":"1986","cover":"","duet":false},{"id":416,"title":"Qué hay más allá","artist":"María Parrado (BSO Vaiana)","language":"Español","genre":"SoundTrack","year":"2017","cover":"","duet":false},{"id":417,"title":"Terriblemente cruel","artist":"Leiva","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":418,"title":"Destripando la historia - Zeus","artist":"Pascu y Rodri","language":"Spanish","genre":"Pop","year":"2019","cover":"","duet":false},{"id":419,"title":"Lemon","artist":"Kenshi Yonezu","language":"Japanese","genre":"Pop","year":"2018","cover":"","duet":true},{"id":420,"title":"Destripando la historia - Deméter","artist":"Pascu y Rodri","language":"Spanish","genre":"Ballad","year":"2020","cover":"","duet":false},{"id":421,"title":"El frío","artist":"Zahara","language":"Spanish","genre":"Alternative","year":"2015","cover":"","duet":false},{"id":422,"title":"Destripando la historia - Sun Wukong","artist":"Pascu y Rodri","language":"Spanish","genre":"J-Rock","year":"2019","cover":"","duet":false},{"id":423,"title":"Destripando la historia - Hermes","artist":"Pascu y Rodri","language":"Spanish","genre":"Eurobeat","year":"2021","cover":"","duet":false},{"id":424,"title":"El lamento de Jack","artist":"Pesadilla antes de Navidad","language":"Spanish","genre":"Blues","year":"1993","cover":"","duet":false},{"id":425,"title":"Jack's lament","artist":"The Nightmare before Christmas","language":"English","genre":"Blues","year":"1993","cover":"","duet":false},{"id":426,"title":"Parte de él","artist":"Disney (BSO La sirenita)","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":427,"title":"Parte de él (V.O.)","artist":"Disney (BSO La sirenita)","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":428,"title":"Got My Mind Set On You","artist":"George Harrison","language":"English","genre":null,"year":"1987","cover":"","duet":false},{"id":429,"title":"La boca junta","artist":"Melendi y Mau & Ricky","language":"Español","genre":"Reguetón","year":"2021","cover":"","duet":true},{"id":430,"title":"La boca junta","artist":"Melendi y Mau & Ricky","language":"Español","genre":"Reguetón","year":"2021","cover":"","duet":false},{"id":431,"title":"Heal the world","artist":"Michael Jackson","language":"English","genre":"Pop","year":"1991","cover":"","duet":false},{"id":432,"title":"CLEAR (TV)","artist":"Maaya Sakamoto","language":"Japanese","genre":"Anime","year":"2017","cover":"","duet":false},{"id":433,"title":"Aute Cuture","artist":"ROSALÍA","language":"Español","genre":"Pop","year":"2019","cover":"","duet":false},{"id":434,"title":"Creep","artist":"Radiohead","language":"English","genre":"Pop","year":"1992","cover":"","duet":false},{"id":435,"title":"Imposible","artist":"Luis Fonsi y Ozuna","language":"Español","genre":null,"year":"2018","cover":"","duet":false},{"id":436,"title":"Mmm mmm mmm","artist":"Crash Test Dummies","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":437,"title":"Photograph","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":438,"title":"Sincericidio","artist":"Leiva","language":"Español","genre":"Pop","year":"2016","cover":"","duet":false},{"id":439,"title":"Resonance (TV)","artist":"T.M.Revolution","language":"Japanese","genre":"Anime","year":"2007","cover":"","duet":false},{"id":440,"title":"Heathens","artist":"Twenty One Pilots","language":"English","genre":"Soundtrack","year":"2016","cover":"","duet":false},{"id":441,"title":"Como lo tienes tú","artist":"Pereza","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":442,"title":"Hora de aventuras","artist":"Templeton","language":"Español","genre":"Dibujos animados","year":"2010","cover":"","duet":false},{"id":443,"title":"A Little Piece Of Heaven","artist":"Avenged Sevenfold","language":"English","genre":"Alternative","year":"2007","cover":"","duet":false},{"id":444,"title":"Sleep walking orchestra (TV)","artist":"BUMP OF CHICKEN","language":"Japanese","genre":"Alternative Rock","year":"2023","cover":"","duet":false},{"id":445,"title":"Dreams","artist":"The Cranberries","language":"English","genre":"Pop","year":"1992","cover":"","duet":false},{"id":446,"title":"Desátame","artist":"Mónica Naranjo","language":"Español","genre":null,"year":"1997","cover":"","duet":false},{"id":447,"title":"Little Talks","artist":"Of Monsters and Men","language":"English","genre":"Indie Rock","year":"2011","cover":"","duet":true},{"id":448,"title":"Little Talks","artist":"Of Monsters and Men","language":"English","genre":"Indie Rock","year":"2011","cover":"","duet":false},{"id":449,"title":"Yesterday","artist":"The Beatles","language":"English","genre":"Pop","year":"1965","cover":"","duet":false},{"id":450,"title":"A Million Love Songs","artist":"Take That","language":"English","genre":null,"year":"1992","cover":"","duet":false},{"id":451,"title":"Desde que estamos juntos","artist":"Melendi","language":"Español","genre":null,"year":"2016","cover":"","duet":false},{"id":452,"title":"Mambo No. 5","artist":"Lou Bega","language":"English","genre":"Pop","year":"1999","cover":"","duet":false},{"id":453,"title":"Zenryoku Batankyuu (TV)","artist":"AOP","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":454,"title":"Oye mi amor","artist":"Maná","language":"Español","genre":"Pop Rock","year":"1992","cover":"","duet":false},{"id":455,"title":"Torquemada","artist":"Avalanch","language":"Español","genre":"Power Metal","year":"1999","cover":"","duet":false},{"id":456,"title":"Resurrección","artist":"Amaral","language":"Español","genre":"Pop Nacional","year":"2005","cover":"","duet":false},{"id":457,"title":"Malibu","artist":"Miley Cyrus","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":458,"title":"Breathless","artist":"The Corrs","language":"English","genre":null,"year":"2000","cover":"","duet":false},{"id":459,"title":"Burn it down","artist":"Linkin Park","language":"English","genre":"Rock Alternative","year":"2012","cover":"","duet":false},{"id":460,"title":"Sogeking (TV)","artist":"Usopp","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":461,"title":"Melissa","artist":"Porno graffiti","language":"Japanese","genre":"Anime","year":"2003","cover":"","duet":false},{"id":462,"title":"Chim chímeni (Dúo)","artist":"Mary Poppins","language":"Español","genre":"Soundtrack","year":"1964","cover":"","duet":false},{"id":463,"title":"Chim chímeni (Dúo)","artist":"Mary Poppins","language":"Español","genre":"Soundtrack","year":"1964","cover":"","duet":true},{"id":464,"title":"Never gonna give you up","artist":"Rick Astley","language":"Englisch","genre":"","year":"","cover":"","duet":false},{"id":465,"title":"Shape Of You","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":466,"title":"Tiene nombres mil","artist":"Leonardo Dantés","language":"Español","genre":null,"year":"2005","cover":"","duet":false},{"id":467,"title":"América, América","artist":"Nino Bravo","language":"Español","genre":"Balada","year":"1973","cover":"","duet":false},{"id":468,"title":"Uchiage Hanabi","artist":"Daoko x Kenshi Yonezu","language":"Japanese","genre":"Jpop","year":"2017","cover":"","duet":true},{"id":469,"title":"Uchiage Hanabi","artist":"Daoko x Kenshi Yonezu","language":"Japanese","genre":"Jpop","year":"2017","cover":"","duet":false},{"id":470,"title":"Ama, ama y ensancha el alma","artist":"Extremoduro","language":"Español","genre":null,"year":"1992","cover":"","duet":false},{"id":471,"title":"Can't stop","artist":"Red Hot Chili Peppers","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":472,"title":"Physical","artist":"Olivia Newton-John","language":"English","genre":"Pop","year":"1981","cover":"","duet":false},{"id":473,"title":"Abcdefu","artist":"Gayle","language":"English","genre":null,"year":"2021","cover":"","duet":false},{"id":474,"title":"Bienvenidos","artist":"Miguel Ríos","language":"Español","genre":"Rock","year":"1982","cover":"","duet":false},{"id":475,"title":"The world (TV)","artist":"Nightmare","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":476,"title":"Ray of Light","artist":"Shoko Nakagawa","language":"Japanese","genre":"Pop","year":"2010","cover":"","duet":false},{"id":477,"title":"Hello Especially (TV)","artist":"Sukima Switch","language":"Japanese","genre":null,"year":"2013","cover":"","duet":false},{"id":478,"title":"Prayer X (TV)","artist":"King Gnu","language":"Japanese","genre":"Jpop","year":"2018","cover":"","duet":false},{"id":479,"title":"Mi Jefe","artist":"Mojinos Escozios","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":480,"title":"Crawling","artist":"Linkin Park","language":"English","genre":null,"year":"2001","cover":"","duet":false},{"id":481,"title":"Justo cuando el mundo apriete","artist":"Viva Suecia y Leiva","language":"Español","genre":"Indie","year":"2022","cover":"","duet":false},{"id":482,"title":"Justo cuando el mundo apriete","artist":"Viva Suecia y Leiva","language":"Español","genre":"Indie","year":"2022","cover":"","duet":true},{"id":483,"title":"Clattanoia (TV)","artist":"OxT","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":484,"title":"All the things she said","artist":"t.A.T.u.","language":"English","genre":"Pop Internacional","year":"2002","cover":"","duet":false},{"id":485,"title":"Canción del verano","artist":"José Mota y Edurne","language":"Español","genre":null,"year":"2009","cover":"","duet":false},{"id":486,"title":"I Love Rock 'n Roll","artist":"Britney Spears","language":"English","genre":null,"year":"2002","cover":"","duet":false},{"id":487,"title":"Eyes closed","artist":"Ed Sheeran","language":"English","genre":"Pop folkl√≥rico","year":"2023","cover":"","duet":false},{"id":488,"title":"Bad Liar","artist":"Imagine Dragons","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":489,"title":"Tan cierto como tú","artist":"Disney (BSO Hércules)","language":"Español","genre":"Other","year":"1997","cover":"","duet":false},{"id":490,"title":"Sonrisa","artist":"Ana Torroja","language":"Español","genre":null,"year":"2010","cover":"","duet":false},{"id":491,"title":"Just the two of us","artist":"Grover Washington, Jr.","language":"English","genre":"Ballad","year":"1980","cover":"","duet":false},{"id":492,"title":"Lovefool","artist":"The Cardigans","language":"English","genre":"Pop","year":"1996","cover":"","duet":false},{"id":493,"title":"ABC","artist":"The Jackson 5","language":"English","genre":null,"year":"1970","cover":"","duet":false},{"id":494,"title":"Adventure Of A Lifetime","artist":"Coldplay","language":"English","genre":"Rock, Pop, Alternative","year":"2015","cover":"","duet":false},{"id":495,"title":"Kings and queens","artist":"30 Seconds to mars","language":"English","genre":"ROCK ALTERNATIVE","year":"2009","cover":"","duet":false},{"id":496,"title":"Memories","artist":"Maroon 5","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":497,"title":"Ma Meilleure Ennemie","artist":"Stromae, Pomme","language":"French","genre":"Hip hop","year":"2024","cover":"","duet":false},{"id":498,"title":"I'm yours","artist":"Jason Mraz","language":"English","genre":"Other","year":"2008","cover":"","duet":false},{"id":499,"title":"Lucha de gigantes","artist":"Nacha Pop","language":"Español","genre":"Balada","year":"1987","cover":"","duet":false},{"id":500,"title":"Cabecera","artist":"La abeja Maya","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":501,"title":"Lo malo","artist":"Ana Guerra y Aitana Ocaña","language":"Español","genre":"Pop","year":"2017","cover":"","duet":true},{"id":502,"title":"Lo malo","artist":"Ana Guerra y Aitana Ocaña","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":503,"title":"Magic Number (TV)","artist":"Maaya Sakamoto","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":504,"title":"Binks no sake","artist":"One Piece","language":"Japanese","genre":"Anime","year":"2008","cover":"","duet":false},{"id":505,"title":"Millones","artist":"Camilo","language":"Español","genre":"Pop","year":"2021","cover":"","duet":false},{"id":506,"title":"Everybody's fool","artist":"Evanescence","language":"English","genre":null,"year":"2003","cover":"","duet":false},{"id":507,"title":"Ponte el cinturón","artist":"Silvia Padilla (Cásting Factor X)","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":508,"title":"It's Gonna Be Me","artist":"N'Sync","language":"English","genre":null,"year":"2000","cover":"","duet":false},{"id":509,"title":"Last kiss (TV)","artist":"Bonnie Pink","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":510,"title":"Hula hoop","artist":"OMI","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":511,"title":"Dude (Looks like a lady)","artist":"Aerosmith","language":"English","genre":"Glam Metal","year":"1987","cover":"","duet":false},{"id":512,"title":"Dark Horse","artist":"Katy Perry","language":"English","genre":"R&B","year":"2014","cover":"","duet":false},{"id":513,"title":"Don't Start Now","artist":"Dua Lipa","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":514,"title":"That That","artist":"Psy feat. Suga of BTS","language":"English","genre":null,"year":"2022","cover":"","duet":false},{"id":515,"title":"My favourite game","artist":"The Cardigans","language":"English","genre":"Pop","year":"1998","cover":"","duet":false},{"id":516,"title":"Suki de, Suki de, Suki de","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2010","cover":"","duet":false},{"id":517,"title":"Sabor de amor","artist":"Danza Invisible","language":"Español","genre":"Pop","year":"1988","cover":"","duet":false},{"id":518,"title":"Is this love","artist":"Bob Marley & the Wailers","language":"English","genre":"Reggae","year":"1978","cover":"","duet":false},{"id":519,"title":"Y, ¿si fuera ella?","artist":"Alejandro Sanz","language":"Español","genre":"Pop","year":"1997","cover":"","duet":false},{"id":520,"title":"Come as you are","artist":"Nirvana","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":521,"title":"Cuando me vaya","artist":"Melocos y Natalia Jiménez (de La Quinta Estación)","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":522,"title":"Please Please Please","artist":"Sabrina Carpenter","language":"English","genre":null,"year":"2024","cover":"","duet":false},{"id":523,"title":"Solo","artist":"Clean Bandit feat. Demi Lovato","language":"English","genre":"Pop","year":"2018","cover":"","duet":false},{"id":524,"title":"Retorciendo palabras","artist":"Fangoria","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":525,"title":"Speed of Sound","artist":"Coldplay","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":526,"title":"Galilea","artist":"Sergio Dalma","language":"Español","genre":"Pop","year":"1991","cover":"","duet":false},{"id":527,"title":"Animals","artist":"Muse","language":"English","genre":"Rock","year":"2012","cover":"","duet":false},{"id":528,"title":"Esto es Halloween","artist":"Pesadilla antes de Navidad","language":"Español","genre":"Banda sonora","year":"1993","cover":"","duet":false},{"id":529,"title":"Clavaíto","artist":"Chanel y Abraham Mateo","language":"Español","genre":"Bachata","year":"2023","cover":"","duet":true},{"id":530,"title":"Clavaíto","artist":"Chanel y Abraham Mateo","language":"Español","genre":"Bachata","year":"2023","cover":"","duet":false},{"id":531,"title":"DI MI NOMBRE (Cap.8 Éxtasis)","artist":"ROSALÍA","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":532,"title":"Go Your Own Way","artist":"Fleetwood Mac","language":"English","genre":"Rock","year":"1976","cover":"","duet":false},{"id":533,"title":"Sakura Saku","artist":"Megumi Hayashibara","language":"Japanese","genre":"J-Pop","year":null,"cover":"","duet":false},{"id":534,"title":"Radikal","artist":"El Chivi","language":"Español","genre":null,"year":"2001","cover":"","duet":false},{"id":535,"title":"You're Beautiful","artist":"James Blunt","language":"English","genre":"Pop","year":"2005","cover":"","duet":false},{"id":536,"title":"Señorita","artist":"Shawn Mendes, Camila Cabello","language":"English","genre":null,"year":"2019","cover":"","duet":true},{"id":537,"title":"Señorita","artist":"Shawn Mendes, Camila Cabello","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":538,"title":"Padam Padam","artist":"Kylie Minogue","language":"English","genre":null,"year":"2023","cover":"","duet":false},{"id":539,"title":"Cabecera","artist":"BSO Isidoro","language":"Español","genre":"Dibujos animados","year":"1994","cover":"","duet":false},{"id":540,"title":"Michelle","artist":"The Beatles","language":"English","genre":"Pop","year":"1965","cover":"","duet":false},{"id":541,"title":"La bachata","artist":"Manuel Turizo","language":"Español","genre":"Bachata","year":"2022","cover":"","duet":false},{"id":542,"title":"What I've been looking for","artist":"High School Musical","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":543,"title":"Sobreviviré","artist":"Mónica Naranjo","language":"Español","genre":"Pop","year":"2000","cover":"","duet":false},{"id":544,"title":"Unholy","artist":"Sam Smith, Kim Petras","language":"English","genre":"Pop","year":"2022","cover":"","duet":false},{"id":545,"title":"El universo sobre mi","artist":"Amaral","language":"Español","genre":"Rock","year":"2005","cover":"","duet":false},{"id":546,"title":"Moves Like Jagger","artist":"Maroon 5 feat. Christina Aguilera","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":547,"title":"Moves Like Jagger","artist":"Maroon 5 feat. Christina Aguilera","language":"English","genre":"Pop","year":"2011","cover":"","duet":true},{"id":548,"title":"Sen no kotoba","artist":"Koda Kumi","language":"Japanese","genre":"Other","year":null,"cover":"","duet":false},{"id":549,"title":"The Reason","artist":"Hoobastank","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":550,"title":"This is Halloween","artist":"The Nightmare Before Christmas","language":"English","genre":"Musical","year":"1993","cover":"","duet":false},{"id":551,"title":"Tabi no tochuu","artist":"Natsumi Kiyoura","language":"Japanese","genre":"J-pop","year":"2008","cover":"","duet":false},{"id":552,"title":"What Lovers Do","artist":"Maroon 5 ft. SZA","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":553,"title":"Nothin' on you","artist":"B.o.B Feat. Bruno Mars","language":"English","genre":null,"year":"2010","cover":"","duet":false},{"id":554,"title":"Nothin' on you","artist":"B.o.B Feat. Bruno Mars","language":"English","genre":null,"year":"2010","cover":"","duet":true},{"id":555,"title":"Uno más uno son siete","artist":"Fran Perea","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":556,"title":"Estoy fatal de lo mío","artist":"El Payaso (La Hora Chanante)","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":557,"title":"Walk me home","artist":"P!nk","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":558,"title":"Style","artist":"Taylor Swift","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":559,"title":"Physical","artist":"Dua Lipa","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":560,"title":"Breaking the Habit","artist":"Linkin Park","language":"English","genre":null,"year":"2004","cover":"","duet":false},{"id":561,"title":"Cover me in sunshine","artist":"P!NK & Willow Sage Hart","language":"English","genre":null,"year":"2021","cover":"","duet":false},{"id":562,"title":"Naturaleza muerta","artist":"Mecano","language":"Español","genre":null,"year":"1991","cover":"","duet":false},{"id":563,"title":"Paranoid","artist":"Black Sabbath","language":"English","genre":"Rock","year":"1970","cover":"","duet":false},{"id":564,"title":"Mi Gato","artist":"Rosario","language":"Español","genre":null,"year":"1992","cover":"","duet":false},{"id":565,"title":"Aprendiz","artist":"Malú","language":"Español","genre":"Pop Nacional","year":"1998","cover":"","duet":false},{"id":566,"title":"Sirenas","artist":"Taburete","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":567,"title":"The Sound of Silence","artist":"Simon & Garfunkel","language":"English","genre":"Pop","year":"1964","cover":"","duet":false},{"id":568,"title":"Bye bye bye","artist":"N'Sync","language":"English","genre":"Pop","year":"2000","cover":"","duet":false},{"id":569,"title":"Driver's High","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"J-Pop","year":"2003","cover":"","duet":false},{"id":570,"title":"La Flaca","artist":"Jarabe de Palo","language":"Español","genre":"Rock","year":"1996","cover":"","duet":false},{"id":571,"title":"PINK BLOOD (TV)","artist":"Hikaru Utada","language":"Japanese","genre":"Anime","year":"2021","cover":"","duet":false},{"id":572,"title":"Dragostea din teï","artist":"O-Zone","language":"Romanian","genre":"Eurodance, dance pop","year":"2003","cover":"","duet":false},{"id":573,"title":"From the inside","artist":"Linkin Park","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":574,"title":"Moonlight shadow","artist":"Mike Oldfield con Maggie Reilly","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":575,"title":"Secret Base ~Kimi ga Kureta Mono~ (10 Years After) (TV)","artist":"Ai Kayano","language":"Japanese","genre":"Anime","year":"2011","cover":"","duet":false},{"id":576,"title":"Mar Adentro","artist":"Héroes del Silencio","language":"Español","genre":"Rock","year":"1989","cover":"","duet":false},{"id":577,"title":"Butter","artist":"BTS","language":"English","genre":null,"year":"2021","cover":"","duet":false},{"id":578,"title":"Euphoria","artist":"Loreen","language":"English","genre":"Dance-Pop","year":"2012","cover":"","duet":false},{"id":579,"title":"Canción de Meg","artist":"Celia Vergara","language":"Español","genre":"Soundtrack","year":"1997","cover":"","duet":true},{"id":580,"title":"Canción de Meg","artist":"Celia Vergara","language":"Español","genre":"Soundtrack","year":"1997","cover":"","duet":false},{"id":581,"title":"Planetarium","artist":"Ai Otsuka","language":"Japanese","genre":"J-Pop","year":"2005","cover":"","duet":false},{"id":582,"title":"Manazashi wa hikari (TV)","artist":"Tatsuya Kitani","language":"Japanese","genre":"J-pop","year":"2025","cover":"","duet":false},{"id":583,"title":"I ain't worried","artist":"OneRepublic","language":"English","genre":"Pop","year":"2022","cover":"","duet":false},{"id":584,"title":"Kamikaze","artist":"Amaral","language":"Español","genre":"Pop","year":"2008","cover":"","duet":false},{"id":585,"title":"Atemonaku (TV)","artist":"Aimer","language":"Japanese","genre":"Pop","year":"2023","cover":"","duet":false},{"id":586,"title":"Who Wants to Live Forever","artist":"Queen","language":"English","genre":null,"year":"1986","cover":"","duet":false},{"id":587,"title":"Dear Maria, count me in","artist":"All Time Low","language":"English","genre":"Pop Punk","year":"2007","cover":"","duet":false},{"id":588,"title":"Hung Up","artist":"Madonna","language":"English","genre":null,"year":"2005","cover":"","duet":false},{"id":589,"title":"Sunny","artist":"Boney M.","language":"English","genre":"Disco","year":"1976","cover":"","duet":false},{"id":590,"title":"Mujer Bruja","artist":"Lola Indigo y Mala Rodríguez","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":591,"title":"From the start","artist":"Laufey","language":"English","genre":"Jazz Pop","year":"2023","cover":"","duet":false},{"id":592,"title":"Cry Baby (TV)","artist":"Official HIGE DANdism","language":"Japanese","genre":"J-pop","year":"2021","cover":"","duet":false},{"id":593,"title":"Por la boca vive el pez","artist":"Fito & Fitipaldis","language":"Español","genre":"Pop","year":"2006","cover":"","duet":false},{"id":594,"title":"One step closer","artist":"Linkin Park","language":"English","genre":"Nu Metal","year":"2001","cover":"","duet":false},{"id":595,"title":"Zankyou sanka (TV)","artist":"Aimer","language":"Japanese","genre":"Rock","year":"2022","cover":"","duet":false},{"id":596,"title":"Entre tú y mil mares","artist":"Laura Pausini","language":"Español","genre":null,"year":"2000","cover":"","duet":false},{"id":597,"title":"I Still Haven't Found What I'm Looking For","artist":"U2","language":"English","genre":"Rock","year":"1987","cover":"","duet":false},{"id":598,"title":"11:00","artist":"HY","language":"Japanese","genre":"J-Pop","year":null,"cover":"","duet":false},{"id":599,"title":"Suerte","artist":"Shakira","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":600,"title":"Lapis Lazuli (TV)","artist":"Eir Aoi","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":601,"title":"Left behind","artist":"Slipknot","language":"English","genre":"Nu Metal","year":"2001","cover":"","duet":false},{"id":602,"title":"Bat Country","artist":"Avenged Sevenfold","language":"English","genre":"Metal","year":"2005","cover":"","duet":false},{"id":603,"title":"Entre dos tierras","artist":"Héroes del silencio","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":604,"title":"You And Me","artist":"The Cranberries","language":"English","genre":"Rock","year":"1999","cover":"","duet":false},{"id":605,"title":"SOUVENIR (TV)","artist":"BUMP OF CHICKEN","language":"Japanese","genre":"Anime","year":"2022","cover":"","duet":false},{"id":606,"title":"La puerta hacia el amor","artist":"Carmen López y Tony Menguiano","language":"Español","genre":"Soundtrack","year":"2013","cover":"","duet":false},{"id":607,"title":"La puerta hacia el amor","artist":"Carmen López y Tony Menguiano","language":"Español","genre":"Soundtrack","year":"2013","cover":"","duet":true},{"id":608,"title":"Toxicity","artist":"System of a Down","language":"English","genre":"Metal Alternativo","year":"2001","cover":"","duet":false},{"id":609,"title":"Counting Stars","artist":"OneRepublic","language":"English","genre":null,"year":"2013","cover":"","duet":false},{"id":610,"title":"¿Y cómo es él?","artist":"José Luis Perales","language":"Español","genre":null,"year":"1982","cover":"","duet":false},{"id":611,"title":"All About That Bass","artist":"Meghan Trainor","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":612,"title":"Futari de... (Karaoke)","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":613,"title":"Futari de...","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":614,"title":"Bam Bam","artist":"Camila Cabello feat. Ed Sheeran","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":615,"title":"Love Machine","artist":"Morning Musume","language":"Japanese","genre":null,"year":"1999","cover":"","duet":false},{"id":616,"title":"Elevation","artist":"U2","language":"English","genre":null,"year":"2000","cover":"","duet":false},{"id":617,"title":"I Want To Know What Love Is","artist":"Foreigner","language":"English","genre":"Rock","year":"1984","cover":"","duet":false},{"id":618,"title":"Él no soy yo","artist":"Blas Cantó","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":619,"title":"Love Me Again","artist":"John Newman","language":"English","genre":null,"year":"2013","cover":"","duet":false},{"id":620,"title":"Tu jardín con enanitos","artist":"Melendi","language":"Español","genre":"Pop Rock","year":"2012","cover":"","duet":false},{"id":621,"title":"Ichirin no hana (versión corta)","artist":"High and mighty color (BSO Bleach)","language":"Japanese","genre":"Anime","year":"2005","cover":"","duet":false},{"id":622,"title":"Just Can't Get Enough","artist":"The Black Eyed Peas","language":"English","genre":"R&B","year":"2011","cover":"","duet":false},{"id":623,"title":"Ticket To Ride","artist":"The Beatles","language":"English","genre":"Pop","year":"1965","cover":"","duet":false},{"id":624,"title":"A Dios le pido","artist":"Juanes","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":625,"title":"Lay all your love on me","artist":"ABBA","language":"English","genre":"Dance","year":"1980","cover":"","duet":false},{"id":626,"title":"R U Mine","artist":"Arctic Monkeys","language":"English","genre":"Rock","year":"2012","cover":"","duet":false},{"id":627,"title":"Butter-fly","artist":"Kouji Wada","language":"Japanese","genre":"Anime","year":"1999","cover":"","duet":false},{"id":628,"title":"Zankoku na Tenshi no Te-ze (TV)","artist":"Yoko Takahashi","language":"Japanese","genre":"Anime","year":"1995","cover":"","duet":false},{"id":629,"title":"Faded","artist":"Alan Walker","language":"English","genre":null,"year":"2015","cover":"","duet":false},{"id":630,"title":"Odd Future (TV)","artist":"UVERworld","language":"Japanese","genre":"Anime","year":"2018","cover":"","duet":false},{"id":631,"title":"The Lazy Song","artist":"Bruno Mars","language":"English","genre":"pop","year":"2011","cover":"","duet":false},{"id":632,"title":"Bésala (español de España)","artist":"Disney (BSO La sirenita)","language":"Español","genre":null,"year":"1989","cover":"","duet":false},{"id":633,"title":"Peter Pan","artist":"El Canto del Loco","language":"Español","genre":"Pop","year":"2008","cover":"","duet":false},{"id":634,"title":"Chasing Pavements","artist":"Adele","language":"English","genre":null,"year":"2008","cover":"","duet":false},{"id":635,"title":"Sigo Aquí","artist":"Álex Ubago","language":"Español","genre":"Pop","year":"2002","cover":"","duet":false},{"id":636,"title":"Everlong","artist":"Foo Fighters","language":"English","genre":"Rock Alternativo","year":"1997","cover":"","duet":false},{"id":637,"title":"Nobody (TV)","artist":"OneRepublic","language":"English","genre":"Pop","year":"2024","cover":"","duet":false},{"id":638,"title":"Maybe you're the problem","artist":"Ava Max","language":"English","genre":"Hip Hop","year":"2022","cover":"","duet":false},{"id":639,"title":"Under the bridge","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock alternativo","year":"1991","cover":"","duet":false},{"id":640,"title":"Burn it to the ground","artist":"Nickelback","language":"English","genre":"Hard Rock","year":"2008","cover":"","duet":false},{"id":641,"title":"Human","artist":"The Killers","language":"English","genre":null,"year":"2008","cover":"","duet":false},{"id":642,"title":"Like OOH-AHH","artist":"TWICE","language":"Korean","genre":"Kpop","year":"2015","cover":"","duet":false},{"id":643,"title":"Earth Song","artist":"Michael Jackson","language":"English","genre":"Ballad","year":"1995","cover":"","duet":false},{"id":644,"title":"Ride the lightning","artist":"Metallica","language":"English","genre":"Thrash Metal","year":"1984","cover":"","duet":false},{"id":645,"title":"It's A Beautiful Day","artist":"Michael Bublé","language":"English","genre":null,"year":"2013","cover":"","duet":false},{"id":646,"title":"El último vals","artist":"La Oreja de Van Gogh","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":647,"title":"Mientes","artist":"Camila","language":"Español","genre":"Pop","year":"2010","cover":"","duet":false},{"id":648,"title":"Amerika","artist":"Rammstein","language":"German","genre":"Metal Industrial","year":"2004","cover":"","duet":false},{"id":649,"title":"Hazme un muñeco de nieve","artist":"Naima Barroso, Emma Amselem y Carmen López","language":"Español","genre":null,"year":"2013","cover":"","duet":false},{"id":650,"title":"Linger","artist":"The Cranberries","language":"English","genre":"Pop","year":"1993","cover":"","duet":false},{"id":651,"title":"Black Sheep (Brie Larson Vocal Version)","artist":"Metric","language":"English","genre":"Unknown","year":"2010","cover":"","duet":false},{"id":652,"title":"Tasogare no Bay City","artist":"Junko Yagami","language":"Japanese","genre":"Jpop","year":"1983","cover":"","duet":false},{"id":653,"title":"Días de verano","artist":"Amaral","language":"Español","genre":null,"year":"2005","cover":"","duet":false},{"id":654,"title":"Nada que perder","artist":"Conchita","language":"Español","genre":"Rock","year":"2007","cover":"","duet":false},{"id":655,"title":"Saoko","artist":"Rosalía","language":"Español","genre":"Urban latino, reguetón","year":"2022","cover":"","duet":false},{"id":656,"title":"Cada dos minutos","artist":"Despistaos (Versión 2)","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":657,"title":"Bitter Sweet Symphony","artist":"The Verve","language":"English","genre":"Britpop","year":"1997","cover":"","duet":false},{"id":658,"title":"The Winner Takes It All","artist":"ABBA","language":"English","genre":null,"year":"1980","cover":"","duet":false},{"id":659,"title":"Salomé","artist":"Chayanne","language":"Español","genre":"Latina","year":"1998","cover":"","duet":false},{"id":660,"title":"Oz (TV)","artist":"Yama","language":"Japanese","genre":"Pop","year":"2021","cover":"","duet":false},{"id":661,"title":"A Whole New World","artist":"Aladdin","language":"English","genre":null,"year":"1992","cover":"","duet":false},{"id":662,"title":"Hanabi (TV)","artist":"Ikimono gakari","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":663,"title":"Cruz de navajas","artist":"Mecano","language":"Español","genre":null,"year":"1986","cover":"","duet":false},{"id":664,"title":"FLY HIGH!! (TV)","artist":"BURNOUT SYNDROMES","language":"Japanese","genre":"J-pop","year":"2016","cover":"","duet":false},{"id":665,"title":"Cabecera","artist":"Dulces (BSO Dragones y mazmorras)","language":"Español","genre":"Dibujos animados","year":"1985","cover":"","duet":false},{"id":666,"title":"He Said, She Said","artist":"Ashley Tisdale","language":"English","genre":"Pop","year":"2007","cover":"","duet":false},{"id":667,"title":"Nada de ná","artist":"Café Quijano","language":"Español","genre":"Pop","year":"2001","cover":"","duet":false},{"id":668,"title":"Puedes Contar Conmigo","artist":"La Oreja de Van Gogh","language":"Español","genre":null,"year":"2003","cover":"","duet":false},{"id":669,"title":"Glamourous sky","artist":"Mika Nakashima como NANA","language":"Japanese","genre":"Anime","year":"2005","cover":"","duet":false},{"id":670,"title":"La frase tonta de la semana","artist":"La Quinta Estación","language":"Español","genre":"Pop","year":"2006","cover":"","duet":false},{"id":671,"title":"Romantikku Ageru Yo (TV)","artist":"Hashimoto Ushio","language":"Japanese","genre":null,"year":"1986","cover":"","duet":false},{"id":672,"title":"One More Time","artist":"Daft Punk","language":"English","genre":null,"year":"2000","cover":"","duet":false},{"id":673,"title":"The Fourth Avenue Cafe (TV)","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"Anime","year":"1997","cover":"","duet":false},{"id":674,"title":"Oh my God","artist":"Adele","language":"English","genre":"Soul, Dance Pop","year":"2021","cover":"","duet":false},{"id":675,"title":"Haruka kanata","artist":"Asian Kung-fu Generation","language":"Japanese","genre":"Anime","year":"2003","cover":"","duet":false},{"id":676,"title":"Rewrite","artist":"Asian Kung Fu Generation","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":677,"title":"Cabecera","artist":"Heidi","language":"Español","genre":"Dibujos animados","year":"1975","cover":"","duet":false},{"id":678,"title":"Cuando brille el sol","artist":"La Guardia","language":"Español","genre":"Pop","year":"1990","cover":"","duet":false},{"id":679,"title":"Since U Been Gone","artist":"Kelly Clarkson","language":"English","genre":"Pop","year":"2004","cover":"","duet":false},{"id":680,"title":"Esa diva","artist":"Melody","language":"Español","genre":"Pop electrónico","year":"2024","cover":"","duet":false},{"id":681,"title":"Sakura (2007)","artist":"Ikimono Gakari","language":"Japanese","genre":"J-Pop","year":null,"cover":"","duet":false},{"id":682,"title":"Thank you","artist":"Dido","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":683,"title":"Sing","artist":"Ed Sheeran","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":684,"title":"That don't impress me much","artist":"Shania Twain","language":"English","genre":"Country, dance pop","year":"1998","cover":"","duet":false},{"id":685,"title":"Zombie","artist":"The Cranberries","language":"English","genre":"Pop","year":"1995","cover":"","duet":false},{"id":686,"title":"Rosenrot","artist":"Rammstein","language":"German","genre":null,"year":"2005","cover":"","duet":false},{"id":687,"title":"Chica Ye Ye","artist":"Conchita Velasco","language":"Español","genre":"Soundtrack","year":"1965","cover":"","duet":false},{"id":688,"title":"Going under","artist":"Evanescence","language":"English","genre":"Rock alternativo","year":"2003","cover":"","duet":false},{"id":689,"title":"Before You Go","artist":"Lewis Capaldi","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":690,"title":"Idiota","artist":"Los Ronaldos","language":"Español","genre":"Pop","year":"1994","cover":"","duet":false},{"id":691,"title":"I Will Survive","artist":"Gloria Gaynor","language":"English","genre":"Pop","year":"1979","cover":"","duet":false},{"id":692,"title":"I'm Still Standing","artist":"Elton John","language":"English","genre":null,"year":"1983","cover":"","duet":false},{"id":693,"title":"I'm Still Standing (Extended version)","artist":"Elton John","language":"English","genre":"Rock","year":"1983","cover":"","duet":false},{"id":694,"title":"I will survive (Special Disco Version)","artist":"Gloria Gaynor","language":"English","genre":"Disco","year":"1979","cover":"","duet":false},{"id":695,"title":"MALAMENTE (Cap.1 Augurio)","artist":"ROSALÍA","language":"Español","genre":"","year":"2018","cover":"","duet":false},{"id":696,"title":"Hawái","artist":"Maluma","language":"Español","genre":"Reguetón lento","year":"2020","cover":"","duet":false},{"id":697,"title":"Estrella polar","artist":"Pereza","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":698,"title":"Thank u, next (MV)","artist":"Ariana Grande","language":"English","genre":null,"year":"2018","cover":"","duet":false},{"id":699,"title":"ワールドイズマイン","artist":"初音ミク","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":700,"title":"ワールドイズマイン","artist":"初音ミク","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":749,"title":"Love again","artist":"Dua Lipa","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":701,"title":"World is mine","artist":"Hatsune Miku","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":702,"title":"El beso","artist":"Pablo Alborán","language":"Español","genre":null,"year":"2012","cover":"","duet":false},{"id":703,"title":"Are You Gonna Go My Way","artist":"Lenny Kravitz","language":"English","genre":"Rock","year":"1993","cover":"","duet":false},{"id":704,"title":"Como hablar","artist":"Amaral","language":"Español","genre":"Pop Rock Latino","year":"2000","cover":"","duet":false},{"id":705,"title":"Muñeca de trapo","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2006","cover":"","duet":false},{"id":706,"title":"Peace Sign","artist":"Kenshi Yonezu","language":"Japanese","genre":"JRock","year":"2017","cover":"","duet":false},{"id":707,"title":"¡Bang, bang! Lucky Luke","artist":"Lucky Luke","language":"Español","genre":"Dibujos animados","year":"1983","cover":"","duet":false},{"id":708,"title":"Sex Bomb","artist":"Tom Jones","language":"English","genre":null,"year":"1999","cover":"","duet":false},{"id":709,"title":"Lamento (TV)","artist":"Kanako Itou","language":"Latin","genre":"Visual Novel","year":"2006","cover":"","duet":false},{"id":710,"title":"Miénteme","artist":"David Bisbal Y Elena Gadel","language":"Español","genre":"","year":"","cover":"","duet":false},{"id":711,"title":"Sugar","artist":"Maroon 5","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":712,"title":"Una foto en blanco y negro","artist":"David Otero y Taburete","language":"Español","genre":"Pop Nacional","year":"2020","cover":"","duet":true},{"id":713,"title":"Una foto en blanco y negro","artist":"David Otero y Taburete","language":"Español","genre":"Pop Nacional","year":"2020","cover":"","duet":false},{"id":714,"title":"Por el miedo a equivocarnos","artist":"Maldita Nerea","language":"Español","genre":"Pop Español","year":"2009","cover":"","duet":false},{"id":715,"title":"I Knew You Were Trouble","artist":"Taylor Swift","language":"English","genre":null,"year":"2012","cover":"","duet":false},{"id":716,"title":"Pedro","artist":"Raffaella Carrà","language":"Español","genre":"Pop, dance","year":"1980","cover":"","duet":false},{"id":717,"title":"Don't let me down","artist":"The Chainsmokers ft. Daya","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":718,"title":"Ni tú ni nadie","artist":"Alaska y Dinarama","language":"Español","genre":"Pop Nacional","year":"1984","cover":"","duet":false},{"id":719,"title":"The Fate of Ophelia","artist":"Taylor Swift","language":"English","genre":"Pop","year":"2025","cover":"","duet":false},{"id":720,"title":"We Gotta Power (TV)","artist":"Hironobu Kageyama","language":"Japanese","genre":"Anime","year":"1993","cover":"","duet":false},{"id":721,"title":"Lost","artist":"Linkin Park","language":"English","genre":"Rock","year":"2023","cover":"","duet":false},{"id":722,"title":"Wish I Had An Angel","artist":"Nightwish","language":"English","genre":"Metal","year":"2004","cover":"","duet":true},{"id":723,"title":"Wish I Had An Angel","artist":"Nightwish","language":"English","genre":"Metal","year":"2004","cover":"","duet":false},{"id":724,"title":"Dan Dan Kokoro Hikareteku (TV)","artist":"Field of View","language":"Japanese","genre":"Anime","year":"1996","cover":"","duet":false},{"id":725,"title":"Sevilla","artist":"Miguel Bosé","language":"Español","genre":"Latin","year":"1984","cover":"","duet":false},{"id":726,"title":"California Gurls","artist":"Katy Perry feat. Snoop Dogg","language":"English","genre":"Pop","year":"2010","cover":"","duet":false},{"id":727,"title":"All I Want For Christmas is You","artist":"Mariah Carey","language":"English","genre":"Christmas Songs","year":null,"cover":"","duet":false},{"id":728,"title":"Mi gran noche","artist":"Raphael","language":"Español","genre":"Balada","year":"1968","cover":"","duet":false},{"id":729,"title":"Ain’t It Fun","artist":"Paramore","language":"English","genre":"Rock & Roll","year":null,"cover":"","duet":false},{"id":730,"title":"Wrecking Ball","artist":"Miley Cyrus","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":731,"title":"Baka Mitai","artist":"Shun Akiyama","language":"Japanese","genre":null,"year":"2012","cover":"","duet":false},{"id":732,"title":"Lo echamos a suertes","artist":"Ella Baila Sola","language":"Español","genre":"Pop","year":"1997","cover":"","duet":true},{"id":733,"title":"Lo echamos a suertes","artist":"Ella Baila Sola","language":"Español","genre":"Pop","year":"1997","cover":"","duet":false},{"id":734,"title":"Duele el amor","artist":"Aleks Syntek y Ana Torroja","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":735,"title":"Duele el amor","artist":"Aleks Syntek y Ana Torroja","language":"Español","genre":"Pop","year":"2004","cover":"","duet":true},{"id":736,"title":"Hero","artist":"Nickelback","language":"English","genre":"Rock","year":"2002","cover":"","duet":true},{"id":737,"title":"Hero","artist":"Nickelback","language":"English","genre":"Rock","year":"2002","cover":"","duet":false},{"id":738,"title":"Bang Bang","artist":"Jessie J, Ariana Grande & Nicki Minaj","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":739,"title":"Flaca","artist":"Andrés Calamaro","language":"Español","genre":"Pop","year":"1997","cover":"","duet":false},{"id":740,"title":"Welcome to the black parade","artist":"My Chemical Romance","language":"English","genre":"Rock Alternativo","year":"2006","cover":"","duet":false},{"id":741,"title":"Jiriki Hongan Revolution (TV)","artist":"3-nen E-Gumi Utatan","language":"Japanese","genre":"Anime","year":"2015","cover":"","duet":false},{"id":742,"title":"Un clásico","artist":"Ana Mena","language":"Español","genre":"Pop","year":"2023","cover":"","duet":false},{"id":743,"title":"The Edge Of Glory","artist":"Lady GaGa","language":"English","genre":"Dance Pop","year":"2011","cover":"","duet":false},{"id":744,"title":"The kids aren't alright","artist":"The Offspring","language":"English","genre":"Punk Rock","year":"1998","cover":"","duet":false},{"id":745,"title":"Stay with me","artist":"Sam Smith","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":746,"title":"Paint It, Black","artist":"The Rolling Stones","language":"English","genre":"Rock","year":"1966","cover":"","duet":false},{"id":747,"title":"Hey, Soul Sister","artist":"Train","language":"English","genre":"Pop","year":"2009","cover":"","duet":false},{"id":748,"title":"I Wanna Dance With Somebody","artist":"Whitney Houston","language":"English","genre":"Pop","year":"1987","cover":"","duet":false},{"id":750,"title":"Gentleman","artist":"Psy","language":"Korean","genre":"Pop Dance","year":"2013","cover":"","duet":false},{"id":751,"title":"Island in the Sun","artist":"Weezer","language":"English","genre":"Rock","year":"2001","cover":"","duet":false},{"id":752,"title":"Wake Me Up Before You Go-Go","artist":"Wham","language":"English","genre":"Pop","year":"1984","cover":"","duet":false},{"id":753,"title":"Ain't Your Mama","artist":"Jennifer Lopez","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":754,"title":"Labios compartidos","artist":"Maná","language":"Español","genre":"Rock","year":"2006","cover":"","duet":false},{"id":755,"title":"Don't be shy","artist":"Tiësto y Karol G","language":"English","genre":"Dance","year":"2021","cover":"","duet":false},{"id":756,"title":"Mamma Mia","artist":"ABBA","language":"English","genre":null,"year":"1975","cover":"","duet":false},{"id":757,"title":"BAGDAD (Cap.7 Liturgia)","artist":"ROSALÍA","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":758,"title":"Hakuna matata","artist":"El Rey León","language":"Español","genre":"Banda sonora","year":"1994","cover":"","duet":false},{"id":759,"title":"In the Shadows","artist":"The Rasmus","language":"English","genre":"Pop","year":"2003","cover":"","duet":false},{"id":760,"title":"The Real Folk Blues (TV)","artist":"Seatbelts feat. Mai Yamane","language":"Japanese","genre":"Anime","year":"1998","cover":"","duet":false},{"id":761,"title":"Love Dramatic (TV)","artist":"Masayuki Suzuki ft. Rikka Ihara","language":"Japanese","genre":null,"year":"2019","cover":"","duet":false},{"id":762,"title":"BOOMBAYAH","artist":"BLACKPINK","language":"Korean","genre":null,"year":"2016","cover":"","duet":false},{"id":763,"title":"Mixed Nuts (TV)","artist":"Official HIGE DANdism","language":"Japanese","genre":"Anime","year":"2022","cover":"","duet":false},{"id":764,"title":"Clavado en un bar","artist":"Maná","language":"Español","genre":"Rock","year":"1997","cover":"","duet":false},{"id":765,"title":"¿Qué es?","artist":"Pesadilla antes de Navidad","language":"Español","genre":"OST","year":"1993","cover":"","duet":false},{"id":766,"title":"Libre","artist":"Nino Bravo","language":"español","genre":null,"year":null,"cover":"","duet":false},{"id":767,"title":"Mocasines saltarines","artist":"Los Simpson","language":"Español","genre":null,"year":"1993","cover":"","duet":false},{"id":768,"title":"Me gustas tú","artist":"Manu Chao","language":"Español","genre":null,"year":"2000","cover":"","duet":false},{"id":769,"title":"All Star","artist":"Smash Mouth","language":"English","genre":null,"year":"1999","cover":"","duet":false},{"id":770,"title":"Closer","artist":"The Chainsmokers ft. Halsey","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":771,"title":"Earned it","artist":"The Weeknd","language":"English","genre":"Soundtracks","year":"2015","cover":"","duet":false},{"id":772,"title":"It Will Rain","artist":"Bruno Mars","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":773,"title":"Para ti sería","artist":"Nek","language":"Español","genre":"Pop","year":"2005","cover":"","duet":false},{"id":774,"title":"APT.","artist":"ROSÉ & Bruno Mars","language":"English","genre":"Pop","year":"2024","cover":"","duet":false},{"id":775,"title":"AIZO (TV)","artist":"King Gnu","language":"Japanese","genre":"Jpop","year":"2026","cover":"","duet":false},{"id":776,"title":"Juliette","artist":"Platero y Tú con Robe Iniesta y Evaristo","language":"Español","genre":"Rock","year":"1994","cover":"","duet":false},{"id":777,"title":"When you're gone","artist":"Avril Lavigne","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":778,"title":"Me Equivocaría Otra Vez","artist":"Fito Y Fitipaldis","language":"Español","genre":null,"year":"2006","cover":"","duet":false},{"id":779,"title":"Golden time lover (TV)","artist":"Sukima Switch","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":780,"title":"Giragira","artist":"Ado","language":"Japanese","genre":"J-Pop","year":"2021","cover":"","duet":false},{"id":781,"title":"One More Time, One More Chance","artist":"Masayoshi Yamazaki","language":"Japanese","genre":"Anime","year":"2007","cover":"","duet":false},{"id":782,"title":"Lips are moving","artist":"Meghan Trainor","language":"English","genre":"Pop","year":null,"cover":"","duet":false},{"id":783,"title":"Platinum (TV)","artist":"Maaya Sakamoto","language":"Japanese","genre":"Anime","year":"1999","cover":"","duet":false},{"id":784,"title":"Moi... Lolita","artist":"Alizée","language":"Französisch","genre":null,"year":null,"cover":"","duet":false},{"id":785,"title":"Una noche con arte","artist":"El arrebato","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":786,"title":"Marta, Sebas, Guille y los demás","artist":"Amaral","language":"Español","genre":"Pop Nacional","year":"2005","cover":"","duet":false},{"id":787,"title":"Dale, Ramón","artist":"Miliki","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":788,"title":"Carousel","artist":"Melanie Martinez","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":789,"title":"There she is!!","artist":"Witches","language":"Korean","genre":"Krock","year":"2003","cover":"","duet":false},{"id":790,"title":"Haru (TV)","artist":"Yorushika","language":"Japanese","genre":"J-pop","year":"2024","cover":"","duet":false},{"id":791,"title":"Hacking to the Gate (TV)","artist":"Itou Kanako","language":"Japanese","genre":"J-Pop","year":null,"cover":"","duet":false},{"id":792,"title":"Shiny Happy People","artist":"R.E.M.","language":"Englisch","genre":null,"year":null,"cover":"","duet":false},{"id":793,"title":"Amor gitano","artist":"Alejandro Fernández y Beyoncé","language":"Español","genre":"Other","year":"2005","cover":"","duet":false},{"id":794,"title":"Puzzle (TV)","artist":"Round Table featuring Nino","language":"Japanese","genre":null,"year":"2006","cover":"","duet":false},{"id":795,"title":"Spaceman","artist":"The Killers","language":"English","genre":"Rock","year":"2008","cover":"","duet":false},{"id":796,"title":"Let me be with you","artist":"Round Table featuring Nino","language":"Japanese","genre":"Anime","year":"2002","cover":"","duet":false},{"id":797,"title":"Northern Lights (TV)","artist":"Megumi Hayashibara","language":"Japanese","genre":"Anime","year":"2001","cover":"","duet":false},{"id":798,"title":"La primavera trompetera","artist":"Los Delinqüentes","language":"Español","genre":"Rumba","year":"2005","cover":"","duet":false},{"id":799,"title":"Heikousen (TV)","artist":"Sayuri","language":"Japanese","genre":null,"year":"2017","cover":"","duet":false},{"id":800,"title":"Desde Brasil","artist":"Café Quijano","language":"Español","genre":"Latina","year":"2001","cover":"","duet":false},{"id":801,"title":"Beautiful","artist":"Christina Aguilera","language":"English","genre":"Ballad","year":"2002","cover":"","duet":false},{"id":802,"title":"El baile del chiki-chiki","artist":"Rodolfo Chikilicuatre","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":803,"title":"Shake It Off","artist":"Taylor Swift","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":804,"title":"dawn (TV)","artist":"LiSA","language":"Japanese","genre":"Anime","year":"2021","cover":"","duet":false},{"id":805,"title":"La incondicional","artist":"Luis Miguel","language":"Español","genre":null,"year":"1988","cover":"","duet":false},{"id":806,"title":"Driver's High (TV)","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"Anime","year":"2003","cover":"","duet":false},{"id":807,"title":"Viva Las Vegas","artist":"Elvis Presley","language":"English","genre":"Rock","year":"1963","cover":"","duet":false},{"id":808,"title":"Sentimental Generation (TV)","artist":"Tokitou Ami","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":809,"title":"The Lion Sleeps Tonight","artist":"The Tokens","language":"English","genre":"Pop","year":"1961","cover":"","duet":false},{"id":810,"title":"Somewhere I belong","artist":"Linkin Park","language":"English","genre":"Nu Metal","year":"2003","cover":"","duet":false},{"id":811,"title":"Promises","artist":"The Cranberries","language":"English","genre":"Rock","year":"1999","cover":"","duet":false},{"id":812,"title":"Rouge no dengon","artist":"Yumi Arai","language":"Japanese","genre":"J-pop","year":"1975","cover":"","duet":false},{"id":813,"title":"Molinos de viento","artist":"Mägo de Oz","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":814,"title":"Dynamite","artist":"BTS","language":"English","genre":null,"year":"2020","cover":"","duet":false},{"id":815,"title":"Con las ganas","artist":"Zahara","language":"Español","genre":"Pop","year":"2009","cover":"","duet":false},{"id":816,"title":"Vete a dormir","artist":"El hormiguero","language":"Español","genre":"","year":"2007","cover":"","duet":false},{"id":817,"title":"What Dreams Are Made Of","artist":"Hilary Duff","language":"English","genre":null,"year":"2003","cover":"","duet":false},{"id":818,"title":"Súbeme la radio","artist":"Enrique Iglesias feat. Zion & Lennox y Descemer Bueno","language":"Español","genre":"Latin","year":"2017","cover":"","duet":true},{"id":819,"title":"Súbeme la radio","artist":"Enrique Iglesias feat. Zion & Lennox y Descemer Bueno","language":"Español","genre":"Latin","year":"2017","cover":"","duet":false},{"id":820,"title":"Bonfire Heart","artist":"James Blunt","language":"English","genre":null,"year":"2013","cover":"","duet":false},{"id":821,"title":"Kuusou Mesorogiwi (TV)","artist":"Yousei Teikoku","language":"Japanese","genre":"Anime","year":"2011","cover":"","duet":false},{"id":822,"title":"Un rayo de sol","artist":"Los Diablos","language":"Español","genre":"Pop","year":"1970","cover":"","duet":false},{"id":823,"title":"Treat You Better","artist":"Shawn Mendes","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":824,"title":"Yin Yang","artist":"Jarabe de Palo","language":"Español","genre":"Pop","year":"2003","cover":"","duet":false},{"id":825,"title":"Te felicito","artist":"Shakira y Rauw Alejandro","language":"Español","genre":"Latin","year":"2022","cover":"","duet":false},{"id":826,"title":"Grilletto","artist":"GARNiDELiA","language":"Japanese","genre":"Jpop","year":"2016","cover":"","duet":false},{"id":827,"title":"Gravity (TV)","artist":"Maaya Sakamoto","language":"English","genre":null,"year":"2003","cover":"","duet":false},{"id":828,"title":"A un minuto de ti","artist":"Mikel Erentxun","language":"Español","genre":"Pop","year":"1991","cover":"","duet":false},{"id":829,"title":"Partiendo la pana","artist":"Estopa","language":"Español","genre":"Other","year":"2001","cover":"","duet":false},{"id":830,"title":"La lluvia en los zapatos","artist":"Leiva","language":"Español","genre":"Rock","year":"2016","cover":"","duet":false},{"id":831,"title":"Another One Bites the Dust","artist":"Queen","language":"English","genre":null,"year":"1980","cover":"","duet":false},{"id":832,"title":"Another Brick In The Wall (Part II)","artist":"Pink Floyd","language":"English","genre":"Rock","year":"1979","cover":"","duet":false},{"id":833,"title":"Lady Madrid","artist":"Pereza","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":834,"title":"Trapped under ice","artist":"Metallica","language":"English","genre":"Metal","year":"1984","cover":"","duet":false},{"id":835,"title":"Sólo si es contigo","artist":"Bombai y Bebe","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":836,"title":"Sólo si es contigo","artist":"Bombai y Bebe","language":"Español","genre":"Pop","year":"2017","cover":"","duet":true},{"id":837,"title":"Amores extraños","artist":"Laura Pausini","language":"Español","genre":"Pop","year":"1992","cover":"","duet":false},{"id":838,"title":"Kingyo hanabi","artist":"Otsuka Ai","language":"Japanese","genre":"C-Pop","year":null,"cover":"","duet":false},{"id":839,"title":"Billie Jean","artist":"Michael Jackson","language":"English","genre":null,"year":"1982","cover":"","duet":false},{"id":840,"title":"Lilium (versión corta)","artist":"Kumiko Noma","language":"Latin","genre":"Anime","year":"2004","cover":"","duet":false},{"id":841,"title":"Apologize","artist":"Timbaland con la colaboraci√≥n de One Republic","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":842,"title":"Jajauma ni Sasenaide (TV)","artist":"Etsuko Nishio","language":"Japanese","genre":"Anime","year":"1989","cover":"","duet":false},{"id":843,"title":"A prueba de ti","artist":"Malú","language":"Español","genre":"Pop","year":"2013","cover":"","duet":false},{"id":844,"title":"I just might","artist":"Bruno Mars","language":"English","genre":"Funk, Disco, Pop-Soul","year":"2026","cover":"","duet":false},{"id":845,"title":"Don Diablo","artist":"Miguel Bosé","language":"Español","genre":"Pop","year":"1980","cover":"","duet":false},{"id":846,"title":"Candy","artist":"Koda Kumi feat. Mr.Blistah","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":847,"title":"Colors (TV)","artist":"Flow","language":"Japanese","genre":"Anime","year":"2007","cover":"","duet":false},{"id":848,"title":"Pan y mantequilla","artist":"Efecto Pasillo","language":"Español","genre":null,"year":"2012","cover":"","duet":false},{"id":849,"title":"El perro verde","artist":"Marea","language":"Español","genre":"Rock","year":"2000","cover":"","duet":false},{"id":850,"title":"La rueca","artist":"Marea","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":851,"title":"Los huesos","artist":"Dani Martín y Juanes","language":"Español","genre":"Pop","year":"2020","cover":"","duet":true},{"id":852,"title":"Los huesos","artist":"Dani Martín y Juanes","language":"Español","genre":"Pop","year":"2020","cover":"","duet":false},{"id":853,"title":"Te Entiendo","artist":"Pignoise","language":"Español","genre":"Pop","year":"2006","cover":"","duet":false},{"id":854,"title":"Shoujo S (TV)","artist":"SCANDAL","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":855,"title":"Ninja Ri Ban Ban","artist":"Kyary Pamyu Pamyu","language":"Japanese","genre":"Jpop","year":"2013","cover":"","duet":false},{"id":856,"title":"Eso que tú me das","artist":"Jarabe de Palo","language":"Español","genre":"Pop","year":"2020","cover":"","duet":false},{"id":857,"title":"Hot N Cold","artist":"Katy Perry","language":"English","genre":"Pop/Rock","year":"2008","cover":"","duet":false},{"id":858,"title":"Payphone","artist":"Maroon 5 feat. Wiz Khalifa","language":"English","genre":"Pop","year":"2012","cover":"","duet":false},{"id":859,"title":"Cosas que suenan a","artist":"Maldita Nerea","language":"Español","genre":"Pop Rock","year":"2009","cover":"","duet":false},{"id":860,"title":"Reptilia","artist":"The Strokes","language":"English","genre":"Garage Rock","year":"2003","cover":"","duet":false},{"id":861,"title":"White Wishes (TV)","artist":"9nine","language":"Japanese","genre":"Anime","year":"2012","cover":"","duet":false},{"id":862,"title":"Yakusoku","artist":"Yui Horie","language":"Japanese","genre":"Anime","year":"2001","cover":"","duet":false},{"id":863,"title":"Pa Mis Muchachas","artist":"Christina Aguilera, Becky G, Nicki Nicole ft. Nathy Peluso","language":"Español","genre":null,"year":"2021","cover":"","duet":false},{"id":864,"title":"Stay the night","artist":"James Blunt","language":"English","genre":"Pop","year":"2010","cover":"","duet":false},{"id":865,"title":"Cry Baby","artist":"Official HIGE DANdism","language":"Japanese","genre":"J-pop","year":"2021","cover":"","duet":false},{"id":866,"title":"Grenade","artist":"Bruno Mars","language":"English","genre":"Pop","year":"2010","cover":"","duet":false},{"id":867,"title":"Yerbatero","artist":"Juanes","language":"Español","genre":"Pop","year":"2010","cover":"","duet":false},{"id":868,"title":"Si por mí fuera","artist":"Beret","language":"Español","genre":"Pop","year":"2019","cover":"","duet":false},{"id":869,"title":"Como un vagabundo","artist":"Bertín Osborne","language":"Español","genre":"Ranchera","year":"1982","cover":"","duet":false},{"id":870,"title":"Daddy Cool","artist":"Boney M","language":"English","genre":null,"year":"1976","cover":"","duet":false},{"id":871,"title":"Te echo de menos","artist":"Beret","language":"Español","genre":null,"year":"2018","cover":"","duet":false},{"id":872,"title":"Same Blue","artist":"Official HIGE DANdism","language":"Japanese","genre":"J-rock","year":"2024","cover":"","duet":false},{"id":873,"title":"Cabecera","artist":"Mocedades (BSO La vuelta al mundo de Willy Fog)","language":"Español","genre":"Dibujos animados","year":"1985","cover":"","duet":false},{"id":874,"title":"As bolas máxicas","artist":"Dragon ball","language":"Galician","genre":null,"year":"1990","cover":"","duet":false},{"id":875,"title":"Para no olvidar","artist":"Andrés Calamaro","language":"Español","genre":"Pop","year":"2005","cover":"","duet":false},{"id":876,"title":"DDU-DU DDU-DU","artist":"BLACKPINK","language":"Korean","genre":null,"year":"2018","cover":"","duet":false},{"id":877,"title":"Pantera en libertad","artist":"Monica Naranjo","language":"Español","genre":"Pop","year":"1998","cover":"","duet":false},{"id":878,"title":"Livin' la vida loca","artist":"Ricky Martin","language":"Español","genre":null,"year":"1999","cover":"","duet":false},{"id":879,"title":"My last breath","artist":"Evanescence","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":880,"title":"That's what I like","artist":"Bruno Mars","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":881,"title":"Link","artist":"L'Arc en ciel","language":"Japanese","genre":"Anime","year":"2005","cover":"","duet":false},{"id":882,"title":"Muéstrate","artist":"Gisela e Isabel Valls","language":"Español","genre":"BSO","year":"2019","cover":"","duet":true},{"id":883,"title":"Muéstrate","artist":"Gisela e Isabel Valls","language":"Español","genre":"BSO","year":"2019","cover":"","duet":false},{"id":884,"title":"Niji (TV)","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"Anime","year":"1997","cover":"","duet":false},{"id":885,"title":"Sorry I'm here for someone else","artist":"Benson Boone","language":"English","genre":null,"year":"2025","cover":"","duet":false},{"id":886,"title":"A thousand miles","artist":"Vanessa Carlton","language":"English","genre":"Pop Internacional","year":"2002","cover":"","duet":false},{"id":887,"title":"NO","artist":"Meghan Trainor","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":888,"title":"La camisa negra","artist":"Juanes","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":889,"title":"Stop Crying Your Heart Out","artist":"Oasis","language":"English","genre":"Indie","year":"2002","cover":"","duet":false},{"id":890,"title":"Los cuatro músicos de Bremen","artist":"Los Trotamúsicos","language":"Español","genre":"Dibujos animados","year":"1989","cover":"","duet":false},{"id":891,"title":"Lovers On The Sun","artist":"David Guetta feat. Sam Martin","language":"English","genre":"EDM","year":"2014","cover":"","duet":false},{"id":892,"title":"Mariposas","artist":"Sangiovanni y Aitana","language":"Español","genre":"Urbano latino","year":"2022","cover":"","duet":true},{"id":893,"title":"Mariposas","artist":"Sangiovanni y Aitana","language":"Español","genre":"Urbano latino","year":"2022","cover":"","duet":false},{"id":894,"title":"Oda a Josemi","artist":"The New Experience feat. Pumukiu","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":895,"title":"Strategy","artist":"TWICE feat. Megan Thee Stallion","language":"English","genre":null,"year":"2024","cover":"","duet":false},{"id":896,"title":"Uprising","artist":"Muse","language":"English","genre":"Alternative","year":"2009","cover":"","duet":false},{"id":897,"title":"Pour some sugar on me (live)","artist":"Def Leppard","language":"English","genre":"Glam Metal","year":"1987","cover":"","duet":false},{"id":898,"title":"Rewrite (versión corta)","artist":"Asian Kung Fu Generation (BSO Full Metal Alchemist)","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":899,"title":"Be Alright","artist":"Dean Lewis","language":"English","genre":null,"year":"2018","cover":"","duet":false},{"id":900,"title":"Girls Just Wanna Have Fun","artist":"Cyndi Lauper","language":"English","genre":"Pop","year":"1984","cover":"","duet":false},{"id":901,"title":"Maniac","artist":"Michael Sembello","language":"English","genre":"Synth Pop","year":"1983","cover":"","duet":false},{"id":902,"title":"Fly Away","artist":"Lenny Kravitz","language":"English","genre":"Alternative Rock","year":"1998","cover":"","duet":false},{"id":903,"title":"La La La","artist":"Naughty Boy Feat. Sam Smith","language":"English","genre":"Electronic","year":"2013","cover":"","duet":false},{"id":904,"title":"Tu calorro","artist":"Estopa","language":"Español","genre":"Rumba catalana","year":"1999","cover":"","duet":false},{"id":905,"title":"Rosas","artist":"La Oreja de Van Gogh","language":"Español","genre":"Rock","year":"2003","cover":"","duet":false},{"id":906,"title":"Otherside","artist":"Red Hot Chili Peppers","language":"English","genre":"Alternative","year":"2000","cover":"","duet":false},{"id":907,"title":"What About Us","artist":"Pink","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":908,"title":"Cabecera","artist":"Mazinger Z","language":"Español","genre":"Dibujos animados","year":"1978","cover":"","duet":false},{"id":909,"title":"Sin ti no soy nada","artist":"Amaral","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":910,"title":"The boy does nothing","artist":"Alesha Dixon","language":"English","genre":"Swing","year":"2008","cover":"","duet":false},{"id":911,"title":"Quiero decirte","artist":"Abraham Mateo y Ana Mena","language":"Español","genre":"Pop","year":"2022","cover":"","duet":false},{"id":912,"title":"Quiero decirte","artist":"Abraham Mateo y Ana Mena","language":"Español","genre":"Pop","year":"2022","cover":"","duet":true},{"id":913,"title":"Kings & Queens","artist":"Ava Max","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":914,"title":"Mi vida sin ti","artist":"La Oreja de Van Gogh","language":"Español","genre":"Bossa Nova","year":"2006","cover":"","duet":false},{"id":915,"title":"Espíritu de amor","artist":"WarCry","language":"Español","genre":"Power Metal","year":"2005","cover":"","duet":false},{"id":916,"title":"Cabecera","artist":"Botones (BSO Don Quijote de la Mancha)","language":"Español","genre":"Dibujos animados","year":"1979","cover":"","duet":false},{"id":917,"title":"Castle On The Hill","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":918,"title":"Clock Strikes","artist":"ONE OK ROCK","language":"Japanese","genre":"Jrock","year":"2013","cover":"","duet":false},{"id":919,"title":"Manué Sanche Sanche","artist":"No me pises que llevo chanclas","language":"Español","genre":"Pop","year":"1991","cover":"","duet":false},{"id":920,"title":"Manos al aire","artist":"Nelly Furtado","language":"Español","genre":null,"year":"2009","cover":"","duet":false},{"id":921,"title":"Waiting For Love","artist":"Avicii","language":"English","genre":"Electronic","year":"2015","cover":"","duet":false},{"id":922,"title":"Say it right","artist":"Nelly Furtado","language":"Inglés","genre":null,"year":null,"cover":"","duet":false},{"id":923,"title":"Chiquilla","artist":"Seguridad Social","language":"Español","genre":"Rock","year":"1995","cover":"","duet":false},{"id":924,"title":"PLAYING WITH FIRE","artist":"BLACKPINK","language":"Korean","genre":"Unknown","year":null,"cover":"","duet":false},{"id":925,"title":"PLAYING WITH FIRE [한글]","artist":"BLACKPINK","language":"Korean","genre":"Unknown","year":null,"cover":"","duet":false},{"id":926,"title":"Somebody That I Used To Know","artist":"Gotye & Kimbra","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":927,"title":"Te quiero puta!","artist":"Rammstein","language":"Español","genre":"Metal","year":"2005","cover":"","duet":false},{"id":928,"title":"Colgando en tus manos","artist":"Carlos Baute y Marta Sánchez","language":"Español","genre":"Dueto","year":"2008","cover":"","duet":false},{"id":929,"title":"Colgando en tus manos","artist":"Carlos Baute y Marta Sánchez","language":"Español","genre":"Dueto","year":"2008","cover":"","duet":true},{"id":930,"title":"You're the One that I Want","artist":"Grease (John Travolta & Olivia Newton-John)","language":"English","genre":"Musical","year":"1978","cover":"","duet":true},{"id":931,"title":"You're the One that I Want","artist":"Grease (John Travolta & Olivia Newton-John)","language":"English","genre":"Musical","year":"1978","cover":"","duet":false},{"id":932,"title":"En el mundo genial de las cosas que dices","artist":"Maldita Nerea","language":"Español","genre":null,"year":"2011","cover":"","duet":false},{"id":933,"title":"Closer","artist":"Nine Inch Nails","language":"English","genre":null,"year":"1994","cover":"","duet":false},{"id":934,"title":"Freed from desire","artist":"GALA","language":"English","genre":"Eurodance","year":"1996","cover":"","duet":false},{"id":935,"title":"A fuego","artist":"Extremoduro","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":936,"title":"Busca lo más vital","artist":"Disney (BSO El Libro de la Selva)","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":937,"title":"Maldito duende","artist":"Héroes del Silencio","language":"Español","genre":"Rock","year":"1990","cover":"","duet":false},{"id":938,"title":"Love Me Harder","artist":"Ariana Grande & The Weeknd","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":939,"title":"Rather Be","artist":"Clean Bandit feat. Jess Glynne","language":"English","genre":"Dance & Electronic","year":null,"cover":"","duet":false},{"id":940,"title":"Azizam","artist":"Ed Sheeran","language":"English","genre":null,"year":"2025","cover":"","duet":false},{"id":941,"title":"Attack","artist":"30 Seconds To Mars","language":"English","genre":"Rock Progresivo","year":"2005","cover":"","duet":false},{"id":942,"title":"Fluorescent Adolescent","artist":"Arctic Monkeys","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":943,"title":"Born With a Broken Heart","artist":"Damiano David","language":"English","genre":"Pop","year":"2024","cover":"","duet":false},{"id":944,"title":"Animals","artist":"Maroon 5","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":945,"title":"Forgotten","artist":"Avril Lavigne","language":"English","genre":null,"year":"2004","cover":"","duet":false},{"id":946,"title":"No callaré (Parte 2)","artist":"Aladdín","language":"Español","genre":"OST","year":"2019","cover":"","duet":false},{"id":947,"title":"Remember Summer Days","artist":"Anri","language":"Japanese","genre":"Jpop","year":"1983","cover":"","duet":false},{"id":948,"title":"Fade to Black","artist":"Metallica","language":"English","genre":"Thrash Metal","year":"1984","cover":"","duet":false},{"id":949,"title":"Memories (versión corta)","artist":"Maki Otsuki","language":"Japanese","genre":"Anime","year":"1999","cover":"","duet":false},{"id":950,"title":"El vals del obrero","artist":"Ska-P","language":"Español","genre":"Rock","year":"1996","cover":"","duet":false},{"id":951,"title":"La Lola","artist":"Café Quijano","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":952,"title":"Otonoke (TV)","artist":"Creepy Nuts","language":"Japanese","genre":"Rap","year":"2024","cover":"","duet":false},{"id":953,"title":"Killed by death","artist":"Motörhead","language":"English","genre":"Heavy Metal","year":"1984","cover":"","duet":false},{"id":954,"title":"Flyers (TV)","artist":"BRADIO","language":"Japanese","genre":"Anime","year":"2015","cover":"","duet":false},{"id":955,"title":"Sílbame","artist":"Mocedades (BSO La vuelta al mundo de Willy Fog)","language":"Español","genre":"Dibujos animados","year":"1985","cover":"","duet":false},{"id":956,"title":"Eres tonto","artist":"El canto del loco","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":957,"title":"Roulette","artist":"System of a Down","language":"English","genre":null,"year":"2002","cover":"","duet":false},{"id":958,"title":"90 minutos (Directo)","artist":"Vanesa Martín","language":"Español","genre":"Pop","year":"2012","cover":"","duet":false},{"id":959,"title":"Walking away","artist":"Craig David","language":"English","genre":null,"year":"2001","cover":"","duet":false},{"id":960,"title":"En el 2000","artist":"Natalia Lafourcade","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":961,"title":"Heart-Shaped Box","artist":"Nirvana","language":"English","genre":"Grunge","year":"1993","cover":"","duet":false},{"id":962,"title":"Quédate a dormir","artist":"M Clan","language":"Español","genre":null,"year":"1999","cover":"","duet":false},{"id":963,"title":"La fama","artist":"Rosalía y The Weeknd","language":"Español","genre":"Bachata","year":"2021","cover":"","duet":true},{"id":964,"title":"La fama","artist":"Rosalía y The Weeknd","language":"Español","genre":"Bachata","year":"2021","cover":"","duet":false},{"id":965,"title":"Innocent sorrow (TV)","artist":"Abingdon boys school","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":966,"title":"Kimi no Shiranai Monogatari","artist":"supercell","language":"Japanese","genre":"Anime","year":null,"cover":"","duet":false},{"id":967,"title":"Losing My Religion","artist":"R.E.M.","language":"English","genre":"Rock","year":"1991","cover":"","duet":false},{"id":968,"title":"Chandelier","artist":"Sia","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":969,"title":"Here (TV)","artist":"JUNNA","language":"Japanese","genre":"Anime","year":"2017","cover":"","duet":false},{"id":970,"title":"Stronger (What Doesn't Kill You)","artist":"Kelly Clarkson","language":"English","genre":"Pop","year":"2012","cover":"","duet":false},{"id":971,"title":"VAGABUNDO","artist":"Sebastián Yatra, Manuel Turizo, Beéle","language":"Español","genre":"Latin","year":"2023","cover":"","duet":true},{"id":972,"title":"VAGABUNDO","artist":"Sebastián Yatra, Manuel Turizo, Beéle","language":"Español","genre":"Latin","year":"2023","cover":"","duet":false},{"id":973,"title":"Hangover","artist":"Taio Cruz feat. Flo Rida","language":"English","genre":"Other","year":"2011","cover":"","duet":false},{"id":974,"title":"Get Outta My Way","artist":"Kylie Minogue","language":"English","genre":"Electropop","year":"2010","cover":"","duet":false},{"id":975,"title":"Bye, bye","artist":"David Civera","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":976,"title":"Detroit","artist":"Miss Caffeina","language":"Español","genre":"Indie","year":"2017","cover":"","duet":false},{"id":977,"title":"Buscando en la basura","artist":"La fuga","language":"Español","genre":"Rock","year":"2005","cover":"","duet":false},{"id":978,"title":"Tobira no mukou e (TV)","artist":"YeLLOW Generation","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":979,"title":"A contracorriente","artist":"El Canto del Loco","language":"Español","genre":"Pop español","year":"2002","cover":"","duet":false},{"id":980,"title":"Mirando al cielo","artist":"Huecco","language":"Español","genre":"Pop Nacional","year":"2008","cover":"","duet":false},{"id":981,"title":"YMCA","artist":"Village People","language":"English","genre":null,"year":"1978","cover":"","duet":false},{"id":982,"title":"If I ain't got you","artist":"Alicia Keys","language":"English","genre":"Contemporary R&B/Soul","year":null,"cover":"","duet":false},{"id":983,"title":"Yume no Hajima Ring Ring","artist":"Kyary Pamyu Pamyu","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":984,"title":"Imaginary","artist":"Evanescence","language":"English","genre":"Rock Alternativo","year":"2003","cover":"","duet":false},{"id":985,"title":"TQG","artist":"KAROL G & Shakira","language":"Español","genre":"Reguetón","year":"2023","cover":"","duet":false},{"id":986,"title":"Y nos dieron las diez","artist":"Joaquín Sabina","language":"Español","genre":"R&B","year":"1992","cover":"","duet":false},{"id":987,"title":"Days","artist":"Flow","language":"Japanese","genre":"JRock","year":"2005","cover":"","duet":false},{"id":988,"title":"Days","artist":"Flow","language":"Japanese","genre":"JRock","year":"2005","cover":"","duet":true},{"id":989,"title":"Kimi no Sei (TV)","artist":"the peggies","language":"Japanese","genre":"Anime","year":"2018","cover":"","duet":false},{"id":990,"title":"What I've done","artist":"Linkin Park","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":991,"title":"DADDY","artist":"PSY feat. CL of 2NE1","language":"Korean","genre":"Kpop","year":"2015","cover":"","duet":false},{"id":992,"title":"La bamba","artist":"Los Lobos","language":"Español","genre":"Rock & Roll","year":"1989","cover":"","duet":false},{"id":993,"title":"Born This Way","artist":"Lady GaGa","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":994,"title":"Voy a pasármelo bien","artist":"Hombres G","language":"Español","genre":"Pop","year":"1989","cover":"","duet":false},{"id":995,"title":"Stressed Out","artist":"Twenty One Pilots","language":"English","genre":null,"year":"2015","cover":"","duet":false},{"id":996,"title":"No importa que llueva","artist":"Efecto Pasillo","language":"Español","genre":null,"year":"2012","cover":"","duet":false},{"id":997,"title":"Son of a Preacher Man","artist":"Dusty Springfield","language":"English","genre":"Pop","year":"1968","cover":"","duet":false},{"id":998,"title":"Only Girl (In The World)","artist":"Rihanna","language":"English","genre":"Pop","year":"2010","cover":"","duet":false},{"id":999,"title":"Cabecera","artist":"Alfred J. Kwak","language":"Español","genre":"Dibujos animados","year":"1991","cover":"","duet":false},{"id":1000,"title":"The world","artist":"Nightmare","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":1001,"title":"Numb","artist":"Linkin Park","language":"English","genre":"Nu-Metal","year":"2003","cover":"","duet":false},{"id":1002,"title":"Historias de amor","artist":"OBK","language":"Español","genre":"Thecnopop","year":"1991","cover":"","duet":false},{"id":1003,"title":"Cien gaviotas","artist":"Duncan Dhu","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1004,"title":"Taidada (TV)","artist":"Zutomayo","language":"Japanese","genre":"J-Pop, Rock","year":"2024","cover":"","duet":false},{"id":1005,"title":"Ace of Spades","artist":"Motorhead","language":"English","genre":null,"year":"1980","cover":"","duet":false},{"id":1006,"title":"Give a reason (TV)","artist":"Megumi Hayashibara","language":"Japanese","genre":"Anime","year":"1996","cover":"","duet":false},{"id":1007,"title":"Las flechas de amor","artist":"Karina","language":"Español","genre":null,"year":"1969","cover":"","duet":false},{"id":1008,"title":"Stitches","artist":"Shawn Mendes","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1009,"title":"The power of love","artist":"Huey Lewis & The News","language":"English","genre":"Pop Rock","year":"1985","cover":"","duet":false},{"id":1010,"title":"Sweet Home Alabama","artist":"Lynyrd Skynyrd","language":"English","genre":"rock","year":"1974","cover":"","duet":false},{"id":1011,"title":"Omokage (TV)","artist":"Megumi Hayashibara","language":"Japanese","genre":"Anime","year":"2001","cover":"","duet":false},{"id":1012,"title":"Guerra y paz","artist":"Zahara y Santi Balmes","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":1013,"title":"My happy ending","artist":"Avril Lavigne","language":"English","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1014,"title":"Feeling Good","artist":"Muse","language":"English","genre":"Rock","year":"2001","cover":"","duet":false},{"id":1015,"title":"Love someone","artist":"Lukas Graham","language":"English","genre":"Club","year":"2018","cover":"","duet":false},{"id":1016,"title":"Madre Tierra (Oye)","artist":"Chayanne","language":"Español","genre":"Latino","year":"2015","cover":"","duet":false},{"id":1017,"title":"Brianstorm","artist":"Arctic Monkeys","language":"English","genre":"Indie Rock","year":"2007","cover":"","duet":false},{"id":1018,"title":"Timber","artist":"Pitbull & Ke$ha","language":"English","genre":"Country","year":"2013","cover":"","duet":false},{"id":1019,"title":"I'm In Love With A Monster","artist":"Fifth Harmony","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1020,"title":"Nuestro amor será leyenda","artist":"Alejandro Sanz","language":"Español","genre":"Pop Rock","year":"2009","cover":"","duet":false},{"id":1021,"title":"Rolling In The Deep","artist":"Adele","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":1022,"title":"Uptown Funk","artist":"Mark Ronson feat. Bruno Mars","language":"English","genre":"Funk","year":"2014","cover":"","duet":false},{"id":1023,"title":"Tobira Wo Akete (TV)","artist":"Anza","language":"Japanese","genre":"Anime","year":"1999","cover":"","duet":false},{"id":1024,"title":"Dulce locura","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2006","cover":"","duet":false},{"id":1025,"title":"Tengo","artist":"Queco","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":1026,"title":"Irony (TV)","artist":"Claris","language":"Japanese","genre":"Anime","year":"2010","cover":"","duet":false},{"id":1027,"title":"Utsukushiki Zankoku na Sekai (TV)","artist":"Youko Hikasa","language":"Japanese","genre":null,"year":"2013","cover":"","duet":false},{"id":1028,"title":"La rosa de los vientos","artist":"Mägo de Oz","language":"Español","genre":"Other","year":"2003","cover":"","duet":false},{"id":1029,"title":"TOMORROW (TV)","artist":"Machico","language":"Japanese","genre":null,"year":"2017","cover":"","duet":false},{"id":1030,"title":"Tu peor error","artist":"La Quinta Estación","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1031,"title":"Mira cómo vuelo","artist":"Miss Caffeina","language":"Español","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1032,"title":"Fly","artist":"Hilary Duff","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1033,"title":"La llamada","artist":"Leiva","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1034,"title":"Baba O'Riley","artist":"The Who","language":"English","genre":"Rock","year":"1969","cover":"","duet":false},{"id":1035,"title":"Nancy Mulligan","artist":"Ed Sheeran","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":1036,"title":"Love Never Felt So Good","artist":"Michael Jackson ft. Justin Timberlake","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1037,"title":"Fukai Mori (TV)","artist":"Do As Infinity","language":"Japanese","genre":"Anime","year":"2001","cover":"","duet":false},{"id":1038,"title":"Grita","artist":"Jarabe de Palo","language":"Español","genre":null,"year":"1996","cover":"","duet":false},{"id":1039,"title":"Las niñas de la Salle","artist":"Los Mojinos Escozíos","language":"Español","genre":"Rock español","year":"2004","cover":"","duet":false},{"id":1040,"title":"Snow fairy (TV)","artist":"Funkist","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":1041,"title":"Sweet Melody","artist":"Little Mix","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":1042,"title":"Walking on sunshine","artist":"Katrina and The Waves","language":"English","genre":"Pop","year":"1985","cover":"","duet":false},{"id":1043,"title":"Brand new world","artist":"D-51","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":1044,"title":"Nothing Else Matters","artist":"Metallica","language":"English","genre":"Rock","year":"1991","cover":"","duet":false},{"id":1045,"title":"Between Angels and Insects","artist":"Papa Roach","language":"English","genre":null,"year":"2000","cover":"","duet":false},{"id":1046,"title":"Efectos vocales","artist":"Nach","language":"Español","genre":"Rap","year":"2008","cover":"","duet":false},{"id":1047,"title":"Al amanecer","artist":"Los Fresones Rebeldes","language":"Español","genre":null,"year":"1997","cover":"","duet":false},{"id":1048,"title":"So am I","artist":"Ava Max","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1049,"title":"Quiero ser como tú","artist":"Disney (BSO El Libro de la Selva)","language":"Español","genre":null,"year":"1967","cover":"","duet":false},{"id":1050,"title":"Nasío pa' la alegría","artist":"Estopa","language":"Español","genre":"Rumba","year":"2001","cover":"","duet":false},{"id":1051,"title":"Hey brother","artist":"Avicii","language":"English","genre":null,"year":"2013","cover":"","duet":false},{"id":1101,"title":"Something stupid","artist":"Robbie Williams y Nicole Kidman","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1052,"title":"En tus tierras bailaré","artist":"Delfín Hasta El Fin, La Tigresa del Oriente y Wendy Sulca","language":"Español","genre":null,"year":"2010","cover":"","duet":false},{"id":1053,"title":"I Want It All","artist":"High School Musical 3","language":"English","genre":null,"year":"2008","cover":"","duet":false},{"id":1054,"title":"Tonight (I'm Fuckin' You)","artist":"Enrique Iglesias feat. Ludacris & DJ Frank E","language":"English","genre":"Dance","year":"2010","cover":"","duet":false},{"id":1055,"title":"Polaris (TV)","artist":"BLUE ENCOUNT","language":"Japanese","genre":"J-pop","year":"2019","cover":"","duet":false},{"id":1056,"title":"Amiga mía","artist":"Alejandro Sanz","language":"Español","genre":"Pop","year":"1997","cover":"","duet":false},{"id":1057,"title":"Una noche de amor desesperada","artist":"Triana","language":"Español","genre":"Rock Andaluz","year":"1981","cover":"","duet":false},{"id":1058,"title":"chAngE","artist":"Miwa","language":"Japanese","genre":"Pop","year":"2010","cover":"","duet":false},{"id":1059,"title":"No me crees","artist":"Efecto Mariposa con Javier Ojeda","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1060,"title":"I'm So Excited","artist":"The Pointer Sisters","language":"English","genre":"Pop","year":"1982","cover":"","duet":false},{"id":1061,"title":"Cutie Honey","artist":"Koda Kumi","language":"Japanese","genre":"JPop","year":"2004","cover":"","duet":false},{"id":1062,"title":"Bloody Stream (TV)","artist":"Coda","language":"Japanese","genre":null,"year":"2013","cover":"","duet":false},{"id":1063,"title":"Million Dollar Baby","artist":"Ava Max","language":"English","genre":"Pop","year":"2022","cover":"","duet":false},{"id":1064,"title":"Walkin' on the Sun","artist":"Smash Mouth","language":"English","genre":"Pop Rock","year":"1997","cover":"","duet":false},{"id":1065,"title":"Duele el corazón","artist":"Enrique Iglesias ft. Wisin","language":"Español","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1066,"title":"Sore wa Chiisana Hikari no You na","artist":"Sayuri","language":"Japanese","genre":null,"year":"2016","cover":"","duet":false},{"id":1067,"title":"Dangerous","artist":"David Guetta ft. Sam Martin","language":"English","genre":"House","year":"2014","cover":"","duet":false},{"id":1068,"title":"Buscando el sol","artist":"El Pescao","language":"Español","genre":"Pop Rock","year":"2010","cover":"","duet":false},{"id":1069,"title":"Hay muy poca gente","artist":"Enrique Búnbury","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":1070,"title":"Cheap Thrills","artist":"Sia","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1071,"title":"Bailarina","artist":"Maldita Nerea","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1072,"title":"Last Resort","artist":"Papa Roach","language":"English","genre":"Nu Metal","year":"1999","cover":"","duet":false},{"id":1073,"title":"Dani California","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock Internacional","year":"2006","cover":"","duet":false},{"id":1074,"title":"El secreto de las tortugas","artist":"Maldita Nerea con los Delinqüentes","language":"Español","genre":"Pop español","year":"2007","cover":"","duet":false},{"id":1075,"title":"¡Qué festín!","artist":"La Bella y La Bestia","language":"Español","genre":null,"year":"1991","cover":"","duet":false},{"id":1076,"title":"Dame! (TV)","artist":"You Izumi","language":"Japanese","genre":"Anime","year":"1998","cover":"","duet":false},{"id":1077,"title":"Butter-fly (TV)","artist":"Kouji Wada","language":"Japanese","genre":"Anime","year":"1999","cover":"","duet":false},{"id":1078,"title":"Stargazing","artist":"Myles Smith","language":"English","genre":"Folk-Pop","year":"2024","cover":"","duet":false},{"id":1079,"title":"Devuélveme A Mi Chica","artist":"Hombres G","language":"Español","genre":"Pop","year":"1985","cover":"","duet":false},{"id":1080,"title":"Ride On Shooting Star","artist":"The Pillows","language":"Japanese","genre":"Anime","year":"2000","cover":"","duet":false},{"id":1081,"title":"Light my fire","artist":"The Doors","language":"English","genre":"Pop","year":"1967","cover":"","duet":false},{"id":1082,"title":"Despacito","artist":"Luis Fonsi feat. Daddy Yankee","language":"Español","genre":null,"year":"2017","cover":"","duet":true},{"id":1083,"title":"Despacito","artist":"Luis Fonsi feat. Daddy Yankee","language":"Español","genre":null,"year":"2017","cover":"","duet":false},{"id":1084,"title":"Zombified","artist":"Falling In Reverse","language":"English","genre":null,"year":"2022","cover":"","duet":false},{"id":1085,"title":"Hanbunko","artist":"Stereopony","language":"Japanese","genre":"Japan","year":null,"cover":"","duet":false},{"id":1086,"title":"Dirty Diana","artist":"Michael Jackson","language":"English","genre":null,"year":"1987","cover":"","duet":false},{"id":1087,"title":"Sofía","artist":"Álvaro Soler","language":"Español","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1088,"title":"Carolina","artist":"M-Clan","language":"Español","genre":"Rock","year":"2001","cover":"","duet":false},{"id":1089,"title":"Solo si es contigo","artist":"Bombai","language":"Español","genre":null,"year":"2015","cover":"","duet":false},{"id":1090,"title":"Unravel (TV)","artist":"TK from Ling Tosite Sigure","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":1091,"title":"SPECIALZ (TV)","artist":"King Gnu","language":"Japanese","genre":"J-pop","year":"2023","cover":"","duet":false},{"id":1092,"title":"2 Become 1","artist":"Spice Girls","language":"English","genre":"Pop","year":"1996","cover":"","duet":false},{"id":1093,"title":"Digimon Frontier","artist":"Digimon","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":1094,"title":"DtMF","artist":"Bad Bunny","language":"Español","genre":"Latino","year":"2025","cover":"","duet":false},{"id":1095,"title":"99 (TV)","artist":"MOB CHOIR","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":1096,"title":"99 (TV)","artist":"MOB CHOIR","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":true},{"id":1097,"title":"lovely","artist":"Billie Eilish, Khalid","language":"English","genre":"Other","year":"2018","cover":"","duet":false},{"id":1098,"title":"lovely","artist":"Billie Eilish, Khalid","language":"English","genre":"Other","year":"2018","cover":"","duet":true},{"id":1099,"title":"Calma (Remix)","artist":"Pedro Capó y Farruko","language":"Español","genre":null,"year":"2018","cover":"","duet":false},{"id":1100,"title":"Daría","artist":"La Quinta Estación","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1102,"title":"What's Up?","artist":"4 Non Blondes","language":"English","genre":"Alternative","year":"1993","cover":"","duet":false},{"id":1103,"title":"Ima made nando mo (TV)","artist":"The Mass Missile","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":1104,"title":"No vaya a ser","artist":"Pablo Alborán","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1105,"title":"Si te vas","artist":"Shakira","language":"Español","genre":"Rock/Pop","year":"1998","cover":"","duet":false},{"id":1106,"title":"Groovy (TV)","artist":"Koumi Hirose","language":"Japanese","genre":"Anime","year":"1998","cover":"","duet":false},{"id":1107,"title":"On The Floor","artist":"Jennifer Lopez & Pitbull","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":1108,"title":"Años ochenta","artist":"Los Piratas","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":1109,"title":"Vanilla Salt (TV)","artist":"Yui Horie","language":"Japanese","genre":"Anime","year":"2008","cover":"","duet":false},{"id":1110,"title":"Overprotected","artist":"Britney Spears","language":"English","genre":"Pop","year":"2002","cover":"","duet":false},{"id":1111,"title":"Cuando nadie ve","artist":"Morat","language":"Español","genre":null,"year":"2018","cover":"","duet":false},{"id":1112,"title":"Barbie Girl","artist":"Aqua","language":"English","genre":"Pop","year":"1997","cover":"","duet":false},{"id":1113,"title":"11 razones","artist":"Aitana","language":"Español","genre":"Pop","year":"2020","cover":"","duet":false},{"id":1114,"title":"Una vez en diciembre","artist":"Anastasia","language":"Español","genre":null,"year":"1997","cover":"","duet":false},{"id":1115,"title":"Paradise City","artist":"Guns N' Roses","language":"English","genre":null,"year":"1987","cover":"","duet":false},{"id":1116,"title":"Still Loving You","artist":"Scorpions","language":"English","genre":"Rock","year":"1984","cover":"","duet":false},{"id":1117,"title":"Lights","artist":"Ellie Goulding","language":"English","genre":"Electropop","year":"2011","cover":"","duet":false},{"id":1118,"title":"Si es tan sólo amor","artist":"Revólver","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1119,"title":"In the Navy","artist":"Village People","language":"English","genre":null,"year":"1979","cover":"","duet":false},{"id":1120,"title":"All You Need Is Love","artist":"The Beatles","language":"English","genre":"Pop","year":"1967","cover":"","duet":false},{"id":1121,"title":"Dumb ways to die","artist":"Tangerine Kitty","language":"English","genre":null,"year":"2012","cover":"","duet":false},{"id":1122,"title":"Reality","artist":"Lost Frequencies ft. Janieck Devy","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1123,"title":"Traicionera","artist":"Sebastián Yatra","language":"Español","genre":null,"year":"2016","cover":"","duet":false},{"id":1124,"title":"Light switch","artist":"Charlie Puth","language":"English","genre":"Pop","year":"2022","cover":"","duet":false},{"id":1125,"title":"Leave a Light On","artist":"Tom Walker","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":1126,"title":"It's not unusual","artist":"Tom Jones","language":"English","genre":"Misc","year":"1964","cover":"","duet":false},{"id":1127,"title":"El secreto de las tortugas","artist":"Maldita Nerea","language":"Español","genre":"Pop español","year":"2007","cover":"","duet":false},{"id":1128,"title":"J´en Ai Marre","artist":"Alizée","language":"French","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1129,"title":"Wild Challenger (TV)","artist":"Jindou","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":1130,"title":"It's Gonna Rain (TV)","artist":"Bonnie Pink","language":"Japanese","genre":"Anime","year":"1997","cover":"","duet":false},{"id":1131,"title":"Backlight","artist":"Ado","language":"Japanese","genre":null,"year":"2022","cover":"","duet":false},{"id":1132,"title":"Sevillana en la mirada","artist":"Cantores de Hispalis","language":"Español","genre":"Flamenco","year":"2010","cover":"","duet":false},{"id":1133,"title":"Set Fire To The Rain","artist":"Adele","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":1134,"title":"Limón y sal","artist":"Julieta Venegas","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1135,"title":"Mi verdad","artist":"Maná con Shakira","language":"Español","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1136,"title":"Mi verdad","artist":"Maná con Shakira","language":"Español","genre":"Pop","year":"2015","cover":"","duet":true},{"id":1137,"title":"El ciclo de la vida","artist":"El Rey León","language":"Español","genre":null,"year":"1994","cover":"","duet":false},{"id":1138,"title":"Hit That","artist":"The Offspring","language":"English","genre":null,"year":"2003","cover":"","duet":false},{"id":1139,"title":"Baile","artist":"David Otero y Rozalén","language":"Español","genre":"Pop","year":"2018","cover":"","duet":true},{"id":1140,"title":"Baile","artist":"David Otero y Rozalén","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":1141,"title":"Miraikei Answer (TV)","artist":"TRUSTRICK","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":1142,"title":"The man who sold the world","artist":"Nirvana","language":"English","genre":"Acoustic Rock","year":"1994","cover":"","duet":false},{"id":1143,"title":"Thinking out loud","artist":"Ed Sheeran","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":1144,"title":"Beautiful Things","artist":"Benson Boone","language":"English","genre":null,"year":"2024","cover":"","duet":false},{"id":1145,"title":"Never be the same","artist":"Camila Cabello","language":"English","genre":null,"year":"2018","cover":"","duet":false},{"id":1146,"title":"The Monster","artist":"Eminem & Rihanna","language":"English","genre":"Hip-Hop/Rap","year":"2013","cover":"","duet":false},{"id":1147,"title":"Lucky","artist":"Britney Spears","language":"English","genre":"Pop","year":"2000","cover":"","duet":false},{"id":1148,"title":"Nemo","artist":"Nightwish","language":"English","genre":"Power Metal Sinfonico","year":"2004","cover":"","duet":false},{"id":1149,"title":"Fukai Mori","artist":"Do As Infinity","language":"Japanese","genre":"Anime","year":"2001","cover":"","duet":false},{"id":1150,"title":"HEROES (TV)","artist":"Brian the Sun","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":1151,"title":"Levitating","artist":"Dua Lipa feat. DaBaby","language":"English","genre":"Dance","year":"2020","cover":"","duet":false},{"id":1152,"title":"Hai yorokonde","artist":"Kocchi no Kento","language":"Japanese","genre":null,"year":"2024","cover":"","duet":false},{"id":1153,"title":"La tortura","artist":"Shakira y Alejandro Sanz","language":"Español","genre":"Pop","year":"2005","cover":"","duet":true},{"id":1256,"title":"月の明り","artist":"伊田恵美","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":1154,"title":"La tortura","artist":"Shakira y Alejandro Sanz","language":"Español","genre":"Pop","year":"2005","cover":"","duet":false},{"id":1155,"title":"Dance The Night","artist":"Dua Lipa","language":"English","genre":"Dance","year":"2023","cover":"","duet":false},{"id":1156,"title":"Wake Me Up When September Ends","artist":"Green Day","language":"English","genre":null,"year":"2004","cover":"","duet":false},{"id":1157,"title":"Una rosa es una rosa","artist":"Mecano","language":"Español","genre":null,"year":"1991","cover":"","duet":false},{"id":1158,"title":"No mires a los ojos de la gente","artist":"Golpes Bajos","language":"Español","genre":"Rock","year":"1983","cover":"","duet":false},{"id":1159,"title":"All My Life","artist":"Foo Fighters","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1160,"title":"Don't look back in anger","artist":"Oasis","language":"English","genre":"Britpop","year":"1995","cover":"","duet":false},{"id":1161,"title":"La cintura","artist":"Alvaro Soler","language":"Español","genre":null,"year":"2018","cover":"","duet":false},{"id":1162,"title":"Kuzuri Nen (TV)","artist":"ZUTOMAYO","language":"Japanese","genre":"Jpop","year":"2024","cover":"","duet":false},{"id":1163,"title":"Minna no Peace (TV)","artist":"Afromania","language":"Japanese","genre":"JRock","year":"2007","cover":"","duet":false},{"id":1164,"title":"Rain","artist":"Mika","language":"English","genre":"Pop","year":"2009","cover":"","duet":false},{"id":1165,"title":"La puerta violeta","artist":"Rozalén","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1166,"title":"Palabras más, palabras menos","artist":"Los Rodríguez","language":"Español","genre":"Rock","year":"1995","cover":"","duet":false},{"id":1167,"title":"Cupid (Twin Ver.)","artist":"FIFTY FIFTY","language":"English","genre":null,"year":"2023","cover":"","duet":false},{"id":1168,"title":"Fatima (TV)","artist":"Kanako Itou","language":"Japanese","genre":"Anime","year":"2018","cover":"","duet":false},{"id":1169,"title":"There is a light that never goes out","artist":"The Smiths","language":"English","genre":"Rock","year":"1986","cover":"","duet":false},{"id":1170,"title":"Back For Good","artist":"Take That","language":"English","genre":"Pop","year":"1995","cover":"","duet":false},{"id":1171,"title":"How You Remind Me","artist":"Nickelback","language":"English","genre":"Pop","year":"2001","cover":"","duet":false},{"id":1172,"title":"Sin pijama","artist":"Becky G ft. Natti Natasha","language":"Español","genre":null,"year":"2018","cover":"","duet":false},{"id":1173,"title":"Sin pijama","artist":"Becky G ft. Natti Natasha","language":"Español","genre":null,"year":"2018","cover":"","duet":true},{"id":1174,"title":"Perfect","artist":"Fairground Attraction","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1175,"title":"Pray (TV)","artist":"Tommy heavenly6","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":1176,"title":"Amante Bandido","artist":"Miguel Bosé","language":"Español","genre":"Pop","year":"2003","cover":"","duet":false},{"id":1177,"title":"What do you mean?","artist":"Justin Bieber","language":"English","genre":null,"year":"2015","cover":"","duet":false},{"id":1178,"title":"It's my life","artist":"Bon Jovi","language":"English","genre":null,"year":"2000","cover":"","duet":false},{"id":1179,"title":"Hemisphere (TV)","artist":"Maaya Sakamoto","language":"Japanese","genre":null,"year":"2002","cover":"","duet":false},{"id":1180,"title":"Sucker","artist":"Jonas Brothers","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1181,"title":"White Flag","artist":"Dido","language":"English","genre":"Pop","year":"2003","cover":"","duet":false},{"id":1182,"title":"Come What May","artist":"Moulin Rouge","language":"English","genre":"Soundtrack","year":"2001","cover":"","duet":false},{"id":1183,"title":"A little pain","artist":"OLIVIA como LEILA de TRAPNEST","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":1184,"title":"Like I'm Gonna Lose You","artist":"Meghan Trainor feat. John Legend","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1185,"title":"20 de enero","artist":"La Oreja de Van Gogh","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1186,"title":"Faint","artist":"Linkin Park","language":"English","genre":"Nu-Metal","year":"2003","cover":"","duet":false},{"id":1187,"title":"La casa por el tejado","artist":"Fito & Fitipaldis","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1188,"title":"My Oh My","artist":"Camila Cabello  feat. DaBaby","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":1189,"title":"Massara (TV)","artist":"KANA-BOON","language":"Japanese","genre":null,"year":"2019","cover":"","duet":false},{"id":1190,"title":"Kimi No Shiranai Monogatari (TV)","artist":"Supercell","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":1191,"title":"Enjoy The Silence","artist":"Depeche Mode","language":"English","genre":"Pop","year":"1990","cover":"","duet":false},{"id":1192,"title":"HONEY","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"Jrock","year":"1999","cover":"","duet":false},{"id":1193,"title":"Un burdo rumor","artist":"Javier Krahe","language":"Español","genre":null,"year":"1981","cover":"","duet":false},{"id":1194,"title":"If U Seek Amy","artist":"Britney Spears","language":"English","genre":"Pop Rock","year":"2008","cover":"","duet":false},{"id":1195,"title":"Kimi Janakya Dame Mitai (TV)","artist":"Masayoshi Ooishi","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":1196,"title":"Usseewa","artist":"Ado","language":"Japanese","genre":null,"year":"2020","cover":"","duet":false},{"id":1197,"title":"innocent arrogance (TV)","artist":"BiSH","language":"Japanese","genre":"Pop","year":"2023","cover":"","duet":false},{"id":1198,"title":"Last piece","artist":"Great Teacher Onizuka","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":1199,"title":"Summer Paradise","artist":"Simple Plan","language":"French","genre":"Other","year":"2012","cover":"","duet":false},{"id":1200,"title":"Seishun Satsubatsuron (TV)","artist":"3-nen E-Gumi Utatan","language":"Japanese","genre":"Anime","year":"2015","cover":"","duet":false},{"id":1201,"title":"The Boys Are Back In Town","artist":"Thin Lizzy","language":"English","genre":"Rock","year":"1976","cover":"","duet":false},{"id":1202,"title":"Senbonzakura","artist":"Wagakki Band","language":"Japanese","genre":"Jrock","year":"2014","cover":"","duet":false},{"id":1203,"title":"Fighter (TV)","artist":"BUMP OF CHICKEN","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":1204,"title":"Moonlight Densetsu (TV)","artist":"DALI","language":"Japanese","genre":null,"year":"1992","cover":"","duet":false},{"id":1205,"title":"Camiseta de Rokanrol","artist":"Estopa con Fito y Fitipaldis","language":"Español","genre":"Latin Music","year":"2022","cover":"","duet":true},{"id":1206,"title":"Camiseta de Rokanrol","artist":"Estopa con Fito y Fitipaldis","language":"Español","genre":"Latin Music","year":"2022","cover":"","duet":false},{"id":1207,"title":"Welcome to the jungle","artist":"Guns N' Roses","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1208,"title":"Christmas Song","artist":"back number","language":"Japanese","genre":"Jpop","year":"2015","cover":"","duet":false},{"id":1209,"title":"How To Save A Life","artist":"The Fray","language":"English","genre":null,"year":"2005","cover":"","duet":false},{"id":1210,"title":"Catch You Catch Me (TV)","artist":"GUMI","language":"Japanese","genre":"Anime","year":"1998","cover":"","duet":false},{"id":1211,"title":"Lucy (versión corta)","artist":"ANNA como NANA (BSO NANA)","language":"Japanese","genre":"Anime","year":"2007","cover":"","duet":false},{"id":1212,"title":"Laura no está","artist":"Nek","language":"Español","genre":"Pop Internacional","year":"1997","cover":"","duet":false},{"id":1213,"title":"Beggin'","artist":"Madcon","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":1214,"title":"My Prerogative","artist":"Britney Spears","language":"English","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1215,"title":"Crazy Little Thing Called Love","artist":"Queen","language":"English","genre":null,"year":"1979","cover":"","duet":false},{"id":1216,"title":"Ni una sola palabra","artist":"Paulina Rubio","language":"Español","genre":null,"year":"2006","cover":"","duet":false},{"id":1217,"title":"Love runs out","artist":"OneRepublic","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":1218,"title":"Ma Baker","artist":"Boney M.","language":"English","genre":"Disco","year":"1977","cover":"","duet":false},{"id":1219,"title":"Knocking On Heavens Door","artist":"Guns N' Roses","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1220,"title":"Vivir así es morir de amor","artist":"Camilo Sesto","language":"Español","genre":null,"year":"1978","cover":"","duet":false},{"id":1221,"title":"Te quise tanto","artist":"Paulina Rubio","language":"Español","genre":null,"year":"2004","cover":"","duet":false},{"id":1222,"title":"Nandemo nai ya (movie ver.)","artist":"RADWIMPS","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":1223,"title":"Si antes te hubiera conocido","artist":"KAROL G","language":"Español","genre":"Latino","year":"2024","cover":"","duet":false},{"id":1224,"title":"Conga","artist":"Miami Sound Machine","language":"English","genre":"Latin Dance","year":"1985","cover":"","duet":false},{"id":1225,"title":"Me lo tiro","artist":"Berto & the Border Boys","language":"Español","genre":"Televisión","year":"2011","cover":"","duet":false},{"id":1226,"title":"Llamando a la Tierra","artist":"M-Clan","language":"Español","genre":null,"year":"1999","cover":"","duet":false},{"id":1227,"title":"Kanashii Ureshii","artist":"Frederic","language":"Japanese","genre":null,"year":"2017","cover":"","duet":false},{"id":1228,"title":"Lucha de gigantes","artist":"Love of Lesbian y Zahara","language":"Español","genre":"Indie","year":"2010","cover":"","duet":false},{"id":1229,"title":"Torero","artist":"Chayanne","language":"Español","genre":"Pop/Rock Latino","year":"2002","cover":"","duet":false},{"id":1230,"title":"Serenade","artist":"Dover","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1231,"title":"One Half (TV)","artist":"Kawamoto Makoto","language":"Japanese","genre":"Anime","year":"1997","cover":"","duet":false},{"id":1232,"title":"High","artist":"Lighthouse Family","language":"English","genre":"Pop Internacional","year":"1997","cover":"","duet":false},{"id":1233,"title":"Sparkle","artist":"RADWIMPS","language":"Japanese","genre":"JRock","year":"2016","cover":"","duet":false},{"id":1234,"title":"Bandido","artist":"Azúcar Moreno","language":"Español","genre":"Rumba","year":"1990","cover":"","duet":false},{"id":1235,"title":"Blinding Lights","artist":"The Weeknd","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1236,"title":"New Genesis","artist":"Ado","language":"Japanese","genre":null,"year":"2022","cover":"","duet":false},{"id":1237,"title":"Mr. Brightside","artist":"The Killers","language":"English","genre":"Alternativa","year":"2004","cover":"","duet":false},{"id":1238,"title":"Re:Re: (TV)","artist":"Asian Kung-Fu Generation","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":1239,"title":"Me enamoré","artist":"Shakira","language":"Español","genre":null,"year":"2017","cover":"","duet":false},{"id":1240,"title":"Opalite","artist":"Taylor Swift","language":"English","genre":"Soft rock","year":"2025","cover":"","duet":false},{"id":1241,"title":"Steal My Girl","artist":"One Direction","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":1242,"title":"I Like The Way You Kiss Me","artist":"Artemas","language":"English","genre":null,"year":"2024","cover":"","duet":false},{"id":1243,"title":"Incomplete","artist":"Backstreet Boys","language":"English","genre":null,"year":"2005","cover":"","duet":false},{"id":1244,"title":"Disturbia","artist":"Rihanna","language":"English","genre":null,"year":"2008","cover":"","duet":false},{"id":1245,"title":"Blurry eyes (karaoke)","artist":"L'Arc en ciel (BSO DNAÂ²)","language":"Japanese","genre":"J-Rock","year":null,"cover":"","duet":false},{"id":1246,"title":"Blurry eyes","artist":"L'Arc en ciel (BSO DNAÂ²)","language":"Japanese","genre":"J-Rock","year":null,"cover":"","duet":false},{"id":1247,"title":"Troublemaker","artist":"Olly Murs feat. Flo-Rida","language":"English","genre":"Pop","year":"2012","cover":"","duet":false},{"id":1248,"title":"The show must go on","artist":"Queen","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1249,"title":"Ningyo hime","artist":"Rie Tanaka","language":"Japanese","genre":"","year":null,"cover":"","duet":false},{"id":1250,"title":"Pink Venom","artist":"BLACKPINK","language":"Korean","genre":null,"year":"2022","cover":"","duet":false},{"id":1251,"title":"Only You","artist":"The Platters","language":"English","genre":null,"year":"1955","cover":"","duet":false},{"id":1252,"title":"Tu enemigo","artist":"Pablo López y Juanes","language":"Español","genre":null,"year":"2015","cover":"","duet":true},{"id":1253,"title":"Tu enemigo","artist":"Pablo López y Juanes","language":"Español","genre":null,"year":"2015","cover":"","duet":false},{"id":1254,"title":"月の明り","artist":"伊田恵美","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":1255,"title":"Tsuki no Akari","artist":"Ida Megumi","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":1861,"title":"Holiday","artist":"Green Day","language":"English","genre":"Rock","year":"2005","cover":"","duet":false},{"id":1257,"title":"Hoshi no Utsuwa (PV)","artist":"Sukima Switch","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":1258,"title":"First day of my life","artist":"The Rasmus","language":"English","genre":null,"year":"2003","cover":"","duet":false},{"id":1259,"title":"Mañana","artist":"Mikel Erentxun","language":"Español","genre":null,"year":"2003","cover":"","duet":false},{"id":1260,"title":"Hoy no me puedo levantar","artist":"Mecano","language":"Español","genre":null,"year":"1981","cover":"","duet":false},{"id":1261,"title":"Symphony","artist":"Clean Bandit ft. Zara Larsson","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1262,"title":"Big in Japan","artist":"Guano Apes","language":"English","genre":"Rock alternativo","year":"2000","cover":"","duet":false},{"id":1263,"title":"Welcome to the jungle","artist":"Guns N' Roses","language":"English","genre":"Hard Rock","year":"1987","cover":"","duet":false},{"id":1264,"title":"Cuéntame","artist":"Fórmula V","language":"Español","genre":null,"year":"1969","cover":"","duet":false},{"id":1265,"title":"Amazing","artist":"Aerosmith","language":"English","genre":null,"year":"1993","cover":"","duet":false},{"id":1266,"title":"IGNITE (TV)","artist":"Eir Aoi","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":1267,"title":"Speed Of Sound","artist":"Coldplay","language":"English","genre":"Rock","year":"2005","cover":"","duet":false},{"id":1268,"title":"STYLE ~get glory in this hand~","artist":"HIGH and MIGHTY COLOR","language":"Japanese","genre":"Jrock","year":"2006","cover":"","duet":false},{"id":1269,"title":"Kiss Me More","artist":"Doja Cat feat. SZA","language":"English","genre":"Pop","year":"2021","cover":"","duet":false},{"id":1270,"title":"Let her go","artist":"Passenger","language":"English","genre":null,"year":"2013","cover":"","duet":false},{"id":1271,"title":"La Soledad","artist":"Laura Pausini","language":"Español","genre":"pop","year":"1994","cover":"","duet":false},{"id":1272,"title":"The Beautiful People","artist":"Marilyn Manson","language":"English","genre":"Metal Industrial","year":"1996","cover":"","duet":false},{"id":1273,"title":"Cheerleader (Felix Jaehn Remix)","artist":"OMI","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1274,"title":"Pop","artist":"La Oreja de Van Gogh","language":"Español","genre":null,"year":"2000","cover":"","duet":false},{"id":1275,"title":"No puedo vivir sin ti","artist":"Los Ronaldos","language":"Español","genre":"Pop","year":"1996","cover":"","duet":false},{"id":1276,"title":"Walk this way","artist":"Aerosmith","language":"English","genre":"Rock","year":"1975","cover":"","duet":false},{"id":1277,"title":"Beautiful Lies","artist":"Beyond The Black feat. Rick Altzi","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":1278,"title":"The Joker and the Queen","artist":"Ed Sheeran feat. Taylor Swift","language":"English","genre":null,"year":"2022","cover":"","duet":false},{"id":1279,"title":"Cold Water","artist":"Major Lazer feat. Justin Bieber & MØ","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1280,"title":"My Immortal","artist":"Evanescence","language":"English","genre":"Rock","year":"2003","cover":"","duet":false},{"id":1281,"title":"Wiggle","artist":"Jason Derulo feat. Snoop Dogg","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1282,"title":"Black or white","artist":"Michael Jackson","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1283,"title":"Satisfaction (I Can't Get No)","artist":"The Rolling Stones","language":"English","genre":null,"year":"1966","cover":"","duet":false},{"id":1284,"title":"Macarena","artist":"Los del Río","language":"Español","genre":null,"year":"1993","cover":"","duet":false},{"id":1285,"title":"Amanecer","artist":"Edurne","language":"Español","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1286,"title":"The Greatest Show","artist":"The Greatest Showman","language":"English","genre":"Musical","year":"2017","cover":"","duet":false},{"id":1287,"title":"Riptide","artist":"Vance Joy","language":"English","genre":"Alternative","year":null,"cover":"","duet":false},{"id":1288,"title":"Magic of Love","artist":"Perfume","language":"Japanese","genre":null,"year":"2013","cover":"","duet":false},{"id":1289,"title":"I was born to love you","artist":"Freddie Mercury","language":"English","genre":"Rock","year":"1985","cover":"","duet":false},{"id":1290,"title":"Torn","artist":"Natalie Imbruglia","language":"English","genre":"Pop","year":"1997","cover":"","duet":false},{"id":1291,"title":"Gnarly","artist":"KATSEYE","language":"English","genre":"Pop","year":"2025","cover":"","duet":false},{"id":1292,"title":"Work","artist":"Rihanna feat. Drake","language":"English","genre":"R&B","year":"2016","cover":"","duet":false},{"id":1293,"title":"No me acuerdo","artist":"Thalía ft. Natti Natasha","language":"Español","genre":null,"year":"2018","cover":"","duet":true},{"id":1294,"title":"No me acuerdo","artist":"Thalía ft. Natti Natasha","language":"Español","genre":null,"year":"2018","cover":"","duet":false},{"id":1295,"title":"A little pain (versión corta)","artist":"OLIVIA como LEILA de TRAPNEST (BSO NANA)","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":1296,"title":"Como un burro amarrado a la puerta del baile","artist":"El Último de la Fila","language":"Español","genre":null,"year":"1993","cover":"","duet":false},{"id":1297,"title":"Give It Away","artist":"Red Hot Chili Peppers","language":"English","genre":"Funk Metal","year":"1991","cover":"","duet":false},{"id":1298,"title":"Shinzou wo sasageyou! (TV)","artist":"Linked Horizon","language":"Japanese","genre":null,"year":"2017","cover":"","duet":false},{"id":1299,"title":"Hay que venir al sur","artist":"Raffaella Carrà","language":"Español","genre":null,"year":"1978","cover":"","duet":false},{"id":1300,"title":"Singing In The Rain","artist":"Gene Kelly","language":"English","genre":"Soundtrack","year":"1952","cover":"","duet":false},{"id":1301,"title":"Amores Dormidos","artist":"Edurne","language":"Español","genre":"Pop","year":"2006","cover":"","duet":false},{"id":1302,"title":"Embrujada","artist":"Despistaos","language":"Español","genre":"Rock Nacional","year":"2008","cover":"","duet":false},{"id":1303,"title":"Kamisama no Iutoori (TV)","artist":"Juuji Ishiwatari & Yoshinori Sunahara + Etsuko Yakushimaru","language":"Japanese","genre":null,"year":"2010","cover":"","duet":false},{"id":1304,"title":"Kiseki No Umi (TV)","artist":"Maaya Sakamoto","language":"Japanese","genre":"J-Pop","year":"1990","cover":"","duet":false},{"id":1305,"title":"Fuente de energía","artist":"Estopa","language":"Español","genre":"Rock","year":"2004","cover":"","duet":false},{"id":1306,"title":"A la luz del lorenzo","artist":"Los Delinqüentes","language":"Español","genre":"Folklore","year":"2001","cover":"","duet":false},{"id":1307,"title":"Capitan Lawrence","artist":"WarCry","language":"Español","genre":"Power Metal","year":"2002","cover":"","duet":false},{"id":1308,"title":"I gotta feeling","artist":"Black Eyed Peas","language":"English","genre":"Hip Hop","year":"2008","cover":"","duet":false},{"id":1309,"title":"21 guns","artist":"Green Day","language":"English","genre":"Punk Rock","year":"2009","cover":"","duet":false},{"id":1310,"title":"Lost on you","artist":"LP","language":"English","genre":"Pop","year":"2012","cover":"","duet":false},{"id":1311,"title":"Yuusha (TV)","artist":"YOASOBI","language":"Japanese (romanized)","genre":null,"year":"2023","cover":"","duet":false},{"id":1312,"title":"Tell Me Baby","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock","year":"2006","cover":"","duet":false},{"id":1313,"title":"Tell Me Baby","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock","year":"2006","cover":"","duet":true},{"id":1314,"title":"you (Karaoke)","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2005","cover":"","duet":false},{"id":1315,"title":"you","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2005","cover":"","duet":false},{"id":1316,"title":"billionarie","artist":"Travis mccoy ft. bruno mars","language":"English","genre":"Pop","year":"2010","cover":"","duet":false},{"id":1317,"title":"Attention","artist":"Charlie Puth","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":1318,"title":"Price Tag","artist":"Jessie J","language":"English","genre":"R&B","year":"2011","cover":"","duet":false},{"id":1319,"title":"La taberna del Buda","artist":"Café Quijano","language":"Español","genre":"Latina","year":"2001","cover":"","duet":false},{"id":1320,"title":"Pretty vacant","artist":"Sex Pistols","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1321,"title":"Idol","artist":"YOASOBI","language":"Japanese (romanized)","genre":null,"year":"2023","cover":"","duet":false},{"id":1322,"title":"Pastillas de freno","artist":"Estopa","language":"Español","genre":"Rumba catalana","year":"2004","cover":"","duet":false},{"id":1323,"title":"Take a bow","artist":"Rihanna","language":"English","genre":"Pop Rock","year":"2008","cover":"","duet":false},{"id":1324,"title":"Desesperada","artist":"Marta Sánchez","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1325,"title":"Zankoku na tenshi no teeze","artist":"Yoko Takahashi (BSO Neog√©nesis Evangelion)","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":1326,"title":"Flying Fafnir (TV)","artist":"TRUSTRICK","language":"Japanese","genre":"Anime","year":"2015","cover":"","duet":false},{"id":1327,"title":"Space Oddity","artist":"David Bowie","language":"Englisch","genre":null,"year":null,"cover":"","duet":false},{"id":1328,"title":"Monotonía","artist":"Shakira y Ozuna","language":"Español","genre":"Bachata","year":"2022","cover":"","duet":false},{"id":1329,"title":"Monotonía","artist":"Shakira y Ozuna","language":"Español","genre":"Bachata","year":"2022","cover":"","duet":true},{"id":1330,"title":"El mismo sol","artist":"Álvaro Soler y Jennifer Lopez","language":"Español","genre":"Salsa","year":"2015","cover":"","duet":false},{"id":1331,"title":"El mismo sol","artist":"Álvaro Soler y Jennifer Lopez","language":"Español","genre":"Salsa","year":"2015","cover":"","duet":true},{"id":1332,"title":"Beautiful Colors (TV)","artist":"OneRepublic","language":"English","genre":"Pop","year":"2025","cover":"","duet":false},{"id":1333,"title":"FANCY","artist":"TWICE","language":"Korean","genre":null,"year":"2019","cover":"","duet":false},{"id":1334,"title":"Heavy is the crown","artist":"Linkin Park","language":"English","genre":null,"year":"2024","cover":"","duet":false},{"id":1335,"title":"Fireflies","artist":"Owl City","language":"English","genre":"Pop","year":"2009","cover":"","duet":false},{"id":1336,"title":"Don't Go Yet","artist":"Camila Cabello","language":"English","genre":null,"year":"2021","cover":"","duet":false},{"id":1337,"title":"Zen Zen Zense (movie ver.)","artist":"RADWIMPS","language":"Japanese","genre":"JRock","year":"2016","cover":"","duet":false},{"id":1338,"title":"En cambio no","artist":"Laura Pausini","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":1339,"title":"Me too","artist":"Meghan Trainor","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1340,"title":"First Love","artist":"Hikaru Utada","language":"Japanese","genre":"JPop","year":"1999","cover":"","duet":false},{"id":1341,"title":"About a Girl (Unplugged)","artist":"Nirvana","language":"English","genre":"Grunge","year":"1993","cover":"","duet":false},{"id":1342,"title":"Fuego en el fuego","artist":"Eros Ramazzotti con Carlos Santana","language":"Español","genre":"Pop Internacional","year":"2007","cover":"","duet":false},{"id":1343,"title":"Cryin'","artist":"Aerosmith","language":"English","genre":"Rock","year":"1993","cover":"","duet":false},{"id":1344,"title":"1000 Words (Orchestral)","artist":"Jade","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1345,"title":"El rey","artist":"Disney (BSO Aladdín)","language":"Español","genre":"Bandas sonoras","year":"1992","cover":"","duet":false},{"id":1346,"title":"Hold Back The River","artist":"James Bay","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1347,"title":"Disparé","artist":"Nena Daconte","language":"Español","genre":null,"year":"2013","cover":"","duet":false},{"id":1348,"title":"Goya no Machiawase (TV)","artist":"Hello Sleepwalkers","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":1349,"title":"Alors on danse","artist":"Stromae","language":"French","genre":"Pop","year":"2010","cover":"","duet":false},{"id":1350,"title":"Ironic","artist":"Alanis Morissette","language":"English","genre":null,"year":"1995","cover":"","duet":false},{"id":1351,"title":"Are You Gonna Be My Girl","artist":"Jet","language":"English","genre":"Rock","year":"2003","cover":"","duet":false},{"id":1352,"title":"Welcome to my life","artist":"Simple Plan","language":"English","genre":"Other","year":null,"cover":"","duet":false},{"id":1353,"title":"Corazón latino","artist":"David Bisbal","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":1354,"title":"Grace Kelly","artist":"Mika","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":1355,"title":"Baby, I Love Your Way","artist":"Big Mountain","language":"English","genre":null,"year":"1994","cover":"","duet":false},{"id":1356,"title":"Game","artist":"Ayumi Hamasaki","language":"Japanese","genre":"Jpop","year":"2005","cover":"","duet":false},{"id":1357,"title":"I Fought the Law","artist":"The Clash","language":"English","genre":"Punk","year":"1979","cover":"","duet":false},{"id":1358,"title":"Cuando me siento bien","artist":"Efecto Pasillo","language":"Español","genre":null,"year":"2015","cover":"","duet":false},{"id":1359,"title":"Hijo de la luna","artist":"Mecano","language":"Español","genre":null,"year":"1986","cover":"","duet":false},{"id":1360,"title":"Looking for love","artist":"Whitesnake","language":"English","genre":"Power Ballad","year":"1987","cover":"","duet":false},{"id":1361,"title":"good 4 u","artist":"Olivia Rodrigo","language":"English","genre":"Pop","year":"2021","cover":"","duet":false},{"id":1362,"title":"La mentira","artist":"Dani Martín","language":"Español","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1363,"title":"Highschool Of The Dead (TV)","artist":"Kishida Kyoudan","language":"Japanese","genre":"Anime","year":"2010","cover":"","duet":false},{"id":1364,"title":"Pegao","artist":"Camilo","language":"Español","genre":"Cumbia","year":"2022","cover":"","duet":false},{"id":1365,"title":"All Falls Down","artist":"Alan Walker feat. Noah Cyrus with Digital Farm Animals","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":1366,"title":"Butterfly","artist":"Smile DK","language":"English","genre":"Eurodance","year":"1998","cover":"","duet":false},{"id":1367,"title":"Butterfly","artist":"Smile DK","language":"English","genre":"Eurodance","year":"1998","cover":"","duet":true},{"id":1368,"title":"Stay","artist":"The Kid LAROI, Justin Bieber","language":"English","genre":null,"year":"2021","cover":"","duet":false},{"id":1369,"title":"Hello, shooting-star (TV)","artist":"moumoon","language":"Japanese","genre":"Anime","year":"2015","cover":"","duet":false},{"id":1370,"title":"Candy","artist":"Robbie Williams","language":"English","genre":"Pop-Rock","year":"2012","cover":"","duet":false},{"id":1371,"title":"Stand by me (TV)","artist":"The Peggies","language":"Japanese","genre":null,"year":"2019","cover":"","duet":false},{"id":1372,"title":"Corazón indomable","artist":"Camela","language":"Español","genre":"Pop Flamenco","year":"1997","cover":"","duet":false},{"id":1373,"title":"Shut up","artist":"Black Eyed Peas","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1374,"title":"Aerials","artist":"System of a Down","language":"English","genre":null,"year":"2002","cover":"","duet":false},{"id":1375,"title":"Lonely in Gorgeous","artist":"Tommy february6","language":"Japanese","genre":"J-pop","year":null,"cover":"","duet":false},{"id":1376,"title":"Final Fantasy Classic With Lyrics","artist":"Brentalfloss","language":"English","genre":"Rock","year":"2009","cover":"","duet":false},{"id":1377,"title":"Watermelon sugar","artist":"Harry Styles","language":"English","genre":"Pop, funk","year":"2019","cover":"","duet":false},{"id":1378,"title":"La madre de José","artist":"El Canto del Loco","language":"Español","genre":"Pop","year":"2003","cover":"","duet":false},{"id":1379,"title":"Tusa","artist":"Karol G y Nicki Minaj","language":"Español","genre":null,"year":"2019","cover":"","duet":false},{"id":1380,"title":"Chicken Noodle Soup","artist":"J-Hope feat. Becky G","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1381,"title":"willow","artist":"Taylor Swift","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":1382,"title":"Machi No Dorufin","artist":"Kingo Hamada","language":"Japanese","genre":"Citypop","year":"1982","cover":"","duet":false},{"id":1383,"title":"La suerte de mi vida","artist":"El canto del loco","language":"Español","genre":"Pop Nacional","year":"2008","cover":"","duet":false},{"id":1384,"title":"Hello, world! (TV)","artist":"BUMP OF CHICKEN","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":1385,"title":"Hey Jude","artist":"The Beatles","language":"English","genre":"Pop","year":"1970","cover":"","duet":false},{"id":1386,"title":"Europa","artist":"Mónica Naranjo","language":"Español","genre":"Pop","year":"2008","cover":"","duet":false},{"id":1387,"title":"Bad Romance","artist":"Lady GaGa","language":"English","genre":null,"year":"2009","cover":"","duet":false},{"id":1388,"title":"La niña de la escuela","artist":"Lola Índigo, TINI & Belinda","language":"Español","genre":"Pop/Latino","year":"2021","cover":"","duet":false},{"id":1389,"title":"Chiquitita","artist":"ABBA","language":"English","genre":null,"year":"1979","cover":"","duet":false},{"id":1390,"title":"Corazón sin vida","artist":"Aitana y Sebastián Yatra","language":"Español","genre":"Urbano latino, Pop","year":"2020","cover":"","duet":true},{"id":1391,"title":"Corazón sin vida","artist":"Aitana y Sebastián Yatra","language":"Español","genre":"Urbano latino, Pop","year":"2020","cover":"","duet":false},{"id":1392,"title":"What You Waiting For?","artist":"Gwen Stefani","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":1393,"title":"I Want to Break Free","artist":"Queen","language":"English","genre":null,"year":"1984","cover":"","duet":false},{"id":1394,"title":"El primer dia del resto de mi vida (En directo)","artist":"La Oreja de Van Gogh","language":"Español","genre":null,"year":"2013","cover":"","duet":false},{"id":1395,"title":"Don't Worry Be Happy","artist":"Bobby McFerrin","language":"English","genre":"Reggae","year":"1988","cover":"","duet":false},{"id":1396,"title":"Blanco y negro","artist":"Malú","language":"Español","genre":"Pop","year":"2010","cover":"","duet":false},{"id":1397,"title":"No Te Escaparás","artist":"Hombres G","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":1398,"title":"Niña piensa en ti","artist":"Los Caños","language":"Español","genre":"Pop","year":"2000","cover":"","duet":false},{"id":1399,"title":"A quién le importa","artist":"Alaska y Dinarama","language":"Español","genre":"Pop","year":"1986","cover":"","duet":false},{"id":1400,"title":"Summer Sunshine","artist":"The Corrs","language":"English","genre":null,"year":"2004","cover":"","duet":false},{"id":1401,"title":"Brimful of Asha","artist":"Cornershop","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1402,"title":"Bailar pegados (versión Eurovision)","artist":"Sergio Dalma","language":"Español","genre":null,"year":"1991","cover":"","duet":false},{"id":1403,"title":"Mou sukoshi... Mou sukoshi... (TV)","artist":"Saori Atsumi","language":"Japanese","genre":null,"year":"2004","cover":"","duet":false},{"id":1404,"title":"El roce de tu cuerpo","artist":"Platero y Tú","language":"Español","genre":null,"year":"1992","cover":"","duet":false},{"id":1405,"title":"Barbie de extrarradio","artist":"Melendi","language":"Español","genre":"Rock español","year":"2010","cover":"","duet":false},{"id":1406,"title":"Diciembre","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1407,"title":"Walk of Life","artist":"Dire Straits","language":"English","genre":"Rock","year":"1985","cover":"","duet":false},{"id":1408,"title":"Days (TV)","artist":"Flow","language":"Japanese","genre":"Anime","year":"2005","cover":"","duet":false},{"id":1409,"title":"Mares igual que tú","artist":"Amaral","language":"Español","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1410,"title":"El perro Freddy","artist":"El niño de la hipoteca","language":"Español","genre":"Humour","year":"2019","cover":"","duet":false},{"id":1411,"title":"Shining ray (TV)","artist":"Janne da Arc","language":"Japanese","genre":"Anime","year":"2002","cover":"","duet":false},{"id":1412,"title":"Just my imagination","artist":"The Cranberries","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1413,"title":"How You Like That","artist":"BLACKPINK","language":"Korean","genre":null,"year":"2020","cover":"","duet":false},{"id":1414,"title":"La Mordidita","artist":"Ricky Martin","language":"Español","genre":"Latin","year":"2015","cover":"","duet":false},{"id":1415,"title":"The middle","artist":"Jimmy Eat World","language":"English","genre":"Rock Alternativo","year":"2001","cover":"","duet":false},{"id":1416,"title":"No te vayas mamá","artist":"Marco","language":"Español","genre":null,"year":"1976","cover":"","duet":false},{"id":1417,"title":"You gotta be","artist":"Des'ree","language":"English","genre":"Soul","year":"1994","cover":"","duet":false},{"id":1418,"title":"She sells sanctuary","artist":"The Cult","language":"English","genre":"Rock Gotico","year":"1985","cover":"","duet":false},{"id":1419,"title":"Radioactive","artist":"Imagine Dragons","language":"English","genre":null,"year":"2012","cover":"","duet":false},{"id":1420,"title":"Waterloo","artist":"ABBA","language":"English","genre":null,"year":"1974","cover":"","duet":false},{"id":1421,"title":"Girls Like You","artist":"Maroon 5 ft. Cardi B","language":"English","genre":"Pop","year":"2018","cover":"","duet":false},{"id":1422,"title":"Shizuku","artist":"Sukima Switch","language":"Japanese","genre":null,"year":"2009","cover":"","duet":false},{"id":1423,"title":"Quiéreme","artist":"El Barrio","language":"Español","genre":"Rumba","year":"2003","cover":"","duet":false},{"id":1424,"title":"Ranbu no Melody (TV)","artist":"Sid","language":"Japanese","genre":null,"year":"2010","cover":"","duet":false},{"id":1425,"title":"Link (TV)","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"Anime","year":"2005","cover":"","duet":false},{"id":1426,"title":"Melissa (TV)","artist":"Porno graffiti","language":"Japanese","genre":"Anime","year":"2003","cover":"","duet":false},{"id":1427,"title":"Chim chímeni","artist":"Mary Poppins","language":"Español","genre":"Soundtrack","year":"1964","cover":"","duet":false},{"id":1428,"title":"Nada fue un error","artist":"Coti y Andrés Calamaro","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1429,"title":"Simple And Clean","artist":"Utada Hikaru","language":"English","genre":"Game","year":"2002","cover":"","duet":false},{"id":1430,"title":"Helena","artist":"My Chemical Romance","language":"English","genre":"Pop","year":"2005","cover":"","duet":false},{"id":1431,"title":"The Hand That Feeds","artist":"Nine Inch Nails","language":"English","genre":"Rock Industrial","year":"2005","cover":"","duet":false},{"id":1432,"title":"Tarde de domingo rara","artist":"Amaral","language":"Español","genre":"Rock","year":"2008","cover":"","duet":false},{"id":1433,"title":"Wannabe","artist":"Spice Girls","language":"English","genre":"Pop","year":"1996","cover":"","duet":false},{"id":1434,"title":"I Really Like You","artist":"Carly Rae Jepsen","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1435,"title":"SUPERESTRELLA","artist":"Aitana","language":"Español","genre":"Pop","year":"2025","cover":"","duet":false},{"id":1436,"title":"Every breath you take","artist":"The Police","language":"English","genre":"Pop","year":"1983","cover":"","duet":false},{"id":1437,"title":"Popular Monster","artist":"Falling In Reverse","language":"English","genre":"Rap Metal","year":"2019","cover":"","duet":false},{"id":1438,"title":"Los Amantes","artist":"Ana Torroja","language":"Español","genre":"Pop","year":"2006","cover":"","duet":false},{"id":1439,"title":"CHE.R.RY","artist":"YUI","language":"Japanese","genre":"Jpop","year":"2007","cover":"","duet":false},{"id":1440,"title":"Sevilla tiene un color especial","artist":"Los del Río","language":"Español","genre":"Pop","year":"1991","cover":"","duet":false},{"id":1441,"title":"Quiero besarte","artist":"Roser","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":1442,"title":"Cielo hermético","artist":"Fito y Fitipaldis","language":"Español","genre":"Rock","year":"2021","cover":"","duet":false},{"id":1443,"title":"Cabecera","artist":"Parchís (BSO Érase una vez el hombre)","language":"Español","genre":"Dibujos animados","year":"1978","cover":"","duet":false},{"id":1444,"title":"Datte Atashi no Hero (TV)","artist":"LiSA","language":"Japanese","genre":"Anime","year":"2017","cover":"","duet":false},{"id":1445,"title":"Harmonia (versión corta)","artist":"RYTHEM (BSO Naruto)","language":"Japanese","genre":"Anime","year":"2003","cover":"","duet":false},{"id":1446,"title":"Marvin Gaye","artist":"Charlie Puth and Meghan Trainor","language":"English","genre":"Pop","year":"2015","cover":"","duet":true},{"id":1447,"title":"Marvin Gaye","artist":"Charlie Puth and Meghan Trainor","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1448,"title":"Happy Together","artist":"The Turtles","language":"English","genre":"Rock","year":"1967","cover":"","duet":false},{"id":1449,"title":"Crazy Party Night ~Pumpkin no Gyakushuu~","artist":"Kyary Pamyu Pamyu","language":"Japanese","genre":"Jpop","year":"2015","cover":"","duet":false},{"id":1450,"title":"Manazashi wa hikari","artist":"Tatsuya Kitani","language":"Japanese","genre":"J-pop","year":"2025","cover":"","duet":false},{"id":1451,"title":"Bailar pegados","artist":"Sergio Dalma","language":"Español","genre":null,"year":"1991","cover":"","duet":false},{"id":1452,"title":"Flames","artist":"David Guetta & Sia","language":"English","genre":"Pop","year":"2018","cover":"","duet":false},{"id":1453,"title":"Du hast","artist":"Rammstein","language":"German","genre":null,"year":null,"cover":"","duet":false},{"id":1454,"title":"La chica de ayer (directo)","artist":"Nacha Pop","language":"Español","genre":"Pop","year":"1980","cover":"","duet":false},{"id":1455,"title":"Wild Side (TV)","artist":"ALI","language":"Japanese","genre":null,"year":"2019","cover":"","duet":false},{"id":1456,"title":"En algún lugar","artist":"Duncan Dhu","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1457,"title":"Trumpets","artist":"Jason Derulo","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1458,"title":"Namida no Mukou","artist":"Stereopony","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":1459,"title":"You Give Love A Bad Name","artist":"Bon Jovi","language":"English","genre":null,"year":"1986","cover":"","duet":false},{"id":1460,"title":"Animal instinct","artist":"The Cranberries","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1461,"title":"By the way","artist":"Red Hot Chili Peppers","language":"English","genre":"","year":null,"cover":"","duet":false},{"id":1462,"title":"This Game (TV)","artist":"Konomi Suzuki","language":"Japanese","genre":"Anime","year":"2014","cover":"","duet":false},{"id":1463,"title":"I don't care","artist":"Ed Sheeran and Justin Bieber","language":"English","genre":"Pop","year":"2019","cover":"","duet":true},{"id":1464,"title":"I don't care","artist":"Ed Sheeran and Justin Bieber","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1465,"title":"Happy","artist":"Pharrell Williams","language":"English","genre":"Pop","year":"2003","cover":"","duet":false},{"id":1466,"title":"Silhouette (TV)","artist":"KANA-BOON","language":"Japanese","genre":"Anime","year":"2014","cover":"","duet":false},{"id":1467,"title":"Viaje con nosotros","artist":"Orquesta Mondragón","language":"Español","genre":"Pop","year":"1980","cover":"","duet":false},{"id":1468,"title":"Macho man","artist":"Village People","language":"English","genre":"Dance","year":"1978","cover":"","duet":false},{"id":1469,"title":"Te busqué","artist":"Nelly Furtado con Juanes","language":"Español","genre":null,"year":"2006","cover":"","duet":false},{"id":1470,"title":"Lapis Lazuli","artist":"Eir Aoi","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":1471,"title":"Here With Me","artist":"Dido","language":"English","genre":"Pop","year":"2000","cover":"","duet":false},{"id":1472,"title":"Hollaback Girl","artist":"Gwen Stefani","language":"English","genre":"Pop","year":"2006","cover":"","duet":false},{"id":1473,"title":"Miracle","artist":"Calvin Harris and Ellie Goulding","language":"English","genre":"Pop","year":"2023","cover":"","duet":false},{"id":1474,"title":"Cabecera","artist":"Grupo Nins (BSO Sherlock Holmes)","language":"Español","genre":"Dibujos animados","year":"1984","cover":"","duet":false},{"id":1475,"title":"Casi","artist":"Melendi","language":"Español","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1476,"title":"No Lie","artist":"Sean Paul & Dua Lipa","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":1477,"title":"Shape of my heart","artist":"Backstreet Boys","language":"English","genre":null,"year":"2000","cover":"","duet":false},{"id":1478,"title":"Yakusoku wa iranai (TV)","artist":"Maaya Sakamoto","language":"Japanese","genre":"Jpop","year":"1996","cover":"","duet":false},{"id":1479,"title":"Haato wo miga kukkyanai (TV)","artist":"Tokio","language":"Japanese","genre":null,"year":"1995","cover":"","duet":false},{"id":1480,"title":"Beat It","artist":"Michael Jackson","language":"English","genre":"Pop Internacional","year":"1982","cover":"","duet":false},{"id":1481,"title":"Accidentally in love","artist":"Counting Crows","language":"English","genre":"Banda sonora","year":"2004","cover":"","duet":false},{"id":1482,"title":"Chasing Cars","artist":"Snow Patrol","language":"English","genre":"Pop","year":"2006","cover":"","duet":false},{"id":1483,"title":"Coming Home","artist":"Diddy Dirty Money ft. Skylar Grey","language":"English","genre":"R&B","year":"2010","cover":"","duet":false},{"id":1484,"title":"Sultans of Swing","artist":"Dire Straits","language":"English","genre":"Rock","year":"1978","cover":"","duet":false},{"id":1485,"title":"A bailar y a bailar","artist":"Cantores de Híspalis","language":"Español","genre":"Sevillanas","year":"1987","cover":"","duet":false},{"id":1486,"title":"crossing field","artist":"LiSA","language":"Japanese","genre":"Anime","year":"2012","cover":"","duet":false},{"id":1487,"title":"Chankapana","artist":"NEWS","language":"Japanese","genre":"Jpop","year":"2012","cover":"","duet":false},{"id":1488,"title":"Kanashii Ureshii (TV)","artist":"Frederic","language":"Japanese","genre":null,"year":"2017","cover":"","duet":false},{"id":1489,"title":"Livin' on a Prayer","artist":"Bon Jovi","language":"English","genre":null,"year":"1986","cover":"","duet":false},{"id":1490,"title":"Bad Medicine","artist":"Bon Jovi","language":"English","genre":null,"year":"1988","cover":"","duet":false},{"id":1491,"title":"Lo que tengo yo adentro","artist":"Pereza","language":"Español","genre":null,"year":"2005","cover":"","duet":false},{"id":1492,"title":"Soul to Squeeze","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock Alternativo","year":"1993","cover":"","duet":false},{"id":1493,"title":"Fashion Monster","artist":"Kyary Pamyu Pamyu","language":"Japanese","genre":null,"year":"2012","cover":"","duet":false},{"id":1494,"title":"Mi nuevo vicio","artist":"Morat","language":"Español","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1495,"title":"Basket Case","artist":"Green Day","language":"English","genre":"Alternative Rock","year":"1994","cover":"","duet":false},{"id":1496,"title":"Miedo","artist":"M Clan","language":"Español","genre":"Rock","year":"2004","cover":"","duet":false},{"id":1497,"title":"Digimon 02","artist":"Digimon","language":"Español","genre":"Dibujos animados","year":"2001","cover":"","duet":false},{"id":1498,"title":"Levitating","artist":"Dua Lipa","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":1499,"title":"Ray of Light (TV)","artist":"Shoko Nakagawa","language":"Japanese","genre":"Jpop","year":"2010","cover":"","duet":false},{"id":1500,"title":"Karma (TV)","artist":"Bump Of Chicken","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":1501,"title":"Se fue","artist":"Laura Pausini","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1502,"title":"Fruta fresca","artist":"Carlos Vives","language":"Español","genre":null,"year":"1999","cover":"","duet":false},{"id":1503,"title":"Son De Amores","artist":"Andy Y Lucas","language":"Español","genre":null,"year":"2003","cover":"","duet":false},{"id":1504,"title":"Gastón","artist":"Disney (BSO La Bella y la Bestia)","language":"Español","genre":"Bandas sonoras","year":"1992","cover":"","duet":false},{"id":1505,"title":"Somwhere Only We Know","artist":"Keane","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":1506,"title":"Havana","artist":"Camila Cabello feat. Young Thug","language":"English","genre":null,"year":"2017","cover":"","duet":true},{"id":1507,"title":"Havana","artist":"Camila Cabello feat. Young Thug","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":1508,"title":"Olvídame y pega la vuelta","artist":"Pimpinela","language":"Español","genre":null,"year":"1984","cover":"","duet":false},{"id":1509,"title":"Olvídame y pega la vuelta","artist":"Pimpinela","language":"Español","genre":null,"year":"1984","cover":"","duet":true},{"id":1510,"title":"20 de abril","artist":"Celtas Cortos","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1511,"title":"La gozadera","artist":"Gente de Zona y Marc Anthony","language":"Español","genre":"Latin","year":"2015","cover":"","duet":false},{"id":1512,"title":"La gozadera","artist":"Gente de Zona y Marc Anthony","language":"Español","genre":"Latin","year":"2015","cover":"","duet":true},{"id":1513,"title":"Womanizer","artist":"Britney Spears","language":"English","genre":"Pop","year":"2008","cover":"","duet":false},{"id":1514,"title":"Fantastic Dreamer (TV)","artist":"Machico","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":1515,"title":"Menchi aishou no borero","artist":"Excel Saga","language":"Others","genre":null,"year":null,"cover":"","duet":false},{"id":1516,"title":"WHISTLE","artist":"BLACKPINK","language":"Korean","genre":null,"year":"2016","cover":"","duet":false},{"id":1517,"title":"Sugar","artist":"Robin Schulz ft. Francesco Yates","language":"English","genre":null,"year":"2015","cover":"","duet":false},{"id":1518,"title":"Dile al Sol","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop Nacional","year":"1998","cover":"","duet":false},{"id":1519,"title":"La niña que llora en tus fiestas","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2011","cover":"","duet":false},{"id":1520,"title":"Domino","artist":"Jessie J","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":1521,"title":"Don't you worry","artist":"Black Eyed Peas, Shakira and David Guetta","language":"English","genre":"Pop, electrónica","year":"2022","cover":"","duet":false},{"id":1522,"title":"Don't you worry","artist":"Black Eyed Peas, Shakira and David Guetta","language":"English","genre":"Pop, electrónica","year":"2022","cover":"","duet":true},{"id":1523,"title":"Come And Get It","artist":"Selena Gomez","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":1524,"title":"A past and future secret","artist":"Blind Guardian","language":"English","genre":"Power Metal","year":"1995","cover":"","duet":false},{"id":1525,"title":"when the party's over","artist":"Billie Eilish","language":"English","genre":null,"year":"2018","cover":"","duet":false},{"id":1526,"title":"Maggie despierta","artist":"M Clan","language":"Español","genre":null,"year":"2001","cover":"","duet":false},{"id":1527,"title":"Lemon Tree","artist":"Fool's Garden","language":"English","genre":"Pop","year":"1995","cover":"","duet":false},{"id":1528,"title":"Elastic Heart","artist":"Sia","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1529,"title":"So young","artist":"The Corrs","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1530,"title":"Never Give Up","artist":"Sia","language":"English","genre":"Soundtrack","year":"2016","cover":"","duet":false},{"id":1531,"title":"Be The One","artist":"Dua Lipa","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1532,"title":"Dame cariño","artist":"El Arrebato","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":1533,"title":"Heaven Knows I'm Miserable Now","artist":"The Smiths","language":"English","genre":"Rock Alternativo","year":"1984","cover":"","duet":false},{"id":1534,"title":"Tranquilo, majete","artist":"Celtas Cortos","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1535,"title":"Hijo de hombre","artist":"Disney (BSO Tarzán)","language":"Español","genre":null,"year":"1999","cover":"","duet":false},{"id":1536,"title":"Bajito","artist":"Ana Guerra","language":"Español","genre":"Reggaeton","year":"2018","cover":"","duet":false},{"id":1537,"title":"How Deep Is Your Love","artist":"Calvin Harris & Disciples","language":"English","genre":null,"year":"2015","cover":"","duet":false},{"id":1538,"title":"WIND (Karaoke)","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":1539,"title":"WIND","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":1540,"title":"from the edge (TV)","artist":"FictionJunction feat. LiSA","language":"Japanese","genre":"Anime","year":"2019","cover":"","duet":false},{"id":1541,"title":"Something Stupid (dueto)","artist":"Robbie Williams & Nicole Kidman","language":"English","genre":"Pop","year":"2002","cover":"","duet":true},{"id":1542,"title":"El guardián de Troya","artist":"WarCry","language":"Español","genre":"Heavy Metal","year":"2004","cover":"","duet":false},{"id":1543,"title":"Mugen (TV)","artist":"My First Story x Hyde","language":"Japanese","genre":"J-rock","year":"2024","cover":"","duet":false},{"id":1544,"title":"Tenía tanto que darte","artist":"Nena Daconte","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":1545,"title":"You're still the one","artist":"Shania Twain","language":"English","genre":"Country, dance pop","year":"1998","cover":"","duet":false},{"id":1546,"title":"Callaíta","artist":"Bad Bunny y Tainy","language":"Español","genre":null,"year":"2019","cover":"","duet":false},{"id":1547,"title":"Impossible","artist":"James Arthur","language":"English","genre":"Pop","year":"2012","cover":"","duet":false},{"id":1548,"title":"Read my mind","artist":"The Killers","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":1549,"title":"Side To Side","artist":"Ariana Grande feat. Nicki Minaj","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1550,"title":"El anillo","artist":"Jennifer Lopez","language":"Español","genre":null,"year":"2018","cover":"","duet":false},{"id":1551,"title":"Wonderwall","artist":"Oasis","language":"English","genre":"Britpop","year":"1995","cover":"","duet":false},{"id":1552,"title":"Time is running out","artist":"Muse","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1553,"title":"All of Me","artist":"John Legend","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":1554,"title":"Move Your Body (Single Mix)","artist":"Sia","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1555,"title":"Hotel California","artist":"The Eagles","language":"English","genre":"Classic Rock","year":"1976","cover":"","duet":false},{"id":1556,"title":"I won't give up","artist":"Jason Mraz","language":"English","genre":null,"year":"2012","cover":"","duet":false},{"id":1557,"title":"Tu mirada me hace grande","artist":"Maldita Nerea","language":"Español","genre":null,"year":"2010","cover":"","duet":false},{"id":1558,"title":"Tonari no Totoro (Canción de los créditos)","artist":"Mi vecino Totoro","language":"Japanese","genre":"Anime","year":null,"cover":"","duet":false},{"id":1559,"title":"¿Dónde estas?","artist":"Jaime Urrutia con Andrés Calamaro, Loquillo y Bunbury","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":1560,"title":"Voy a ser El Rey León","artist":"El Rey León","language":"Español","genre":null,"year":"1994","cover":"","duet":false},{"id":1561,"title":"Cartoon heroes","artist":"Aqua","language":"English","genre":"Pop","year":"2000","cover":"","duet":false},{"id":1562,"title":"1/3 no junjô na kanjô (versión corta)","artist":"Siam Shade (BSO Rurôni Kenshin)","language":"Japanese","genre":"Anime","year":"1997","cover":"","duet":false},{"id":1563,"title":"Amigos para siempre","artist":"Los Manolos","language":"Español","genre":null,"year":"1992","cover":"","duet":false},{"id":1564,"title":"Sexed Up","artist":"Robbie Williams","language":"English","genre":"Pop","year":"2003","cover":"","duet":false},{"id":1565,"title":"The Fresh Prince Of Bel Air","artist":"Will Smith","language":"English","genre":"Rap","year":null,"cover":"","duet":false},{"id":1566,"title":"My Sharona","artist":"The Knack","language":"Englisch","genre":null,"year":null,"cover":"","duet":false},{"id":1567,"title":"On top of the world","artist":"Imagine Dragons","language":"English","genre":"Indie Rock","year":"2013","cover":"","duet":false},{"id":1568,"title":"Pre-parade (TV)","artist":"Yui Horie","language":"Japanese","genre":"j pop","year":"2008","cover":"","duet":false},{"id":1569,"title":"Roar","artist":"Katy Perry","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":1570,"title":"Himno del centenario del Sevilla F.C.","artist":"El Arrebato","language":"Español","genre":null,"year":"2005","cover":"","duet":false},{"id":1571,"title":"Tourniquet","artist":"Evanescence","language":"English","genre":"AlternRock","year":"2003","cover":"","duet":false},{"id":1572,"title":"So easy (To fall in love)","artist":"Olivia Dean","language":"English","genre":"Neo soul, Bossa Nova, Easy Listening","year":"2025","cover":"","duet":false},{"id":1573,"title":"Cake by the ocean","artist":"DNCE","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1574,"title":"Uso (TV)","artist":"Sid","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":1575,"title":"Akeboshi (TV)","artist":"LiSA","language":"Japanese","genre":"J-pop","year":"2021","cover":"","duet":false},{"id":1576,"title":"La vereda de la puerta de atrás","artist":"Extremoduro","language":"Español","genre":"Rock","year":"2002","cover":"","duet":false},{"id":1577,"title":"Same Blue (TV)","artist":"Official HIGE DANdism","language":"Japanese","genre":"J-rock","year":"2024","cover":"","duet":false},{"id":1578,"title":"Reapers","artist":"Muse","language":"English","genre":"Rock","year":"2015","cover":"","duet":false},{"id":1579,"title":"THE HERO !! ~Okoreru Kobushi ni Hi wo Tsukero~ (TV)","artist":"JAM Project","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":1580,"title":"O Fortuna","artist":"Carmina Burana","language":"Latin","genre":"Classical","year":"1981","cover":"","duet":false},{"id":1581,"title":"We Don't Need Another Hero (Thunderdome)","artist":"Tina Turner","language":"English","genre":"Rock","year":"1985","cover":"","duet":false},{"id":1582,"title":"Stupid Love","artist":"Lady Gaga","language":"English","genre":null,"year":"2020","cover":"","duet":false},{"id":1583,"title":"Should I Stay Or Should I GO","artist":"The Clash","language":"English","genre":"Rock","year":"1982","cover":"","duet":false},{"id":1584,"title":"Overpass Graffiti","artist":"Ed Sheeran","language":"English","genre":null,"year":"2021","cover":"","duet":false},{"id":1585,"title":"Bad habits","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2021","cover":"","duet":false},{"id":1586,"title":"Kitt y los coches del pasado","artist":"Ladilla Rusa con Joan Colomo y Los ganglios","language":"Español","genre":"Subnopop","year":"2019","cover":"","duet":false},{"id":1587,"title":"Viejoven","artist":"Ojete Calor","language":"Español","genre":"Subnopop","year":"2014","cover":"","duet":false},{"id":1588,"title":"Tu hamster","artist":"El Reno Renardo","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":1589,"title":"Boom Clap","artist":"Charli XCX","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":1590,"title":"Despídete","artist":"Ella Baila Sola","language":"Español","genre":null,"year":"1998","cover":"","duet":false},{"id":1591,"title":"Despídete","artist":"Ella Baila Sola","language":"Español","genre":null,"year":"1998","cover":"","duet":true},{"id":1592,"title":"Luz, fuego, destrucción","artist":"Dragon Ball Z","language":"Español","genre":"Dibujos animados","year":"1992","cover":"","duet":false},{"id":1593,"title":"Haruka kanata (TV)","artist":"Asian Kung-fu Generation","language":"Japanese","genre":"Anime","year":"2003","cover":"","duet":false},{"id":1594,"title":"Rojitas las orejas","artist":"Fito & Fitipaldis","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1595,"title":"Human nature","artist":"Michael Jackson","language":"English","genre":"Pop","year":"1982","cover":"","duet":false},{"id":1596,"title":"Bon Appétit","artist":"Katy Perry feat. Migos","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1597,"title":"Love Me Like You Do","artist":"Ellie Goulding","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1598,"title":"Vente pa'ca","artist":"Ricky Martin y Maluma","language":"Español","genre":null,"year":"2016","cover":"","duet":false},{"id":1599,"title":"Vente pa'ca","artist":"Ricky Martin y Maluma","language":"Español","genre":null,"year":"2016","cover":"","duet":true},{"id":1600,"title":"Bury a friend","artist":"Billie Eilish","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":1601,"title":"Como si no nos hubiéramos amado","artist":"Laura Pausini","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1602,"title":"Sora ni Utaeba (TV)","artist":"Amazarashi","language":"Japanese","genre":"Anime","year":"2017","cover":"","duet":false},{"id":1603,"title":"Inmortal","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2008","cover":"","duet":false},{"id":1604,"title":"This Fffire (TV)","artist":"Franz Ferdinand","language":"English","genre":"Rock","year":"2022","cover":"","duet":false},{"id":1659,"title":"The Greatest","artist":"James Blunt","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":1605,"title":"Si tienes fe","artist":"El príncipe de Egipto","language":"Español","genre":"Dibujos animados","year":"1998","cover":"","duet":false},{"id":1606,"title":"Kiss and Make Up","artist":"Dua Lipa & BLACKPINK","language":"English","genre":"Pop","year":"2018","cover":"","duet":false},{"id":1607,"title":"One","artist":"U2","language":"English","genre":null,"year":"1991","cover":"","duet":false},{"id":1608,"title":"Madre sabe más","artist":"Celia Vergara","language":"Español","genre":"Soundtrack","year":"2011","cover":"","duet":false},{"id":1609,"title":"Bonustrack","artist":"La Oreja de Van Gogh","language":"Español","genre":"Latin Pop","year":"2003","cover":"","duet":false},{"id":1610,"title":"Me and my broken heart","artist":"Rixton","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":1611,"title":"A sangre y fuego","artist":"Saratoga","language":"Español","genre":"Heavy Metal","year":"1998","cover":"","duet":false},{"id":1612,"title":"Mediterráneo","artist":"Joan Manuel Serrat","language":"Español","genre":"Latin","year":"1971","cover":"","duet":false},{"id":1613,"title":"Supremacy","artist":"Muse","language":"English","genre":"Rock","year":"2012","cover":"","duet":false},{"id":1614,"title":"Cha-la head-cha-la (TV)","artist":"Hironobu Kageyama","language":"Japanese","genre":"Anime","year":"1989","cover":"","duet":false},{"id":1615,"title":"No Roots","artist":"Alice Merton","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1616,"title":"Camino Moria","artist":"El Reno Renardo","language":"Español","genre":"Freak Metal","year":null,"cover":"","duet":false},{"id":1617,"title":"Un violinista en tu tejado","artist":"Melendi","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":1618,"title":"Boys Don't Cry","artist":"The Cure","language":"English","genre":"Pop","year":"1979","cover":"","duet":false},{"id":1619,"title":"departure! (TV)","artist":"Masatoshi Ono","language":"Japanese","genre":null,"year":"2011","cover":"","duet":false},{"id":1620,"title":"La canción del Mariachi","artist":"Los Lobos y Antonio Banderas","language":"español","genre":null,"year":null,"cover":"","duet":false},{"id":1621,"title":"Closer to the Edge","artist":"30 Seconds To Mars","language":"English","genre":"Rock","year":null,"cover":"","duet":false},{"id":1622,"title":"No solo respirar","artist":"La Fuga","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":1623,"title":"¿Dónde estás?","artist":"Jaime Urrutia, Enrique Búnbury y Andrés Calamaro","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":1624,"title":"The kill","artist":"30 Seconds to Mars","language":"English","genre":null,"year":"2005","cover":"","duet":false},{"id":1625,"title":"Salvajes irracionales","artist":"Efecto Pasillo","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1626,"title":"Believe (español)","artist":"One Piece","language":"Español","genre":"Anime","year":"2004","cover":"","duet":false},{"id":1627,"title":"This is me","artist":"The Greatest Showman","language":"English","genre":"Musical","year":"2017","cover":"","duet":false},{"id":1628,"title":"Bad Guy","artist":"Billie Eilish","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":1629,"title":"Umbrella","artist":"Rihanna","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":1630,"title":"Comedy","artist":"Gen Hoshino","language":"Japanese","genre":null,"year":"2022","cover":"","duet":false},{"id":1631,"title":"Universo","artist":"Blas Cantó","language":"Español","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1632,"title":"Ateo","artist":"C. Tangana y Nathy Peluso","language":"Español","genre":"Bachata","year":"2021","cover":"","duet":false},{"id":1633,"title":"Ateo","artist":"C. Tangana y Nathy Peluso","language":"Español","genre":"Bachata","year":"2021","cover":"","duet":true},{"id":1634,"title":"Bring Me to Life","artist":"Evanescence","language":"English","genre":"Pop","year":"2003","cover":"","duet":true},{"id":1635,"title":"Bring Me to Life","artist":"Evanescence","language":"English","genre":"Pop","year":"2003","cover":"","duet":false},{"id":1636,"title":"Kaen (TV)","artist":"Ziyoou-vachi","language":"Japanese","genre":null,"year":"2019","cover":"","duet":false},{"id":1637,"title":"Pump Up the Jam","artist":"Technotronic","language":"English","genre":"Pop","year":"1989","cover":"","duet":false},{"id":1638,"title":"Dai Dai","artist":"Shakira feat. Burna Boy","language":"English","genre":null,"year":"2026","cover":"","duet":true},{"id":1639,"title":"Dai Dai","artist":"Shakira feat. Burna Boy","language":"English","genre":null,"year":"2026","cover":"","duet":false},{"id":1640,"title":"Send Me On My Way","artist":"Rusted Root","language":"English","genre":null,"year":"1994","cover":"","duet":false},{"id":1641,"title":"Like a Virgin","artist":"Madonna","language":"English","genre":null,"year":"1984","cover":"","duet":false},{"id":1642,"title":"Rasputin","artist":"Boney M.","language":"English","genre":null,"year":"1978","cover":"","duet":false},{"id":1643,"title":"MUKANJYO (TV)","artist":"Survive Said The Prophet","language":"Japanese","genre":"Anime","year":"2019","cover":"","duet":false},{"id":1644,"title":"Build a B*tch","artist":"Bella Poarch","language":"English","genre":"Pop","year":"2021","cover":"","duet":false},{"id":1645,"title":"Looking for Paradise","artist":"Alejandro Sanz y Alicia Keys","language":"Español","genre":"Other","year":"2009","cover":"","duet":false},{"id":1646,"title":"Jesucristo García","artist":"Extremoduro","language":"Español","genre":"","year":null,"cover":"","duet":false},{"id":1647,"title":"Física o química","artist":"Despistaos","language":"Español","genre":"Pop Rock","year":"2008","cover":"","duet":false},{"id":1648,"title":"Say So","artist":"Doja Cat","language":"English","genre":null,"year":"2019","cover":"","duet":false},{"id":1649,"title":"Nobody","artist":"Wonder Girls","language":"Korean","genre":null,"year":null,"cover":"","duet":false},{"id":1650,"title":"Estoy aquí","artist":"Shakira","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":1651,"title":"I Miss You","artist":"Blink 182","language":"English","genre":"Pop","year":"2003","cover":"","duet":false},{"id":1652,"title":"Con un poco de azúcar","artist":"Mary Poppins","language":"Español","genre":"Soundtrack","year":"1964","cover":"","duet":false},{"id":1653,"title":"Lady Blue","artist":"Enrique Búnbury","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1654,"title":"Snowman","artist":"Sia","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":1655,"title":"Alone","artist":"Alan Walker","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":1656,"title":"Tú volverás","artist":"Ketama","language":"Español","genre":null,"year":"1991","cover":"","duet":false},{"id":1657,"title":"The Fox","artist":"Ylvis","language":"English","genre":null,"year":"2013","cover":"","duet":true},{"id":1658,"title":"The Fox","artist":"Ylvis","language":"English","genre":null,"year":"2013","cover":"","duet":false},{"id":1660,"title":"Hadaka no Yuusha","artist":"Vaundy","language":"Japanese","genre":"Rock","year":"2022","cover":"","duet":false},{"id":1661,"title":"Cabecera","artist":"Caballeros del Zodiaco","language":"Spanish","genre":"Anime","year":null,"cover":"","duet":false},{"id":1662,"title":"Liberian Girl","artist":"Michael Jackson","language":"English","genre":"Pop","year":"1987","cover":"","duet":false},{"id":1663,"title":"Enter sandman","artist":"Metallica","language":"English","genre":"Metal","year":"1991","cover":"","duet":false},{"id":1664,"title":"Chained to the rhythm","artist":"Katy Perry feat. Skip Marley","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":1665,"title":"Chained to the rhythm","artist":"Katy Perry feat. Skip Marley","language":"English","genre":null,"year":"2017","cover":"","duet":true},{"id":1666,"title":"Cabecera (español)","artist":"Sonia Torrecilla (BSO Crayon Shin-chan)","language":"Español","genre":"Dibujos animados","year":"2001","cover":"","duet":false},{"id":1667,"title":"Oto no Naru Hou e (TV)","artist":"Goose house","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":1668,"title":"We Can't Stop","artist":"Miley Cyrus","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":1669,"title":"Dusk till dawn","artist":"ZAYN feat. Sia","language":"English","genre":"Pop","year":"2017","cover":"","duet":true},{"id":1670,"title":"Dusk till dawn","artist":"ZAYN feat. Sia","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1671,"title":"Madrid city","artist":"Ana Mena","language":"Español","genre":"Pop electrónico","year":"2023","cover":"","duet":false},{"id":1672,"title":"Shikisai (TV)","artist":"yama","language":"Japanese","genre":"Anime","year":"2022","cover":"","duet":false},{"id":1673,"title":"Ai","artist":"Kotono Mitsuishi (BSO Excel Saga)","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":1674,"title":"Como una ola","artist":"Rocío Jurado","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1675,"title":"Feels","artist":"Calvin Harris feat. Pharrell Williams, Katy Perry, Big Sean","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1676,"title":"Mi persona favorita","artist":"Alejandro Sanz & Camila Cabello","language":"Español","genre":null,"year":"2019","cover":"","duet":true},{"id":1677,"title":"Mi persona favorita","artist":"Alejandro Sanz & Camila Cabello","language":"Español","genre":null,"year":"2019","cover":"","duet":false},{"id":1678,"title":"El patio","artist":"Pablo López","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1679,"title":"Loba","artist":"Shakira","language":"Español","genre":"Pop Internacional","year":"2009","cover":"","duet":false},{"id":1680,"title":"Cabecera","artist":"Jordi Vila (BSO Bola de Dragón)","language":"Español","genre":"Dibujos animados","year":"1989","cover":"","duet":false},{"id":1681,"title":"Call Me When You're Sober","artist":"Evanescence","language":"English","genre":"Rock","year":"2006","cover":"","duet":false},{"id":1682,"title":"Rose","artist":"ANNA como NANA de Black Stones (BSO NANA)","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":1683,"title":"Puta","artist":"Extremoduro","language":"Español","genre":"Rock Nacional","year":"2002","cover":"","duet":false},{"id":1684,"title":"Cuéntame un cuento","artist":"Celtas Cortos","language":"Español","genre":"","year":"","cover":"","duet":false},{"id":1685,"title":"Kimi wo nosete","artist":"Azumi Inoue","language":"Japanese","genre":"Soundtrack","year":"1986","cover":"","duet":false},{"id":1686,"title":"High Hopes","artist":"Panic! at the Disco","language":"English","genre":"Pop","year":"2018","cover":"","duet":false},{"id":1687,"title":"Eloise","artist":"Tino Casal","language":"Español","genre":null,"year":"1988","cover":"","duet":false},{"id":1688,"title":"Houdini","artist":"Dua Lipa","language":"English","genre":"Nu-disco, Psicodelia, Pop","year":"2023","cover":"","duet":false},{"id":1689,"title":"Que dolor","artist":"Raffaella Carrà","language":"Español","genre":null,"year":"1982","cover":"","duet":false},{"id":1690,"title":"Planetarium","artist":"Otsuka Ai","language":"Japanese","genre":"J-Pop","year":null,"cover":"","duet":false},{"id":1691,"title":"Kyouran Hey Kids!! (TV)","artist":"THE ORAL CIGARETTES","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":1692,"title":"Not Afraid","artist":"Eminem","language":"English","genre":"Hip Hop","year":"2010","cover":"","duet":false},{"id":1693,"title":"Can I Have This Dance? (Dueto)","artist":"High School Musical 3","language":"English","genre":"Soundtrack","year":"2008","cover":"","duet":true},{"id":1694,"title":"4 in the morning","artist":"Gwen Stefani","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1695,"title":"Feel it still","artist":"Portugal. The Man","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1696,"title":"Beautiful Girls","artist":"Sean Kingston","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":1697,"title":"New York, New York","artist":"Frank Sinatra","language":"English","genre":"Vocal","year":"1980","cover":"","duet":false},{"id":1698,"title":"Un genio genial","artist":"Aladdín","language":"Español","genre":"Banda sonora","year":"1992","cover":"","duet":false},{"id":1699,"title":"Ichirin no hana","artist":"High and mighty color","language":"Japanese","genre":"Anime","year":"2005","cover":"","duet":false},{"id":1700,"title":"Ciega, sordomuda","artist":"Shakira","language":"Español","genre":"Pop","year":"1998","cover":"","duet":false},{"id":1701,"title":"Show","artist":"Ado","language":"Japanese","genre":null,"year":"2023","cover":"","duet":false},{"id":1702,"title":"The logical song","artist":"Supertramp","language":"English","genre":"Pop","year":"1979","cover":"","duet":false},{"id":1703,"title":"En qué estrella estará","artist":"Nena Daconte","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1704,"title":"Waka waka (Esto es África)","artist":"Shakira ft. Freshlyground","language":"Español","genre":null,"year":"2010","cover":"","duet":false},{"id":1705,"title":"Hello","artist":"Adele","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1706,"title":"Cuando zarpa el amor","artist":"Camela","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1707,"title":"Demasiado Tarde","artist":"El Sueño de Morfeo","language":"Español","genre":null,"year":"2007","cover":"","duet":false},{"id":1708,"title":"Lo noto","artist":"Hombres G","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1709,"title":"Hikari E (versión corta)","artist":"The Babystars (BSO One Piece)","language":"Japanese","genre":"Anime","year":"2002","cover":"","duet":false},{"id":1710,"title":"Sorairo Days (TV)","artist":"Shoko Nakagawa","language":"Japanese","genre":"Anime","year":"2007","cover":"","duet":false},{"id":1711,"title":"Shut Up And Dance","artist":"WALK THE MOON","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":1712,"title":"No voy a cambiar","artist":"Malú","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1713,"title":"Where is my husband!","artist":"Raye","language":"English","genre":"R&B, Pop","year":"2025","cover":"","duet":false},{"id":1714,"title":"The diary of Jane","artist":"Breaking Benjamin","language":"English","genre":"Nu Metal","year":"2006","cover":"","duet":false},{"id":1715,"title":"Can you feel the love tonight","artist":"Elton John","language":"English","genre":"Bandas sonoras","year":"1994","cover":"","duet":false},{"id":1716,"title":"Al cantar","artist":"Platero y Tú","language":"Español","genre":"Rock","year":"1997","cover":"","duet":false},{"id":1717,"title":"Chouzetsu☆Dynamic! (TV)","artist":"Kazuya Yoshii","language":"Japanese","genre":"Anime","year":"2015","cover":"","duet":false},{"id":1718,"title":"La Bikina","artist":"Luis Miguel","language":"Español","genre":"Huapango","year":"2000","cover":"","duet":false},{"id":1719,"title":"Supermassive Black Hole","artist":"Muse","language":"English","genre":"Rock Alternativo","year":"2006","cover":"","duet":false},{"id":1720,"title":"Shivers","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2021","cover":"","duet":false},{"id":1721,"title":"If We Ever Meet Again","artist":"Timbaland feat. Katy Perry","language":"English","genre":"Pop","year":"2009","cover":"","duet":true},{"id":1722,"title":"If We Ever Meet Again","artist":"Timbaland feat. Katy Perry","language":"English","genre":"Pop","year":"2009","cover":"","duet":false},{"id":1723,"title":"Photograph","artist":"Nickelback","language":"English","genre":"Rock Alternativo","year":"2005","cover":"","duet":false},{"id":1724,"title":"Dime dónde vas","artist":"Anastasia","language":"Español","genre":null,"year":"1997","cover":"","duet":false},{"id":1725,"title":"La chispa adecuada","artist":"Héroes del Silencio","language":"Español","genre":"Rock","year":"1995","cover":"","duet":false},{"id":1726,"title":"Chiki Chiki Ban Ban (TV)","artist":"QUEENDOM","language":"Japanese","genre":"Anime","year":"2022","cover":"","duet":false},{"id":1727,"title":"Only Human","artist":"Jonas Brothers","language":"English","genre":"Reggae","year":"2019","cover":"","duet":false},{"id":1728,"title":"Thriller","artist":"Michael Jackson","language":"English","genre":"Other","year":null,"cover":"","duet":false},{"id":1729,"title":"Dive","artist":"Ed Sheeran","language":"English","genre":"Memphis soul","year":"2017","cover":"","duet":false},{"id":1730,"title":"Resistiré","artist":"Dúo Dinámico","language":"Español","genre":"Pop","year":"1986","cover":"","duet":false},{"id":1731,"title":"En el muelle de San Blas","artist":"Maná","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":1732,"title":"Gone gone gone","artist":"David Guetta, Teddy Swims, Tones and I","language":"English","genre":"Pop, Dance","year":"2025","cover":"","duet":false},{"id":1733,"title":"Gone gone gone","artist":"David Guetta, Teddy Swims, Tones and I","language":"English","genre":"Pop, Dance","year":"2025","cover":"","duet":true},{"id":1734,"title":"Ambiguous","artist":"GARNiDELiA","language":"Japanese","genre":"Jpop","year":"2014","cover":"","duet":false},{"id":1735,"title":"Jet Lag","artist":"Simple Plan ft. Natasha Bedingfield","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":1736,"title":"Love Yourself","artist":"Justin Bieber","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1737,"title":"Just Give Me A Reason","artist":"Pink Ft. Nate Ruess","language":"English","genre":"Pop","year":"2013","cover":"","duet":true},{"id":1738,"title":"Just Give Me A Reason","artist":"Pink Ft. Nate Ruess","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":1739,"title":"Sweet Dreams","artist":"Eurythmics","language":"English","genre":"Pop","year":"1983","cover":"","duet":false},{"id":1740,"title":"Piratas del Bar Caribe","artist":"Melendi","language":"Español","genre":"Pop","year":"2008","cover":"","duet":false},{"id":1741,"title":"All Summer Long","artist":"Kid Rock","language":"English","genre":"Rock","year":"2008","cover":"","duet":false},{"id":1742,"title":"PonPonPon!","artist":"Kyary Pamyu Pamyu","language":"Japanese - Romaji","genre":"J-Pop","year":"2011","cover":"","duet":false},{"id":1743,"title":"PonPonPon! (ひらがな）","artist":"きゃりーぱみゅぱみゅ","language":"Japanese - Hiragana","genre":"J-Pop","year":"2011","cover":"","duet":false},{"id":1744,"title":"PonPonPon! (漢字)","artist":"きゃりーぱみゅぱみゅ","language":"Japanese - Kanji","genre":"J-Pop","year":"2011","cover":"","duet":false},{"id":1745,"title":"Nobody","artist":"OneRepublic","language":"English","genre":"Pop","year":"2024","cover":"","duet":false},{"id":1746,"title":"Crazy 4 U","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2004","cover":"","duet":false},{"id":1747,"title":"Alcohol-Free","artist":"TWICE","language":"Korean","genre":null,"year":"2021","cover":"","duet":false},{"id":1748,"title":"Outnumbered","artist":"Dermot Kennedy","language":"English","genre":null,"year":"2020","cover":"","duet":false},{"id":1749,"title":"Blurred Lines","artist":"Robin Thicke, Pharrell Williams & T.I.","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":1750,"title":"I'm gonna be (500 miles)","artist":"The Proclaimers","language":"English","genre":null,"year":"1988","cover":"","duet":false},{"id":1751,"title":"La raja de tu falda","artist":"Estopa","language":"Español","genre":"Rumba Catalana","year":"1999","cover":"","duet":false},{"id":1752,"title":"Kiss","artist":"Prince","language":"English","genre":"Funk Rock","year":"1986","cover":"","duet":false},{"id":1753,"title":"Dancing in the Moonlight [VIDEO]","artist":"Toploader","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1754,"title":"Happier","artist":"Ed Sheeran","language":"English","genre":"Pop","year":null,"cover":"","duet":false},{"id":1755,"title":"Me quedaré (acústico)","artist":"Estopa","language":"Español","genre":"Rock Catalán","year":"2011","cover":"","duet":false},{"id":1756,"title":"Tsukiakari no Michishirube (TV)","artist":"STEREOPONY","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":1757,"title":"Is This Love","artist":"Whitesnake","language":"English","genre":"rock","year":"1987","cover":"","duet":false},{"id":1758,"title":"Sopa fría","artist":"M Clan","language":"Español","genre":"Rock","year":"2004","cover":"","duet":false},{"id":1759,"title":"Tabi no Tochuu (TV)","artist":"Natsumi Kiyoura","language":"Japanese","genre":"Anime","year":"2008","cover":"","duet":false},{"id":1760,"title":"Silencio","artist":"David Bisbal","language":"Español","genre":"Pop","year":"2006","cover":"","duet":false},{"id":1761,"title":"Si no estás","artist":"El sueño de Morfeo","language":"Español","genre":"Pop Rock","year":"2009","cover":"","duet":false},{"id":1762,"title":"Supercalifragilisticoespialidoso","artist":"Mary Poppins","language":"Español","genre":"Soundtrack","year":"1964","cover":"","duet":false},{"id":1763,"title":"Duvet (TV)","artist":"Bôa","language":"English","genre":"Rock / alternative pop-rock","year":"1996","cover":"","duet":false},{"id":1764,"title":"He wasn't","artist":"Avril Lavigne","language":"English","genre":null,"year":"2004","cover":"","duet":false},{"id":1765,"title":"Tallulah","artist":"Sonata Arctica","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1766,"title":"Can't Feel My Face","artist":"The Weeknd","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1767,"title":"No tears left to cry","artist":"Ariana Grande","language":"English","genre":null,"year":"2018","cover":"","duet":false},{"id":1768,"title":"As It Was","artist":"Harry Styles","language":"English","genre":"Pop","year":"2022","cover":"","duet":false},{"id":1769,"title":"Breeze (TV)","artist":"Megumi Hayashibara","language":"Japanese","genre":"Anime","year":"1997","cover":"","duet":false},{"id":1770,"title":"Solamente tú","artist":"Pablo Alborán","language":"Español","genre":"Pop","year":"2010","cover":"","duet":false},{"id":1771,"title":"I'm Just A Kid","artist":"Simple Plan","language":"English","genre":null,"year":"2002","cover":"","duet":false},{"id":1772,"title":"Somebody Told Me","artist":"The Killers","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":1773,"title":"Ropa cara","artist":"Camilo","language":"Español","genre":"Reggaetón","year":"2021","cover":"","duet":false},{"id":1774,"title":"Devuélveme La Vida","artist":"Antonio Orozco","language":"Español","genre":"Pop","year":"2002","cover":"","duet":false},{"id":1775,"title":"Stay","artist":"The Kid Laroi & Justin Bieber","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1776,"title":"Want To Want Me","artist":"Jason Derulo","language":"English","genre":"Pop","year":null,"cover":"","duet":false},{"id":1777,"title":"The Day (TV)","artist":"Porno Graffitti","language":"Japanese","genre":null,"year":"2016","cover":"","duet":false},{"id":1778,"title":"Californication","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock","year":"1999","cover":"","duet":false},{"id":1779,"title":"Mi carro","artist":"Manolo Escobar","language":"Español","genre":null,"year":"1969","cover":"","duet":false},{"id":1780,"title":"Outside","artist":"Calvin Harris feat. Ellie Goulding","language":"English","genre":"Electrodance","year":"2014","cover":"","duet":false},{"id":1781,"title":"yes, and?","artist":"Ariana Grande","language":"English","genre":null,"year":"2024","cover":"","duet":false},{"id":1782,"title":"Si amaneciera","artist":"Saratoga","language":"Español","genre":"Rock","year":"2004","cover":"","duet":false},{"id":1783,"title":"Nothing Breaks Like a Heart","artist":"Mark Ronson ft  Miley Cyrus","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1784,"title":"Entre poetas y presos","artist":"La Raíz","language":"Español","genre":"Rock","year":"2016","cover":"","duet":false},{"id":1785,"title":"New Born","artist":"Muse","language":"English","genre":"Rock Alternative","year":"2001","cover":"","duet":false},{"id":1786,"title":"Have a nice day","artist":"Bon Jovi","language":"English","genre":"Hard Rock","year":"2005","cover":"","duet":false},{"id":1787,"title":"Fuel","artist":"Metallica","language":"English","genre":"Hard Rock","year":"1997","cover":"","duet":false},{"id":1788,"title":"Call Me Maybe","artist":"Carly Rae Jepsen","language":"English","genre":null,"year":"2012","cover":"","duet":false},{"id":1789,"title":"Víveme","artist":"Laura Pausini y Alejandro Sanz","language":"Español","genre":null,"year":"2013","cover":"","duet":true},{"id":1790,"title":"Víveme","artist":"Laura Pausini y Alejandro Sanz","language":"Español","genre":null,"year":"2013","cover":"","duet":false},{"id":1791,"title":"Innocent ~Mujaki na Mama de~ (TV)","artist":"Kouji Wada","language":"Japanese","genre":"Anime","year":"2002","cover":"","duet":false},{"id":1792,"title":"History Maker (TV)","artist":"Dean Fujioka","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":1793,"title":"I'm not okay (I promise)","artist":"My Chemical Romance","language":"English","genre":"Pop Punk","year":"2004","cover":"","duet":false},{"id":1794,"title":"Pero a tu lado","artist":"Los Secretos","language":"Español","genre":"Pop","year":"1995","cover":"","duet":false},{"id":1795,"title":"Otra vez","artist":"Coti","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":1796,"title":"How Soon is Now","artist":"The Smiths","language":"English","genre":"Rock Alternativo","year":"1984","cover":"","duet":false},{"id":1797,"title":"1/3 no junjô na kanjô","artist":"Siam Shade","language":"Japanese","genre":"Anime","year":"1997","cover":"","duet":false},{"id":1798,"title":"Warriors","artist":"Imagine Dragons","language":"English","genre":"Alternative rock","year":"2014","cover":"","duet":false},{"id":1799,"title":"Vida de rico","artist":"Camilo","language":"Español","genre":"Pop","year":"2020","cover":"","duet":false},{"id":1800,"title":"Cómo te atreves","artist":"Morat","language":"Español","genre":"Pop","year":"2016","cover":"","duet":false},{"id":1801,"title":"C.h.a.o.s.m.y.t.h.","artist":"ONE OK ROCK","language":"Japanese","genre":"Jrock","year":"2011","cover":"","duet":false},{"id":1802,"title":"Porque te vas","artist":"Jeanette","language":"Español","genre":null,"year":"1974","cover":"","duet":false},{"id":1803,"title":"Hijos de Caín","artist":"Barón Rojo","language":"Español","genre":"Heavy metal","year":"1985","cover":"","duet":false},{"id":1804,"title":"Together Forever","artist":"Rick Astley","language":"English","genre":null,"year":"1987","cover":"","duet":false},{"id":1805,"title":"Puede ser","artist":"Conchita","language":"Español","genre":"Pop","year":"2007","cover":"","duet":false},{"id":1806,"title":"El Aleph","artist":"Nena Daconte","language":"Español","genre":"Pop","year":"2009","cover":"","duet":false},{"id":1807,"title":"Message in a bottle","artist":"The Police","language":"English","genre":"New Wave","year":"1979","cover":"","duet":false},{"id":1808,"title":"Tik tok","artist":"Ke$ha","language":"English","genre":"Pop","year":"2009","cover":"","duet":false},{"id":1809,"title":"SloMo","artist":"Chanel","language":"Español","genre":"Dance, pop","year":"2022","cover":"","duet":false},{"id":1810,"title":"Un mundo ideal","artist":"Aladdín","language":"Español","genre":null,"year":"1992","cover":"","duet":false},{"id":1811,"title":"Here With Me","artist":"Marshmello feat. CHVRCHES","language":"English","genre":"Electronic","year":"2019","cover":"","duet":false},{"id":1812,"title":"Frente a frente","artist":"Jeanette","language":"Español","genre":null,"year":"1981","cover":"","duet":false},{"id":1813,"title":"With or without you","artist":"U2","language":"English","genre":"Rock","year":"1987","cover":"","duet":false},{"id":1814,"title":"Me quedaré solo","artist":"Amistades Peligrosas","language":"Español","genre":"Pop","year":"1996","cover":"","duet":false},{"id":1815,"title":"Me quedaré solo","artist":"Amistades Peligrosas","language":"Español","genre":"Pop","year":"1996","cover":"","duet":true},{"id":1816,"title":"Cold Heart","artist":"Elton John and Dua Lipa","language":"English","genre":"Pop","year":"2021","cover":"","duet":true},{"id":1817,"title":"Cold Heart","artist":"Elton John and Dua Lipa","language":"English","genre":"Pop","year":"2021","cover":"","duet":false},{"id":1818,"title":"Corazón contento","artist":"Marisol","language":"Español","genre":"Pop","year":"1968","cover":"","duet":false},{"id":1819,"title":"Adiós papá","artist":"Los Ronaldos","language":"Español","genre":"Rock","year":"1988","cover":"","duet":false},{"id":1820,"title":"Die with a smile","artist":"Lady Gaga & Bruno Mars","language":"English","genre":"Pop","year":"2024","cover":"","duet":false},{"id":1821,"title":"Rocket Man","artist":"Elton John","language":"English","genre":"Pop","year":"1972","cover":"","duet":false},{"id":1822,"title":"War Pigs","artist":"Black Sabbath","language":"English","genre":"Heavy Metal","year":"1970","cover":"","duet":false},{"id":1823,"title":"My Head & My Heart","artist":"Ava Max","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":1824,"title":"Ode to my family","artist":"The Cranberries","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1825,"title":"You are not alone","artist":"Michael Jackson","language":"English","genre":"Pop","year":"1995","cover":"","duet":false},{"id":1826,"title":"Don't Call Me Up","artist":"Mabel","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1827,"title":"Heroes","artist":"Måns Zelmerlöw","language":"English","genre":null,"year":"2015","cover":"","duet":false},{"id":1828,"title":"No es lo mismo","artist":"Alejandro Sanz","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":1829,"title":"Jiyuu no Tsubasa (TV)","artist":"Linked Horizon","language":"Japanese","genre":"J-Rock","year":"2013","cover":"","duet":false},{"id":1830,"title":"Ya nada volverá a ser como antes","artist":"El canto del loco","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1831,"title":"Cabecera","artist":"David, el gnomo","language":"Español","genre":"Dibujos animados","year":"1985","cover":"","duet":false},{"id":1832,"title":"Just can't get enough","artist":"Depeche Mode","language":"English","genre":"Synthpop","year":"1981","cover":"","duet":false},{"id":1833,"title":"Judas","artist":"Lady GaGa","language":"English","genre":"Dance","year":"2011","cover":"","duet":false},{"id":1834,"title":"The Show Must Go On","artist":"Nicole Kidman & Jim Broadbent (Moulin Rouge)","language":"English","genre":null,"year":"2001","cover":"","duet":false},{"id":1835,"title":"Stupid little things","artist":"Anastacia","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":1836,"title":"Cabecera","artist":"Digimon","language":"Español","genre":"Dibujos animados","year":"1999","cover":"","duet":false},{"id":1837,"title":"Cheque al portamor","artist":"Melendi","language":"Español","genre":"Balada","year":"2012","cover":"","duet":false},{"id":1838,"title":"Haven't Met You Yet","artist":"Michael Bublé","language":"English","genre":"Pop","year":"2009","cover":"","duet":false},{"id":1839,"title":"Promise","artist":"Kohmi Hirose","language":"Japanese","genre":null,"year":"1997","cover":"","duet":false},{"id":1840,"title":"Sargento Keroro (TV)","artist":"Eba Ojanguren","language":"Español","genre":"Anime","year":"2004","cover":"","duet":false},{"id":1841,"title":"Tractor amarillo","artist":"Zapato Veloz","language":"Español","genre":null,"year":"1992","cover":"","duet":false},{"id":1842,"title":"Hablame de ti","artist":"Los Pecos","language":"Español","genre":null,"year":"1979","cover":"","duet":false},{"id":1843,"title":"Asterisk (TV)","artist":"Orange Range","language":"Japanese","genre":"J-Rock","year":"2004","cover":"","duet":false},{"id":1844,"title":"I Love It","artist":"Icona Pop & Charli XCX","language":"English","genre":"Pop","year":"2012","cover":"","duet":false},{"id":1845,"title":"Mune ga doki doki (TV)","artist":"The High-Lows","language":"Japanese","genre":"Anime","year":"1996","cover":"","duet":false},{"id":1846,"title":"Bulería","artist":"David Bisbal","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1847,"title":"Nakushita Kotoba (TV)","artist":"No Regret Life","language":"Japanese","genre":null,"year":"2005","cover":"","duet":false},{"id":1848,"title":"The emptiness machine","artist":"Linkin Park","language":"English","genre":"Nu Metal","year":"2024","cover":"","duet":false},{"id":1849,"title":"Eres Un Enfermo","artist":"Las Supremas de Móstoles","language":"Español","genre":"Pop","year":"2005","cover":"","duet":false},{"id":1850,"title":"Baton Road (TV)","artist":"KANA-BOON","language":"Japanese","genre":null,"year":"2017","cover":"","duet":false},{"id":1851,"title":"Sweet but Psycho","artist":"Ava Max","language":"English","genre":null,"year":"2018","cover":"","duet":false},{"id":1852,"title":"The game of love","artist":"Santana Feat. Michelle Branch","language":"English","genre":"Pop","year":"2002","cover":"","duet":false},{"id":1853,"title":"Sobakasu (TV)","artist":"Judy And Mary","language":"Japanese","genre":"Anime","year":"1999","cover":"","duet":false},{"id":1854,"title":"Change the World (TV)","artist":"V6","language":"Japanese","genre":null,"year":"2000","cover":"","duet":false},{"id":1855,"title":"Who Let The Dogs Out?","artist":"Baha Men","language":"English","genre":"Raggae Pop","year":"2000","cover":"","duet":false},{"id":1856,"title":"Training Season","artist":"Dua Lipa","language":"English","genre":"Pop, Dance-Pop","year":"2024","cover":"","duet":false},{"id":1857,"title":"Save your tears","artist":"The Weeknd","language":"English","genre":"Pop","year":"2020","cover":"","duet":false},{"id":1858,"title":"Hoshi no Utsuwa","artist":"Sukima Switch","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":1859,"title":"Cherish","artist":"Ai Otsuka","language":"Japanese","genre":"J-Pop","year":"2005","cover":"","duet":false},{"id":1860,"title":"Peaches","artist":"Jack Black","language":"English","genre":"Comedy","year":"2023","cover":"","duet":false},{"id":1862,"title":"Nunca volverá","artist":"El sueño de Morfeo","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1863,"title":"Stand by me","artist":"Ben E. King","language":"English","genre":"Clásicos","year":"1961","cover":"","duet":false},{"id":1864,"title":"La promesa","artist":"Melendi","language":"Español","genre":null,"year":"2014","cover":"","duet":false},{"id":1865,"title":"Party!! (TV)","artist":"Ryokuoushoku Shakai","language":"Japanese","genre":null,"year":"2024","cover":"","duet":false},{"id":1866,"title":"Yume Tourou","artist":"RADWIMPS","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":1867,"title":"¿Qué pides tú?","artist":"Alex Ubago","language":"Español","genre":"Pop","year":"2001","cover":"","duet":false},{"id":1868,"title":"Dollhouse","artist":"Melanie Martinez","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":1869,"title":"Stan","artist":"Eminem ft. Dido","language":"English","genre":"HipHop","year":"2005","cover":"","duet":false},{"id":1870,"title":"Telephone","artist":"Lady GaGa Ft. Beyoncé","language":"English","genre":"Pop","year":"2009","cover":"","duet":false},{"id":1871,"title":"Pieces Of Me","artist":"Ashlee Simpson","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":1872,"title":"Let it be","artist":"The Beatles","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1873,"title":"Hana ni natte (TV)","artist":"Ryokuoushoku Shakai","language":"Japanese","genre":"J-pop","year":"2023","cover":"","duet":false},{"id":1874,"title":"Mocatriz","artist":"Ojete Calor","language":"Español","genre":"Subnopop","year":"2019","cover":"","duet":false},{"id":1875,"title":"París","artist":"La Oreja de Van Gogh","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1876,"title":"La Puerta de Alcalá","artist":"Ana Belén y Victor Manuel","language":"Español","genre":null,"year":"1986","cover":"","duet":false},{"id":1877,"title":"La Puerta de Alcalá","artist":"Ana Belén y Victor Manuel","language":"Español","genre":null,"year":"1986","cover":"","duet":true},{"id":1878,"title":"Lean On","artist":"Major Lazer & DJ Snake feat. MØ","language":"English","genre":"EDM","year":"2015","cover":"","duet":false},{"id":1879,"title":"Brave Heart","artist":"Ayumi Miyazaki","language":"Japanese","genre":"Anime","year":"1999","cover":"","duet":false},{"id":1880,"title":"Baka Survivor (TV)","artist":"Ulfuls","language":"Japanese","genre":"Jpop","year":"2004","cover":"","duet":false},{"id":1881,"title":"Ay mamá","artist":"Rigoberta Bandini","language":"Español","genre":"Pop","year":"2022","cover":"","duet":false},{"id":1882,"title":"Contando lunares","artist":"Don Patricio y Cruz Cafuné","language":"Español","genre":"Pop / Rap","year":"2019","cover":"","duet":false},{"id":1883,"title":"Kesenai tsumi","artist":"Nana Kitade","language":"Japanese","genre":null,"year":null,"cover":"","duet":false},{"id":1884,"title":"La costa del silencio","artist":"Mägo de Oz","language":"Español","genre":"Rock","year":"2003","cover":"","duet":false},{"id":1885,"title":"Oniria e insomnia","artist":"Love Of Lesbian","language":"Español","genre":"Pop","year":"2012","cover":"","duet":false},{"id":1886,"title":"Geografía","artist":"La Oreja de Van Gogh","language":"Español","genre":"Latin Pop","year":"2003","cover":"","duet":false},{"id":1887,"title":"Ambivalent (TV)","artist":"Uru","language":"Japanese","genre":"J-pop","year":"2024","cover":"","duet":false},{"id":1888,"title":"What is love","artist":"Haddaway","language":"English","genre":"Eurodance","year":"1993","cover":"","duet":false},{"id":1889,"title":"Bet On It","artist":"High School Musical 2","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":1890,"title":"Kogarashi Sentiment (TV)","artist":"Chiwa Saito & Shinichiro Miki","language":"Japanese","genre":"Anime","year":"2013","cover":"","duet":false},{"id":1891,"title":"Kogarashi Sentiment (TV)","artist":"Chiwa Saito & Shinichiro Miki","language":"Japanese","genre":"Anime","year":"2013","cover":"","duet":true},{"id":1892,"title":"Idol (TV)","artist":"YOASOBI","language":"Japanese","genre":"Anime","year":"2023","cover":"","duet":false},{"id":1893,"title":"Bam Bam","artist":"Camila Cabello ft. Ed Sheeran","language":"English","genre":null,"year":"2022","cover":"","duet":false},{"id":1894,"title":"Bam Bam","artist":"Camila Cabello ft. Ed Sheeran","language":"English","genre":null,"year":"2022","cover":"","duet":true},{"id":1895,"title":"Astronaut","artist":"Simple Plan","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":1896,"title":"Zorra","artist":"Nebulossa","language":"Español","genre":"Dance & DJ","year":"2023","cover":"","duet":false},{"id":1897,"title":"B.Y.O.B.","artist":"System Of A Down","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1898,"title":"Gurenge (TV)","artist":"LiSA","language":"Japanese","genre":"Anime","year":"2019","cover":"","duet":false},{"id":1899,"title":"Satellite","artist":"Rise Against","language":"English","genre":"Punk Rock","year":"2011","cover":"","duet":false},{"id":1900,"title":"Por mi tripa","artist":"Pereza","language":"Español","genre":"Rock Español","year":"2008","cover":"","duet":false},{"id":1901,"title":"Con calma","artist":"Daddy Yankee con Snow","language":"Español","genre":null,"year":"2019","cover":"","duet":false},{"id":1902,"title":"Sakura (K)","artist":"Ikimono Gakari","language":"Japanese","genre":"J-Pop","year":null,"cover":"","duet":false},{"id":1903,"title":"Sakura","artist":"Ikimono Gakari","language":"Japanese","genre":"J-Pop","year":null,"cover":"","duet":false},{"id":1904,"title":"Un velero llamado libertad","artist":"José Luis Perales","language":"Español","genre":null,"year":"1979","cover":"","duet":false},{"id":1905,"title":"Xana","artist":"Avalanch","language":"Español","genre":"Power Metal","year":"2001","cover":"","duet":false},{"id":1906,"title":"Shoujo S","artist":"SCANDAL","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":1907,"title":"I'm with you","artist":"Avril Lavigne","language":"English","genre":"Pop","year":"2002","cover":"","duet":false},{"id":1908,"title":"Pussy","artist":"Rammstein","language":"English","genre":null,"year":"2009","cover":"","duet":false},{"id":1909,"title":"Get Lucky","artist":"Daft Punk","language":"English","genre":"Electronic Music","year":"2013","cover":"","duet":false},{"id":1910,"title":"Despechá","artist":"Rosalía","language":"Español","genre":"Mambo, electropop","year":"2022","cover":"","duet":false},{"id":1911,"title":"feelslikeimfallinginlove","artist":"Coldplay","language":"English","genre":"Pop","year":"2024","cover":"","duet":false},{"id":1912,"title":"From Yesterday","artist":"30 Seconds To Mars","language":"English","genre":"Other","year":"2005","cover":"","duet":false},{"id":1913,"title":"Orgullo","artist":"El Barrio","language":"Español","genre":"Flamenco","year":"2008","cover":"","duet":false},{"id":1914,"title":"In the stars","artist":"Benson Boone","language":"English","genre":null,"year":"2022","cover":"","duet":false},{"id":1915,"title":"Lush Life","artist":"Zara Larsson","language":"English","genre":"Pop","year":"2015","cover":"","duet":false},{"id":1916,"title":"Canción del negrito (La canción del Cola-Cao)","artist":"Cola-Cao","language":"Español","genre":null,"year":"1956","cover":"","duet":false},{"id":1917,"title":"Believer","artist":"Imagine Dragons","language":"English","genre":"Pop","year":"2017","cover":"","duet":false},{"id":1918,"title":"Man on the Moon","artist":"R.E.M.","language":"English","genre":"Rock Alternativo","year":"1992","cover":"","duet":false},{"id":1919,"title":"Starman","artist":"David Bowie","language":"English","genre":"Glam Rock","year":"1972","cover":"","duet":false},{"id":1920,"title":"American Woman","artist":"Lenny Kravitz","language":"English","genre":"Funk rock","year":"1999","cover":"","duet":false},{"id":1921,"title":"I CAN'T STOP ME","artist":"TWICE","language":"Korean","genre":null,"year":"2020","cover":"","duet":false},{"id":1922,"title":"Perfect","artist":"Simple Plan","language":"English","genre":"Punk","year":"2002","cover":"","duet":false},{"id":1923,"title":"Antes que ver el sol","artist":"Coti","language":"Español","genre":"Pop","year":"2002","cover":"","duet":false},{"id":1924,"title":"Can't fight the moonlight","artist":"LeAnn Rimes","language":"English","genre":"Pop","year":"2000","cover":"","duet":false},{"id":1925,"title":"Try","artist":"Pink","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1926,"title":"La razón","artist":"Ana Mena y GALE","language":"Español","genre":"Dance pop","year":"2024","cover":"","duet":true},{"id":1927,"title":"La razón","artist":"Ana Mena y GALE","language":"Español","genre":"Dance pop","year":"2024","cover":"","duet":false},{"id":1928,"title":"Netsujou no Spectrum (TV)","artist":"Ikimono Gakari","language":"Japanese","genre":null,"year":"2014","cover":"","duet":false},{"id":1929,"title":"9 to 5","artist":"Dolly Parton","language":"English","genre":"Country","year":"1980","cover":"","duet":false},{"id":1930,"title":"Lego House","artist":"Ed Sheeran","language":"English","genre":"Pop","year":"2011","cover":"","duet":false},{"id":1931,"title":"Terra","artist":"Tanxugueiras","language":"Galician","genre":"Folklore, Urbano, Elecrónico","year":"2022","cover":"","duet":false},{"id":1932,"title":"The Beginning","artist":"ONE OK ROCK","language":"Japanese","genre":"Jrock","year":"2012","cover":"","duet":false},{"id":1933,"title":"Sueños rotos","artist":"La Quinta Estación","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1934,"title":"Dance Monkey","artist":"Tones and I","language":"English","genre":"Alternative","year":"2019","cover":"","duet":false},{"id":1935,"title":"Sore wa Chiisana Hikari no You na (TV)","artist":"Sayuri","language":"Japanese","genre":null,"year":"2016","cover":"","duet":false},{"id":1936,"title":"Left Outside Alone","artist":"Anastacia","language":"English","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1937,"title":"Geometría polisentimental","artist":"Fangoria","language":"Español","genre":null,"year":"2016","cover":"","duet":false},{"id":1938,"title":"Puede ser","artist":"El Canto del Loco y Amaia Montero","language":"Español","genre":null,"year":"2002","cover":"","duet":true},{"id":1939,"title":"Puede ser","artist":"El Canto del Loco y Amaia Montero","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":1940,"title":"Who's That Chick","artist":"David Guetta feat. Rihanna","language":"English","genre":"Electro-Pop","year":"2010","cover":"","duet":false},{"id":1941,"title":"Sakura Saku (español)","artist":"Ana Orra (BSO Love Hina)","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1942,"title":"Jueves","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop Nacional","year":"2008","cover":"","duet":false},{"id":1943,"title":"Siempre estoy soñando","artist":"Fito & Fitipaldis","language":"Español","genre":null,"year":"2004","cover":"","duet":false},{"id":1944,"title":"Veneno en la piel","artist":"Radio Futura","language":"Español","genre":"Rock","year":"1990","cover":"","duet":false},{"id":1945,"title":"El regalo más grande","artist":"Tiziano Ferro y Amaia Montero","language":"Español","genre":"Pop","year":"2009","cover":"","duet":false},{"id":1946,"title":"Without You","artist":"The Kid Laroi and Miley Cyrus","language":"English","genre":"Folk-pop, rap emo","year":"2021","cover":"","duet":true},{"id":1947,"title":"Without You","artist":"The Kid Laroi and Miley Cyrus","language":"English","genre":"Folk-pop, rap emo","year":"2021","cover":"","duet":false},{"id":1948,"title":"Flash","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":1949,"title":"Nunca me acuerdo de olvidarte","artist":"Shakira","language":"Español","genre":"Pop","year":"2014","cover":"","duet":false},{"id":1950,"title":"Koi no Dance Site","artist":"Morning Musume","language":"Japanese","genre":null,"year":"2000","cover":"","duet":false},{"id":1951,"title":"Passion","artist":"Utada Hikaru","language":"Japanese","genre":"J-Pop","year":null,"cover":"","duet":false},{"id":1952,"title":"Standby","artist":"Extremoduro","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":1953,"title":"Love of my life","artist":"Queen","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1954,"title":"Livin' On The Edge","artist":"Aerosmith","language":"English","genre":null,"year":"1993","cover":"","duet":false},{"id":1955,"title":"Hay un amigo en mí","artist":"Disney (BSO Toy Story (Juguetes))","language":"Español","genre":null,"year":"1995","cover":"","duet":false},{"id":1956,"title":"Don't Stop Me Now","artist":"Queen","language":"English","genre":"Rock","year":"1978","cover":"","duet":false},{"id":1957,"title":"La revolución sexual","artist":"La Casa Azul","language":"Español","genre":"Indie Pop","year":"2007","cover":"","duet":false},{"id":1958,"title":"My Generation (Live at Leeds)","artist":"The Who","language":"English","genre":"Rock","year":"1965","cover":"","duet":false},{"id":1959,"title":"Gabriela","artist":"KATSEYE","language":"English","genre":null,"year":"2025","cover":"","duet":false},{"id":1960,"title":"Don't stop 'till you get enough","artist":"Michael Jackson","language":"English","genre":"Disco","year":"1979","cover":"","duet":false},{"id":1961,"title":"Burn (TV)","artist":"YamaxWurtS","language":"Japanese","genre":"Pop","year":"2025","cover":"","duet":false},{"id":1962,"title":"Dream on","artist":"Aerosmith","language":"English","genre":"Other","year":"1973","cover":"","duet":false},{"id":1963,"title":"Hadaka no Yuusha (TV)","artist":"Vaundy","language":"Japanese","genre":"Rock","year":"2022","cover":"","duet":false},{"id":1964,"title":"I Want You Back","artist":"The Jackson 5","language":"English","genre":"Pop","year":"1969","cover":"","duet":false},{"id":1965,"title":"Q&A Recital! (TV)","artist":"Haruka Tomatsu","language":"Japanese","genre":"Anime","year":"2012","cover":"","duet":false},{"id":1966,"title":"Final Countdown","artist":"Europe","language":"English","genre":"Pop","year":"1986","cover":"","duet":false},{"id":1967,"title":"Man! I Feel Like a Woman!","artist":"Shania Twain","language":"English","genre":null,"year":"1999","cover":"","duet":false},{"id":1968,"title":"Cada vez cadáver","artist":"Fito y Fitipaldis","language":"Español","genre":"Pop","year":"2021","cover":"","duet":false},{"id":1969,"title":"Sakura Drops","artist":"Utada Hikaru","language":"Japanese","genre":"J-pop","year":"2002","cover":"","duet":false},{"id":1970,"title":"The Pretender","artist":"Foo Fighters","language":"English","genre":null,"year":"2007","cover":"","duet":false},{"id":1971,"title":"Young Folks","artist":"Peter Bjorn And John Featuring Victoria Bergsman","language":"English","genre":"Pop","year":"2006","cover":"","duet":false},{"id":1972,"title":"Angels","artist":"Robbie Williams","language":"English","genre":null,"year":"1997","cover":"","duet":false},{"id":1973,"title":"Jet Lag (Duett)","artist":"Simple Plan ft. Natasha Bedingfield","language":"English","genre":"Pop","year":"2011","cover":"","duet":true},{"id":1974,"title":"Real Emotion","artist":"Koda Kumi","language":"Japanese","genre":"Other","year":null,"cover":"","duet":false},{"id":1975,"title":"Celestial","artist":"Ed Sheeran & Pokémon","language":"English","genre":"Pop","year":"2022","cover":"","duet":false},{"id":1976,"title":"Las 12","artist":"Ana Mena y Belinda","language":"Español","genre":"Urbano latino","year":"2022","cover":"","duet":false},{"id":1977,"title":"Las 12","artist":"Ana Mena y Belinda","language":"Español","genre":"Urbano latino","year":"2022","cover":"","duet":true},{"id":1978,"title":"True Love","artist":"P!nk ft. Lily Allen","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":1979,"title":"Finesse (Remix)","artist":"Bruno Mars & Cardi B","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":1980,"title":"After dark (TV)","artist":"Asian Kung-fu Generation","language":"Japanese","genre":"Anime","year":"2007","cover":"","duet":false},{"id":1981,"title":"Step you","artist":"Ayumi Hamasaki","language":"Japanese","genre":"Jpop","year":"2005","cover":"","duet":false},{"id":1982,"title":"homura","artist":"LiSA","language":"Japanese","genre":"J-Pop","year":"2020","cover":"","duet":false},{"id":1983,"title":"Borro Cassette","artist":"Maluma","language":"Español","genre":"Reggaetón","year":"2015","cover":"","duet":false},{"id":1984,"title":"What's My Age Again?","artist":"Blink 182","language":"English","genre":"Pop","year":"1999","cover":"","duet":false},{"id":1985,"title":"Yonaguni","artist":"Bad Bunny","language":"Español","genre":"Reggaetón","year":"2021","cover":"","duet":false},{"id":1986,"title":"Suzume","artist":"Radwimps feat. Toaka","language":"Japanese","genre":"Soundtrack","year":"2022","cover":"","duet":false},{"id":1987,"title":"Everybody Hurts","artist":"R.E.M.","language":"English","genre":"Pop","year":"1996","cover":"","duet":false},{"id":1988,"title":"Boom, Boom, Boom, Boom!!","artist":"Vengaboys","language":"English","genre":"Dance","year":"1998","cover":"","duet":false},{"id":1989,"title":"Déjame","artist":"Los Secretos","language":"Español","genre":"Pop","year":"1981","cover":"","duet":false},{"id":1990,"title":"The Drug In Me Is You","artist":"Falling In Reverse","language":"English","genre":"Pop Punk","year":"2011","cover":"","duet":false},{"id":1991,"title":"Hold Me Now (TV)","artist":"Nai Br.XX and Celeina Ann","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":1992,"title":"Bad","artist":"Michael Jackson","language":"English","genre":"Pop","year":"1987","cover":"","duet":false},{"id":1993,"title":"Akari (TV)","artist":"Soushi Sakiyama","language":"Japanese","genre":"J-pop","year":"2023","cover":"","duet":false},{"id":1994,"title":"Dramas y comedias","artist":"Fangoria","language":"Español","genre":null,"year":"2013","cover":"","duet":false},{"id":1995,"title":"Perdóname","artist":"La Oreja de Van Gogh","language":"Español","genre":"Pop","year":"2003","cover":"","duet":false},{"id":1996,"title":"¡Carnaval mágico!","artist":"Blanca Rada","language":"Español","genre":"Anime","year":"2000","cover":"","duet":false},{"id":1997,"title":"Let me hear (TV)","artist":"Fear, and Loathing in Las Vegas","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":1998,"title":"Melodies of Life","artist":"Final Fantasy","language":"English","genre":"Pop","year":null,"cover":"","duet":false},{"id":1999,"title":"19 días y 500 noches","artist":"Joaquín Sabina","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":2000,"title":"Rock DJ","artist":"Robbie Williams","language":"English","genre":null,"year":"2000","cover":"","duet":false},{"id":2001,"title":"Dancing Queen","artist":"ABBA","language":"English","genre":null,"year":"1976","cover":"","duet":false},{"id":2002,"title":"Volverte a ver","artist":"Juanes","language":"Español","genre":"Pop","year":"2004","cover":"","duet":false},{"id":2003,"title":"Lovesick Girls","artist":"BLACKPINK","language":"Korean","genre":null,"year":"2020","cover":"","duet":false},{"id":2004,"title":"El burrito sabanero","artist":"David Bisbal","language":"Español","genre":"Carol, Villancico","year":"2024","cover":"","duet":false},{"id":2005,"title":"Crazy","artist":"Aerosmith","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":2006,"title":"Crazy","artist":"Aerosmith","language":"English","genre":null,"year":"1994","cover":"","duet":false},{"id":2007,"title":"With You","artist":"Linkin Park","language":"English","genre":"Rock","year":"2000","cover":"","duet":false},{"id":2008,"title":"With You","artist":"Linkin Park","language":"English","genre":"Rock","year":"2000","cover":"","duet":true},{"id":2009,"title":"Burn","artist":"Ellie Goulding","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":2010,"title":"Me enamora","artist":"Juanes","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":2011,"title":"When You Were Young","artist":"The Killers","language":"English","genre":"Pop","year":"2006","cover":"","duet":false},{"id":2012,"title":"Hanabi","artist":"Ikimono gakari","language":"Japanese","genre":"Anime","year":"2006","cover":"","duet":false},{"id":2013,"title":"READY STEADY GO","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":2014,"title":"Chop Suey!","artist":"System of a Down","language":"English","genre":"Metal Alternativo","year":"2001","cover":"","duet":false},{"id":2015,"title":"Besos","artist":"El canto del loco","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":2016,"title":"Mighty Long Fall","artist":"ONE OK ROCK","language":"English","genre":"Jrock","year":"2014","cover":"","duet":false},{"id":2017,"title":"Blank Space","artist":"Taylor Swift","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":2018,"title":"Moriría por vos","artist":"Amaral","language":"Español","genre":null,"year":"2002","cover":"","duet":false},{"id":2019,"title":"Escándalo","artist":"Raphael","language":"Español","genre":null,"year":"1991","cover":"","duet":false},{"id":2020,"title":"Poker Face","artist":"Lady GaGa","language":"English","genre":null,"year":"2009","cover":"","duet":false},{"id":2021,"title":"Let Me Entertain You","artist":"Robbie Williams","language":"English","genre":"Pop","year":"1998","cover":"","duet":false},{"id":2022,"title":"Through the fire and flames","artist":"DragonForce","language":"English","genre":"Other","year":"2006","cover":"","duet":false},{"id":2023,"title":"Hysteria","artist":"Muse","language":"English","genre":"Rock Alternativo","year":"2003","cover":"","duet":false},{"id":2024,"title":"Revolución (En directo)","artist":"Amaral","language":"Español","genre":"Rock","year":"2005","cover":"","duet":false},{"id":2025,"title":"Uso (TV)","artist":"Sid","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":2026,"title":"Before I Forget","artist":"Slipknot","language":"English","genre":"Metal Alternativo","year":"2004","cover":"","duet":false},{"id":2027,"title":"Dame veneno","artist":"Los Chunguitos","language":"Español","genre":"Rumba Flamenca","year":"1977","cover":"","duet":false},{"id":2028,"title":"Bailaré sobre tu tumba","artist":"Siniestro Total","language":"Español","genre":"Punk Rock","year":"1985","cover":"","duet":false},{"id":2029,"title":"Formentera","artist":"Aitana y Nicki Nicole","language":"Español","genre":"Reguetón","year":"2021","cover":"","duet":true},{"id":2030,"title":"Formentera","artist":"Aitana y Nicki Nicole","language":"Español","genre":"Reguetón","year":"2021","cover":"","duet":false},{"id":2031,"title":"Lobo-hombre en París","artist":"La Unión","language":"Español","genre":null,"year":"1984","cover":"","duet":false},{"id":2032,"title":"Parallel Universe","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock Alternativo","year":"1999","cover":"","duet":false},{"id":2033,"title":"La bicicleta","artist":"Carlos Vives y Shakira","language":"Español","genre":"Vallenato","year":"2016","cover":"","duet":false},{"id":2034,"title":"La bicicleta","artist":"Carlos Vives y Shakira","language":"Español","genre":"Vallenato","year":"2016","cover":"","duet":true},{"id":2035,"title":"The nights","artist":"Avicii","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":2036,"title":"KICK BACK (TV)","artist":"Kenshi Yonezu","language":"Japanese","genre":"Anime","year":"2022","cover":"","duet":false},{"id":2037,"title":"No callaré (Parte 1)","artist":"Aladdín","language":"Español","genre":"OST","year":"2019","cover":"","duet":false},{"id":2038,"title":"Como Camarón","artist":"Estopa","language":"Español","genre":"Pop Rock","year":"1999","cover":"","duet":false},{"id":2039,"title":"Blurry eyes (TV)","artist":"L'Arc~en~Ciel","language":"Japanese","genre":"Anime","year":"1994","cover":"","duet":false},{"id":2040,"title":"Titanium","artist":"David Guetta & Sia","language":"English","genre":"Electronic","year":"2011","cover":"","duet":false},{"id":2041,"title":"Mujer contra mujer","artist":"Mecano","language":"Español","genre":null,"year":"1988","cover":"","duet":false},{"id":2042,"title":"City of Stars","artist":"Ryan Gosling & Emma Stone","language":"English","genre":"Soundtrack","year":"2016","cover":"","duet":false},{"id":2043,"title":"City of Stars","artist":"Ryan Gosling & Emma Stone","language":"English","genre":"Soundtrack","year":"2016","cover":"","duet":true},{"id":2044,"title":"The one I love","artist":"R.E.M.","language":"English","genre":"Rock Alternativo","year":"1987","cover":"","duet":false},{"id":2045,"title":"Sympathy For The Devil","artist":"The Rolling Stones","language":"English","genre":"Pop","year":"1968","cover":"","duet":false},{"id":2046,"title":"Ice Cream","artist":"BLACKPINK & Selena Gomez","language":"English","genre":null,"year":"2020","cover":"","duet":false},{"id":2047,"title":"Peace Sign (TV)","artist":"Kenshi Yonezu","language":"Japanese","genre":"Anime","year":"2017","cover":"","duet":false},{"id":2048,"title":"The Trooper","artist":"Iron Maiden","language":"English","genre":"Heavy Metal","year":"1983","cover":"","duet":false},{"id":2049,"title":"Stacy's Mom","artist":"Fountains Of Wayne","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":2050,"title":"Sin documentos","artist":"Los Rodríguez","language":"Español","genre":null,"year":"1993","cover":"","duet":false},{"id":2051,"title":"Stayin' Alive","artist":"Bee Gees","language":"English","genre":"Disco","year":"1977","cover":"","duet":false},{"id":2052,"title":"Baby One More Time","artist":"Britney Spears","language":"English","genre":"Pop","year":"1999","cover":"","duet":false},{"id":2053,"title":"Marihuana","artist":"Porretas","language":"Español","genre":"Rock Nacional","year":"1997","cover":"","duet":false},{"id":2054,"title":"Yume no naka e","artist":"Yosui Inoue","language":"Japanese","genre":"Folk rock","year":"2017","cover":"","duet":false},{"id":2055,"title":"Corazón partío","artist":"Alejandro Sanz","language":"Español","genre":null,"year":"1997","cover":"","duet":false},{"id":2056,"title":"Chicken Attack","artist":"Takeo Ischi","language":"English","genre":"Other","year":"2017","cover":"","duet":false},{"id":2057,"title":"Búscate Un Hombre Que Te Quiera","artist":"El Arrebato","language":"Español","genre":"Rock","year":"2004","cover":"","duet":false},{"id":2058,"title":"Answer (TV)","artist":"BUMP OF CHICKEN","language":"Japanese","genre":"Anime","year":"2016","cover":"","duet":false},{"id":2059,"title":"Cántame","artist":"María del Monte","language":"Español","genre":"Flamenco","year":"1988","cover":"","duet":false},{"id":2060,"title":"Que me quedes tú","artist":"Shakira","language":"Español","genre":"Other","year":"2002","cover":"","duet":false},{"id":2061,"title":"Lo siento","artist":"Beret","language":"Español","genre":"Ballad","year":"2018","cover":"","duet":false},{"id":2062,"title":"Soltera","artist":"Shakira","language":"Español","genre":"Latin pop","year":"2024","cover":"","duet":false},{"id":2063,"title":"I Could Be The One (Nicktim)","artist":"Avicii vs. Nicky Romero","language":"English","genre":"Electronic","year":"2013","cover":"","duet":false},{"id":2064,"title":"Todo","artist":"Pereza","language":"Español","genre":null,"year":"2005","cover":"","duet":false},{"id":2065,"title":"Come and get your Love","artist":"Redbone","language":"English","genre":"Pop-Folk","year":"1973","cover":"","duet":false},{"id":2066,"title":"FREAKY","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2007","cover":"","duet":false},{"id":2067,"title":"White Light (TV)","artist":"Superfly","language":"Japanese","genre":null,"year":"2015","cover":"","duet":false},{"id":2068,"title":"Nunca el tiempo es perdido","artist":"Manolo García","language":"Español","genre":null,"year":"2001","cover":"","duet":false},{"id":2069,"title":"Points of authority","artist":"Linkin Park","language":"English","genre":"Nu Metal","year":"2000","cover":"","duet":false},{"id":2070,"title":"Life is a highway","artist":"Rascal Flatts","language":"English","genre":"Pop","year":null,"cover":"","duet":false},{"id":2071,"title":"Vicio","artist":"Reincidentes","language":"Español","genre":"Rock-Punk","year":"1994","cover":"","duet":false},{"id":2072,"title":"Dan dan kokoro hikareteku (español)","artist":"Dragon Ball GT","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":2073,"title":"Digimon 3","artist":"Digimon","language":"Español","genre":null,"year":"2001","cover":"","duet":false},{"id":2074,"title":"Es por ti","artist":"Juanes","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":2075,"title":"Treasure","artist":"Bruno Mars","language":"English","genre":"Pop","year":"2013","cover":"","duet":false},{"id":2076,"title":"Undo (TV)","artist":"Cool Joke","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":2077,"title":"Music Sessions #52","artist":"Quevedo con Bizarrap","language":"Español","genre":"Trap, electrodance","year":"2022","cover":"","duet":false},{"id":2078,"title":"Rape Me","artist":"Nirvana","language":"English","genre":"Grunge","year":"1993","cover":"","duet":false},{"id":2079,"title":"Torito guapo","artist":"El Fary","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":2080,"title":"Carmen","artist":"Stromae","language":"French","genre":"Chanson","year":"2013","cover":"","duet":false},{"id":2081,"title":"Pen Pineapple Apple Pen","artist":"Piko Taro","language":"English","genre":null,"year":"2016","cover":"","duet":false},{"id":2082,"title":"Everybody (Backstreet's Back)","artist":"Backstreet Boys","language":"English","genre":"Pop Internacional","year":"1997","cover":"","duet":false},{"id":2083,"title":"Volaré","artist":"Russian Red","language":"Español","genre":"Soundtrack","year":"2012","cover":"","duet":false},{"id":2084,"title":"Anytime Anywhere (TV)","artist":"milet","language":"Japanese","genre":"J-pop","year":"2023","cover":"","duet":false},{"id":2085,"title":"Rayando el sol","artist":"Maná","language":"Español","genre":"Rock","year":"1990","cover":"","duet":false},{"id":2086,"title":"I Could Have Lied","artist":"Red Hot Chili Peppers","language":"English","genre":"Rock Alternativo","year":"1991","cover":"","duet":false},{"id":2087,"title":"Todos quieren ser ya gatos jazz","artist":"Los Aristogatos","language":"Español","genre":null,"year":"1970","cover":"","duet":false},{"id":2088,"title":"We Are Young","artist":"Fun & Janelle Monáe","language":"English","genre":"Pop","year":"2012","cover":"","duet":false},{"id":2089,"title":"No woman no cry","artist":"Bob Marley","language":"English","genre":"Rock","year":"1976","cover":"","duet":false},{"id":2090,"title":"La barbacoa","artist":"Georgie Dann","language":"Español","genre":"Pachanga","year":"1994","cover":"","duet":false},{"id":2091,"title":"Aquí no hay playa","artist":"The Refrescos","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":2092,"title":"Where Have You Been","artist":"Rihanna","language":"English","genre":"Pop","year":"2012","cover":"","duet":false},{"id":2093,"title":"TT","artist":"TWICE","language":"Korean","genre":"Kpop","year":"2016","cover":"","duet":false},{"id":2094,"title":"Cabecera","artist":"Doraemon","language":"Español","genre":null,"year":null,"cover":"","duet":false},{"id":2095,"title":"Youngblood","artist":"5 Seconds of Summer","language":"English","genre":"Pop","year":"2018","cover":"","duet":false},{"id":2096,"title":"5 sentidos","artist":"Dvicio y Taburete","language":"Español","genre":"Pop","year":"2018","cover":"","duet":true},{"id":2097,"title":"5 sentidos","artist":"Dvicio y Taburete","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":2098,"title":"Sanpo (TV)","artist":"Azumi Inoue","language":"Japanese","genre":"Anime","year":"1988","cover":"","duet":false},{"id":2099,"title":"September","artist":"Earth, Wind & Fire","language":"English","genre":"Dance","year":"1978","cover":"","duet":false},{"id":2100,"title":"Antes de que cuente diez","artist":"Fito & Fitipaldis","language":"Español","genre":"Rock Nacional","year":"2009","cover":"","duet":false},{"id":2101,"title":"Build me up buttercup","artist":"The Foundations","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":2102,"title":"LET IT OUT","artist":"Miho Fukuhara","language":"Japanese","genre":"Anime","year":"2009","cover":"","duet":false},{"id":2103,"title":"Quiero ser","artist":"Amaia Montero","language":"Español","genre":"Pop","year":"2008","cover":"","duet":false},{"id":2104,"title":"Morenamía","artist":"Miguel Bosé","language":"Español","genre":"Pop","year":"2001","cover":"","duet":false},{"id":2105,"title":"The Adults Are Talking","artist":"The Strokes","language":"English","genre":"New wave, indie rock, post-punk","year":"2020","cover":"","duet":false},{"id":2106,"title":"Vas a quedarte","artist":"Aitana","language":"Español","genre":"Pop","year":"2018","cover":"","duet":false},{"id":2107,"title":"Music","artist":"Madonna","language":"English","genre":"Pop","year":"2000","cover":"","duet":false},{"id":2108,"title":"Up from the bottom","artist":"Linkin Park","language":"English","genre":"Nu Metal","year":"2025","cover":"","duet":false},{"id":2109,"title":"Heroes","artist":"David Bowie","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":2110,"title":"Afterlife","artist":"Evanescence","language":"English","genre":"Alternative Rock","year":"2025","cover":"","duet":false},{"id":2111,"title":"I'm a believer","artist":"Smash Mouth","language":"English","genre":"Banda sonora","year":"2001","cover":"","duet":false},{"id":2112,"title":"Chocolate Disco","artist":"Perfume","language":"Japanese","genre":null,"year":"2008","cover":"","duet":false},{"id":2113,"title":"Pareja del año","artist":"Sebastián Yatra, Myke Towers","language":"Español","genre":null,"year":"2021","cover":"","duet":true},{"id":2114,"title":"Pareja del año","artist":"Sebastián Yatra, Myke Towers","language":"Español","genre":null,"year":"2021","cover":"","duet":false},{"id":2115,"title":"We Will Rock You","artist":"Queen","language":"English","genre":null,"year":"1977","cover":"","duet":false},{"id":2116,"title":"GO!!! (versión corta)","artist":"FLOW (BSO Naruto)","language":"Japanese","genre":"Anime","year":"2004","cover":"","duet":false},{"id":2117,"title":"Cuando amanece","artist":"Estopa","language":"Español","genre":null,"year":"2008","cover":"","duet":false},{"id":2118,"title":"Hard Times","artist":"Paramore","language":"English","genre":null,"year":"2017","cover":"","duet":false},{"id":2119,"title":"Ya no quiero ná","artist":"Lola Indigo","language":"Español","genre":"Funk Brasileño","year":"2018","cover":"","duet":false},{"id":2120,"title":"Dos hombres y un destino","artist":"David Bustamante y Àlex Casademunt","language":"Español","genre":"Pop","year":"2002","cover":"","duet":false},{"id":2121,"title":"Dos hombres y un destino","artist":"David Bustamante y Àlex Casademunt","language":"Español","genre":"Pop","year":"2002","cover":"","duet":true},{"id":2122,"title":"This Is The Last Time","artist":"Keane","language":"English","genre":"Rock","year":"2004","cover":"","duet":false},{"id":2123,"title":"Con altura","artist":"ROSALÍA feat. J Balvin & El Guincho","language":"Español","genre":"Pop","year":"2019","cover":"","duet":false},{"id":2124,"title":"Diez mil maneras","artist":"David Bisbal","language":"Español","genre":null,"year":"2014","cover":"","duet":false},{"id":2125,"title":"Ciudad de los gitanos","artist":"Marea","language":"Español","genre":"Rock","year":"2004","cover":"","duet":false},{"id":2126,"title":"The Greatest","artist":"Sia","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":2127,"title":"Papaoutai","artist":"Stromae","language":"French","genre":"R&B","year":"2013","cover":"","duet":false},{"id":2128,"title":"Pegasus Fantasy (TV)","artist":"MAKE-UP","language":"Japanese","genre":null,"year":"1986","cover":"","duet":false},{"id":2129,"title":"Break Free","artist":"Ariana Grande & Zedd","language":"English","genre":"Pop","year":"2014","cover":"","duet":false},{"id":2130,"title":"Salir corriendo","artist":"Amaral","language":"Español","genre":"Pop Nacional","year":"2002","cover":"","duet":false},{"id":2131,"title":"Lifeline","artist":"Papa Roach","language":"English","genre":"Pop Rock","year":"2009","cover":"","duet":false},{"id":2132,"title":"Johnny B. Goode","artist":"Chuck Berry","language":"English","genre":"Rock","year":"1958","cover":"","duet":false},{"id":2133,"title":"Felices los 4","artist":"Maluma","language":"Español","genre":null,"year":"2017","cover":"","duet":false},{"id":2134,"title":"Safe And Sound","artist":"Capital Cities","language":"English","genre":"Electronic","year":"2013","cover":"","duet":false},{"id":2135,"title":"Meet me halfway","artist":"Black Eyed Peas","language":"English","genre":null,"year":"2009","cover":"","duet":false},{"id":2136,"title":"Estando contigo","artist":"Conchita Bautista","language":"Español","genre":"Copla","year":"1961","cover":"","duet":false},{"id":2137,"title":"Mayores","artist":"Becky G ft. Bad Bunny","language":"Español","genre":null,"year":"2017","cover":"","duet":false},{"id":2138,"title":"In Your Eyes","artist":"Kylie Minogue","language":"English","genre":"Pop","year":"2002","cover":"","duet":false},{"id":2139,"title":"Provenza","artist":"Karol G","language":"Español","genre":"Reggaetón","year":"2022","cover":"","duet":false},{"id":2140,"title":"Oath Sign (TV)","artist":"LiSA","language":"Japanese","genre":null,"year":"2011","cover":"","duet":false},{"id":2141,"title":"crossing field (TV)","artist":"LiSA","language":"Japanese","genre":"Anime","year":"2012","cover":"","duet":false},{"id":2142,"title":"Todos me miran","artist":"Gloria Trevi","language":"Español","genre":null,"year":"2006","cover":"","duet":false},{"id":2143,"title":"The Best","artist":"Tina Turner","language":"English","genre":"Pop","year":"1989","cover":"","duet":false},{"id":2144,"title":"La tormenta de arena","artist":"Dorian","language":"Español","genre":"Indie","year":"2009","cover":"","duet":false},{"id":2145,"title":"SG","artist":"DJ Snake, Ozuna, Megan Thee Stallion, LISA of BLACKPINK","language":"Español","genre":null,"year":"2021","cover":"","duet":false},{"id":2146,"title":"Love Tropicana","artist":"Jungle wa itsumo Hale nochi Guu","language":"Japanese","genre":"Anime","year":null,"cover":"","duet":false},{"id":2147,"title":"So payaso","artist":"Extremoduro","language":"Español","genre":"Rock","year":"1995","cover":"","duet":false},{"id":2148,"title":"Ao no Sumika (TV)","artist":"Tatsuya Kitani","language":"Japanese","genre":"Pop","year":"2023","cover":"","duet":false},{"id":2149,"title":"Lovesong","artist":"The Cure","language":"English","genre":"Gothic Rock","year":"1989","cover":"","duet":false},{"id":2150,"title":"Black Rover (TV)","artist":"VickeBlanka","language":"Japanese","genre":"J-Rock","year":"2018","cover":"","duet":false},{"id":2151,"title":"Todo de ti","artist":"Rauw Alejandro","language":"Español","genre":null,"year":"2021","cover":"","duet":false},{"id":2152,"title":"Someone You Loved","artist":"Lewis Capaldi","language":"English","genre":"Pop","year":"2019","cover":"","duet":false},{"id":2153,"title":"Chantaje","artist":"Shakira y Maluma","language":"Español","genre":"Latin","year":"2016","cover":"","duet":true},{"id":2154,"title":"Chantaje","artist":"Shakira y Maluma","language":"Español","genre":"Latin","year":"2016","cover":"","duet":false},{"id":2155,"title":"No estamos lokos (kalikeño)","artist":"Ketama","language":"Español","genre":"flamenco-fusión","year":"1995","cover":"","duet":false},{"id":2156,"title":"Roxanne","artist":"The Police","language":"English","genre":"Pop","year":"1979","cover":"","duet":false},{"id":2157,"title":"I kissed a girl","artist":"Katy Perry","language":"English","genre":"House","year":"2008","cover":"","duet":false},{"id":2158,"title":"The Middle","artist":"Zedd ft. Maren Morris & Grey","language":"English","genre":null,"year":"2018","cover":"","duet":false},{"id":2159,"title":"Santa tell me","artist":"Ariana Grande","language":"English","genre":null,"year":"2014","cover":"","duet":false},{"id":2160,"title":"Jamming","artist":"Bob Marley","language":"English","genre":null,"year":null,"cover":"","duet":false},{"id":2161,"title":"The Number of the Beast","artist":"Iron Maiden","language":"English","genre":"Heavy Metal","year":"1982","cover":"","duet":false},{"id":2162,"title":"Atrapados En La Red","artist":"Tam Tam Go","language":"Español","genre":null,"year":"1999","cover":"","duet":false},{"id":2163,"title":"Monochrome Effect","artist":"Perfume","language":"Japanese","genre":"J-Pop","year":"2004","cover":"","duet":false},{"id":2164,"title":"モノクローム エフェクト","artist":"Perfume (パフューム)","language":"Japanese","genre":"J-Pop","year":"2004","cover":"","duet":false},{"id":2165,"title":"Beautiful World","artist":"Utada Hikaru","language":"Japanese","genre":"Anime","year":"2010","cover":"","duet":false},{"id":2166,"title":"El límite","artist":"La Frontera","language":"Español","genre":"Rock","year":"1989","cover":"","duet":false},{"id":2167,"title":"Dime","artist":"Beth","language":"Spanish","genre":null,"year":null,"cover":"","duet":false},{"id":2168,"title":"Abyss (TV)","artist":"YUNGBLUD","language":"English","genre":"Pop","year":"2024","cover":"","duet":false},{"id":2169,"title":"Back to friends","artist":"sombr","language":"English","genre":"Alternative, Indie","year":"2024","cover":"","duet":false},{"id":2170,"title":"White Noise (TV)","artist":"Official HIGE DANdism","language":"Japanese","genre":"J-pop","year":"2023","cover":"","duet":false},{"id":2171,"title":"Fiesta pagana","artist":"Mägo de Oz","language":"Español","genre":"Folk-Rock","year":"2000","cover":"","duet":false},{"id":2172,"title":"Bailando","artist":"Enrique Iglesias, Descemer Bueno y Gente de Zona","language":"Español","genre":"Reggaeton","year":"2014","cover":"","duet":false},{"id":2173,"title":"Bailando","artist":"Enrique Iglesias, Descemer Bueno y Gente de Zona","language":"Español","genre":"Reggaeton","year":"2014","cover":"","duet":true},{"id":2174,"title":"Scar Tissue","artist":"Red Hot Chili Peppers","language":"English","genre":"Pop","year":"1999","cover":"","duet":false},{"id":2175,"title":"Bolillón","artist":"No me pises que llevo chanclas","language":"Español","genre":"Pop","year":"1989","cover":"","duet":false},{"id":2176,"title":"Música ligera","artist":"Ana Mena","language":"Español","genre":"Pop","year":"2021","cover":"","duet":false},{"id":2177,"title":"Princesas","artist":"Pereza","language":"Español","genre":"Pop","year":"2005","cover":"","duet":false},{"id":2178,"title":"Let me out","artist":"Dover","language":"English","genre":"Pop","year":"2006","cover":"","duet":false},{"id":2179,"title":"El último adiós","artist":"Paulina Rubio","language":"Español","genre":null,"year":"2000","cover":"","duet":false},{"id":2180,"title":"Sour Candy","artist":"Lady Gaga & BLACKPINK","language":"English","genre":null,"year":"2020","cover":"","duet":false},{"id":2181,"title":"Nochentera","artist":"Vicco","language":"Español","genre":"Pop eléctrico","year":"2023","cover":"","duet":false},{"id":2182,"title":"Yo contigo, tú conmigo","artist":"Morat y Álvaro Soler","language":"Español","genre":"BSO","year":"2017","cover":"","duet":true},{"id":2183,"title":"Yo contigo, tú conmigo","artist":"Morat y Álvaro Soler","language":"Español","genre":"BSO","year":"2017","cover":"","duet":false},{"id":2184,"title":"Back to School (Mini Maggit)","artist":"Deftones","language":"English","genre":"Alternative metal","year":"2001","cover":"","duet":false},{"id":2185,"title":"Un Beso Y Una Flor","artist":"Nino Bravo","language":"Español","genre":"Pop","year":"1972","cover":"","duet":false},{"id":2186,"title":"Digital Love","artist":"Daft Punk","language":"English","genre":null,"year":"2001","cover":"","duet":false},{"id":2187,"title":"Te aviso, te anuncio (Tango)","artist":"Shakira","language":"Español","genre":"Pop","year":"2002","cover":"","duet":false},{"id":2188,"title":"Favorito","artist":"Camilo","language":"Español","genre":"POP","year":"2020","cover":"","duet":false},{"id":2189,"title":"Two faced","artist":"Linkin Park","language":"English","genre":null,"year":"2024","cover":"","duet":true},{"id":2190,"title":"Quisiera ser","artist":"Dúo Dinámico","language":"Español","genre":null,"year":"1961","cover":"","duet":false},{"id":2191,"title":"Over soul (versión corta)","artist":"Megumi Hayashibara (BSO Shaman King)","language":"Japanese","genre":"Anime","year":"2001","cover":"","duet":false},{"id":2192,"title":"Paco, Paco, Paco","artist":"Encarnita Polo","language":"Español","genre":"Flamenco pop","year":"1969","cover":"","duet":false},{"id":2193,"title":"Take on me","artist":"a-ha","language":"English","genre":null,"year":"1985","cover":"","duet":false},{"id":2194,"title":"Mercy","artist":"Duffy","language":"English","genre":null,"year":"2008","cover":"","duet":false},{"id":2195,"title":"Follow you","artist":"Imagine Dragons","language":"English","genre":"Alternative","year":"2021","cover":"","duet":false},{"id":2196,"title":"Bohemian Rhapsody","artist":"Queen","language":"English","genre":null,"year":"1975","cover":"","duet":false},{"id":2197,"title":"El bien","artist":"Viva Suecia","language":"Español","genre":"Indie","year":"2022","cover":"","duet":false},{"id":2198,"title":"Besos en guerra","artist":"Morat & Juanes","language":"Español","genre":"Pop","year":"2017","cover":"","duet":false},{"id":2199,"title":"Vivid Vice (TV)","artist":"Who-ya Extended","language":"Japanese","genre":"J-rock","year":"2021","cover":"","duet":false},{"id":2200,"title":"This One's For You","artist":"David Guetta feat. Zara Larsson","language":"English","genre":"Pop","year":"2016","cover":"","duet":false},{"id":2201,"title":"Colores en el viento","artist":"Disney (BSO Pocahontas)","language":"Español","genre":"","year":null,"cover":"","duet":false},{"id":2202,"title":"Salir","artist":"Extremoduro","language":"Español","genre":"Rock","year":"1998","cover":"","duet":false},{"id":2203,"title":"NIGHT DANCER (TV)","artist":"imase","language":"Japanese","genre":"Jpop","year":"2022","cover":"","duet":false},{"id":2204,"title":"Cabecera","artist":"Lola Lola (BSO Chicho Terremoto)","language":"Español","genre":"Dibujos animados","year":"1991","cover":"","duet":false},{"id":2205,"title":"Una vez más","artist":"David Otero","language":"Español","genre":"Pop","year":"2016","cover":"","duet":false},{"id":2206,"title":"Gimme! Gimme! Gimme! (A Man After Midnight)","artist":"ABBA","language":"English","genre":null,"year":"1979","cover":"","duet":false},{"id":2207,"title":"Ima Sugu Hoshii (Karaoke)","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":2208,"title":"Ima Sugu Hoshii","artist":"Koda Kumi","language":"Japanese","genre":"J-Pop","year":"2006","cover":"","duet":false},{"id":2209,"title":"Malibu","artist":"Hole","language":"English","genre":null,"year":"1998","cover":"","duet":false},{"id":2210,"title":"Destripando la historia - Perséfone - No es tan malo","artist":"Pascu y Rodri con Laura Pastor","language":"Spanish","genre":null,"year":"2026","cover":"","duet":false}]
+const SONGS = [
+  {
+    "id": 1,
+    "title": "Smells like teen spirit",
+    "artist": "Nirvana",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2,
+    "title": "Noelia",
+    "artist": "Nino Bravo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1972",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 3,
+    "title": "DADDY! DADDY! DO! (TV)",
+    "artist": "Masayuki Suzuki ft. Airi Suzuki",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 4,
+    "title": "Hyakka ryouran (TV)",
+    "artist": "Lilas Ikuta",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 5,
+    "title": "Hymn for the weekend",
+    "artist": "Coldplay ft. Beyoncé",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 6,
+    "title": "Gangnam Style",
+    "artist": "Psy",
+    "language": "Korean",
+    "genre": "K-Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 7,
+    "title": "Brown Eyed Girl",
+    "artist": "Van Morrison",
+    "language": "English",
+    "genre": null,
+    "year": "1967",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 8,
+    "title": "Get Along (TV)",
+    "artist": "Megumi Hayashibara & Masami Okui",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 9,
+    "title": "Get Along (TV)",
+    "artist": "Megumi Hayashibara & Masami Okui",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1995",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 10,
+    "title": "Cabecera",
+    "artist": "Pokémon",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 11,
+    "title": "Limit Break x Survivor (TV)",
+    "artist": "Kiyoshi Hikawa",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 12,
+    "title": "Imagination (TV)",
+    "artist": "SPYAIR",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 13,
+    "title": "I'm Slave 4 U",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 14,
+    "title": "The bard's song (In the forest)",
+    "artist": "Blind Guardian",
+    "language": "English",
+    "genre": "Power Metal",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 15,
+    "title": "Savior",
+    "artist": "Rise Against",
+    "language": "English",
+    "genre": "Melodic Hardcore",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 16,
+    "title": "Video killed the radio star",
+    "artist": "Buggles",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 17,
+    "title": "Roadhouse blues",
+    "artist": "The Doors",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1970",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 18,
+    "title": "God is a woman",
+    "artist": "Ariana Grande",
+    "language": "English",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 19,
+    "title": "Summercat",
+    "artist": "Billie the Vision & the Dancers",
+    "language": "English",
+    "genre": "Anuncios TV",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 20,
+    "title": "Live forever",
+    "artist": "Oasis",
+    "language": "English",
+    "genre": "Britpop",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 21,
+    "title": "Nada que perder",
+    "artist": "Pignoise",
+    "language": "Español",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 22,
+    "title": "Be Prepared",
+    "artist": "Disney's The Lion King",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 23,
+    "title": "Pride",
+    "artist": "High and mighty color",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 24,
+    "title": "Vino tinto",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 25,
+    "title": "Hurricane",
+    "artist": "30 Seconds to Mars",
+    "language": "English",
+    "genre": "Rock",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 26,
+    "title": "Renai Circulation (TV)",
+    "artist": "Kana Hanazawa",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 27,
+    "title": "El gato que esta triste y azul",
+    "artist": "Roberto Carlos",
+    "language": "Español",
+    "genre": "Other",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 28,
+    "title": "Deseos de cosas imposibles",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 29,
+    "title": "God knows",
+    "artist": "Aya Hirano",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 30,
+    "title": "Quiero tener tu presencia",
+    "artist": "Seguridad Social",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 31,
+    "title": "7 Rings",
+    "artist": "Ariana Grande",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 32,
+    "title": "Cant Hold Us",
+    "artist": "Macklemore & Ryan Lewis feat. Ray Dalton",
+    "language": "English",
+    "genre": "Hip-Hop & Rap",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 33,
+    "title": "Que te quería",
+    "artist": "La Quinta Estación",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 34,
+    "title": "Made You Look",
+    "artist": "Meghan Trainor",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 35,
+    "title": "Garabatos",
+    "artist": "Fito y Fitipaldis",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 36,
+    "title": "Devil came to me",
+    "artist": "Dover",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 37,
+    "title": "Again (versión corta)",
+    "artist": "YUI",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 38,
+    "title": "Malos pensamientos",
+    "artist": "La Fuga",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 39,
+    "title": "Master of puppets",
+    "artist": "Metallica",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 40,
+    "title": "Cómo hemos cambiado",
+    "artist": "Presuntos Implicados",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 41,
+    "title": "Bye Bye Yesterday (TV)",
+    "artist": "3-nen E-gumi Utatan",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 42,
+    "title": "Rain (TV)",
+    "artist": "SID",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 43,
+    "title": "Sonne",
+    "artist": "Rammstein",
+    "language": "German",
+    "genre": "Industrial metal",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 44,
+    "title": "Everybody's Changing",
+    "artist": "Keane",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 45,
+    "title": "QUESTION (TV)",
+    "artist": "3-nen E-gumi Utatan",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 46,
+    "title": "READY STEADY GO (TV)",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 47,
+    "title": "Bailando",
+    "artist": "Alaska y los Pegamoides",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 48,
+    "title": "Sale el sol",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 49,
+    "title": "Can't Stop The Feeling!",
+    "artist": "Justin Timberlake",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 50,
+    "title": "Lonely Day",
+    "artist": "System of a Down",
+    "language": "English",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 51,
+    "title": "Bling-Bang-Bang-Born (TV)",
+    "artist": "Creepy Nuts",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 52,
+    "title": "Not gonna get us",
+    "artist": "t.A.T.u.",
+    "language": "English",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 53,
+    "title": "Show yourself",
+    "artist": "Frozen II",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 54,
+    "title": "Pienso en aquella tarde",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 55,
+    "title": "Si a Arabia tú vas",
+    "artist": "Aladdín",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 56,
+    "title": "P'aquí, p'allá",
+    "artist": "La Fuga",
+    "language": "Español",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 57,
+    "title": "Way Down We Go",
+    "artist": "Kaleo",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 58,
+    "title": "Fuego",
+    "artist": "Eleni Foureira",
+    "language": "English",
+    "genre": "Eurovision",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 59,
+    "title": "Something Just Like This",
+    "artist": "The Chainsmokers ft. Coldplay",
+    "language": "English",
+    "genre": "Dance & Electronic",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 60,
+    "title": "Missing",
+    "artist": "Everything but the girl",
+    "language": "English",
+    "genre": "",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 61,
+    "title": "Summer Nights",
+    "artist": "Grease (John Travolta & Olivia Newton-John)",
+    "language": "English",
+    "genre": "Musical",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 62,
+    "title": "Sweet Dreams",
+    "artist": "Marilyn Manson",
+    "language": "English",
+    "genre": null,
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 63,
+    "title": "Promesas que no valen nada",
+    "artist": "Los Piratas",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 64,
+    "title": "Escuela de calor",
+    "artist": "Radio Futura",
+    "language": "Español",
+    "genre": null,
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 65,
+    "title": "Pon tus sueños a jugar",
+    "artist": "Marta Sánchez, David Bustamante, Niña Pastori, Montserrat Caballé y Raphael",
+    "language": "Español",
+    "genre": "Villancico",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 66,
+    "title": "Golden",
+    "artist": "HUNTR/X",
+    "language": "English",
+    "genre": null,
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 67,
+    "title": "De ellos aprendí",
+    "artist": "David Rees",
+    "language": "Español",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 68,
+    "title": "Fell In Love With A Girl",
+    "artist": "The White Stripes",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 69,
+    "title": "Tactics (TV)",
+    "artist": "The Yellow Monkey",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 70,
+    "title": "Insoportable",
+    "artist": "El canto del loco",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 71,
+    "title": "Sweet Child O´Mine",
+    "artist": "Guns N' Roses",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 72,
+    "title": "Por quererte",
+    "artist": "Efecto Mariposa",
+    "language": "Español",
+    "genre": "Pop Español",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 73,
+    "title": "Problem",
+    "artist": "Ariana Grande feat. Iggy Azalea",
+    "language": "English",
+    "genre": "R&B",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 74,
+    "title": "That's so true",
+    "artist": "Gracie Abrams",
+    "language": "English",
+    "genre": "Folk-Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 75,
+    "title": "Alive",
+    "artist": "Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 76,
+    "title": "Cabecera",
+    "artist": "Popitos (BSO D'Artacán y los tres Mosqueperros)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 77,
+    "title": "Delgadito",
+    "artist": "La Rabia del Milenio",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 78,
+    "title": "Bang Bang",
+    "artist": "Nancy Sinatra",
+    "language": "English",
+    "genre": "Classic Rock",
+    "year": "1966",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 79,
+    "title": "Wrecked",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 80,
+    "title": "Cabecera",
+    "artist": "Campeones (Óliver y Benji)",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 81,
+    "title": "We Are Never Ever Getting Back Together",
+    "artist": "Taylor Swift",
+    "language": "English",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 82,
+    "title": "Hypnodancer",
+    "artist": "Little Big",
+    "language": "English",
+    "genre": "Electronic",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 83,
+    "title": "lull ~Soshite Bokura wa~ (TV)",
+    "artist": "Ray",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 84,
+    "title": "Sorry",
+    "artist": "Justin Bieber",
+    "language": "English",
+    "genre": "Dance pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 85,
+    "title": "Night Fever",
+    "artist": "Bee Gees",
+    "language": "English",
+    "genre": "Disco",
+    "year": "1977",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 86,
+    "title": "Canción folk de la huelga de la central (inglés)",
+    "artist": "Los Simpson",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 87,
+    "title": "Love removal machine",
+    "artist": "The Cult",
+    "language": "English",
+    "genre": "Hard Rock",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 88,
+    "title": "Demons",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": "Indie rock",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 89,
+    "title": "Una foto en blanco y negro",
+    "artist": "El Canto del Loco",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 90,
+    "title": "Nobody's home",
+    "artist": "Avril Lavigne",
+    "language": "English",
+    "genre": "Pop Internacional",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 91,
+    "title": "Sapphire",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 92,
+    "title": "La perla",
+    "artist": "ROSALÍA",
+    "language": "Español",
+    "genre": "Latin Music",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 93,
+    "title": "Shunkan Sentimental",
+    "artist": "SCANDAL",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 94,
+    "title": "LET IT OUT (TV)",
+    "artist": "Miho Fukuhara",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 95,
+    "title": "Super Shooter (TV)",
+    "artist": "Rip Slyme",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 96,
+    "title": "¿Por qué no ser amigos?",
+    "artist": "Hombres G con Dani Martín",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 97,
+    "title": "Dos Oruguitas",
+    "artist": "Sebastián Yatra",
+    "language": "Español",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 98,
+    "title": "Hikari",
+    "artist": "Utada Hikaru",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 99,
+    "title": "Pero me acuerdo",
+    "artist": "Christina Aguilera",
+    "language": "Español",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 100,
+    "title": "Échame la culpa",
+    "artist": "Luis Fonsi y Demi Lovato",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 101,
+    "title": "Échame la culpa",
+    "artist": "Luis Fonsi y Demi Lovato",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 102,
+    "title": "Wherever You Are",
+    "artist": "ONE OK ROCK",
+    "language": "Japanese",
+    "genre": "Jrock",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 103,
+    "title": "Redo (TV)",
+    "artist": "Konomi Suzuki",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 104,
+    "title": "Echo de menos",
+    "artist": "Kiko Veneno",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 105,
+    "title": "Heavy Starry Chain",
+    "artist": "Tommy Heavenly6",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 106,
+    "title": "Cuídate",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 107,
+    "title": "Marieta",
+    "artist": "Javier Krahe",
+    "language": "Español",
+    "genre": null,
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 108,
+    "title": "Like A Prayer",
+    "artist": "Madonna",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 109,
+    "title": "Rock You Like a Hurricane",
+    "artist": "Scorpions",
+    "language": "English",
+    "genre": null,
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 110,
+    "title": "Bzrp Music Sessions, Vol. 53",
+    "artist": "Bizarrap & Shakira",
+    "language": "Español",
+    "genre": "Dance",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 111,
+    "title": "The Zephyr Song",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 112,
+    "title": "Easy on me",
+    "artist": "Adele",
+    "language": "English",
+    "genre": "Ballad",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 113,
+    "title": "Lágrimas desordenadas",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 114,
+    "title": "Ayo Technology",
+    "artist": "Milow",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 115,
+    "title": "PIENSO EN TU MIRÁ (Cap.3 Celos)",
+    "artist": "ROSALÍA",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 116,
+    "title": "Emocional",
+    "artist": "Dani Martín",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 117,
+    "title": "Wait & Bleed",
+    "artist": "Slipknot",
+    "language": "English",
+    "genre": "Metal",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 118,
+    "title": "Feel Good Inc.",
+    "artist": "Gorillaz",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 119,
+    "title": "Positions",
+    "artist": "Ariana Grande",
+    "language": "English",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 120,
+    "title": "Run to the Hills",
+    "artist": "Iron Maiden",
+    "language": "English",
+    "genre": "Heavy Metal",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 121,
+    "title": "We Are The Champions",
+    "artist": "Queen",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1977",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 122,
+    "title": "Starlight",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 123,
+    "title": "El aire de la calle",
+    "artist": "Los delinqüentes",
+    "language": "Español",
+    "genre": "Flamenco",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 124,
+    "title": "Paradise",
+    "artist": "Coldplay",
+    "language": "English",
+    "genre": null,
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 125,
+    "title": "Pa' mi guerrera",
+    "artist": "Huecco",
+    "language": "Español",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 126,
+    "title": "Hablando en plata",
+    "artist": "Melendi",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 127,
+    "title": "Take My Breath",
+    "artist": "The Weeknd",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 128,
+    "title": "Out of Time",
+    "artist": "The Weeknd",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 129,
+    "title": "Complicated",
+    "artist": "Avril Lavigne",
+    "language": "Englisch",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 130,
+    "title": "Help!",
+    "artist": "The Beatles",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1965",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 131,
+    "title": "Dos mundos",
+    "artist": "Disney (BSO Tarzán)",
+    "language": "Español",
+    "genre": "Bandas sonoras",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 132,
+    "title": "Salvation",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": null,
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 133,
+    "title": "Por fin",
+    "artist": "Pablo Alborán",
+    "language": "Español",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 134,
+    "title": "Soledad",
+    "artist": "La oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 135,
+    "title": "Teléfono",
+    "artist": "Aitana",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 136,
+    "title": "Madrid",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 137,
+    "title": "Ki Ni Naru Aitsu (TV)",
+    "artist": "Motoko Kumai",
+    "language": "Japanese",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 138,
+    "title": "The Man Who Can't Be Moved",
+    "artist": "The Script",
+    "language": "English",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 139,
+    "title": "God Save The Queen",
+    "artist": "Sex Pistols",
+    "language": "English",
+    "genre": "Punk",
+    "year": "1977",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 140,
+    "title": "Hasta que tu muerte nos separe",
+    "artist": "Mägo de Oz",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 141,
+    "title": "Promises",
+    "artist": "Calvin Harris and Sam Smith",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 142,
+    "title": "Como yo te amo",
+    "artist": "Raphael",
+    "language": "Español",
+    "genre": "Unknown",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 143,
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "language": "English",
+    "genre": "Synth Pop, Disco",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 144,
+    "title": "La playa",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 145,
+    "title": "Drive By",
+    "artist": "Train",
+    "language": "English",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 146,
+    "title": "Hikaru Nara (TV)",
+    "artist": "Goose house",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 147,
+    "title": "Lose you to love me",
+    "artist": "Selena Gomez",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 148,
+    "title": "Viajar Contigo",
+    "artist": "Alex Ubago",
+    "language": "Español",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 149,
+    "title": "Preparaos",
+    "artist": "El rey león",
+    "language": "Español",
+    "genre": "OST",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 150,
+    "title": "Sakuranbo",
+    "artist": "Ai Otsuka",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 151,
+    "title": "Hanamaru Pippi wa Yoiko Dake (TV)",
+    "artist": "AOP",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 152,
+    "title": "Sin miedo a nada",
+    "artist": "Alex Ubago y Amaia Montero",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2001",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 153,
+    "title": "Sin miedo a nada",
+    "artist": "Alex Ubago y Amaia Montero",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 154,
+    "title": "7 Years",
+    "artist": "Lukas Graham",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 155,
+    "title": "Pisando fuerte",
+    "artist": "Alejandro Sanz",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 156,
+    "title": "Uragiri no Yuuyake (TV)",
+    "artist": "Theatre Brook",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 157,
+    "title": "Te necesito",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 158,
+    "title": "I Will Survive",
+    "artist": "Gloria Gaynor",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 159,
+    "title": "Con la luna llena",
+    "artist": "Melendi",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 160,
+    "title": "Nanairo Symphony (TV)",
+    "artist": "Coalamode",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 161,
+    "title": "Break My Heart",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 162,
+    "title": "UNO",
+    "artist": "Little Big",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 163,
+    "title": "Melissa",
+    "artist": "Porno graffiti (BSO Full Metal Alchemist)",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 164,
+    "title": "Vestido azul",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 165,
+    "title": "Mi nombre",
+    "artist": "Leire Martínez",
+    "language": "Español",
+    "genre": "Pop/Rock",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 166,
+    "title": "In the end",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 167,
+    "title": "Birthday Eve",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 168,
+    "title": "Birthday Eve (Karaoke)",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 169,
+    "title": "Mon amour",
+    "artist": "Zzoilo y Aitana",
+    "language": "Español",
+    "genre": "Pop, rap",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 170,
+    "title": "Mon amour",
+    "artist": "Zzoilo y Aitana",
+    "language": "Español",
+    "genre": "Pop, rap",
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 171,
+    "title": "Ain't My Fault",
+    "artist": "Zara Larsson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 172,
+    "title": "Night changes",
+    "artist": "One Direction",
+    "language": "English",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 173,
+    "title": "Sólo Se Vive Una Vez",
+    "artist": "Azucar Moreno",
+    "language": "Español",
+    "genre": null,
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 174,
+    "title": "Tema de Bob Esponja (TV)",
+    "artist": "Bob Esponja",
+    "language": "Español",
+    "genre": null,
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 175,
+    "title": "Soldadito marinero",
+    "artist": "Fito & Fitipaldis",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 176,
+    "title": "Aproximación",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 177,
+    "title": "Loko",
+    "artist": "Mürfila",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 178,
+    "title": "Lies",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 179,
+    "title": "Nada es para siempre",
+    "artist": "Luis Fonsi",
+    "language": "Español",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 180,
+    "title": "Girlfriend",
+    "artist": "Avril Lavigne",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 181,
+    "title": "Sakura (TV)",
+    "artist": "NIRGILIS",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 182,
+    "title": "Watashi wa Candy",
+    "artist": "Horie Mitsuko (BSO Candy Candy)",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 183,
+    "title": "Under Pressure",
+    "artist": "Queen & David Bowie",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1981",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 184,
+    "title": "Under Pressure",
+    "artist": "Queen & David Bowie",
+    "language": "English",
+    "genre": null,
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 185,
+    "title": "Mizérable",
+    "artist": "Gackt",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 186,
+    "title": "Rose (versión corta)",
+    "artist": "ANNA como NANA de Black Stones (BSO NANA)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 187,
+    "title": "Africa",
+    "artist": "Toto",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 188,
+    "title": "Noche en vela",
+    "artist": "Guaraná",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 189,
+    "title": "Strongest (Alan Walker remix)",
+    "artist": "Ina Wroldsen",
+    "language": "English",
+    "genre": "Polka",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 190,
+    "title": "Tanto la quería",
+    "artist": "Andy y Lucas",
+    "language": "Español",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 191,
+    "title": "A sky full of stars",
+    "artist": "Coldplay",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 192,
+    "title": "Kanashimi wo yasashisa ni (versión corta)",
+    "artist": "Little by little (BSO Naruto)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 193,
+    "title": "Toxic",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 194,
+    "title": "Good Luck My Way",
+    "artist": "L'Arc~en~ciel",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 195,
+    "title": "See you again",
+    "artist": "Wiz Khalifa ft. Charlie Puth",
+    "language": "English",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 196,
+    "title": "Cabecera",
+    "artist": "Pinky y Cerebro",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 197,
+    "title": "You Got It",
+    "artist": "Roy Orbison",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 198,
+    "title": "Cometas por el cielo",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 199,
+    "title": "Renai Revolution 21",
+    "artist": "Morning Musume",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 200,
+    "title": "American idiot",
+    "artist": "Green Day",
+    "language": "English",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 201,
+    "title": "Ahora te puedes marchar",
+    "artist": "Luis Miguel",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 202,
+    "title": "That Thing You Do",
+    "artist": "The Wonders",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 203,
+    "title": "Stand By Me",
+    "artist": "Oasis",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 204,
+    "title": "Galway Girl",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 205,
+    "title": "Guren no Yumiya (TV)",
+    "artist": "Linked Horizon",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 206,
+    "title": "Príncipe Alí",
+    "artist": "Disney (BSO Aladdín)",
+    "language": "Español",
+    "genre": "Bandas sonoras",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 207,
+    "title": "Lose Control",
+    "artist": "Teddy Swims",
+    "language": "English",
+    "genre": null,
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 208,
+    "title": "We don't talk anymore",
+    "artist": "Charlie Puth & Selena Gomez",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 209,
+    "title": "We don't talk anymore",
+    "artist": "Charlie Puth & Selena Gomez",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 210,
+    "title": "MAMIII",
+    "artist": "Becky G & Karol G",
+    "language": "Español",
+    "genre": "Reguetón",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 211,
+    "title": "Everytime We Touch (Slow Version)",
+    "artist": "Cascada",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 212,
+    "title": "Wouldn't It Be Nice",
+    "artist": "Beach Boys",
+    "language": "English",
+    "genre": "Rock/Pop",
+    "year": "1965",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 213,
+    "title": "God knows (TV)",
+    "artist": "Aya Hirano",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 214,
+    "title": "I Want Out",
+    "artist": "Helloween",
+    "language": "English",
+    "genre": "Power Metal",
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 215,
+    "title": "Famous Last Words",
+    "artist": "My Chemical Romance",
+    "language": "English",
+    "genre": "Other",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 216,
+    "title": "Hecho con tus sueños",
+    "artist": "Funambulista",
+    "language": "Español",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 217,
+    "title": "CLOSER (TV)",
+    "artist": "Inoue Joe",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 218,
+    "title": "Ojos así",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Other",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 219,
+    "title": "I Want It That Way",
+    "artist": "Backstreet Boys",
+    "language": "English",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 220,
+    "title": "Paparazzi",
+    "artist": "Lady GaGa",
+    "language": "English",
+    "genre": "Pop Internacional",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 221,
+    "title": "Magia",
+    "artist": "Álvaro Soler",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 222,
+    "title": "Highway To Hell",
+    "artist": "AC/DC",
+    "language": "English",
+    "genre": "Hard Rock",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 223,
+    "title": "Superstar",
+    "artist": "Jamelia",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 224,
+    "title": "Arrepentido",
+    "artist": "Sôber",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 225,
+    "title": "Mr. Jones",
+    "artist": "Counting Crows",
+    "language": "English",
+    "genre": null,
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 226,
+    "title": "Don't Go Breaking My Heart",
+    "artist": "Elton John & Kiki Dee",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 227,
+    "title": "Estrella",
+    "artist": "Despistaos",
+    "language": "Spanish",
+    "genre": "Rock",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 228,
+    "title": "PAPERMOON (TV)",
+    "artist": "Tommy heavenly6",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 229,
+    "title": "Friends",
+    "artist": "Marshmello & Anne-Marie",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 230,
+    "title": "Changes",
+    "artist": "David Bowie",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1972",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 231,
+    "title": "I don't want to miss a thing",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": null,
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 232,
+    "title": "Plastic Love",
+    "artist": "Mariya Takeuchi",
+    "language": "Japanese",
+    "genre": "City pop",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 233,
+    "title": "Papercut",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2000",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 234,
+    "title": "Papercut",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 235,
+    "title": "Drive My Car",
+    "artist": "The Beatles",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1965",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 236,
+    "title": "Killing In The Name",
+    "artist": "Rage Against The Machine",
+    "language": "English",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 237,
+    "title": "Habits (Stay High)",
+    "artist": "Tove Lo",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 238,
+    "title": "Dangerous Woman",
+    "artist": "Ariana Grande",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 239,
+    "title": "Talk Dirty (Radio Edit)",
+    "artist": "Jason Derülo Feat. 2 Chainz",
+    "language": "English",
+    "genre": "General Pop Vocal",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 240,
+    "title": "Killing Me",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 241,
+    "title": "Lovegame",
+    "artist": "Lady GaGa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 242,
+    "title": "GIRI GIRI (TV)",
+    "artist": "Masayuki Suzuki ft. Suu",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 243,
+    "title": "The adventures of Rain Dance Maggie",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 244,
+    "title": "Engel",
+    "artist": "Rammstein",
+    "language": "German",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 245,
+    "title": "Todo cambió",
+    "artist": "Camila",
+    "language": "Español",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 246,
+    "title": "Tio Sam",
+    "artist": "Ska-P",
+    "language": "Spanish",
+    "genre": "Ska",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 247,
+    "title": "Someday (Karaoke)",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 248,
+    "title": "Someday",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 249,
+    "title": "My Way",
+    "artist": "Frank Sinatra",
+    "language": "English",
+    "genre": "Oldies",
+    "year": "1969",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 250,
+    "title": "I'll Be There For You",
+    "artist": "The Rembrandts",
+    "language": "English",
+    "genre": null,
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 251,
+    "title": "Vogue",
+    "artist": "Madonna",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 252,
+    "title": "Undo",
+    "artist": "Cool Joke",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 253,
+    "title": "Pushing Me Away",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 254,
+    "title": "Beautiful People",
+    "artist": "Ed Sheeran ft. Khalid",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 255,
+    "title": "Perfect",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 256,
+    "title": "Boulevard of Broken Dreams",
+    "artist": "Green Day",
+    "language": "English",
+    "genre": "Rock Internacional",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 257,
+    "title": "The NeverEnding Story",
+    "artist": "Limahl",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 258,
+    "title": "The NeverEnding Story",
+    "artist": "Limahl",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1984",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 259,
+    "title": "Santé",
+    "artist": "Stromae",
+    "language": "French",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 260,
+    "title": "La bilirrubina",
+    "artist": "Juan Luis Guerra",
+    "language": "Español",
+    "genre": "Merengue",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 261,
+    "title": "Volverá",
+    "artist": "El canto del loco",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 262,
+    "title": "Eva María",
+    "artist": "Fórmula V",
+    "language": "Español",
+    "genre": null,
+    "year": "1973",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 263,
+    "title": "Buriki no dance",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 264,
+    "title": "She looks so perfect",
+    "artist": "5 Seconds of Summer",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 265,
+    "title": "I'm Outta Love",
+    "artist": "Anastacia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 266,
+    "title": "KIRA",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2026",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 267,
+    "title": "Bajo el mar",
+    "artist": "Disney (BSO La sirenita)",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 268,
+    "title": "Hoy",
+    "artist": "Gloria Estefan",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 269,
+    "title": "Clint Eastwood",
+    "artist": "Gorillaz",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 270,
+    "title": "Thunderstruck",
+    "artist": "AC/DC",
+    "language": "English",
+    "genre": "Hard Rock",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 271,
+    "title": "Kanashimi ga Tomaranai",
+    "artist": "Anri",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 272,
+    "title": "Get this party started",
+    "artist": "Pink",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 273,
+    "title": "Ave María",
+    "artist": "David Bisbal",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 274,
+    "title": "Unwritten",
+    "artist": "Natasha Bedingfield",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 275,
+    "title": "La gata bajo la lluvia",
+    "artist": "Rocío Dúrcal",
+    "language": "Español",
+    "genre": null,
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 276,
+    "title": "Cuerpo triste",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Rumba catalana",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 277,
+    "title": "Personal Jesus",
+    "artist": "Marilyn Manson",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 278,
+    "title": "Kill this love",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 279,
+    "title": "Gracias por venir",
+    "artist": "Lina Morgan",
+    "language": "Español",
+    "genre": null,
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 280,
+    "title": "El baúl de los recuerdos",
+    "artist": "Karina",
+    "language": "Español",
+    "genre": null,
+    "year": "1969",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 281,
+    "title": "La canción del pirata (parte I)",
+    "artist": "Tierra Santa",
+    "language": "Español",
+    "genre": "Power Metal",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 282,
+    "title": "So Yesterday",
+    "artist": "Hilary Duff",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 283,
+    "title": "Fly Me to the Moon",
+    "artist": "Frank Sinatra",
+    "language": "English",
+    "genre": "Jazz",
+    "year": "1964",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 284,
+    "title": "Satsugai (TV)",
+    "artist": "Detroit Metal City",
+    "language": "Japanese",
+    "genre": "Death Metal",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 285,
+    "title": "Real Emotion (FFX-2 ver.)",
+    "artist": "SWEETBOX",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 286,
+    "title": "Gitana",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 287,
+    "title": "Can't help falling in love",
+    "artist": "Elvis Presley",
+    "language": "English",
+    "genre": "Ballad",
+    "year": "1961",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 288,
+    "title": "Smooth Criminal [Moonwalker]",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 289,
+    "title": "SCOPE",
+    "artist": "Aimer",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 290,
+    "title": "Blue bird",
+    "artist": "Ikimono gakari",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 291,
+    "title": "Rockabye ft. Sean Paul & Anne-Marie",
+    "artist": "Clean Bandit",
+    "language": "English",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 292,
+    "title": "Soda Pop",
+    "artist": "Saja Boys",
+    "language": "English",
+    "genre": null,
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 293,
+    "title": "De cero a héroe",
+    "artist": "Hércules",
+    "language": "Spanish",
+    "genre": null,
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 294,
+    "title": "Destripando la historia - Ares",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "AlternRock",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 295,
+    "title": "Alma de blues",
+    "artist": "Presuntos Implicados",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 296,
+    "title": "Destripando la historia - Hades",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Pop Rock",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 297,
+    "title": "Anta nante (TV)",
+    "artist": "Riria",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 298,
+    "title": "Canción de la huelga de la central",
+    "artist": "Los Simpson",
+    "language": "Spanish",
+    "genre": "Soundtrack",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 299,
+    "title": "Es un golfo",
+    "artist": "La dama y el vagabundo",
+    "language": "Español",
+    "genre": null,
+    "year": "1955",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 300,
+    "title": "Don't tell me",
+    "artist": "Avril Lavigne",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 301,
+    "title": "Give me a reason",
+    "artist": "Megumi Hayashibara (BSO Slayers Next (Reena y Gaudy))",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 302,
+    "title": "Destripando la historia - Horus",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 303,
+    "title": "The Rumbling (TV)",
+    "artist": "SiM",
+    "language": "English",
+    "genre": "Metalcore",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 304,
+    "title": "Destripando la historia - Blancanieves rusa",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 305,
+    "title": "Hikari E (español)",
+    "artist": "One Piece",
+    "language": "Español",
+    "genre": "Anime",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 306,
+    "title": "El sol no regresa",
+    "artist": "La Quinta Estación",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 307,
+    "title": "Mayonaka no doa ~ Stay with me",
+    "artist": "Miki Matsubara",
+    "language": "Japanese",
+    "genre": "City pop",
+    "year": null,
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 308,
+    "title": "Kimi wa rock wo kikanai",
+    "artist": "Aimyon",
+    "language": "Japanese",
+    "genre": "JPop",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 309,
+    "title": "Sutekina kimi (TV)",
+    "artist": "Razz Ma Tazz",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 310,
+    "title": "El Shaka de Virgo",
+    "artist": "Caballeros del reggaeton",
+    "language": "Spanish",
+    "genre": "Reggaeton",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 311,
+    "title": "L'esercito del selfie",
+    "artist": "Takagi & Ketra feat. Lorenzo Fragola, Arisa",
+    "language": "Italian",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 312,
+    "title": "Destripando la historia - Heimdal",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Dance",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 313,
+    "title": "Destripando la historia - Ra (Pollomán)",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "R&B",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 314,
+    "title": "Chouzetsu☆Dynamic! (cover)",
+    "artist": "Dragon Ball Super",
+    "language": "Spanish",
+    "genre": "Anime",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 315,
+    "title": "Marigold",
+    "artist": "Aimyon",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 316,
+    "title": "Destripando la historia - Thor",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 317,
+    "title": "Destripando la historia - Apolo",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Disco",
+    "year": "2026",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 318,
+    "title": "Destripando la historia - Freyja",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Glam Metal",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 319,
+    "title": "Cruella De Vil",
+    "artist": "101 dálmatas",
+    "language": "Spanish",
+    "genre": "Jazz",
+    "year": "1961",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 320,
+    "title": "Cruella De Vil",
+    "artist": "101 dalmatians",
+    "language": "English",
+    "genre": "Jazz",
+    "year": "1961",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 321,
+    "title": "Los Nintendos",
+    "artist": "Soy tan sutil",
+    "language": "Spanish",
+    "genre": "Remix",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 322,
+    "title": "Cabecera",
+    "artist": "Cosas de locos (Osomatsu-kun)",
+    "language": "Spanish",
+    "genre": "Blues",
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 323,
+    "title": "Destripando la historia - Ulises",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Rock",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 324,
+    "title": "BadBoy",
+    "artist": "Da FLOWers",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 325,
+    "title": "Take me to the beach",
+    "artist": "Imagine Dragons feat. Ado",
+    "language": "English",
+    "genre": "AlternRock",
+    "year": "2024",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 326,
+    "title": "Take me to the beach",
+    "artist": "Imagine Dragons feat. Ado",
+    "language": "English",
+    "genre": "AlternRock",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 327,
+    "title": "Fan de ti",
+    "artist": "Sidecars",
+    "language": "Spanish",
+    "genre": "Rock",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 328,
+    "title": "Q&A Recital! (TV)",
+    "artist": "Haruka Tomatsu (BSO Tonari no Kaibutsu-kun)",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 329,
+    "title": "Destripando la Historia - Mulán",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 330,
+    "title": "Koi",
+    "artist": "Gen Hoshino",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 331,
+    "title": "A whole new world (japonés)",
+    "artist": "Aladdin",
+    "language": "Japanese",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 332,
+    "title": "Un mundo ideal (latino)",
+    "artist": "Aladdín",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 333,
+    "title": "Un mundo ideal (latino)",
+    "artist": "Aladdín",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 334,
+    "title": "Un mundo ideal (España)",
+    "artist": "Aladdín",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 335,
+    "title": "Not today",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 336,
+    "title": "La boda del año",
+    "artist": "SUNO feat. Vikstroyer",
+    "language": "Spanish",
+    "genre": "Celtic Rock",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 337,
+    "title": "You're welcome",
+    "artist": "Dwayne Johnson (BSO Moana/Vaiana)",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 338,
+    "title": "De nada",
+    "artist": "Marc Ullod (BSO Vaiana)",
+    "language": "Spanish",
+    "genre": "Soundtrack",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 339,
+    "title": "Yoru ni kakeru",
+    "artist": "YOASOBI",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 340,
+    "title": "Bella",
+    "artist": "Disney - La bella y la bestia",
+    "language": "Spanish",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 341,
+    "title": "Sora no aosa wo shiru hito yo",
+    "artist": "Aimyon",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 342,
+    "title": "Heridas del rock & roll",
+    "artist": "Rulo y la Contrabanda",
+    "language": "Spanish",
+    "genre": "Rock",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 343,
+    "title": "Kaikai kitan (TV)",
+    "artist": "Eve",
+    "language": "Japanese",
+    "genre": "JPop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 344,
+    "title": "Broken",
+    "artist": "Seether feat. Amy Lee",
+    "language": "English",
+    "genre": "Metal",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 345,
+    "title": "Bésala (español latinoamericano)",
+    "artist": "Disney (BSO La sirenita)",
+    "language": "Español",
+    "genre": null,
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 346,
+    "title": "Gigantes",
+    "artist": "Miss Caffeina",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 347,
+    "title": "Destripando la historia - Gilgamesh",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 348,
+    "title": "Destripando la historia - Hestia",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 349,
+    "title": "Dame yo! Dame yo! Dame yo!! (TV)",
+    "artist": "Hekiru Shiina (ED Yat Anshin!)",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 350,
+    "title": "Destripando la historia - Loki",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Rock",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 351,
+    "title": "Tokyo Bon 2020",
+    "artist": "Namewee feat. Meu Ninomiya",
+    "language": "Japanese",
+    "genre": "Folk",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 352,
+    "title": "Destripando la historia - Juana de Arco",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 353,
+    "title": "Destripando la historia - Satán",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Rock",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 354,
+    "title": "Destripando la Historia - Hera",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 355,
+    "title": "Heaven (TV)",
+    "artist": "HIM (OP YAT Anshin!)",
+    "language": "Japanese",
+    "genre": "",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 356,
+    "title": "No se habla de Bruno",
+    "artist": "Encanto",
+    "language": "English",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 357,
+    "title": "We don't talk about Bruno",
+    "artist": "Encanto",
+    "language": "English",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 358,
+    "title": "Sonic Jesucristo azul",
+    "artist": "Venga Monjas",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 359,
+    "title": "Destripando la historia - Cronos",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "AlternRock, R&BSoul",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 360,
+    "title": "I See The Light",
+    "artist": "Mandy Moore & Zachary Levi",
+    "language": "English",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 361,
+    "title": "Veo la luz",
+    "artist": "Disney - Carmen López y Tony Mateo (BSO Enredados)",
+    "language": "Español",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 362,
+    "title": "I See The Light",
+    "artist": "Mandy Moore & Zachary Levi",
+    "language": "English",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 363,
+    "title": "Kaibutsu",
+    "artist": "YOASOBI",
+    "language": "Japanese",
+    "genre": "JPop",
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 364,
+    "title": "Lost in Paradise (TV)",
+    "artist": "ALI feat. AKLO",
+    "language": "Japanese",
+    "genre": "Rock",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 365,
+    "title": "Summertime",
+    "artist": "Cinnamons × Evening cinema",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 366,
+    "title": "Summertime",
+    "artist": "Cinnamons × Evening cinema",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 367,
+    "title": "Destripando la historia - Odín",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Speed metal",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 368,
+    "title": "Lum no love song (TV)",
+    "artist": "Urusei Yatsura - Yuko Matsutani",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 369,
+    "title": "Everything Burns",
+    "artist": "Ben Moody feat. Anastacia",
+    "language": "English",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 370,
+    "title": "Mahou tte itte ii kana",
+    "artist": "Ken Hirai",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 371,
+    "title": "Yuuki ga areba (TV)",
+    "artist": "Kabuki Rocks",
+    "language": "Japanese",
+    "genre": "J-Rock",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 372,
+    "title": "Destripando la historia - Artemisa",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Punk Rock",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 373,
+    "title": "Breaking Bad",
+    "artist": "Leiva",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 374,
+    "title": "El canario",
+    "artist": "No me pises que llevo chanclas",
+    "language": "Spanish",
+    "genre": "Agropop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 375,
+    "title": "Takane no Hanako-san",
+    "artist": "back number",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 376,
+    "title": "Señor Burns",
+    "artist": "Los Simpson",
+    "language": "English",
+    "genre": "Latin Jazz",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 377,
+    "title": "Pegasus Fantasy (español)",
+    "artist": "Joaquín Paz",
+    "language": "Spanish",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 378,
+    "title": "How long",
+    "artist": "Charlie Puth",
+    "language": "English",
+    "genre": "Pop;Dance;Funk",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 379,
+    "title": "Kaibutsu (TV)",
+    "artist": "YOASOBI",
+    "language": "Japanese",
+    "genre": "JPop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 380,
+    "title": "Another day of sun",
+    "artist": "La La Land",
+    "language": "English",
+    "genre": "Musical",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 381,
+    "title": "Douse shinu nara",
+    "artist": "Aimyon",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 382,
+    "title": "Con valor",
+    "artist": "Disney (Mulán)",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 383,
+    "title": "I'll Make A Man Out Of You",
+    "artist": "Disney (Mulan)",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 384,
+    "title": "Toushi wo moyase",
+    "artist": "Disney (Mulan)",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 385,
+    "title": "Cuándo mi vida va a comenzar",
+    "artist": "Disney - Carmen López (BSO Enredados)",
+    "language": "Español",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 386,
+    "title": "When Will My Life Begin",
+    "artist": "Mandy Moore",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 387,
+    "title": "Destripando la historia - Afrodita",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Electronic",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 388,
+    "title": "El fin del mundo",
+    "artist": "La La Love You feat. Olaya Pedrayes",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 389,
+    "title": "Sola no estás",
+    "artist": "Dragon Ball GT",
+    "language": "Spanish",
+    "genre": "Unknown",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 390,
+    "title": "Let It Go",
+    "artist": "Takako Matsu",
+    "language": "Japanese",
+    "genre": "Soundtrack",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 391,
+    "title": "Let It Go",
+    "artist": "Idina Menzel",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 392,
+    "title": "Suéltalo",
+    "artist": "Gisela",
+    "language": "Spanish",
+    "genre": "Soundtrack",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 393,
+    "title": "Comentarios reales de ovres desesperados",
+    "artist": "El Cuadro de Honor",
+    "language": "Spanish",
+    "genre": "Trap",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 394,
+    "title": "Scramble (versión corta)",
+    "artist": "Yuri Horie y Unscandal (BSO School Rumble)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 395,
+    "title": "Scramble (versión corta)",
+    "artist": "El Duende en la Escalera (BSO School Rumble)",
+    "language": "Español",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 396,
+    "title": "Una isla muy chachi",
+    "artist": "Hora de aventuras",
+    "language": "Spanish",
+    "genre": "Blues",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 397,
+    "title": "Tacones rojos",
+    "artist": "Sebastián Yatra",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 398,
+    "title": "Kokorobosoina (TV)",
+    "artist": "Urusei Yatsura - Helen Sasano",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 399,
+    "title": "Mayores",
+    "artist": "Becky G feat. Bad Bunny",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 400,
+    "title": "Destripando la historia - Atenea",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Dance",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 401,
+    "title": "Kakumei douchuu (On the way) (TV)",
+    "artist": "Aina the End",
+    "language": "Japanese",
+    "genre": "2025",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 402,
+    "title": "Cabecera",
+    "artist": "Patoaventuras",
+    "language": "Español",
+    "genre": "Disney",
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 403,
+    "title": "I've got a dream",
+    "artist": "Tangled",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 404,
+    "title": "Mi sueño es",
+    "artist": "Carmen López, Toni Mateo y otros",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 405,
+    "title": "Destripando la historia - Thanos",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 406,
+    "title": "Destripando la historia - Diosa Isis",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Disco Funk",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 407,
+    "title": "Ella",
+    "artist": "Viceversa",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 408,
+    "title": "Brillante",
+    "artist": "Eduardo Bosch (BSO Vaiana)",
+    "language": "Spanish",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 409,
+    "title": "Shiny",
+    "artist": "Jemaine Clement (BSO Moana/Vaiana)",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 410,
+    "title": "Meteoros de Pegaso",
+    "artist": "Caballeros del reggaeton",
+    "language": "Spanish",
+    "genre": "Reggaeton",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 411,
+    "title": "Macaulay Culkin",
+    "artist": "Ladilla Rusa",
+    "language": "Spanish",
+    "genre": "Rumba bakala",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 412,
+    "title": "Destripando la historia - Baldur",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "AlternRock",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 413,
+    "title": "Cabecera",
+    "artist": "Pepper Ann",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 414,
+    "title": "Destripando la historia - Shiva",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "R&B/Soul",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 415,
+    "title": "Dragon Ball - Tema de cierre",
+    "artist": "Manolita Domínguez",
+    "language": "Spanish",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 416,
+    "title": "Qué hay más allá",
+    "artist": "María Parrado (BSO Vaiana)",
+    "language": "Español",
+    "genre": "SoundTrack",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 417,
+    "title": "Terriblemente cruel",
+    "artist": "Leiva",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 418,
+    "title": "Destripando la historia - Zeus",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 419,
+    "title": "Lemon",
+    "artist": "Kenshi Yonezu",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 420,
+    "title": "Destripando la historia - Deméter",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Ballad",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 421,
+    "title": "El frío",
+    "artist": "Zahara",
+    "language": "Spanish",
+    "genre": "Alternative",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 422,
+    "title": "Destripando la historia - Sun Wukong",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "J-Rock",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 423,
+    "title": "Destripando la historia - Hermes",
+    "artist": "Pascu y Rodri",
+    "language": "Spanish",
+    "genre": "Eurobeat",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 424,
+    "title": "El lamento de Jack",
+    "artist": "Pesadilla antes de Navidad",
+    "language": "Spanish",
+    "genre": "Blues",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 425,
+    "title": "Jack's lament",
+    "artist": "The Nightmare before Christmas",
+    "language": "English",
+    "genre": "Blues",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 426,
+    "title": "Parte de él",
+    "artist": "Disney (BSO La sirenita)",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 427,
+    "title": "Parte de él (V.O.)",
+    "artist": "Disney (BSO La sirenita)",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 428,
+    "title": "Got My Mind Set On You",
+    "artist": "George Harrison",
+    "language": "English",
+    "genre": null,
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 429,
+    "title": "La boca junta",
+    "artist": "Melendi y Mau & Ricky",
+    "language": "Español",
+    "genre": "Reguetón",
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 430,
+    "title": "La boca junta",
+    "artist": "Melendi y Mau & Ricky",
+    "language": "Español",
+    "genre": "Reguetón",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 431,
+    "title": "Heal the world",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 432,
+    "title": "CLEAR (TV)",
+    "artist": "Maaya Sakamoto",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 433,
+    "title": "Aute Cuture",
+    "artist": "ROSALÍA",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 434,
+    "title": "Creep",
+    "artist": "Radiohead",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 435,
+    "title": "Imposible",
+    "artist": "Luis Fonsi y Ozuna",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 436,
+    "title": "Mmm mmm mmm",
+    "artist": "Crash Test Dummies",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 437,
+    "title": "Photograph",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 438,
+    "title": "Sincericidio",
+    "artist": "Leiva",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 439,
+    "title": "Resonance (TV)",
+    "artist": "T.M.Revolution",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 440,
+    "title": "Heathens",
+    "artist": "Twenty One Pilots",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 441,
+    "title": "Como lo tienes tú",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 442,
+    "title": "Hora de aventuras",
+    "artist": "Templeton",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 443,
+    "title": "A Little Piece Of Heaven",
+    "artist": "Avenged Sevenfold",
+    "language": "English",
+    "genre": "Alternative",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 444,
+    "title": "Sleep walking orchestra (TV)",
+    "artist": "BUMP OF CHICKEN",
+    "language": "Japanese",
+    "genre": "Alternative Rock",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 445,
+    "title": "Dreams",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 446,
+    "title": "Desátame",
+    "artist": "Mónica Naranjo",
+    "language": "Español",
+    "genre": null,
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 447,
+    "title": "Little Talks",
+    "artist": "Of Monsters and Men",
+    "language": "English",
+    "genre": "Indie Rock",
+    "year": "2011",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 448,
+    "title": "Little Talks",
+    "artist": "Of Monsters and Men",
+    "language": "English",
+    "genre": "Indie Rock",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 449,
+    "title": "Yesterday",
+    "artist": "The Beatles",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1965",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 450,
+    "title": "A Million Love Songs",
+    "artist": "Take That",
+    "language": "English",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 451,
+    "title": "Desde que estamos juntos",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 452,
+    "title": "Mambo No. 5",
+    "artist": "Lou Bega",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 453,
+    "title": "Zenryoku Batankyuu (TV)",
+    "artist": "AOP",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 454,
+    "title": "Oye mi amor",
+    "artist": "Maná",
+    "language": "Español",
+    "genre": "Pop Rock",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 455,
+    "title": "Torquemada",
+    "artist": "Avalanch",
+    "language": "Español",
+    "genre": "Power Metal",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 456,
+    "title": "Resurrección",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 457,
+    "title": "Malibu",
+    "artist": "Miley Cyrus",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 458,
+    "title": "Breathless",
+    "artist": "The Corrs",
+    "language": "English",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 459,
+    "title": "Burn it down",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Rock Alternative",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 460,
+    "title": "Sogeking (TV)",
+    "artist": "Usopp",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 461,
+    "title": "Melissa",
+    "artist": "Porno graffiti",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 462,
+    "title": "Chim chímeni (Dúo)",
+    "artist": "Mary Poppins",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1964",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 463,
+    "title": "Chim chímeni (Dúo)",
+    "artist": "Mary Poppins",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1964",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 464,
+    "title": "Never gonna give you up",
+    "artist": "Rick Astley",
+    "language": "Englisch",
+    "genre": "",
+    "year": "",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 465,
+    "title": "Shape Of You",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 466,
+    "title": "Tiene nombres mil",
+    "artist": "Leonardo Dantés",
+    "language": "Español",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 467,
+    "title": "América, América",
+    "artist": "Nino Bravo",
+    "language": "Español",
+    "genre": "Balada",
+    "year": "1973",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 468,
+    "title": "Uchiage Hanabi",
+    "artist": "Daoko x Kenshi Yonezu",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 469,
+    "title": "Uchiage Hanabi",
+    "artist": "Daoko x Kenshi Yonezu",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 470,
+    "title": "Ama, ama y ensancha el alma",
+    "artist": "Extremoduro",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 471,
+    "title": "Can't stop",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 472,
+    "title": "Physical",
+    "artist": "Olivia Newton-John",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 473,
+    "title": "Abcdefu",
+    "artist": "Gayle",
+    "language": "English",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 474,
+    "title": "Bienvenidos",
+    "artist": "Miguel Ríos",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 475,
+    "title": "The world (TV)",
+    "artist": "Nightmare",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 476,
+    "title": "Ray of Light",
+    "artist": "Shoko Nakagawa",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 477,
+    "title": "Hello Especially (TV)",
+    "artist": "Sukima Switch",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 478,
+    "title": "Prayer X (TV)",
+    "artist": "King Gnu",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 479,
+    "title": "Mi Jefe",
+    "artist": "Mojinos Escozios",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 480,
+    "title": "Crawling",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 481,
+    "title": "Justo cuando el mundo apriete",
+    "artist": "Viva Suecia y Leiva",
+    "language": "Español",
+    "genre": "Indie",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 482,
+    "title": "Justo cuando el mundo apriete",
+    "artist": "Viva Suecia y Leiva",
+    "language": "Español",
+    "genre": "Indie",
+    "year": "2022",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 483,
+    "title": "Clattanoia (TV)",
+    "artist": "OxT",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 484,
+    "title": "All the things she said",
+    "artist": "t.A.T.u.",
+    "language": "English",
+    "genre": "Pop Internacional",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 485,
+    "title": "Canción del verano",
+    "artist": "José Mota y Edurne",
+    "language": "Español",
+    "genre": null,
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 486,
+    "title": "I Love Rock 'n Roll",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 487,
+    "title": "Eyes closed",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop folkl√≥rico",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 488,
+    "title": "Bad Liar",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 489,
+    "title": "Tan cierto como tú",
+    "artist": "Disney (BSO Hércules)",
+    "language": "Español",
+    "genre": "Other",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 490,
+    "title": "Sonrisa",
+    "artist": "Ana Torroja",
+    "language": "Español",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 491,
+    "title": "Just the two of us",
+    "artist": "Grover Washington, Jr.",
+    "language": "English",
+    "genre": "Ballad",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 492,
+    "title": "Lovefool",
+    "artist": "The Cardigans",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 493,
+    "title": "ABC",
+    "artist": "The Jackson 5",
+    "language": "English",
+    "genre": null,
+    "year": "1970",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 494,
+    "title": "Adventure Of A Lifetime",
+    "artist": "Coldplay",
+    "language": "English",
+    "genre": "Rock, Pop, Alternative",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 495,
+    "title": "Kings and queens",
+    "artist": "30 Seconds to mars",
+    "language": "English",
+    "genre": "ROCK ALTERNATIVE",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 496,
+    "title": "Memories",
+    "artist": "Maroon 5",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 497,
+    "title": "Ma Meilleure Ennemie",
+    "artist": "Stromae, Pomme",
+    "language": "French",
+    "genre": "Hip hop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 498,
+    "title": "I'm yours",
+    "artist": "Jason Mraz",
+    "language": "English",
+    "genre": "Other",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 499,
+    "title": "Lucha de gigantes",
+    "artist": "Nacha Pop",
+    "language": "Español",
+    "genre": "Balada",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 500,
+    "title": "Cabecera",
+    "artist": "La abeja Maya",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 501,
+    "title": "Lo malo",
+    "artist": "Ana Guerra y Aitana Ocaña",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 502,
+    "title": "Lo malo",
+    "artist": "Ana Guerra y Aitana Ocaña",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 503,
+    "title": "Magic Number (TV)",
+    "artist": "Maaya Sakamoto",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 504,
+    "title": "Binks no sake",
+    "artist": "One Piece",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 505,
+    "title": "Millones",
+    "artist": "Camilo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 506,
+    "title": "Everybody's fool",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 507,
+    "title": "Ponte el cinturón",
+    "artist": "Silvia Padilla (Cásting Factor X)",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 508,
+    "title": "It's Gonna Be Me",
+    "artist": "N'Sync",
+    "language": "English",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 509,
+    "title": "Last kiss (TV)",
+    "artist": "Bonnie Pink",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 510,
+    "title": "Hula hoop",
+    "artist": "OMI",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 511,
+    "title": "Dude (Looks like a lady)",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": "Glam Metal",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 512,
+    "title": "Dark Horse",
+    "artist": "Katy Perry",
+    "language": "English",
+    "genre": "R&B",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 513,
+    "title": "Don't Start Now",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 514,
+    "title": "That That",
+    "artist": "Psy feat. Suga of BTS",
+    "language": "English",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 515,
+    "title": "My favourite game",
+    "artist": "The Cardigans",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 516,
+    "title": "Suki de, Suki de, Suki de",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 517,
+    "title": "Sabor de amor",
+    "artist": "Danza Invisible",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 518,
+    "title": "Is this love",
+    "artist": "Bob Marley & the Wailers",
+    "language": "English",
+    "genre": "Reggae",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 519,
+    "title": "Y, ¿si fuera ella?",
+    "artist": "Alejandro Sanz",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 520,
+    "title": "Come as you are",
+    "artist": "Nirvana",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 521,
+    "title": "Cuando me vaya",
+    "artist": "Melocos y Natalia Jiménez (de La Quinta Estación)",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 522,
+    "title": "Please Please Please",
+    "artist": "Sabrina Carpenter",
+    "language": "English",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 523,
+    "title": "Solo",
+    "artist": "Clean Bandit feat. Demi Lovato",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 524,
+    "title": "Retorciendo palabras",
+    "artist": "Fangoria",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 525,
+    "title": "Speed of Sound",
+    "artist": "Coldplay",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 526,
+    "title": "Galilea",
+    "artist": "Sergio Dalma",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 527,
+    "title": "Animals",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 528,
+    "title": "Esto es Halloween",
+    "artist": "Pesadilla antes de Navidad",
+    "language": "Español",
+    "genre": "Banda sonora",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 529,
+    "title": "Clavaíto",
+    "artist": "Chanel y Abraham Mateo",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2023",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 530,
+    "title": "Clavaíto",
+    "artist": "Chanel y Abraham Mateo",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 531,
+    "title": "DI MI NOMBRE (Cap.8 Éxtasis)",
+    "artist": "ROSALÍA",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 532,
+    "title": "Go Your Own Way",
+    "artist": "Fleetwood Mac",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 533,
+    "title": "Sakura Saku",
+    "artist": "Megumi Hayashibara",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 534,
+    "title": "Radikal",
+    "artist": "El Chivi",
+    "language": "Español",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 535,
+    "title": "You're Beautiful",
+    "artist": "James Blunt",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 536,
+    "title": "Señorita",
+    "artist": "Shawn Mendes, Camila Cabello",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 537,
+    "title": "Señorita",
+    "artist": "Shawn Mendes, Camila Cabello",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 538,
+    "title": "Padam Padam",
+    "artist": "Kylie Minogue",
+    "language": "English",
+    "genre": null,
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 539,
+    "title": "Cabecera",
+    "artist": "BSO Isidoro",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 540,
+    "title": "Michelle",
+    "artist": "The Beatles",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1965",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 541,
+    "title": "La bachata",
+    "artist": "Manuel Turizo",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 542,
+    "title": "What I've been looking for",
+    "artist": "High School Musical",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 543,
+    "title": "Sobreviviré",
+    "artist": "Mónica Naranjo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 544,
+    "title": "Unholy",
+    "artist": "Sam Smith, Kim Petras",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 545,
+    "title": "El universo sobre mi",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 546,
+    "title": "Moves Like Jagger",
+    "artist": "Maroon 5 feat. Christina Aguilera",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 547,
+    "title": "Moves Like Jagger",
+    "artist": "Maroon 5 feat. Christina Aguilera",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 548,
+    "title": "Sen no kotoba",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "Other",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 549,
+    "title": "The Reason",
+    "artist": "Hoobastank",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 550,
+    "title": "This is Halloween",
+    "artist": "The Nightmare Before Christmas",
+    "language": "English",
+    "genre": "Musical",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 551,
+    "title": "Tabi no tochuu",
+    "artist": "Natsumi Kiyoura",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 552,
+    "title": "What Lovers Do",
+    "artist": "Maroon 5 ft. SZA",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 553,
+    "title": "Nothin' on you",
+    "artist": "B.o.B Feat. Bruno Mars",
+    "language": "English",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 554,
+    "title": "Nothin' on you",
+    "artist": "B.o.B Feat. Bruno Mars",
+    "language": "English",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 555,
+    "title": "Uno más uno son siete",
+    "artist": "Fran Perea",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 556,
+    "title": "Estoy fatal de lo mío",
+    "artist": "El Payaso (La Hora Chanante)",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 557,
+    "title": "Walk me home",
+    "artist": "P!nk",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 558,
+    "title": "Style",
+    "artist": "Taylor Swift",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 559,
+    "title": "Physical",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 560,
+    "title": "Breaking the Habit",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 561,
+    "title": "Cover me in sunshine",
+    "artist": "P!NK & Willow Sage Hart",
+    "language": "English",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 562,
+    "title": "Naturaleza muerta",
+    "artist": "Mecano",
+    "language": "Español",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 563,
+    "title": "Paranoid",
+    "artist": "Black Sabbath",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1970",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 564,
+    "title": "Mi Gato",
+    "artist": "Rosario",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 565,
+    "title": "Aprendiz",
+    "artist": "Malú",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 566,
+    "title": "Sirenas",
+    "artist": "Taburete",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 567,
+    "title": "The Sound of Silence",
+    "artist": "Simon & Garfunkel",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1964",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 568,
+    "title": "Bye bye bye",
+    "artist": "N'Sync",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 569,
+    "title": "Driver's High",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 570,
+    "title": "La Flaca",
+    "artist": "Jarabe de Palo",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 571,
+    "title": "PINK BLOOD (TV)",
+    "artist": "Hikaru Utada",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 572,
+    "title": "Dragostea din teï",
+    "artist": "O-Zone",
+    "language": "Romanian",
+    "genre": "Eurodance, dance pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 573,
+    "title": "From the inside",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 574,
+    "title": "Moonlight shadow",
+    "artist": "Mike Oldfield con Maggie Reilly",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 575,
+    "title": "Secret Base ~Kimi ga Kureta Mono~ (10 Years After) (TV)",
+    "artist": "Ai Kayano",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 576,
+    "title": "Mar Adentro",
+    "artist": "Héroes del Silencio",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 577,
+    "title": "Butter",
+    "artist": "BTS",
+    "language": "English",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 578,
+    "title": "Euphoria",
+    "artist": "Loreen",
+    "language": "English",
+    "genre": "Dance-Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 579,
+    "title": "Canción de Meg",
+    "artist": "Celia Vergara",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1997",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 580,
+    "title": "Canción de Meg",
+    "artist": "Celia Vergara",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 581,
+    "title": "Planetarium",
+    "artist": "Ai Otsuka",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 582,
+    "title": "Manazashi wa hikari (TV)",
+    "artist": "Tatsuya Kitani",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 583,
+    "title": "I ain't worried",
+    "artist": "OneRepublic",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 584,
+    "title": "Kamikaze",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 585,
+    "title": "Atemonaku (TV)",
+    "artist": "Aimer",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 586,
+    "title": "Who Wants to Live Forever",
+    "artist": "Queen",
+    "language": "English",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 587,
+    "title": "Dear Maria, count me in",
+    "artist": "All Time Low",
+    "language": "English",
+    "genre": "Pop Punk",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 588,
+    "title": "Hung Up",
+    "artist": "Madonna",
+    "language": "English",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 589,
+    "title": "Sunny",
+    "artist": "Boney M.",
+    "language": "English",
+    "genre": "Disco",
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 590,
+    "title": "Mujer Bruja",
+    "artist": "Lola Indigo y Mala Rodríguez",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 591,
+    "title": "From the start",
+    "artist": "Laufey",
+    "language": "English",
+    "genre": "Jazz Pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 592,
+    "title": "Cry Baby (TV)",
+    "artist": "Official HIGE DANdism",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 593,
+    "title": "Por la boca vive el pez",
+    "artist": "Fito & Fitipaldis",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 594,
+    "title": "One step closer",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 595,
+    "title": "Zankyou sanka (TV)",
+    "artist": "Aimer",
+    "language": "Japanese",
+    "genre": "Rock",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 596,
+    "title": "Entre tú y mil mares",
+    "artist": "Laura Pausini",
+    "language": "Español",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 597,
+    "title": "I Still Haven't Found What I'm Looking For",
+    "artist": "U2",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 598,
+    "title": "11:00",
+    "artist": "HY",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 599,
+    "title": "Suerte",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 600,
+    "title": "Lapis Lazuli (TV)",
+    "artist": "Eir Aoi",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 601,
+    "title": "Left behind",
+    "artist": "Slipknot",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 602,
+    "title": "Bat Country",
+    "artist": "Avenged Sevenfold",
+    "language": "English",
+    "genre": "Metal",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 603,
+    "title": "Entre dos tierras",
+    "artist": "Héroes del silencio",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 604,
+    "title": "You And Me",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 605,
+    "title": "SOUVENIR (TV)",
+    "artist": "BUMP OF CHICKEN",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 606,
+    "title": "La puerta hacia el amor",
+    "artist": "Carmen López y Tony Menguiano",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 607,
+    "title": "La puerta hacia el amor",
+    "artist": "Carmen López y Tony Menguiano",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "2013",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 608,
+    "title": "Toxicity",
+    "artist": "System of a Down",
+    "language": "English",
+    "genre": "Metal Alternativo",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 609,
+    "title": "Counting Stars",
+    "artist": "OneRepublic",
+    "language": "English",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 610,
+    "title": "¿Y cómo es él?",
+    "artist": "José Luis Perales",
+    "language": "Español",
+    "genre": null,
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 611,
+    "title": "All About That Bass",
+    "artist": "Meghan Trainor",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 612,
+    "title": "Futari de... (Karaoke)",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 613,
+    "title": "Futari de...",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 614,
+    "title": "Bam Bam",
+    "artist": "Camila Cabello feat. Ed Sheeran",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 615,
+    "title": "Love Machine",
+    "artist": "Morning Musume",
+    "language": "Japanese",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 616,
+    "title": "Elevation",
+    "artist": "U2",
+    "language": "English",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 617,
+    "title": "I Want To Know What Love Is",
+    "artist": "Foreigner",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 618,
+    "title": "Él no soy yo",
+    "artist": "Blas Cantó",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 619,
+    "title": "Love Me Again",
+    "artist": "John Newman",
+    "language": "English",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 620,
+    "title": "Tu jardín con enanitos",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": "Pop Rock",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 621,
+    "title": "Ichirin no hana (versión corta)",
+    "artist": "High and mighty color (BSO Bleach)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 622,
+    "title": "Just Can't Get Enough",
+    "artist": "The Black Eyed Peas",
+    "language": "English",
+    "genre": "R&B",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 623,
+    "title": "Ticket To Ride",
+    "artist": "The Beatles",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1965",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 624,
+    "title": "A Dios le pido",
+    "artist": "Juanes",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 625,
+    "title": "Lay all your love on me",
+    "artist": "ABBA",
+    "language": "English",
+    "genre": "Dance",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 626,
+    "title": "R U Mine",
+    "artist": "Arctic Monkeys",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 627,
+    "title": "Butter-fly",
+    "artist": "Kouji Wada",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 628,
+    "title": "Zankoku na Tenshi no Te-ze (TV)",
+    "artist": "Yoko Takahashi",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 629,
+    "title": "Faded",
+    "artist": "Alan Walker",
+    "language": "English",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 630,
+    "title": "Odd Future (TV)",
+    "artist": "UVERworld",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 631,
+    "title": "The Lazy Song",
+    "artist": "Bruno Mars",
+    "language": "English",
+    "genre": "pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 632,
+    "title": "Bésala (español de España)",
+    "artist": "Disney (BSO La sirenita)",
+    "language": "Español",
+    "genre": null,
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 633,
+    "title": "Peter Pan",
+    "artist": "El Canto del Loco",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 634,
+    "title": "Chasing Pavements",
+    "artist": "Adele",
+    "language": "English",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 635,
+    "title": "Sigo Aquí",
+    "artist": "Álex Ubago",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 636,
+    "title": "Everlong",
+    "artist": "Foo Fighters",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 637,
+    "title": "Nobody (TV)",
+    "artist": "OneRepublic",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 638,
+    "title": "Maybe you're the problem",
+    "artist": "Ava Max",
+    "language": "English",
+    "genre": "Hip Hop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 639,
+    "title": "Under the bridge",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock alternativo",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 640,
+    "title": "Burn it to the ground",
+    "artist": "Nickelback",
+    "language": "English",
+    "genre": "Hard Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 641,
+    "title": "Human",
+    "artist": "The Killers",
+    "language": "English",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 642,
+    "title": "Like OOH-AHH",
+    "artist": "TWICE",
+    "language": "Korean",
+    "genre": "Kpop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 643,
+    "title": "Earth Song",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Ballad",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 644,
+    "title": "Ride the lightning",
+    "artist": "Metallica",
+    "language": "English",
+    "genre": "Thrash Metal",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 645,
+    "title": "It's A Beautiful Day",
+    "artist": "Michael Bublé",
+    "language": "English",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 646,
+    "title": "El último vals",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 647,
+    "title": "Mientes",
+    "artist": "Camila",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 648,
+    "title": "Amerika",
+    "artist": "Rammstein",
+    "language": "German",
+    "genre": "Metal Industrial",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 649,
+    "title": "Hazme un muñeco de nieve",
+    "artist": "Naima Barroso, Emma Amselem y Carmen López",
+    "language": "Español",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 650,
+    "title": "Linger",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 651,
+    "title": "Black Sheep (Brie Larson Vocal Version)",
+    "artist": "Metric",
+    "language": "English",
+    "genre": "Unknown",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 652,
+    "title": "Tasogare no Bay City",
+    "artist": "Junko Yagami",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 653,
+    "title": "Días de verano",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 654,
+    "title": "Nada que perder",
+    "artist": "Conchita",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 655,
+    "title": "Saoko",
+    "artist": "Rosalía",
+    "language": "Español",
+    "genre": "Urban latino, reguetón",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 656,
+    "title": "Cada dos minutos",
+    "artist": "Despistaos (Versión 2)",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 657,
+    "title": "Bitter Sweet Symphony",
+    "artist": "The Verve",
+    "language": "English",
+    "genre": "Britpop",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 658,
+    "title": "The Winner Takes It All",
+    "artist": "ABBA",
+    "language": "English",
+    "genre": null,
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 659,
+    "title": "Salomé",
+    "artist": "Chayanne",
+    "language": "Español",
+    "genre": "Latina",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 660,
+    "title": "Oz (TV)",
+    "artist": "Yama",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 661,
+    "title": "A Whole New World",
+    "artist": "Aladdin",
+    "language": "English",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 662,
+    "title": "Hanabi (TV)",
+    "artist": "Ikimono gakari",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 663,
+    "title": "Cruz de navajas",
+    "artist": "Mecano",
+    "language": "Español",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 664,
+    "title": "FLY HIGH!! (TV)",
+    "artist": "BURNOUT SYNDROMES",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 665,
+    "title": "Cabecera",
+    "artist": "Dulces (BSO Dragones y mazmorras)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 666,
+    "title": "He Said, She Said",
+    "artist": "Ashley Tisdale",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 667,
+    "title": "Nada de ná",
+    "artist": "Café Quijano",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 668,
+    "title": "Puedes Contar Conmigo",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 669,
+    "title": "Glamourous sky",
+    "artist": "Mika Nakashima como NANA",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 670,
+    "title": "La frase tonta de la semana",
+    "artist": "La Quinta Estación",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 671,
+    "title": "Romantikku Ageru Yo (TV)",
+    "artist": "Hashimoto Ushio",
+    "language": "Japanese",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 672,
+    "title": "One More Time",
+    "artist": "Daft Punk",
+    "language": "English",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 673,
+    "title": "The Fourth Avenue Cafe (TV)",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 674,
+    "title": "Oh my God",
+    "artist": "Adele",
+    "language": "English",
+    "genre": "Soul, Dance Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 675,
+    "title": "Haruka kanata",
+    "artist": "Asian Kung-fu Generation",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 676,
+    "title": "Rewrite",
+    "artist": "Asian Kung Fu Generation",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 677,
+    "title": "Cabecera",
+    "artist": "Heidi",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1975",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 678,
+    "title": "Cuando brille el sol",
+    "artist": "La Guardia",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 679,
+    "title": "Since U Been Gone",
+    "artist": "Kelly Clarkson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 680,
+    "title": "Esa diva",
+    "artist": "Melody",
+    "language": "Español",
+    "genre": "Pop electrónico",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 681,
+    "title": "Sakura (2007)",
+    "artist": "Ikimono Gakari",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 682,
+    "title": "Thank you",
+    "artist": "Dido",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 683,
+    "title": "Sing",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 684,
+    "title": "That don't impress me much",
+    "artist": "Shania Twain",
+    "language": "English",
+    "genre": "Country, dance pop",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 685,
+    "title": "Zombie",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 686,
+    "title": "Rosenrot",
+    "artist": "Rammstein",
+    "language": "German",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 687,
+    "title": "Chica Ye Ye",
+    "artist": "Conchita Velasco",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1965",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 688,
+    "title": "Going under",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": "Rock alternativo",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 689,
+    "title": "Before You Go",
+    "artist": "Lewis Capaldi",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 690,
+    "title": "Idiota",
+    "artist": "Los Ronaldos",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 691,
+    "title": "I Will Survive",
+    "artist": "Gloria Gaynor",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 692,
+    "title": "I'm Still Standing",
+    "artist": "Elton John",
+    "language": "English",
+    "genre": null,
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 693,
+    "title": "I'm Still Standing (Extended version)",
+    "artist": "Elton John",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 694,
+    "title": "I will survive (Special Disco Version)",
+    "artist": "Gloria Gaynor",
+    "language": "English",
+    "genre": "Disco",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 695,
+    "title": "MALAMENTE (Cap.1 Augurio)",
+    "artist": "ROSALÍA",
+    "language": "Español",
+    "genre": "",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 696,
+    "title": "Hawái",
+    "artist": "Maluma",
+    "language": "Español",
+    "genre": "Reguetón lento",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 697,
+    "title": "Estrella polar",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 698,
+    "title": "Thank u, next (MV)",
+    "artist": "Ariana Grande",
+    "language": "English",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 699,
+    "title": "ワールドイズマイン",
+    "artist": "初音ミク",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 700,
+    "title": "ワールドイズマイン",
+    "artist": "初音ミク",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 749,
+    "title": "Love again",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 701,
+    "title": "World is mine",
+    "artist": "Hatsune Miku",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 702,
+    "title": "El beso",
+    "artist": "Pablo Alborán",
+    "language": "Español",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 703,
+    "title": "Are You Gonna Go My Way",
+    "artist": "Lenny Kravitz",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 704,
+    "title": "Como hablar",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Pop Rock Latino",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 705,
+    "title": "Muñeca de trapo",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 706,
+    "title": "Peace Sign",
+    "artist": "Kenshi Yonezu",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 707,
+    "title": "¡Bang, bang! Lucky Luke",
+    "artist": "Lucky Luke",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 708,
+    "title": "Sex Bomb",
+    "artist": "Tom Jones",
+    "language": "English",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 709,
+    "title": "Lamento (TV)",
+    "artist": "Kanako Itou",
+    "language": "Latin",
+    "genre": "Visual Novel",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 710,
+    "title": "Miénteme",
+    "artist": "David Bisbal Y Elena Gadel",
+    "language": "Español",
+    "genre": "",
+    "year": "",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 711,
+    "title": "Sugar",
+    "artist": "Maroon 5",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 712,
+    "title": "Una foto en blanco y negro",
+    "artist": "David Otero y Taburete",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2020",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 713,
+    "title": "Una foto en blanco y negro",
+    "artist": "David Otero y Taburete",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 714,
+    "title": "Por el miedo a equivocarnos",
+    "artist": "Maldita Nerea",
+    "language": "Español",
+    "genre": "Pop Español",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 715,
+    "title": "I Knew You Were Trouble",
+    "artist": "Taylor Swift",
+    "language": "English",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 716,
+    "title": "Pedro",
+    "artist": "Raffaella Carrà",
+    "language": "Español",
+    "genre": "Pop, dance",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 717,
+    "title": "Don't let me down",
+    "artist": "The Chainsmokers ft. Daya",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 718,
+    "title": "Ni tú ni nadie",
+    "artist": "Alaska y Dinarama",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 719,
+    "title": "The Fate of Ophelia",
+    "artist": "Taylor Swift",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 720,
+    "title": "We Gotta Power (TV)",
+    "artist": "Hironobu Kageyama",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 721,
+    "title": "Lost",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 722,
+    "title": "Wish I Had An Angel",
+    "artist": "Nightwish",
+    "language": "English",
+    "genre": "Metal",
+    "year": "2004",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 723,
+    "title": "Wish I Had An Angel",
+    "artist": "Nightwish",
+    "language": "English",
+    "genre": "Metal",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 724,
+    "title": "Dan Dan Kokoro Hikareteku (TV)",
+    "artist": "Field of View",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 725,
+    "title": "Sevilla",
+    "artist": "Miguel Bosé",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 726,
+    "title": "California Gurls",
+    "artist": "Katy Perry feat. Snoop Dogg",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 727,
+    "title": "All I Want For Christmas is You",
+    "artist": "Mariah Carey",
+    "language": "English",
+    "genre": "Christmas Songs",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 728,
+    "title": "Mi gran noche",
+    "artist": "Raphael",
+    "language": "Español",
+    "genre": "Balada",
+    "year": "1968",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 729,
+    "title": "Ain’t It Fun",
+    "artist": "Paramore",
+    "language": "English",
+    "genre": "Rock & Roll",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 730,
+    "title": "Wrecking Ball",
+    "artist": "Miley Cyrus",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 731,
+    "title": "Baka Mitai",
+    "artist": "Shun Akiyama",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 732,
+    "title": "Lo echamos a suertes",
+    "artist": "Ella Baila Sola",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1997",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 733,
+    "title": "Lo echamos a suertes",
+    "artist": "Ella Baila Sola",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 734,
+    "title": "Duele el amor",
+    "artist": "Aleks Syntek y Ana Torroja",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 735,
+    "title": "Duele el amor",
+    "artist": "Aleks Syntek y Ana Torroja",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 736,
+    "title": "Hero",
+    "artist": "Nickelback",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2002",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 737,
+    "title": "Hero",
+    "artist": "Nickelback",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 738,
+    "title": "Bang Bang",
+    "artist": "Jessie J, Ariana Grande & Nicki Minaj",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 739,
+    "title": "Flaca",
+    "artist": "Andrés Calamaro",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 740,
+    "title": "Welcome to the black parade",
+    "artist": "My Chemical Romance",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 741,
+    "title": "Jiriki Hongan Revolution (TV)",
+    "artist": "3-nen E-Gumi Utatan",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 742,
+    "title": "Un clásico",
+    "artist": "Ana Mena",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 743,
+    "title": "The Edge Of Glory",
+    "artist": "Lady GaGa",
+    "language": "English",
+    "genre": "Dance Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 744,
+    "title": "The kids aren't alright",
+    "artist": "The Offspring",
+    "language": "English",
+    "genre": "Punk Rock",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 745,
+    "title": "Stay with me",
+    "artist": "Sam Smith",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 746,
+    "title": "Paint It, Black",
+    "artist": "The Rolling Stones",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1966",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 747,
+    "title": "Hey, Soul Sister",
+    "artist": "Train",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 748,
+    "title": "I Wanna Dance With Somebody",
+    "artist": "Whitney Houston",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 750,
+    "title": "Gentleman",
+    "artist": "Psy",
+    "language": "Korean",
+    "genre": "Pop Dance",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 751,
+    "title": "Island in the Sun",
+    "artist": "Weezer",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 752,
+    "title": "Wake Me Up Before You Go-Go",
+    "artist": "Wham",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 753,
+    "title": "Ain't Your Mama",
+    "artist": "Jennifer Lopez",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 754,
+    "title": "Labios compartidos",
+    "artist": "Maná",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 755,
+    "title": "Don't be shy",
+    "artist": "Tiësto y Karol G",
+    "language": "English",
+    "genre": "Dance",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 756,
+    "title": "Mamma Mia",
+    "artist": "ABBA",
+    "language": "English",
+    "genre": null,
+    "year": "1975",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 757,
+    "title": "BAGDAD (Cap.7 Liturgia)",
+    "artist": "ROSALÍA",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 758,
+    "title": "Hakuna matata",
+    "artist": "El Rey León",
+    "language": "Español",
+    "genre": "Banda sonora",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 759,
+    "title": "In the Shadows",
+    "artist": "The Rasmus",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 760,
+    "title": "The Real Folk Blues (TV)",
+    "artist": "Seatbelts feat. Mai Yamane",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 761,
+    "title": "Love Dramatic (TV)",
+    "artist": "Masayuki Suzuki ft. Rikka Ihara",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 762,
+    "title": "BOOMBAYAH",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 763,
+    "title": "Mixed Nuts (TV)",
+    "artist": "Official HIGE DANdism",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 764,
+    "title": "Clavado en un bar",
+    "artist": "Maná",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 765,
+    "title": "¿Qué es?",
+    "artist": "Pesadilla antes de Navidad",
+    "language": "Español",
+    "genre": "OST",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 766,
+    "title": "Libre",
+    "artist": "Nino Bravo",
+    "language": "español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 767,
+    "title": "Mocasines saltarines",
+    "artist": "Los Simpson",
+    "language": "Español",
+    "genre": null,
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 768,
+    "title": "Me gustas tú",
+    "artist": "Manu Chao",
+    "language": "Español",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 769,
+    "title": "All Star",
+    "artist": "Smash Mouth",
+    "language": "English",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 770,
+    "title": "Closer",
+    "artist": "The Chainsmokers ft. Halsey",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 771,
+    "title": "Earned it",
+    "artist": "The Weeknd",
+    "language": "English",
+    "genre": "Soundtracks",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 772,
+    "title": "It Will Rain",
+    "artist": "Bruno Mars",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 773,
+    "title": "Para ti sería",
+    "artist": "Nek",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 774,
+    "title": "APT.",
+    "artist": "ROSÉ & Bruno Mars",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 775,
+    "title": "AIZO (TV)",
+    "artist": "King Gnu",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2026",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 776,
+    "title": "Juliette",
+    "artist": "Platero y Tú con Robe Iniesta y Evaristo",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 777,
+    "title": "When you're gone",
+    "artist": "Avril Lavigne",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 778,
+    "title": "Me Equivocaría Otra Vez",
+    "artist": "Fito Y Fitipaldis",
+    "language": "Español",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 779,
+    "title": "Golden time lover (TV)",
+    "artist": "Sukima Switch",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 780,
+    "title": "Giragira",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 781,
+    "title": "One More Time, One More Chance",
+    "artist": "Masayoshi Yamazaki",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 782,
+    "title": "Lips are moving",
+    "artist": "Meghan Trainor",
+    "language": "English",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 783,
+    "title": "Platinum (TV)",
+    "artist": "Maaya Sakamoto",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 784,
+    "title": "Moi... Lolita",
+    "artist": "Alizée",
+    "language": "Französisch",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 785,
+    "title": "Una noche con arte",
+    "artist": "El arrebato",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 786,
+    "title": "Marta, Sebas, Guille y los demás",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 787,
+    "title": "Dale, Ramón",
+    "artist": "Miliki",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 788,
+    "title": "Carousel",
+    "artist": "Melanie Martinez",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 789,
+    "title": "There she is!!",
+    "artist": "Witches",
+    "language": "Korean",
+    "genre": "Krock",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 790,
+    "title": "Haru (TV)",
+    "artist": "Yorushika",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 791,
+    "title": "Hacking to the Gate (TV)",
+    "artist": "Itou Kanako",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 792,
+    "title": "Shiny Happy People",
+    "artist": "R.E.M.",
+    "language": "Englisch",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 793,
+    "title": "Amor gitano",
+    "artist": "Alejandro Fernández y Beyoncé",
+    "language": "Español",
+    "genre": "Other",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 794,
+    "title": "Puzzle (TV)",
+    "artist": "Round Table featuring Nino",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 795,
+    "title": "Spaceman",
+    "artist": "The Killers",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 796,
+    "title": "Let me be with you",
+    "artist": "Round Table featuring Nino",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 797,
+    "title": "Northern Lights (TV)",
+    "artist": "Megumi Hayashibara",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 798,
+    "title": "La primavera trompetera",
+    "artist": "Los Delinqüentes",
+    "language": "Español",
+    "genre": "Rumba",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 799,
+    "title": "Heikousen (TV)",
+    "artist": "Sayuri",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 800,
+    "title": "Desde Brasil",
+    "artist": "Café Quijano",
+    "language": "Español",
+    "genre": "Latina",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 801,
+    "title": "Beautiful",
+    "artist": "Christina Aguilera",
+    "language": "English",
+    "genre": "Ballad",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 802,
+    "title": "El baile del chiki-chiki",
+    "artist": "Rodolfo Chikilicuatre",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 803,
+    "title": "Shake It Off",
+    "artist": "Taylor Swift",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 804,
+    "title": "dawn (TV)",
+    "artist": "LiSA",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 805,
+    "title": "La incondicional",
+    "artist": "Luis Miguel",
+    "language": "Español",
+    "genre": null,
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 806,
+    "title": "Driver's High (TV)",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 807,
+    "title": "Viva Las Vegas",
+    "artist": "Elvis Presley",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1963",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 808,
+    "title": "Sentimental Generation (TV)",
+    "artist": "Tokitou Ami",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 809,
+    "title": "The Lion Sleeps Tonight",
+    "artist": "The Tokens",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1961",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 810,
+    "title": "Somewhere I belong",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 811,
+    "title": "Promises",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 812,
+    "title": "Rouge no dengon",
+    "artist": "Yumi Arai",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "1975",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 813,
+    "title": "Molinos de viento",
+    "artist": "Mägo de Oz",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 814,
+    "title": "Dynamite",
+    "artist": "BTS",
+    "language": "English",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 815,
+    "title": "Con las ganas",
+    "artist": "Zahara",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 816,
+    "title": "Vete a dormir",
+    "artist": "El hormiguero",
+    "language": "Español",
+    "genre": "",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 817,
+    "title": "What Dreams Are Made Of",
+    "artist": "Hilary Duff",
+    "language": "English",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 818,
+    "title": "Súbeme la radio",
+    "artist": "Enrique Iglesias feat. Zion & Lennox y Descemer Bueno",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 819,
+    "title": "Súbeme la radio",
+    "artist": "Enrique Iglesias feat. Zion & Lennox y Descemer Bueno",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 820,
+    "title": "Bonfire Heart",
+    "artist": "James Blunt",
+    "language": "English",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 821,
+    "title": "Kuusou Mesorogiwi (TV)",
+    "artist": "Yousei Teikoku",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 822,
+    "title": "Un rayo de sol",
+    "artist": "Los Diablos",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1970",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 823,
+    "title": "Treat You Better",
+    "artist": "Shawn Mendes",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 824,
+    "title": "Yin Yang",
+    "artist": "Jarabe de Palo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 825,
+    "title": "Te felicito",
+    "artist": "Shakira y Rauw Alejandro",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 826,
+    "title": "Grilletto",
+    "artist": "GARNiDELiA",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 827,
+    "title": "Gravity (TV)",
+    "artist": "Maaya Sakamoto",
+    "language": "English",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 828,
+    "title": "A un minuto de ti",
+    "artist": "Mikel Erentxun",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 829,
+    "title": "Partiendo la pana",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Other",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 830,
+    "title": "La lluvia en los zapatos",
+    "artist": "Leiva",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 831,
+    "title": "Another One Bites the Dust",
+    "artist": "Queen",
+    "language": "English",
+    "genre": null,
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 832,
+    "title": "Another Brick In The Wall (Part II)",
+    "artist": "Pink Floyd",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 833,
+    "title": "Lady Madrid",
+    "artist": "Pereza",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 834,
+    "title": "Trapped under ice",
+    "artist": "Metallica",
+    "language": "English",
+    "genre": "Metal",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 835,
+    "title": "Sólo si es contigo",
+    "artist": "Bombai y Bebe",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 836,
+    "title": "Sólo si es contigo",
+    "artist": "Bombai y Bebe",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 837,
+    "title": "Amores extraños",
+    "artist": "Laura Pausini",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 838,
+    "title": "Kingyo hanabi",
+    "artist": "Otsuka Ai",
+    "language": "Japanese",
+    "genre": "C-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 839,
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": null,
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 840,
+    "title": "Lilium (versión corta)",
+    "artist": "Kumiko Noma",
+    "language": "Latin",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 841,
+    "title": "Apologize",
+    "artist": "Timbaland con la colaboraci√≥n de One Republic",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 842,
+    "title": "Jajauma ni Sasenaide (TV)",
+    "artist": "Etsuko Nishio",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 843,
+    "title": "A prueba de ti",
+    "artist": "Malú",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 844,
+    "title": "I just might",
+    "artist": "Bruno Mars",
+    "language": "English",
+    "genre": "Funk, Disco, Pop-Soul",
+    "year": "2026",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 845,
+    "title": "Don Diablo",
+    "artist": "Miguel Bosé",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 846,
+    "title": "Candy",
+    "artist": "Koda Kumi feat. Mr.Blistah",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 847,
+    "title": "Colors (TV)",
+    "artist": "Flow",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 848,
+    "title": "Pan y mantequilla",
+    "artist": "Efecto Pasillo",
+    "language": "Español",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 849,
+    "title": "El perro verde",
+    "artist": "Marea",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 850,
+    "title": "La rueca",
+    "artist": "Marea",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 851,
+    "title": "Los huesos",
+    "artist": "Dani Martín y Juanes",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 852,
+    "title": "Los huesos",
+    "artist": "Dani Martín y Juanes",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 853,
+    "title": "Te Entiendo",
+    "artist": "Pignoise",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 854,
+    "title": "Shoujo S (TV)",
+    "artist": "SCANDAL",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 855,
+    "title": "Ninja Ri Ban Ban",
+    "artist": "Kyary Pamyu Pamyu",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 856,
+    "title": "Eso que tú me das",
+    "artist": "Jarabe de Palo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 857,
+    "title": "Hot N Cold",
+    "artist": "Katy Perry",
+    "language": "English",
+    "genre": "Pop/Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 858,
+    "title": "Payphone",
+    "artist": "Maroon 5 feat. Wiz Khalifa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 859,
+    "title": "Cosas que suenan a",
+    "artist": "Maldita Nerea",
+    "language": "Español",
+    "genre": "Pop Rock",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 860,
+    "title": "Reptilia",
+    "artist": "The Strokes",
+    "language": "English",
+    "genre": "Garage Rock",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 861,
+    "title": "White Wishes (TV)",
+    "artist": "9nine",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 862,
+    "title": "Yakusoku",
+    "artist": "Yui Horie",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 863,
+    "title": "Pa Mis Muchachas",
+    "artist": "Christina Aguilera, Becky G, Nicki Nicole ft. Nathy Peluso",
+    "language": "Español",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 864,
+    "title": "Stay the night",
+    "artist": "James Blunt",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 865,
+    "title": "Cry Baby",
+    "artist": "Official HIGE DANdism",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 866,
+    "title": "Grenade",
+    "artist": "Bruno Mars",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 867,
+    "title": "Yerbatero",
+    "artist": "Juanes",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 868,
+    "title": "Si por mí fuera",
+    "artist": "Beret",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 869,
+    "title": "Como un vagabundo",
+    "artist": "Bertín Osborne",
+    "language": "Español",
+    "genre": "Ranchera",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 870,
+    "title": "Daddy Cool",
+    "artist": "Boney M",
+    "language": "English",
+    "genre": null,
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 871,
+    "title": "Te echo de menos",
+    "artist": "Beret",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 872,
+    "title": "Same Blue",
+    "artist": "Official HIGE DANdism",
+    "language": "Japanese",
+    "genre": "J-rock",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 873,
+    "title": "Cabecera",
+    "artist": "Mocedades (BSO La vuelta al mundo de Willy Fog)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 874,
+    "title": "As bolas máxicas",
+    "artist": "Dragon ball",
+    "language": "Galician",
+    "genre": null,
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 875,
+    "title": "Para no olvidar",
+    "artist": "Andrés Calamaro",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 876,
+    "title": "DDU-DU DDU-DU",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 877,
+    "title": "Pantera en libertad",
+    "artist": "Monica Naranjo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 878,
+    "title": "Livin' la vida loca",
+    "artist": "Ricky Martin",
+    "language": "Español",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 879,
+    "title": "My last breath",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 880,
+    "title": "That's what I like",
+    "artist": "Bruno Mars",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 881,
+    "title": "Link",
+    "artist": "L'Arc en ciel",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 882,
+    "title": "Muéstrate",
+    "artist": "Gisela e Isabel Valls",
+    "language": "Español",
+    "genre": "BSO",
+    "year": "2019",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 883,
+    "title": "Muéstrate",
+    "artist": "Gisela e Isabel Valls",
+    "language": "Español",
+    "genre": "BSO",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 884,
+    "title": "Niji (TV)",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 885,
+    "title": "Sorry I'm here for someone else",
+    "artist": "Benson Boone",
+    "language": "English",
+    "genre": null,
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 886,
+    "title": "A thousand miles",
+    "artist": "Vanessa Carlton",
+    "language": "English",
+    "genre": "Pop Internacional",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 887,
+    "title": "NO",
+    "artist": "Meghan Trainor",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 888,
+    "title": "La camisa negra",
+    "artist": "Juanes",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 889,
+    "title": "Stop Crying Your Heart Out",
+    "artist": "Oasis",
+    "language": "English",
+    "genre": "Indie",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 890,
+    "title": "Los cuatro músicos de Bremen",
+    "artist": "Los Trotamúsicos",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 891,
+    "title": "Lovers On The Sun",
+    "artist": "David Guetta feat. Sam Martin",
+    "language": "English",
+    "genre": "EDM",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 892,
+    "title": "Mariposas",
+    "artist": "Sangiovanni y Aitana",
+    "language": "Español",
+    "genre": "Urbano latino",
+    "year": "2022",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 893,
+    "title": "Mariposas",
+    "artist": "Sangiovanni y Aitana",
+    "language": "Español",
+    "genre": "Urbano latino",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 894,
+    "title": "Oda a Josemi",
+    "artist": "The New Experience feat. Pumukiu",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 895,
+    "title": "Strategy",
+    "artist": "TWICE feat. Megan Thee Stallion",
+    "language": "English",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 896,
+    "title": "Uprising",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Alternative",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 897,
+    "title": "Pour some sugar on me (live)",
+    "artist": "Def Leppard",
+    "language": "English",
+    "genre": "Glam Metal",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 898,
+    "title": "Rewrite (versión corta)",
+    "artist": "Asian Kung Fu Generation (BSO Full Metal Alchemist)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 899,
+    "title": "Be Alright",
+    "artist": "Dean Lewis",
+    "language": "English",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 900,
+    "title": "Girls Just Wanna Have Fun",
+    "artist": "Cyndi Lauper",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 901,
+    "title": "Maniac",
+    "artist": "Michael Sembello",
+    "language": "English",
+    "genre": "Synth Pop",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 902,
+    "title": "Fly Away",
+    "artist": "Lenny Kravitz",
+    "language": "English",
+    "genre": "Alternative Rock",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 903,
+    "title": "La La La",
+    "artist": "Naughty Boy Feat. Sam Smith",
+    "language": "English",
+    "genre": "Electronic",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 904,
+    "title": "Tu calorro",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Rumba catalana",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 905,
+    "title": "Rosas",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 906,
+    "title": "Otherside",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Alternative",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 907,
+    "title": "What About Us",
+    "artist": "Pink",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 908,
+    "title": "Cabecera",
+    "artist": "Mazinger Z",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 909,
+    "title": "Sin ti no soy nada",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 910,
+    "title": "The boy does nothing",
+    "artist": "Alesha Dixon",
+    "language": "English",
+    "genre": "Swing",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 911,
+    "title": "Quiero decirte",
+    "artist": "Abraham Mateo y Ana Mena",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 912,
+    "title": "Quiero decirte",
+    "artist": "Abraham Mateo y Ana Mena",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 913,
+    "title": "Kings & Queens",
+    "artist": "Ava Max",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 914,
+    "title": "Mi vida sin ti",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Bossa Nova",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 915,
+    "title": "Espíritu de amor",
+    "artist": "WarCry",
+    "language": "Español",
+    "genre": "Power Metal",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 916,
+    "title": "Cabecera",
+    "artist": "Botones (BSO Don Quijote de la Mancha)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 917,
+    "title": "Castle On The Hill",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 918,
+    "title": "Clock Strikes",
+    "artist": "ONE OK ROCK",
+    "language": "Japanese",
+    "genre": "Jrock",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 919,
+    "title": "Manué Sanche Sanche",
+    "artist": "No me pises que llevo chanclas",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 920,
+    "title": "Manos al aire",
+    "artist": "Nelly Furtado",
+    "language": "Español",
+    "genre": null,
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 921,
+    "title": "Waiting For Love",
+    "artist": "Avicii",
+    "language": "English",
+    "genre": "Electronic",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 922,
+    "title": "Say it right",
+    "artist": "Nelly Furtado",
+    "language": "Inglés",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 923,
+    "title": "Chiquilla",
+    "artist": "Seguridad Social",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 924,
+    "title": "PLAYING WITH FIRE",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": "Unknown",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 925,
+    "title": "PLAYING WITH FIRE [한글]",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": "Unknown",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 926,
+    "title": "Somebody That I Used To Know",
+    "artist": "Gotye & Kimbra",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 927,
+    "title": "Te quiero puta!",
+    "artist": "Rammstein",
+    "language": "Español",
+    "genre": "Metal",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 928,
+    "title": "Colgando en tus manos",
+    "artist": "Carlos Baute y Marta Sánchez",
+    "language": "Español",
+    "genre": "Dueto",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 929,
+    "title": "Colgando en tus manos",
+    "artist": "Carlos Baute y Marta Sánchez",
+    "language": "Español",
+    "genre": "Dueto",
+    "year": "2008",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 930,
+    "title": "You're the One that I Want",
+    "artist": "Grease (John Travolta & Olivia Newton-John)",
+    "language": "English",
+    "genre": "Musical",
+    "year": "1978",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 931,
+    "title": "You're the One that I Want",
+    "artist": "Grease (John Travolta & Olivia Newton-John)",
+    "language": "English",
+    "genre": "Musical",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 932,
+    "title": "En el mundo genial de las cosas que dices",
+    "artist": "Maldita Nerea",
+    "language": "Español",
+    "genre": null,
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 933,
+    "title": "Closer",
+    "artist": "Nine Inch Nails",
+    "language": "English",
+    "genre": null,
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 934,
+    "title": "Freed from desire",
+    "artist": "GALA",
+    "language": "English",
+    "genre": "Eurodance",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 935,
+    "title": "A fuego",
+    "artist": "Extremoduro",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 936,
+    "title": "Busca lo más vital",
+    "artist": "Disney (BSO El Libro de la Selva)",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 937,
+    "title": "Maldito duende",
+    "artist": "Héroes del Silencio",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 938,
+    "title": "Love Me Harder",
+    "artist": "Ariana Grande & The Weeknd",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 939,
+    "title": "Rather Be",
+    "artist": "Clean Bandit feat. Jess Glynne",
+    "language": "English",
+    "genre": "Dance & Electronic",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 940,
+    "title": "Azizam",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": null,
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 941,
+    "title": "Attack",
+    "artist": "30 Seconds To Mars",
+    "language": "English",
+    "genre": "Rock Progresivo",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 942,
+    "title": "Fluorescent Adolescent",
+    "artist": "Arctic Monkeys",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 943,
+    "title": "Born With a Broken Heart",
+    "artist": "Damiano David",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 944,
+    "title": "Animals",
+    "artist": "Maroon 5",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 945,
+    "title": "Forgotten",
+    "artist": "Avril Lavigne",
+    "language": "English",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 946,
+    "title": "No callaré (Parte 2)",
+    "artist": "Aladdín",
+    "language": "Español",
+    "genre": "OST",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 947,
+    "title": "Remember Summer Days",
+    "artist": "Anri",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 948,
+    "title": "Fade to Black",
+    "artist": "Metallica",
+    "language": "English",
+    "genre": "Thrash Metal",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 949,
+    "title": "Memories (versión corta)",
+    "artist": "Maki Otsuki",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 950,
+    "title": "El vals del obrero",
+    "artist": "Ska-P",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 951,
+    "title": "La Lola",
+    "artist": "Café Quijano",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 952,
+    "title": "Otonoke (TV)",
+    "artist": "Creepy Nuts",
+    "language": "Japanese",
+    "genre": "Rap",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 953,
+    "title": "Killed by death",
+    "artist": "Motörhead",
+    "language": "English",
+    "genre": "Heavy Metal",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 954,
+    "title": "Flyers (TV)",
+    "artist": "BRADIO",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 955,
+    "title": "Sílbame",
+    "artist": "Mocedades (BSO La vuelta al mundo de Willy Fog)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 956,
+    "title": "Eres tonto",
+    "artist": "El canto del loco",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 957,
+    "title": "Roulette",
+    "artist": "System of a Down",
+    "language": "English",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 958,
+    "title": "90 minutos (Directo)",
+    "artist": "Vanesa Martín",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 959,
+    "title": "Walking away",
+    "artist": "Craig David",
+    "language": "English",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 960,
+    "title": "En el 2000",
+    "artist": "Natalia Lafourcade",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 961,
+    "title": "Heart-Shaped Box",
+    "artist": "Nirvana",
+    "language": "English",
+    "genre": "Grunge",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 962,
+    "title": "Quédate a dormir",
+    "artist": "M Clan",
+    "language": "Español",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 963,
+    "title": "La fama",
+    "artist": "Rosalía y The Weeknd",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 964,
+    "title": "La fama",
+    "artist": "Rosalía y The Weeknd",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 965,
+    "title": "Innocent sorrow (TV)",
+    "artist": "Abingdon boys school",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 966,
+    "title": "Kimi no Shiranai Monogatari",
+    "artist": "supercell",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 967,
+    "title": "Losing My Religion",
+    "artist": "R.E.M.",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 968,
+    "title": "Chandelier",
+    "artist": "Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 969,
+    "title": "Here (TV)",
+    "artist": "JUNNA",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 970,
+    "title": "Stronger (What Doesn't Kill You)",
+    "artist": "Kelly Clarkson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 971,
+    "title": "VAGABUNDO",
+    "artist": "Sebastián Yatra, Manuel Turizo, Beéle",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2023",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 972,
+    "title": "VAGABUNDO",
+    "artist": "Sebastián Yatra, Manuel Turizo, Beéle",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 973,
+    "title": "Hangover",
+    "artist": "Taio Cruz feat. Flo Rida",
+    "language": "English",
+    "genre": "Other",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 974,
+    "title": "Get Outta My Way",
+    "artist": "Kylie Minogue",
+    "language": "English",
+    "genre": "Electropop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 975,
+    "title": "Bye, bye",
+    "artist": "David Civera",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 976,
+    "title": "Detroit",
+    "artist": "Miss Caffeina",
+    "language": "Español",
+    "genre": "Indie",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 977,
+    "title": "Buscando en la basura",
+    "artist": "La fuga",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 978,
+    "title": "Tobira no mukou e (TV)",
+    "artist": "YeLLOW Generation",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 979,
+    "title": "A contracorriente",
+    "artist": "El Canto del Loco",
+    "language": "Español",
+    "genre": "Pop español",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 980,
+    "title": "Mirando al cielo",
+    "artist": "Huecco",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 981,
+    "title": "YMCA",
+    "artist": "Village People",
+    "language": "English",
+    "genre": null,
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 982,
+    "title": "If I ain't got you",
+    "artist": "Alicia Keys",
+    "language": "English",
+    "genre": "Contemporary R&B/Soul",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 983,
+    "title": "Yume no Hajima Ring Ring",
+    "artist": "Kyary Pamyu Pamyu",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 984,
+    "title": "Imaginary",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 985,
+    "title": "TQG",
+    "artist": "KAROL G & Shakira",
+    "language": "Español",
+    "genre": "Reguetón",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 986,
+    "title": "Y nos dieron las diez",
+    "artist": "Joaquín Sabina",
+    "language": "Español",
+    "genre": "R&B",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 987,
+    "title": "Days",
+    "artist": "Flow",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 988,
+    "title": "Days",
+    "artist": "Flow",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2005",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 989,
+    "title": "Kimi no Sei (TV)",
+    "artist": "the peggies",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 990,
+    "title": "What I've done",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 991,
+    "title": "DADDY",
+    "artist": "PSY feat. CL of 2NE1",
+    "language": "Korean",
+    "genre": "Kpop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 992,
+    "title": "La bamba",
+    "artist": "Los Lobos",
+    "language": "Español",
+    "genre": "Rock & Roll",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 993,
+    "title": "Born This Way",
+    "artist": "Lady GaGa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 994,
+    "title": "Voy a pasármelo bien",
+    "artist": "Hombres G",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 995,
+    "title": "Stressed Out",
+    "artist": "Twenty One Pilots",
+    "language": "English",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 996,
+    "title": "No importa que llueva",
+    "artist": "Efecto Pasillo",
+    "language": "Español",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 997,
+    "title": "Son of a Preacher Man",
+    "artist": "Dusty Springfield",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1968",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 998,
+    "title": "Only Girl (In The World)",
+    "artist": "Rihanna",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 999,
+    "title": "Cabecera",
+    "artist": "Alfred J. Kwak",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1000,
+    "title": "The world",
+    "artist": "Nightmare",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1001,
+    "title": "Numb",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Nu-Metal",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1002,
+    "title": "Historias de amor",
+    "artist": "OBK",
+    "language": "Español",
+    "genre": "Thecnopop",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1003,
+    "title": "Cien gaviotas",
+    "artist": "Duncan Dhu",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1004,
+    "title": "Taidada (TV)",
+    "artist": "Zutomayo",
+    "language": "Japanese",
+    "genre": "J-Pop, Rock",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1005,
+    "title": "Ace of Spades",
+    "artist": "Motorhead",
+    "language": "English",
+    "genre": null,
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1006,
+    "title": "Give a reason (TV)",
+    "artist": "Megumi Hayashibara",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1007,
+    "title": "Las flechas de amor",
+    "artist": "Karina",
+    "language": "Español",
+    "genre": null,
+    "year": "1969",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1008,
+    "title": "Stitches",
+    "artist": "Shawn Mendes",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1009,
+    "title": "The power of love",
+    "artist": "Huey Lewis & The News",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1010,
+    "title": "Sweet Home Alabama",
+    "artist": "Lynyrd Skynyrd",
+    "language": "English",
+    "genre": "rock",
+    "year": "1974",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1011,
+    "title": "Omokage (TV)",
+    "artist": "Megumi Hayashibara",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1012,
+    "title": "Guerra y paz",
+    "artist": "Zahara y Santi Balmes",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1013,
+    "title": "My happy ending",
+    "artist": "Avril Lavigne",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1014,
+    "title": "Feeling Good",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1015,
+    "title": "Love someone",
+    "artist": "Lukas Graham",
+    "language": "English",
+    "genre": "Club",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1016,
+    "title": "Madre Tierra (Oye)",
+    "artist": "Chayanne",
+    "language": "Español",
+    "genre": "Latino",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1017,
+    "title": "Brianstorm",
+    "artist": "Arctic Monkeys",
+    "language": "English",
+    "genre": "Indie Rock",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1018,
+    "title": "Timber",
+    "artist": "Pitbull & Ke$ha",
+    "language": "English",
+    "genre": "Country",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1019,
+    "title": "I'm In Love With A Monster",
+    "artist": "Fifth Harmony",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1020,
+    "title": "Nuestro amor será leyenda",
+    "artist": "Alejandro Sanz",
+    "language": "Español",
+    "genre": "Pop Rock",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1021,
+    "title": "Rolling In The Deep",
+    "artist": "Adele",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1022,
+    "title": "Uptown Funk",
+    "artist": "Mark Ronson feat. Bruno Mars",
+    "language": "English",
+    "genre": "Funk",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1023,
+    "title": "Tobira Wo Akete (TV)",
+    "artist": "Anza",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1024,
+    "title": "Dulce locura",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1025,
+    "title": "Tengo",
+    "artist": "Queco",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1026,
+    "title": "Irony (TV)",
+    "artist": "Claris",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1027,
+    "title": "Utsukushiki Zankoku na Sekai (TV)",
+    "artist": "Youko Hikasa",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1028,
+    "title": "La rosa de los vientos",
+    "artist": "Mägo de Oz",
+    "language": "Español",
+    "genre": "Other",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1029,
+    "title": "TOMORROW (TV)",
+    "artist": "Machico",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1030,
+    "title": "Tu peor error",
+    "artist": "La Quinta Estación",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1031,
+    "title": "Mira cómo vuelo",
+    "artist": "Miss Caffeina",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1032,
+    "title": "Fly",
+    "artist": "Hilary Duff",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1033,
+    "title": "La llamada",
+    "artist": "Leiva",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1034,
+    "title": "Baba O'Riley",
+    "artist": "The Who",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1969",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1035,
+    "title": "Nancy Mulligan",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1036,
+    "title": "Love Never Felt So Good",
+    "artist": "Michael Jackson ft. Justin Timberlake",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1037,
+    "title": "Fukai Mori (TV)",
+    "artist": "Do As Infinity",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1038,
+    "title": "Grita",
+    "artist": "Jarabe de Palo",
+    "language": "Español",
+    "genre": null,
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1039,
+    "title": "Las niñas de la Salle",
+    "artist": "Los Mojinos Escozíos",
+    "language": "Español",
+    "genre": "Rock español",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1040,
+    "title": "Snow fairy (TV)",
+    "artist": "Funkist",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1041,
+    "title": "Sweet Melody",
+    "artist": "Little Mix",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1042,
+    "title": "Walking on sunshine",
+    "artist": "Katrina and The Waves",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1043,
+    "title": "Brand new world",
+    "artist": "D-51",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1044,
+    "title": "Nothing Else Matters",
+    "artist": "Metallica",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1045,
+    "title": "Between Angels and Insects",
+    "artist": "Papa Roach",
+    "language": "English",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1046,
+    "title": "Efectos vocales",
+    "artist": "Nach",
+    "language": "Español",
+    "genre": "Rap",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1047,
+    "title": "Al amanecer",
+    "artist": "Los Fresones Rebeldes",
+    "language": "Español",
+    "genre": null,
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1048,
+    "title": "So am I",
+    "artist": "Ava Max",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1049,
+    "title": "Quiero ser como tú",
+    "artist": "Disney (BSO El Libro de la Selva)",
+    "language": "Español",
+    "genre": null,
+    "year": "1967",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1050,
+    "title": "Nasío pa' la alegría",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Rumba",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1051,
+    "title": "Hey brother",
+    "artist": "Avicii",
+    "language": "English",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1101,
+    "title": "Something stupid",
+    "artist": "Robbie Williams y Nicole Kidman",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1052,
+    "title": "En tus tierras bailaré",
+    "artist": "Delfín Hasta El Fin, La Tigresa del Oriente y Wendy Sulca",
+    "language": "Español",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1053,
+    "title": "I Want It All",
+    "artist": "High School Musical 3",
+    "language": "English",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1054,
+    "title": "Tonight (I'm Fuckin' You)",
+    "artist": "Enrique Iglesias feat. Ludacris & DJ Frank E",
+    "language": "English",
+    "genre": "Dance",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1055,
+    "title": "Polaris (TV)",
+    "artist": "BLUE ENCOUNT",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1056,
+    "title": "Amiga mía",
+    "artist": "Alejandro Sanz",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1057,
+    "title": "Una noche de amor desesperada",
+    "artist": "Triana",
+    "language": "Español",
+    "genre": "Rock Andaluz",
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1058,
+    "title": "chAngE",
+    "artist": "Miwa",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1059,
+    "title": "No me crees",
+    "artist": "Efecto Mariposa con Javier Ojeda",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1060,
+    "title": "I'm So Excited",
+    "artist": "The Pointer Sisters",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1061,
+    "title": "Cutie Honey",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "JPop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1062,
+    "title": "Bloody Stream (TV)",
+    "artist": "Coda",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1063,
+    "title": "Million Dollar Baby",
+    "artist": "Ava Max",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1064,
+    "title": "Walkin' on the Sun",
+    "artist": "Smash Mouth",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1065,
+    "title": "Duele el corazón",
+    "artist": "Enrique Iglesias ft. Wisin",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1066,
+    "title": "Sore wa Chiisana Hikari no You na",
+    "artist": "Sayuri",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1067,
+    "title": "Dangerous",
+    "artist": "David Guetta ft. Sam Martin",
+    "language": "English",
+    "genre": "House",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1068,
+    "title": "Buscando el sol",
+    "artist": "El Pescao",
+    "language": "Español",
+    "genre": "Pop Rock",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1069,
+    "title": "Hay muy poca gente",
+    "artist": "Enrique Búnbury",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1070,
+    "title": "Cheap Thrills",
+    "artist": "Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1071,
+    "title": "Bailarina",
+    "artist": "Maldita Nerea",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1072,
+    "title": "Last Resort",
+    "artist": "Papa Roach",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1073,
+    "title": "Dani California",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock Internacional",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1074,
+    "title": "El secreto de las tortugas",
+    "artist": "Maldita Nerea con los Delinqüentes",
+    "language": "Español",
+    "genre": "Pop español",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1075,
+    "title": "¡Qué festín!",
+    "artist": "La Bella y La Bestia",
+    "language": "Español",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1076,
+    "title": "Dame! (TV)",
+    "artist": "You Izumi",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1077,
+    "title": "Butter-fly (TV)",
+    "artist": "Kouji Wada",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1078,
+    "title": "Stargazing",
+    "artist": "Myles Smith",
+    "language": "English",
+    "genre": "Folk-Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1079,
+    "title": "Devuélveme A Mi Chica",
+    "artist": "Hombres G",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1080,
+    "title": "Ride On Shooting Star",
+    "artist": "The Pillows",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1081,
+    "title": "Light my fire",
+    "artist": "The Doors",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1967",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1082,
+    "title": "Despacito",
+    "artist": "Luis Fonsi feat. Daddy Yankee",
+    "language": "Español",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1083,
+    "title": "Despacito",
+    "artist": "Luis Fonsi feat. Daddy Yankee",
+    "language": "Español",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1084,
+    "title": "Zombified",
+    "artist": "Falling In Reverse",
+    "language": "English",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1085,
+    "title": "Hanbunko",
+    "artist": "Stereopony",
+    "language": "Japanese",
+    "genre": "Japan",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1086,
+    "title": "Dirty Diana",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": null,
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1087,
+    "title": "Sofía",
+    "artist": "Álvaro Soler",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1088,
+    "title": "Carolina",
+    "artist": "M-Clan",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1089,
+    "title": "Solo si es contigo",
+    "artist": "Bombai",
+    "language": "Español",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1090,
+    "title": "Unravel (TV)",
+    "artist": "TK from Ling Tosite Sigure",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1091,
+    "title": "SPECIALZ (TV)",
+    "artist": "King Gnu",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1092,
+    "title": "2 Become 1",
+    "artist": "Spice Girls",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1093,
+    "title": "Digimon Frontier",
+    "artist": "Digimon",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1094,
+    "title": "DtMF",
+    "artist": "Bad Bunny",
+    "language": "Español",
+    "genre": "Latino",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1095,
+    "title": "99 (TV)",
+    "artist": "MOB CHOIR",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1096,
+    "title": "99 (TV)",
+    "artist": "MOB CHOIR",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1097,
+    "title": "lovely",
+    "artist": "Billie Eilish, Khalid",
+    "language": "English",
+    "genre": "Other",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1098,
+    "title": "lovely",
+    "artist": "Billie Eilish, Khalid",
+    "language": "English",
+    "genre": "Other",
+    "year": "2018",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1099,
+    "title": "Calma (Remix)",
+    "artist": "Pedro Capó y Farruko",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1100,
+    "title": "Daría",
+    "artist": "La Quinta Estación",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1102,
+    "title": "What's Up?",
+    "artist": "4 Non Blondes",
+    "language": "English",
+    "genre": "Alternative",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1103,
+    "title": "Ima made nando mo (TV)",
+    "artist": "The Mass Missile",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1104,
+    "title": "No vaya a ser",
+    "artist": "Pablo Alborán",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1105,
+    "title": "Si te vas",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Rock/Pop",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1106,
+    "title": "Groovy (TV)",
+    "artist": "Koumi Hirose",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1107,
+    "title": "On The Floor",
+    "artist": "Jennifer Lopez & Pitbull",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1108,
+    "title": "Años ochenta",
+    "artist": "Los Piratas",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1109,
+    "title": "Vanilla Salt (TV)",
+    "artist": "Yui Horie",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1110,
+    "title": "Overprotected",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1111,
+    "title": "Cuando nadie ve",
+    "artist": "Morat",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1112,
+    "title": "Barbie Girl",
+    "artist": "Aqua",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1113,
+    "title": "11 razones",
+    "artist": "Aitana",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1114,
+    "title": "Una vez en diciembre",
+    "artist": "Anastasia",
+    "language": "Español",
+    "genre": null,
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1115,
+    "title": "Paradise City",
+    "artist": "Guns N' Roses",
+    "language": "English",
+    "genre": null,
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1116,
+    "title": "Still Loving You",
+    "artist": "Scorpions",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1117,
+    "title": "Lights",
+    "artist": "Ellie Goulding",
+    "language": "English",
+    "genre": "Electropop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1118,
+    "title": "Si es tan sólo amor",
+    "artist": "Revólver",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1119,
+    "title": "In the Navy",
+    "artist": "Village People",
+    "language": "English",
+    "genre": null,
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1120,
+    "title": "All You Need Is Love",
+    "artist": "The Beatles",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1967",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1121,
+    "title": "Dumb ways to die",
+    "artist": "Tangerine Kitty",
+    "language": "English",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1122,
+    "title": "Reality",
+    "artist": "Lost Frequencies ft. Janieck Devy",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1123,
+    "title": "Traicionera",
+    "artist": "Sebastián Yatra",
+    "language": "Español",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1124,
+    "title": "Light switch",
+    "artist": "Charlie Puth",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1125,
+    "title": "Leave a Light On",
+    "artist": "Tom Walker",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1126,
+    "title": "It's not unusual",
+    "artist": "Tom Jones",
+    "language": "English",
+    "genre": "Misc",
+    "year": "1964",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1127,
+    "title": "El secreto de las tortugas",
+    "artist": "Maldita Nerea",
+    "language": "Español",
+    "genre": "Pop español",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1128,
+    "title": "J´en Ai Marre",
+    "artist": "Alizée",
+    "language": "French",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1129,
+    "title": "Wild Challenger (TV)",
+    "artist": "Jindou",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1130,
+    "title": "It's Gonna Rain (TV)",
+    "artist": "Bonnie Pink",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1131,
+    "title": "Backlight",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1132,
+    "title": "Sevillana en la mirada",
+    "artist": "Cantores de Hispalis",
+    "language": "Español",
+    "genre": "Flamenco",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1133,
+    "title": "Set Fire To The Rain",
+    "artist": "Adele",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1134,
+    "title": "Limón y sal",
+    "artist": "Julieta Venegas",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1135,
+    "title": "Mi verdad",
+    "artist": "Maná con Shakira",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1136,
+    "title": "Mi verdad",
+    "artist": "Maná con Shakira",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1137,
+    "title": "El ciclo de la vida",
+    "artist": "El Rey León",
+    "language": "Español",
+    "genre": null,
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1138,
+    "title": "Hit That",
+    "artist": "The Offspring",
+    "language": "English",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1139,
+    "title": "Baile",
+    "artist": "David Otero y Rozalén",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1140,
+    "title": "Baile",
+    "artist": "David Otero y Rozalén",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1141,
+    "title": "Miraikei Answer (TV)",
+    "artist": "TRUSTRICK",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1142,
+    "title": "The man who sold the world",
+    "artist": "Nirvana",
+    "language": "English",
+    "genre": "Acoustic Rock",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1143,
+    "title": "Thinking out loud",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1144,
+    "title": "Beautiful Things",
+    "artist": "Benson Boone",
+    "language": "English",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1145,
+    "title": "Never be the same",
+    "artist": "Camila Cabello",
+    "language": "English",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1146,
+    "title": "The Monster",
+    "artist": "Eminem & Rihanna",
+    "language": "English",
+    "genre": "Hip-Hop/Rap",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1147,
+    "title": "Lucky",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1148,
+    "title": "Nemo",
+    "artist": "Nightwish",
+    "language": "English",
+    "genre": "Power Metal Sinfonico",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1149,
+    "title": "Fukai Mori",
+    "artist": "Do As Infinity",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1150,
+    "title": "HEROES (TV)",
+    "artist": "Brian the Sun",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1151,
+    "title": "Levitating",
+    "artist": "Dua Lipa feat. DaBaby",
+    "language": "English",
+    "genre": "Dance",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1152,
+    "title": "Hai yorokonde",
+    "artist": "Kocchi no Kento",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1153,
+    "title": "La tortura",
+    "artist": "Shakira y Alejandro Sanz",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1256,
+    "title": "月の明り",
+    "artist": "伊田恵美",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1154,
+    "title": "La tortura",
+    "artist": "Shakira y Alejandro Sanz",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1155,
+    "title": "Dance The Night",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Dance",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1156,
+    "title": "Wake Me Up When September Ends",
+    "artist": "Green Day",
+    "language": "English",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1157,
+    "title": "Una rosa es una rosa",
+    "artist": "Mecano",
+    "language": "Español",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1158,
+    "title": "No mires a los ojos de la gente",
+    "artist": "Golpes Bajos",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1159,
+    "title": "All My Life",
+    "artist": "Foo Fighters",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1160,
+    "title": "Don't look back in anger",
+    "artist": "Oasis",
+    "language": "English",
+    "genre": "Britpop",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1161,
+    "title": "La cintura",
+    "artist": "Alvaro Soler",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1162,
+    "title": "Kuzuri Nen (TV)",
+    "artist": "ZUTOMAYO",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1163,
+    "title": "Minna no Peace (TV)",
+    "artist": "Afromania",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1164,
+    "title": "Rain",
+    "artist": "Mika",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1165,
+    "title": "La puerta violeta",
+    "artist": "Rozalén",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1166,
+    "title": "Palabras más, palabras menos",
+    "artist": "Los Rodríguez",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1167,
+    "title": "Cupid (Twin Ver.)",
+    "artist": "FIFTY FIFTY",
+    "language": "English",
+    "genre": null,
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1168,
+    "title": "Fatima (TV)",
+    "artist": "Kanako Itou",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1169,
+    "title": "There is a light that never goes out",
+    "artist": "The Smiths",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1170,
+    "title": "Back For Good",
+    "artist": "Take That",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1171,
+    "title": "How You Remind Me",
+    "artist": "Nickelback",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1172,
+    "title": "Sin pijama",
+    "artist": "Becky G ft. Natti Natasha",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1173,
+    "title": "Sin pijama",
+    "artist": "Becky G ft. Natti Natasha",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1174,
+    "title": "Perfect",
+    "artist": "Fairground Attraction",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1175,
+    "title": "Pray (TV)",
+    "artist": "Tommy heavenly6",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1176,
+    "title": "Amante Bandido",
+    "artist": "Miguel Bosé",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1177,
+    "title": "What do you mean?",
+    "artist": "Justin Bieber",
+    "language": "English",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1178,
+    "title": "It's my life",
+    "artist": "Bon Jovi",
+    "language": "English",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1179,
+    "title": "Hemisphere (TV)",
+    "artist": "Maaya Sakamoto",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1180,
+    "title": "Sucker",
+    "artist": "Jonas Brothers",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1181,
+    "title": "White Flag",
+    "artist": "Dido",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1182,
+    "title": "Come What May",
+    "artist": "Moulin Rouge",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1183,
+    "title": "A little pain",
+    "artist": "OLIVIA como LEILA de TRAPNEST",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1184,
+    "title": "Like I'm Gonna Lose You",
+    "artist": "Meghan Trainor feat. John Legend",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1185,
+    "title": "20 de enero",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1186,
+    "title": "Faint",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Nu-Metal",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1187,
+    "title": "La casa por el tejado",
+    "artist": "Fito & Fitipaldis",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1188,
+    "title": "My Oh My",
+    "artist": "Camila Cabello  feat. DaBaby",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1189,
+    "title": "Massara (TV)",
+    "artist": "KANA-BOON",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1190,
+    "title": "Kimi No Shiranai Monogatari (TV)",
+    "artist": "Supercell",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1191,
+    "title": "Enjoy The Silence",
+    "artist": "Depeche Mode",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1192,
+    "title": "HONEY",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "Jrock",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1193,
+    "title": "Un burdo rumor",
+    "artist": "Javier Krahe",
+    "language": "Español",
+    "genre": null,
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1194,
+    "title": "If U Seek Amy",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1195,
+    "title": "Kimi Janakya Dame Mitai (TV)",
+    "artist": "Masayoshi Ooishi",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1196,
+    "title": "Usseewa",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1197,
+    "title": "innocent arrogance (TV)",
+    "artist": "BiSH",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1198,
+    "title": "Last piece",
+    "artist": "Great Teacher Onizuka",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1199,
+    "title": "Summer Paradise",
+    "artist": "Simple Plan",
+    "language": "French",
+    "genre": "Other",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1200,
+    "title": "Seishun Satsubatsuron (TV)",
+    "artist": "3-nen E-Gumi Utatan",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1201,
+    "title": "The Boys Are Back In Town",
+    "artist": "Thin Lizzy",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1202,
+    "title": "Senbonzakura",
+    "artist": "Wagakki Band",
+    "language": "Japanese",
+    "genre": "Jrock",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1203,
+    "title": "Fighter (TV)",
+    "artist": "BUMP OF CHICKEN",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1204,
+    "title": "Moonlight Densetsu (TV)",
+    "artist": "DALI",
+    "language": "Japanese",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1205,
+    "title": "Camiseta de Rokanrol",
+    "artist": "Estopa con Fito y Fitipaldis",
+    "language": "Español",
+    "genre": "Latin Music",
+    "year": "2022",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1206,
+    "title": "Camiseta de Rokanrol",
+    "artist": "Estopa con Fito y Fitipaldis",
+    "language": "Español",
+    "genre": "Latin Music",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1207,
+    "title": "Welcome to the jungle",
+    "artist": "Guns N' Roses",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1208,
+    "title": "Christmas Song",
+    "artist": "back number",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1209,
+    "title": "How To Save A Life",
+    "artist": "The Fray",
+    "language": "English",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1210,
+    "title": "Catch You Catch Me (TV)",
+    "artist": "GUMI",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1211,
+    "title": "Lucy (versión corta)",
+    "artist": "ANNA como NANA (BSO NANA)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1212,
+    "title": "Laura no está",
+    "artist": "Nek",
+    "language": "Español",
+    "genre": "Pop Internacional",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1213,
+    "title": "Beggin'",
+    "artist": "Madcon",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1214,
+    "title": "My Prerogative",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1215,
+    "title": "Crazy Little Thing Called Love",
+    "artist": "Queen",
+    "language": "English",
+    "genre": null,
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1216,
+    "title": "Ni una sola palabra",
+    "artist": "Paulina Rubio",
+    "language": "Español",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1217,
+    "title": "Love runs out",
+    "artist": "OneRepublic",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1218,
+    "title": "Ma Baker",
+    "artist": "Boney M.",
+    "language": "English",
+    "genre": "Disco",
+    "year": "1977",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1219,
+    "title": "Knocking On Heavens Door",
+    "artist": "Guns N' Roses",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1220,
+    "title": "Vivir así es morir de amor",
+    "artist": "Camilo Sesto",
+    "language": "Español",
+    "genre": null,
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1221,
+    "title": "Te quise tanto",
+    "artist": "Paulina Rubio",
+    "language": "Español",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1222,
+    "title": "Nandemo nai ya (movie ver.)",
+    "artist": "RADWIMPS",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1223,
+    "title": "Si antes te hubiera conocido",
+    "artist": "KAROL G",
+    "language": "Español",
+    "genre": "Latino",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1224,
+    "title": "Conga",
+    "artist": "Miami Sound Machine",
+    "language": "English",
+    "genre": "Latin Dance",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1225,
+    "title": "Me lo tiro",
+    "artist": "Berto & the Border Boys",
+    "language": "Español",
+    "genre": "Televisión",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1226,
+    "title": "Llamando a la Tierra",
+    "artist": "M-Clan",
+    "language": "Español",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1227,
+    "title": "Kanashii Ureshii",
+    "artist": "Frederic",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1228,
+    "title": "Lucha de gigantes",
+    "artist": "Love of Lesbian y Zahara",
+    "language": "Español",
+    "genre": "Indie",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1229,
+    "title": "Torero",
+    "artist": "Chayanne",
+    "language": "Español",
+    "genre": "Pop/Rock Latino",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1230,
+    "title": "Serenade",
+    "artist": "Dover",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1231,
+    "title": "One Half (TV)",
+    "artist": "Kawamoto Makoto",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1232,
+    "title": "High",
+    "artist": "Lighthouse Family",
+    "language": "English",
+    "genre": "Pop Internacional",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1233,
+    "title": "Sparkle",
+    "artist": "RADWIMPS",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1234,
+    "title": "Bandido",
+    "artist": "Azúcar Moreno",
+    "language": "Español",
+    "genre": "Rumba",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1235,
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1236,
+    "title": "New Genesis",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1237,
+    "title": "Mr. Brightside",
+    "artist": "The Killers",
+    "language": "English",
+    "genre": "Alternativa",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1238,
+    "title": "Re:Re: (TV)",
+    "artist": "Asian Kung-Fu Generation",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1239,
+    "title": "Me enamoré",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1240,
+    "title": "Opalite",
+    "artist": "Taylor Swift",
+    "language": "English",
+    "genre": "Soft rock",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1241,
+    "title": "Steal My Girl",
+    "artist": "One Direction",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1242,
+    "title": "I Like The Way You Kiss Me",
+    "artist": "Artemas",
+    "language": "English",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1243,
+    "title": "Incomplete",
+    "artist": "Backstreet Boys",
+    "language": "English",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1244,
+    "title": "Disturbia",
+    "artist": "Rihanna",
+    "language": "English",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1245,
+    "title": "Blurry eyes (karaoke)",
+    "artist": "L'Arc en ciel (BSO DNAÂ²)",
+    "language": "Japanese",
+    "genre": "J-Rock",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1246,
+    "title": "Blurry eyes",
+    "artist": "L'Arc en ciel (BSO DNAÂ²)",
+    "language": "Japanese",
+    "genre": "J-Rock",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1247,
+    "title": "Troublemaker",
+    "artist": "Olly Murs feat. Flo-Rida",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1248,
+    "title": "The show must go on",
+    "artist": "Queen",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1249,
+    "title": "Ningyo hime",
+    "artist": "Rie Tanaka",
+    "language": "Japanese",
+    "genre": "",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1250,
+    "title": "Pink Venom",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1251,
+    "title": "Only You",
+    "artist": "The Platters",
+    "language": "English",
+    "genre": null,
+    "year": "1955",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1252,
+    "title": "Tu enemigo",
+    "artist": "Pablo López y Juanes",
+    "language": "Español",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1253,
+    "title": "Tu enemigo",
+    "artist": "Pablo López y Juanes",
+    "language": "Español",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1254,
+    "title": "月の明り",
+    "artist": "伊田恵美",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1255,
+    "title": "Tsuki no Akari",
+    "artist": "Ida Megumi",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1861,
+    "title": "Holiday",
+    "artist": "Green Day",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1257,
+    "title": "Hoshi no Utsuwa (PV)",
+    "artist": "Sukima Switch",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1258,
+    "title": "First day of my life",
+    "artist": "The Rasmus",
+    "language": "English",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1259,
+    "title": "Mañana",
+    "artist": "Mikel Erentxun",
+    "language": "Español",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1260,
+    "title": "Hoy no me puedo levantar",
+    "artist": "Mecano",
+    "language": "Español",
+    "genre": null,
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1261,
+    "title": "Symphony",
+    "artist": "Clean Bandit ft. Zara Larsson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1262,
+    "title": "Big in Japan",
+    "artist": "Guano Apes",
+    "language": "English",
+    "genre": "Rock alternativo",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1263,
+    "title": "Welcome to the jungle",
+    "artist": "Guns N' Roses",
+    "language": "English",
+    "genre": "Hard Rock",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1264,
+    "title": "Cuéntame",
+    "artist": "Fórmula V",
+    "language": "Español",
+    "genre": null,
+    "year": "1969",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1265,
+    "title": "Amazing",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": null,
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1266,
+    "title": "IGNITE (TV)",
+    "artist": "Eir Aoi",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1267,
+    "title": "Speed Of Sound",
+    "artist": "Coldplay",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1268,
+    "title": "STYLE ~get glory in this hand~",
+    "artist": "HIGH and MIGHTY COLOR",
+    "language": "Japanese",
+    "genre": "Jrock",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1269,
+    "title": "Kiss Me More",
+    "artist": "Doja Cat feat. SZA",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1270,
+    "title": "Let her go",
+    "artist": "Passenger",
+    "language": "English",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1271,
+    "title": "La Soledad",
+    "artist": "Laura Pausini",
+    "language": "Español",
+    "genre": "pop",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1272,
+    "title": "The Beautiful People",
+    "artist": "Marilyn Manson",
+    "language": "English",
+    "genre": "Metal Industrial",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1273,
+    "title": "Cheerleader (Felix Jaehn Remix)",
+    "artist": "OMI",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1274,
+    "title": "Pop",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1275,
+    "title": "No puedo vivir sin ti",
+    "artist": "Los Ronaldos",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1276,
+    "title": "Walk this way",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1975",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1277,
+    "title": "Beautiful Lies",
+    "artist": "Beyond The Black feat. Rick Altzi",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1278,
+    "title": "The Joker and the Queen",
+    "artist": "Ed Sheeran feat. Taylor Swift",
+    "language": "English",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1279,
+    "title": "Cold Water",
+    "artist": "Major Lazer feat. Justin Bieber & MØ",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1280,
+    "title": "My Immortal",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1281,
+    "title": "Wiggle",
+    "artist": "Jason Derulo feat. Snoop Dogg",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1282,
+    "title": "Black or white",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1283,
+    "title": "Satisfaction (I Can't Get No)",
+    "artist": "The Rolling Stones",
+    "language": "English",
+    "genre": null,
+    "year": "1966",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1284,
+    "title": "Macarena",
+    "artist": "Los del Río",
+    "language": "Español",
+    "genre": null,
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1285,
+    "title": "Amanecer",
+    "artist": "Edurne",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1286,
+    "title": "The Greatest Show",
+    "artist": "The Greatest Showman",
+    "language": "English",
+    "genre": "Musical",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1287,
+    "title": "Riptide",
+    "artist": "Vance Joy",
+    "language": "English",
+    "genre": "Alternative",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1288,
+    "title": "Magic of Love",
+    "artist": "Perfume",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1289,
+    "title": "I was born to love you",
+    "artist": "Freddie Mercury",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1290,
+    "title": "Torn",
+    "artist": "Natalie Imbruglia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1291,
+    "title": "Gnarly",
+    "artist": "KATSEYE",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1292,
+    "title": "Work",
+    "artist": "Rihanna feat. Drake",
+    "language": "English",
+    "genre": "R&B",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1293,
+    "title": "No me acuerdo",
+    "artist": "Thalía ft. Natti Natasha",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1294,
+    "title": "No me acuerdo",
+    "artist": "Thalía ft. Natti Natasha",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1295,
+    "title": "A little pain (versión corta)",
+    "artist": "OLIVIA como LEILA de TRAPNEST (BSO NANA)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1296,
+    "title": "Como un burro amarrado a la puerta del baile",
+    "artist": "El Último de la Fila",
+    "language": "Español",
+    "genre": null,
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1297,
+    "title": "Give It Away",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Funk Metal",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1298,
+    "title": "Shinzou wo sasageyou! (TV)",
+    "artist": "Linked Horizon",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1299,
+    "title": "Hay que venir al sur",
+    "artist": "Raffaella Carrà",
+    "language": "Español",
+    "genre": null,
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1300,
+    "title": "Singing In The Rain",
+    "artist": "Gene Kelly",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "1952",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1301,
+    "title": "Amores Dormidos",
+    "artist": "Edurne",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1302,
+    "title": "Embrujada",
+    "artist": "Despistaos",
+    "language": "Español",
+    "genre": "Rock Nacional",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1303,
+    "title": "Kamisama no Iutoori (TV)",
+    "artist": "Juuji Ishiwatari & Yoshinori Sunahara + Etsuko Yakushimaru",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1304,
+    "title": "Kiseki No Umi (TV)",
+    "artist": "Maaya Sakamoto",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1305,
+    "title": "Fuente de energía",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1306,
+    "title": "A la luz del lorenzo",
+    "artist": "Los Delinqüentes",
+    "language": "Español",
+    "genre": "Folklore",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1307,
+    "title": "Capitan Lawrence",
+    "artist": "WarCry",
+    "language": "Español",
+    "genre": "Power Metal",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1308,
+    "title": "I gotta feeling",
+    "artist": "Black Eyed Peas",
+    "language": "English",
+    "genre": "Hip Hop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1309,
+    "title": "21 guns",
+    "artist": "Green Day",
+    "language": "English",
+    "genre": "Punk Rock",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1310,
+    "title": "Lost on you",
+    "artist": "LP",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1311,
+    "title": "Yuusha (TV)",
+    "artist": "YOASOBI",
+    "language": "Japanese (romanized)",
+    "genre": null,
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1312,
+    "title": "Tell Me Baby",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1313,
+    "title": "Tell Me Baby",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2006",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1314,
+    "title": "you (Karaoke)",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1315,
+    "title": "you",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1316,
+    "title": "billionarie",
+    "artist": "Travis mccoy ft. bruno mars",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1317,
+    "title": "Attention",
+    "artist": "Charlie Puth",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1318,
+    "title": "Price Tag",
+    "artist": "Jessie J",
+    "language": "English",
+    "genre": "R&B",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1319,
+    "title": "La taberna del Buda",
+    "artist": "Café Quijano",
+    "language": "Español",
+    "genre": "Latina",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1320,
+    "title": "Pretty vacant",
+    "artist": "Sex Pistols",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1321,
+    "title": "Idol",
+    "artist": "YOASOBI",
+    "language": "Japanese (romanized)",
+    "genre": null,
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1322,
+    "title": "Pastillas de freno",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Rumba catalana",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1323,
+    "title": "Take a bow",
+    "artist": "Rihanna",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1324,
+    "title": "Desesperada",
+    "artist": "Marta Sánchez",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1325,
+    "title": "Zankoku na tenshi no teeze",
+    "artist": "Yoko Takahashi (BSO Neog√©nesis Evangelion)",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1326,
+    "title": "Flying Fafnir (TV)",
+    "artist": "TRUSTRICK",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1327,
+    "title": "Space Oddity",
+    "artist": "David Bowie",
+    "language": "Englisch",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1328,
+    "title": "Monotonía",
+    "artist": "Shakira y Ozuna",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1329,
+    "title": "Monotonía",
+    "artist": "Shakira y Ozuna",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2022",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1330,
+    "title": "El mismo sol",
+    "artist": "Álvaro Soler y Jennifer Lopez",
+    "language": "Español",
+    "genre": "Salsa",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1331,
+    "title": "El mismo sol",
+    "artist": "Álvaro Soler y Jennifer Lopez",
+    "language": "Español",
+    "genre": "Salsa",
+    "year": "2015",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1332,
+    "title": "Beautiful Colors (TV)",
+    "artist": "OneRepublic",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1333,
+    "title": "FANCY",
+    "artist": "TWICE",
+    "language": "Korean",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1334,
+    "title": "Heavy is the crown",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1335,
+    "title": "Fireflies",
+    "artist": "Owl City",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1336,
+    "title": "Don't Go Yet",
+    "artist": "Camila Cabello",
+    "language": "English",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1337,
+    "title": "Zen Zen Zense (movie ver.)",
+    "artist": "RADWIMPS",
+    "language": "Japanese",
+    "genre": "JRock",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1338,
+    "title": "En cambio no",
+    "artist": "Laura Pausini",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1339,
+    "title": "Me too",
+    "artist": "Meghan Trainor",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1340,
+    "title": "First Love",
+    "artist": "Hikaru Utada",
+    "language": "Japanese",
+    "genre": "JPop",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1341,
+    "title": "About a Girl (Unplugged)",
+    "artist": "Nirvana",
+    "language": "English",
+    "genre": "Grunge",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1342,
+    "title": "Fuego en el fuego",
+    "artist": "Eros Ramazzotti con Carlos Santana",
+    "language": "Español",
+    "genre": "Pop Internacional",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1343,
+    "title": "Cryin'",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1344,
+    "title": "1000 Words (Orchestral)",
+    "artist": "Jade",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1345,
+    "title": "El rey",
+    "artist": "Disney (BSO Aladdín)",
+    "language": "Español",
+    "genre": "Bandas sonoras",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1346,
+    "title": "Hold Back The River",
+    "artist": "James Bay",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1347,
+    "title": "Disparé",
+    "artist": "Nena Daconte",
+    "language": "Español",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1348,
+    "title": "Goya no Machiawase (TV)",
+    "artist": "Hello Sleepwalkers",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1349,
+    "title": "Alors on danse",
+    "artist": "Stromae",
+    "language": "French",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1350,
+    "title": "Ironic",
+    "artist": "Alanis Morissette",
+    "language": "English",
+    "genre": null,
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1351,
+    "title": "Are You Gonna Be My Girl",
+    "artist": "Jet",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1352,
+    "title": "Welcome to my life",
+    "artist": "Simple Plan",
+    "language": "English",
+    "genre": "Other",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1353,
+    "title": "Corazón latino",
+    "artist": "David Bisbal",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1354,
+    "title": "Grace Kelly",
+    "artist": "Mika",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1355,
+    "title": "Baby, I Love Your Way",
+    "artist": "Big Mountain",
+    "language": "English",
+    "genre": null,
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1356,
+    "title": "Game",
+    "artist": "Ayumi Hamasaki",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1357,
+    "title": "I Fought the Law",
+    "artist": "The Clash",
+    "language": "English",
+    "genre": "Punk",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1358,
+    "title": "Cuando me siento bien",
+    "artist": "Efecto Pasillo",
+    "language": "Español",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1359,
+    "title": "Hijo de la luna",
+    "artist": "Mecano",
+    "language": "Español",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1360,
+    "title": "Looking for love",
+    "artist": "Whitesnake",
+    "language": "English",
+    "genre": "Power Ballad",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1361,
+    "title": "good 4 u",
+    "artist": "Olivia Rodrigo",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1362,
+    "title": "La mentira",
+    "artist": "Dani Martín",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1363,
+    "title": "Highschool Of The Dead (TV)",
+    "artist": "Kishida Kyoudan",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1364,
+    "title": "Pegao",
+    "artist": "Camilo",
+    "language": "Español",
+    "genre": "Cumbia",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1365,
+    "title": "All Falls Down",
+    "artist": "Alan Walker feat. Noah Cyrus with Digital Farm Animals",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1366,
+    "title": "Butterfly",
+    "artist": "Smile DK",
+    "language": "English",
+    "genre": "Eurodance",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1367,
+    "title": "Butterfly",
+    "artist": "Smile DK",
+    "language": "English",
+    "genre": "Eurodance",
+    "year": "1998",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1368,
+    "title": "Stay",
+    "artist": "The Kid LAROI, Justin Bieber",
+    "language": "English",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1369,
+    "title": "Hello, shooting-star (TV)",
+    "artist": "moumoon",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1370,
+    "title": "Candy",
+    "artist": "Robbie Williams",
+    "language": "English",
+    "genre": "Pop-Rock",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1371,
+    "title": "Stand by me (TV)",
+    "artist": "The Peggies",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1372,
+    "title": "Corazón indomable",
+    "artist": "Camela",
+    "language": "Español",
+    "genre": "Pop Flamenco",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1373,
+    "title": "Shut up",
+    "artist": "Black Eyed Peas",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1374,
+    "title": "Aerials",
+    "artist": "System of a Down",
+    "language": "English",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1375,
+    "title": "Lonely in Gorgeous",
+    "artist": "Tommy february6",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1376,
+    "title": "Final Fantasy Classic With Lyrics",
+    "artist": "Brentalfloss",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1377,
+    "title": "Watermelon sugar",
+    "artist": "Harry Styles",
+    "language": "English",
+    "genre": "Pop, funk",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1378,
+    "title": "La madre de José",
+    "artist": "El Canto del Loco",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1379,
+    "title": "Tusa",
+    "artist": "Karol G y Nicki Minaj",
+    "language": "Español",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1380,
+    "title": "Chicken Noodle Soup",
+    "artist": "J-Hope feat. Becky G",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1381,
+    "title": "willow",
+    "artist": "Taylor Swift",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1382,
+    "title": "Machi No Dorufin",
+    "artist": "Kingo Hamada",
+    "language": "Japanese",
+    "genre": "Citypop",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1383,
+    "title": "La suerte de mi vida",
+    "artist": "El canto del loco",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1384,
+    "title": "Hello, world! (TV)",
+    "artist": "BUMP OF CHICKEN",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1385,
+    "title": "Hey Jude",
+    "artist": "The Beatles",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1970",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1386,
+    "title": "Europa",
+    "artist": "Mónica Naranjo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1387,
+    "title": "Bad Romance",
+    "artist": "Lady GaGa",
+    "language": "English",
+    "genre": null,
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1388,
+    "title": "La niña de la escuela",
+    "artist": "Lola Índigo, TINI & Belinda",
+    "language": "Español",
+    "genre": "Pop/Latino",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1389,
+    "title": "Chiquitita",
+    "artist": "ABBA",
+    "language": "English",
+    "genre": null,
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1390,
+    "title": "Corazón sin vida",
+    "artist": "Aitana y Sebastián Yatra",
+    "language": "Español",
+    "genre": "Urbano latino, Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1391,
+    "title": "Corazón sin vida",
+    "artist": "Aitana y Sebastián Yatra",
+    "language": "Español",
+    "genre": "Urbano latino, Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1392,
+    "title": "What You Waiting For?",
+    "artist": "Gwen Stefani",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1393,
+    "title": "I Want to Break Free",
+    "artist": "Queen",
+    "language": "English",
+    "genre": null,
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1394,
+    "title": "El primer dia del resto de mi vida (En directo)",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1395,
+    "title": "Don't Worry Be Happy",
+    "artist": "Bobby McFerrin",
+    "language": "English",
+    "genre": "Reggae",
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1396,
+    "title": "Blanco y negro",
+    "artist": "Malú",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1397,
+    "title": "No Te Escaparás",
+    "artist": "Hombres G",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1398,
+    "title": "Niña piensa en ti",
+    "artist": "Los Caños",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1399,
+    "title": "A quién le importa",
+    "artist": "Alaska y Dinarama",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1400,
+    "title": "Summer Sunshine",
+    "artist": "The Corrs",
+    "language": "English",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1401,
+    "title": "Brimful of Asha",
+    "artist": "Cornershop",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1402,
+    "title": "Bailar pegados (versión Eurovision)",
+    "artist": "Sergio Dalma",
+    "language": "Español",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1403,
+    "title": "Mou sukoshi... Mou sukoshi... (TV)",
+    "artist": "Saori Atsumi",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1404,
+    "title": "El roce de tu cuerpo",
+    "artist": "Platero y Tú",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1405,
+    "title": "Barbie de extrarradio",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": "Rock español",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1406,
+    "title": "Diciembre",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1407,
+    "title": "Walk of Life",
+    "artist": "Dire Straits",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1408,
+    "title": "Days (TV)",
+    "artist": "Flow",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1409,
+    "title": "Mares igual que tú",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1410,
+    "title": "El perro Freddy",
+    "artist": "El niño de la hipoteca",
+    "language": "Español",
+    "genre": "Humour",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1411,
+    "title": "Shining ray (TV)",
+    "artist": "Janne da Arc",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1412,
+    "title": "Just my imagination",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1413,
+    "title": "How You Like That",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1414,
+    "title": "La Mordidita",
+    "artist": "Ricky Martin",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1415,
+    "title": "The middle",
+    "artist": "Jimmy Eat World",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1416,
+    "title": "No te vayas mamá",
+    "artist": "Marco",
+    "language": "Español",
+    "genre": null,
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1417,
+    "title": "You gotta be",
+    "artist": "Des'ree",
+    "language": "English",
+    "genre": "Soul",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1418,
+    "title": "She sells sanctuary",
+    "artist": "The Cult",
+    "language": "English",
+    "genre": "Rock Gotico",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1419,
+    "title": "Radioactive",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1420,
+    "title": "Waterloo",
+    "artist": "ABBA",
+    "language": "English",
+    "genre": null,
+    "year": "1974",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1421,
+    "title": "Girls Like You",
+    "artist": "Maroon 5 ft. Cardi B",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1422,
+    "title": "Shizuku",
+    "artist": "Sukima Switch",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1423,
+    "title": "Quiéreme",
+    "artist": "El Barrio",
+    "language": "Español",
+    "genre": "Rumba",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1424,
+    "title": "Ranbu no Melody (TV)",
+    "artist": "Sid",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1425,
+    "title": "Link (TV)",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1426,
+    "title": "Melissa (TV)",
+    "artist": "Porno graffiti",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1427,
+    "title": "Chim chímeni",
+    "artist": "Mary Poppins",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1964",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1428,
+    "title": "Nada fue un error",
+    "artist": "Coti y Andrés Calamaro",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1429,
+    "title": "Simple And Clean",
+    "artist": "Utada Hikaru",
+    "language": "English",
+    "genre": "Game",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1430,
+    "title": "Helena",
+    "artist": "My Chemical Romance",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1431,
+    "title": "The Hand That Feeds",
+    "artist": "Nine Inch Nails",
+    "language": "English",
+    "genre": "Rock Industrial",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1432,
+    "title": "Tarde de domingo rara",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1433,
+    "title": "Wannabe",
+    "artist": "Spice Girls",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1434,
+    "title": "I Really Like You",
+    "artist": "Carly Rae Jepsen",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1435,
+    "title": "SUPERESTRELLA",
+    "artist": "Aitana",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1436,
+    "title": "Every breath you take",
+    "artist": "The Police",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1437,
+    "title": "Popular Monster",
+    "artist": "Falling In Reverse",
+    "language": "English",
+    "genre": "Rap Metal",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1438,
+    "title": "Los Amantes",
+    "artist": "Ana Torroja",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1439,
+    "title": "CHE.R.RY",
+    "artist": "YUI",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1440,
+    "title": "Sevilla tiene un color especial",
+    "artist": "Los del Río",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1441,
+    "title": "Quiero besarte",
+    "artist": "Roser",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1442,
+    "title": "Cielo hermético",
+    "artist": "Fito y Fitipaldis",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1443,
+    "title": "Cabecera",
+    "artist": "Parchís (BSO Érase una vez el hombre)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1444,
+    "title": "Datte Atashi no Hero (TV)",
+    "artist": "LiSA",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1445,
+    "title": "Harmonia (versión corta)",
+    "artist": "RYTHEM (BSO Naruto)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1446,
+    "title": "Marvin Gaye",
+    "artist": "Charlie Puth and Meghan Trainor",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1447,
+    "title": "Marvin Gaye",
+    "artist": "Charlie Puth and Meghan Trainor",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1448,
+    "title": "Happy Together",
+    "artist": "The Turtles",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1967",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1449,
+    "title": "Crazy Party Night ~Pumpkin no Gyakushuu~",
+    "artist": "Kyary Pamyu Pamyu",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1450,
+    "title": "Manazashi wa hikari",
+    "artist": "Tatsuya Kitani",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1451,
+    "title": "Bailar pegados",
+    "artist": "Sergio Dalma",
+    "language": "Español",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1452,
+    "title": "Flames",
+    "artist": "David Guetta & Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1453,
+    "title": "Du hast",
+    "artist": "Rammstein",
+    "language": "German",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1454,
+    "title": "La chica de ayer (directo)",
+    "artist": "Nacha Pop",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1455,
+    "title": "Wild Side (TV)",
+    "artist": "ALI",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1456,
+    "title": "En algún lugar",
+    "artist": "Duncan Dhu",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1457,
+    "title": "Trumpets",
+    "artist": "Jason Derulo",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1458,
+    "title": "Namida no Mukou",
+    "artist": "Stereopony",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1459,
+    "title": "You Give Love A Bad Name",
+    "artist": "Bon Jovi",
+    "language": "English",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1460,
+    "title": "Animal instinct",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1461,
+    "title": "By the way",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1462,
+    "title": "This Game (TV)",
+    "artist": "Konomi Suzuki",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1463,
+    "title": "I don't care",
+    "artist": "Ed Sheeran and Justin Bieber",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1464,
+    "title": "I don't care",
+    "artist": "Ed Sheeran and Justin Bieber",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1465,
+    "title": "Happy",
+    "artist": "Pharrell Williams",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1466,
+    "title": "Silhouette (TV)",
+    "artist": "KANA-BOON",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1467,
+    "title": "Viaje con nosotros",
+    "artist": "Orquesta Mondragón",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1468,
+    "title": "Macho man",
+    "artist": "Village People",
+    "language": "English",
+    "genre": "Dance",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1469,
+    "title": "Te busqué",
+    "artist": "Nelly Furtado con Juanes",
+    "language": "Español",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1470,
+    "title": "Lapis Lazuli",
+    "artist": "Eir Aoi",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1471,
+    "title": "Here With Me",
+    "artist": "Dido",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1472,
+    "title": "Hollaback Girl",
+    "artist": "Gwen Stefani",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1473,
+    "title": "Miracle",
+    "artist": "Calvin Harris and Ellie Goulding",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1474,
+    "title": "Cabecera",
+    "artist": "Grupo Nins (BSO Sherlock Holmes)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1475,
+    "title": "Casi",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1476,
+    "title": "No Lie",
+    "artist": "Sean Paul & Dua Lipa",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1477,
+    "title": "Shape of my heart",
+    "artist": "Backstreet Boys",
+    "language": "English",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1478,
+    "title": "Yakusoku wa iranai (TV)",
+    "artist": "Maaya Sakamoto",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1479,
+    "title": "Haato wo miga kukkyanai (TV)",
+    "artist": "Tokio",
+    "language": "Japanese",
+    "genre": null,
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1480,
+    "title": "Beat It",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Pop Internacional",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1481,
+    "title": "Accidentally in love",
+    "artist": "Counting Crows",
+    "language": "English",
+    "genre": "Banda sonora",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1482,
+    "title": "Chasing Cars",
+    "artist": "Snow Patrol",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1483,
+    "title": "Coming Home",
+    "artist": "Diddy Dirty Money ft. Skylar Grey",
+    "language": "English",
+    "genre": "R&B",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1484,
+    "title": "Sultans of Swing",
+    "artist": "Dire Straits",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1485,
+    "title": "A bailar y a bailar",
+    "artist": "Cantores de Híspalis",
+    "language": "Español",
+    "genre": "Sevillanas",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1486,
+    "title": "crossing field",
+    "artist": "LiSA",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1487,
+    "title": "Chankapana",
+    "artist": "NEWS",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1488,
+    "title": "Kanashii Ureshii (TV)",
+    "artist": "Frederic",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1489,
+    "title": "Livin' on a Prayer",
+    "artist": "Bon Jovi",
+    "language": "English",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1490,
+    "title": "Bad Medicine",
+    "artist": "Bon Jovi",
+    "language": "English",
+    "genre": null,
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1491,
+    "title": "Lo que tengo yo adentro",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1492,
+    "title": "Soul to Squeeze",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1493,
+    "title": "Fashion Monster",
+    "artist": "Kyary Pamyu Pamyu",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1494,
+    "title": "Mi nuevo vicio",
+    "artist": "Morat",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1495,
+    "title": "Basket Case",
+    "artist": "Green Day",
+    "language": "English",
+    "genre": "Alternative Rock",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1496,
+    "title": "Miedo",
+    "artist": "M Clan",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1497,
+    "title": "Digimon 02",
+    "artist": "Digimon",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1498,
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1499,
+    "title": "Ray of Light (TV)",
+    "artist": "Shoko Nakagawa",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1500,
+    "title": "Karma (TV)",
+    "artist": "Bump Of Chicken",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1501,
+    "title": "Se fue",
+    "artist": "Laura Pausini",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1502,
+    "title": "Fruta fresca",
+    "artist": "Carlos Vives",
+    "language": "Español",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1503,
+    "title": "Son De Amores",
+    "artist": "Andy Y Lucas",
+    "language": "Español",
+    "genre": null,
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1504,
+    "title": "Gastón",
+    "artist": "Disney (BSO La Bella y la Bestia)",
+    "language": "Español",
+    "genre": "Bandas sonoras",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1505,
+    "title": "Somwhere Only We Know",
+    "artist": "Keane",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1506,
+    "title": "Havana",
+    "artist": "Camila Cabello feat. Young Thug",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1507,
+    "title": "Havana",
+    "artist": "Camila Cabello feat. Young Thug",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1508,
+    "title": "Olvídame y pega la vuelta",
+    "artist": "Pimpinela",
+    "language": "Español",
+    "genre": null,
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1509,
+    "title": "Olvídame y pega la vuelta",
+    "artist": "Pimpinela",
+    "language": "Español",
+    "genre": null,
+    "year": "1984",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1510,
+    "title": "20 de abril",
+    "artist": "Celtas Cortos",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1511,
+    "title": "La gozadera",
+    "artist": "Gente de Zona y Marc Anthony",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1512,
+    "title": "La gozadera",
+    "artist": "Gente de Zona y Marc Anthony",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2015",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1513,
+    "title": "Womanizer",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1514,
+    "title": "Fantastic Dreamer (TV)",
+    "artist": "Machico",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1515,
+    "title": "Menchi aishou no borero",
+    "artist": "Excel Saga",
+    "language": "Others",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1516,
+    "title": "WHISTLE",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1517,
+    "title": "Sugar",
+    "artist": "Robin Schulz ft. Francesco Yates",
+    "language": "English",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1518,
+    "title": "Dile al Sol",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1519,
+    "title": "La niña que llora en tus fiestas",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1520,
+    "title": "Domino",
+    "artist": "Jessie J",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1521,
+    "title": "Don't you worry",
+    "artist": "Black Eyed Peas, Shakira and David Guetta",
+    "language": "English",
+    "genre": "Pop, electrónica",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1522,
+    "title": "Don't you worry",
+    "artist": "Black Eyed Peas, Shakira and David Guetta",
+    "language": "English",
+    "genre": "Pop, electrónica",
+    "year": "2022",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1523,
+    "title": "Come And Get It",
+    "artist": "Selena Gomez",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1524,
+    "title": "A past and future secret",
+    "artist": "Blind Guardian",
+    "language": "English",
+    "genre": "Power Metal",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1525,
+    "title": "when the party's over",
+    "artist": "Billie Eilish",
+    "language": "English",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1526,
+    "title": "Maggie despierta",
+    "artist": "M Clan",
+    "language": "Español",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1527,
+    "title": "Lemon Tree",
+    "artist": "Fool's Garden",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1528,
+    "title": "Elastic Heart",
+    "artist": "Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1529,
+    "title": "So young",
+    "artist": "The Corrs",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1530,
+    "title": "Never Give Up",
+    "artist": "Sia",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1531,
+    "title": "Be The One",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1532,
+    "title": "Dame cariño",
+    "artist": "El Arrebato",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1533,
+    "title": "Heaven Knows I'm Miserable Now",
+    "artist": "The Smiths",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1534,
+    "title": "Tranquilo, majete",
+    "artist": "Celtas Cortos",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1535,
+    "title": "Hijo de hombre",
+    "artist": "Disney (BSO Tarzán)",
+    "language": "Español",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1536,
+    "title": "Bajito",
+    "artist": "Ana Guerra",
+    "language": "Español",
+    "genre": "Reggaeton",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1537,
+    "title": "How Deep Is Your Love",
+    "artist": "Calvin Harris & Disciples",
+    "language": "English",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1538,
+    "title": "WIND (Karaoke)",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1539,
+    "title": "WIND",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1540,
+    "title": "from the edge (TV)",
+    "artist": "FictionJunction feat. LiSA",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1541,
+    "title": "Something Stupid (dueto)",
+    "artist": "Robbie Williams & Nicole Kidman",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1542,
+    "title": "El guardián de Troya",
+    "artist": "WarCry",
+    "language": "Español",
+    "genre": "Heavy Metal",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1543,
+    "title": "Mugen (TV)",
+    "artist": "My First Story x Hyde",
+    "language": "Japanese",
+    "genre": "J-rock",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1544,
+    "title": "Tenía tanto que darte",
+    "artist": "Nena Daconte",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1545,
+    "title": "You're still the one",
+    "artist": "Shania Twain",
+    "language": "English",
+    "genre": "Country, dance pop",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1546,
+    "title": "Callaíta",
+    "artist": "Bad Bunny y Tainy",
+    "language": "Español",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1547,
+    "title": "Impossible",
+    "artist": "James Arthur",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1548,
+    "title": "Read my mind",
+    "artist": "The Killers",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1549,
+    "title": "Side To Side",
+    "artist": "Ariana Grande feat. Nicki Minaj",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1550,
+    "title": "El anillo",
+    "artist": "Jennifer Lopez",
+    "language": "Español",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1551,
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "language": "English",
+    "genre": "Britpop",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1552,
+    "title": "Time is running out",
+    "artist": "Muse",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1553,
+    "title": "All of Me",
+    "artist": "John Legend",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1554,
+    "title": "Move Your Body (Single Mix)",
+    "artist": "Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1555,
+    "title": "Hotel California",
+    "artist": "The Eagles",
+    "language": "English",
+    "genre": "Classic Rock",
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1556,
+    "title": "I won't give up",
+    "artist": "Jason Mraz",
+    "language": "English",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1557,
+    "title": "Tu mirada me hace grande",
+    "artist": "Maldita Nerea",
+    "language": "Español",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1558,
+    "title": "Tonari no Totoro (Canción de los créditos)",
+    "artist": "Mi vecino Totoro",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1559,
+    "title": "¿Dónde estas?",
+    "artist": "Jaime Urrutia con Andrés Calamaro, Loquillo y Bunbury",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1560,
+    "title": "Voy a ser El Rey León",
+    "artist": "El Rey León",
+    "language": "Español",
+    "genre": null,
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1561,
+    "title": "Cartoon heroes",
+    "artist": "Aqua",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1562,
+    "title": "1/3 no junjô na kanjô (versión corta)",
+    "artist": "Siam Shade (BSO Rurôni Kenshin)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1563,
+    "title": "Amigos para siempre",
+    "artist": "Los Manolos",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1564,
+    "title": "Sexed Up",
+    "artist": "Robbie Williams",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1565,
+    "title": "The Fresh Prince Of Bel Air",
+    "artist": "Will Smith",
+    "language": "English",
+    "genre": "Rap",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1566,
+    "title": "My Sharona",
+    "artist": "The Knack",
+    "language": "Englisch",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1567,
+    "title": "On top of the world",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": "Indie Rock",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1568,
+    "title": "Pre-parade (TV)",
+    "artist": "Yui Horie",
+    "language": "Japanese",
+    "genre": "j pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1569,
+    "title": "Roar",
+    "artist": "Katy Perry",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1570,
+    "title": "Himno del centenario del Sevilla F.C.",
+    "artist": "El Arrebato",
+    "language": "Español",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1571,
+    "title": "Tourniquet",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": "AlternRock",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1572,
+    "title": "So easy (To fall in love)",
+    "artist": "Olivia Dean",
+    "language": "English",
+    "genre": "Neo soul, Bossa Nova, Easy Listening",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1573,
+    "title": "Cake by the ocean",
+    "artist": "DNCE",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1574,
+    "title": "Uso (TV)",
+    "artist": "Sid",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1575,
+    "title": "Akeboshi (TV)",
+    "artist": "LiSA",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1576,
+    "title": "La vereda de la puerta de atrás",
+    "artist": "Extremoduro",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1577,
+    "title": "Same Blue (TV)",
+    "artist": "Official HIGE DANdism",
+    "language": "Japanese",
+    "genre": "J-rock",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1578,
+    "title": "Reapers",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1579,
+    "title": "THE HERO !! ~Okoreru Kobushi ni Hi wo Tsukero~ (TV)",
+    "artist": "JAM Project",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1580,
+    "title": "O Fortuna",
+    "artist": "Carmina Burana",
+    "language": "Latin",
+    "genre": "Classical",
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1581,
+    "title": "We Don't Need Another Hero (Thunderdome)",
+    "artist": "Tina Turner",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1582,
+    "title": "Stupid Love",
+    "artist": "Lady Gaga",
+    "language": "English",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1583,
+    "title": "Should I Stay Or Should I GO",
+    "artist": "The Clash",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1584,
+    "title": "Overpass Graffiti",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1585,
+    "title": "Bad habits",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1586,
+    "title": "Kitt y los coches del pasado",
+    "artist": "Ladilla Rusa con Joan Colomo y Los ganglios",
+    "language": "Español",
+    "genre": "Subnopop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1587,
+    "title": "Viejoven",
+    "artist": "Ojete Calor",
+    "language": "Español",
+    "genre": "Subnopop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1588,
+    "title": "Tu hamster",
+    "artist": "El Reno Renardo",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1589,
+    "title": "Boom Clap",
+    "artist": "Charli XCX",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1590,
+    "title": "Despídete",
+    "artist": "Ella Baila Sola",
+    "language": "Español",
+    "genre": null,
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1591,
+    "title": "Despídete",
+    "artist": "Ella Baila Sola",
+    "language": "Español",
+    "genre": null,
+    "year": "1998",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1592,
+    "title": "Luz, fuego, destrucción",
+    "artist": "Dragon Ball Z",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1593,
+    "title": "Haruka kanata (TV)",
+    "artist": "Asian Kung-fu Generation",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1594,
+    "title": "Rojitas las orejas",
+    "artist": "Fito & Fitipaldis",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1595,
+    "title": "Human nature",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1596,
+    "title": "Bon Appétit",
+    "artist": "Katy Perry feat. Migos",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1597,
+    "title": "Love Me Like You Do",
+    "artist": "Ellie Goulding",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1598,
+    "title": "Vente pa'ca",
+    "artist": "Ricky Martin y Maluma",
+    "language": "Español",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1599,
+    "title": "Vente pa'ca",
+    "artist": "Ricky Martin y Maluma",
+    "language": "Español",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1600,
+    "title": "Bury a friend",
+    "artist": "Billie Eilish",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1601,
+    "title": "Como si no nos hubiéramos amado",
+    "artist": "Laura Pausini",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1602,
+    "title": "Sora ni Utaeba (TV)",
+    "artist": "Amazarashi",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1603,
+    "title": "Inmortal",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1604,
+    "title": "This Fffire (TV)",
+    "artist": "Franz Ferdinand",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1659,
+    "title": "The Greatest",
+    "artist": "James Blunt",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1605,
+    "title": "Si tienes fe",
+    "artist": "El príncipe de Egipto",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1606,
+    "title": "Kiss and Make Up",
+    "artist": "Dua Lipa & BLACKPINK",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1607,
+    "title": "One",
+    "artist": "U2",
+    "language": "English",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1608,
+    "title": "Madre sabe más",
+    "artist": "Celia Vergara",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1609,
+    "title": "Bonustrack",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Latin Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1610,
+    "title": "Me and my broken heart",
+    "artist": "Rixton",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1611,
+    "title": "A sangre y fuego",
+    "artist": "Saratoga",
+    "language": "Español",
+    "genre": "Heavy Metal",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1612,
+    "title": "Mediterráneo",
+    "artist": "Joan Manuel Serrat",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "1971",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1613,
+    "title": "Supremacy",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1614,
+    "title": "Cha-la head-cha-la (TV)",
+    "artist": "Hironobu Kageyama",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1615,
+    "title": "No Roots",
+    "artist": "Alice Merton",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1616,
+    "title": "Camino Moria",
+    "artist": "El Reno Renardo",
+    "language": "Español",
+    "genre": "Freak Metal",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1617,
+    "title": "Un violinista en tu tejado",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1618,
+    "title": "Boys Don't Cry",
+    "artist": "The Cure",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1619,
+    "title": "departure! (TV)",
+    "artist": "Masatoshi Ono",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1620,
+    "title": "La canción del Mariachi",
+    "artist": "Los Lobos y Antonio Banderas",
+    "language": "español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1621,
+    "title": "Closer to the Edge",
+    "artist": "30 Seconds To Mars",
+    "language": "English",
+    "genre": "Rock",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1622,
+    "title": "No solo respirar",
+    "artist": "La Fuga",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1623,
+    "title": "¿Dónde estás?",
+    "artist": "Jaime Urrutia, Enrique Búnbury y Andrés Calamaro",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1624,
+    "title": "The kill",
+    "artist": "30 Seconds to Mars",
+    "language": "English",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1625,
+    "title": "Salvajes irracionales",
+    "artist": "Efecto Pasillo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1626,
+    "title": "Believe (español)",
+    "artist": "One Piece",
+    "language": "Español",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1627,
+    "title": "This is me",
+    "artist": "The Greatest Showman",
+    "language": "English",
+    "genre": "Musical",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1628,
+    "title": "Bad Guy",
+    "artist": "Billie Eilish",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1629,
+    "title": "Umbrella",
+    "artist": "Rihanna",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1630,
+    "title": "Comedy",
+    "artist": "Gen Hoshino",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1631,
+    "title": "Universo",
+    "artist": "Blas Cantó",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1632,
+    "title": "Ateo",
+    "artist": "C. Tangana y Nathy Peluso",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1633,
+    "title": "Ateo",
+    "artist": "C. Tangana y Nathy Peluso",
+    "language": "Español",
+    "genre": "Bachata",
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1634,
+    "title": "Bring Me to Life",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1635,
+    "title": "Bring Me to Life",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1636,
+    "title": "Kaen (TV)",
+    "artist": "Ziyoou-vachi",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1637,
+    "title": "Pump Up the Jam",
+    "artist": "Technotronic",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1638,
+    "title": "Dai Dai",
+    "artist": "Shakira feat. Burna Boy",
+    "language": "English",
+    "genre": null,
+    "year": "2026",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1639,
+    "title": "Dai Dai",
+    "artist": "Shakira feat. Burna Boy",
+    "language": "English",
+    "genre": null,
+    "year": "2026",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1640,
+    "title": "Send Me On My Way",
+    "artist": "Rusted Root",
+    "language": "English",
+    "genre": null,
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1641,
+    "title": "Like a Virgin",
+    "artist": "Madonna",
+    "language": "English",
+    "genre": null,
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1642,
+    "title": "Rasputin",
+    "artist": "Boney M.",
+    "language": "English",
+    "genre": null,
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1643,
+    "title": "MUKANJYO (TV)",
+    "artist": "Survive Said The Prophet",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1644,
+    "title": "Build a B*tch",
+    "artist": "Bella Poarch",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1645,
+    "title": "Looking for Paradise",
+    "artist": "Alejandro Sanz y Alicia Keys",
+    "language": "Español",
+    "genre": "Other",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1646,
+    "title": "Jesucristo García",
+    "artist": "Extremoduro",
+    "language": "Español",
+    "genre": "",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1647,
+    "title": "Física o química",
+    "artist": "Despistaos",
+    "language": "Español",
+    "genre": "Pop Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1648,
+    "title": "Say So",
+    "artist": "Doja Cat",
+    "language": "English",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1649,
+    "title": "Nobody",
+    "artist": "Wonder Girls",
+    "language": "Korean",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1650,
+    "title": "Estoy aquí",
+    "artist": "Shakira",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1651,
+    "title": "I Miss You",
+    "artist": "Blink 182",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1652,
+    "title": "Con un poco de azúcar",
+    "artist": "Mary Poppins",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1964",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1653,
+    "title": "Lady Blue",
+    "artist": "Enrique Búnbury",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1654,
+    "title": "Snowman",
+    "artist": "Sia",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1655,
+    "title": "Alone",
+    "artist": "Alan Walker",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1656,
+    "title": "Tú volverás",
+    "artist": "Ketama",
+    "language": "Español",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1657,
+    "title": "The Fox",
+    "artist": "Ylvis",
+    "language": "English",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1658,
+    "title": "The Fox",
+    "artist": "Ylvis",
+    "language": "English",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1660,
+    "title": "Hadaka no Yuusha",
+    "artist": "Vaundy",
+    "language": "Japanese",
+    "genre": "Rock",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1661,
+    "title": "Cabecera",
+    "artist": "Caballeros del Zodiaco",
+    "language": "Spanish",
+    "genre": "Anime",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1662,
+    "title": "Liberian Girl",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1663,
+    "title": "Enter sandman",
+    "artist": "Metallica",
+    "language": "English",
+    "genre": "Metal",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1664,
+    "title": "Chained to the rhythm",
+    "artist": "Katy Perry feat. Skip Marley",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1665,
+    "title": "Chained to the rhythm",
+    "artist": "Katy Perry feat. Skip Marley",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1666,
+    "title": "Cabecera (español)",
+    "artist": "Sonia Torrecilla (BSO Crayon Shin-chan)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1667,
+    "title": "Oto no Naru Hou e (TV)",
+    "artist": "Goose house",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1668,
+    "title": "We Can't Stop",
+    "artist": "Miley Cyrus",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1669,
+    "title": "Dusk till dawn",
+    "artist": "ZAYN feat. Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1670,
+    "title": "Dusk till dawn",
+    "artist": "ZAYN feat. Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1671,
+    "title": "Madrid city",
+    "artist": "Ana Mena",
+    "language": "Español",
+    "genre": "Pop electrónico",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1672,
+    "title": "Shikisai (TV)",
+    "artist": "yama",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1673,
+    "title": "Ai",
+    "artist": "Kotono Mitsuishi (BSO Excel Saga)",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1674,
+    "title": "Como una ola",
+    "artist": "Rocío Jurado",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1675,
+    "title": "Feels",
+    "artist": "Calvin Harris feat. Pharrell Williams, Katy Perry, Big Sean",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1676,
+    "title": "Mi persona favorita",
+    "artist": "Alejandro Sanz & Camila Cabello",
+    "language": "Español",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1677,
+    "title": "Mi persona favorita",
+    "artist": "Alejandro Sanz & Camila Cabello",
+    "language": "Español",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1678,
+    "title": "El patio",
+    "artist": "Pablo López",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1679,
+    "title": "Loba",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Pop Internacional",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1680,
+    "title": "Cabecera",
+    "artist": "Jordi Vila (BSO Bola de Dragón)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1681,
+    "title": "Call Me When You're Sober",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1682,
+    "title": "Rose",
+    "artist": "ANNA como NANA de Black Stones (BSO NANA)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1683,
+    "title": "Puta",
+    "artist": "Extremoduro",
+    "language": "Español",
+    "genre": "Rock Nacional",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1684,
+    "title": "Cuéntame un cuento",
+    "artist": "Celtas Cortos",
+    "language": "Español",
+    "genre": "",
+    "year": "",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1685,
+    "title": "Kimi wo nosete",
+    "artist": "Azumi Inoue",
+    "language": "Japanese",
+    "genre": "Soundtrack",
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1686,
+    "title": "High Hopes",
+    "artist": "Panic! at the Disco",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1687,
+    "title": "Eloise",
+    "artist": "Tino Casal",
+    "language": "Español",
+    "genre": null,
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1688,
+    "title": "Houdini",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Nu-disco, Psicodelia, Pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1689,
+    "title": "Que dolor",
+    "artist": "Raffaella Carrà",
+    "language": "Español",
+    "genre": null,
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1690,
+    "title": "Planetarium",
+    "artist": "Otsuka Ai",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1691,
+    "title": "Kyouran Hey Kids!! (TV)",
+    "artist": "THE ORAL CIGARETTES",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1692,
+    "title": "Not Afraid",
+    "artist": "Eminem",
+    "language": "English",
+    "genre": "Hip Hop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1693,
+    "title": "Can I Have This Dance? (Dueto)",
+    "artist": "High School Musical 3",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2008",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1694,
+    "title": "4 in the morning",
+    "artist": "Gwen Stefani",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1695,
+    "title": "Feel it still",
+    "artist": "Portugal. The Man",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1696,
+    "title": "Beautiful Girls",
+    "artist": "Sean Kingston",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1697,
+    "title": "New York, New York",
+    "artist": "Frank Sinatra",
+    "language": "English",
+    "genre": "Vocal",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1698,
+    "title": "Un genio genial",
+    "artist": "Aladdín",
+    "language": "Español",
+    "genre": "Banda sonora",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1699,
+    "title": "Ichirin no hana",
+    "artist": "High and mighty color",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1700,
+    "title": "Ciega, sordomuda",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1701,
+    "title": "Show",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1702,
+    "title": "The logical song",
+    "artist": "Supertramp",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1703,
+    "title": "En qué estrella estará",
+    "artist": "Nena Daconte",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1704,
+    "title": "Waka waka (Esto es África)",
+    "artist": "Shakira ft. Freshlyground",
+    "language": "Español",
+    "genre": null,
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1705,
+    "title": "Hello",
+    "artist": "Adele",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1706,
+    "title": "Cuando zarpa el amor",
+    "artist": "Camela",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1707,
+    "title": "Demasiado Tarde",
+    "artist": "El Sueño de Morfeo",
+    "language": "Español",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1708,
+    "title": "Lo noto",
+    "artist": "Hombres G",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1709,
+    "title": "Hikari E (versión corta)",
+    "artist": "The Babystars (BSO One Piece)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1710,
+    "title": "Sorairo Days (TV)",
+    "artist": "Shoko Nakagawa",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1711,
+    "title": "Shut Up And Dance",
+    "artist": "WALK THE MOON",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1712,
+    "title": "No voy a cambiar",
+    "artist": "Malú",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1713,
+    "title": "Where is my husband!",
+    "artist": "Raye",
+    "language": "English",
+    "genre": "R&B, Pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1714,
+    "title": "The diary of Jane",
+    "artist": "Breaking Benjamin",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1715,
+    "title": "Can you feel the love tonight",
+    "artist": "Elton John",
+    "language": "English",
+    "genre": "Bandas sonoras",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1716,
+    "title": "Al cantar",
+    "artist": "Platero y Tú",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1717,
+    "title": "Chouzetsu☆Dynamic! (TV)",
+    "artist": "Kazuya Yoshii",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1718,
+    "title": "La Bikina",
+    "artist": "Luis Miguel",
+    "language": "Español",
+    "genre": "Huapango",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1719,
+    "title": "Supermassive Black Hole",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1720,
+    "title": "Shivers",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1721,
+    "title": "If We Ever Meet Again",
+    "artist": "Timbaland feat. Katy Perry",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1722,
+    "title": "If We Ever Meet Again",
+    "artist": "Timbaland feat. Katy Perry",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1723,
+    "title": "Photograph",
+    "artist": "Nickelback",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1724,
+    "title": "Dime dónde vas",
+    "artist": "Anastasia",
+    "language": "Español",
+    "genre": null,
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1725,
+    "title": "La chispa adecuada",
+    "artist": "Héroes del Silencio",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1726,
+    "title": "Chiki Chiki Ban Ban (TV)",
+    "artist": "QUEENDOM",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1727,
+    "title": "Only Human",
+    "artist": "Jonas Brothers",
+    "language": "English",
+    "genre": "Reggae",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1728,
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Other",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1729,
+    "title": "Dive",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Memphis soul",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1730,
+    "title": "Resistiré",
+    "artist": "Dúo Dinámico",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1731,
+    "title": "En el muelle de San Blas",
+    "artist": "Maná",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1732,
+    "title": "Gone gone gone",
+    "artist": "David Guetta, Teddy Swims, Tones and I",
+    "language": "English",
+    "genre": "Pop, Dance",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1733,
+    "title": "Gone gone gone",
+    "artist": "David Guetta, Teddy Swims, Tones and I",
+    "language": "English",
+    "genre": "Pop, Dance",
+    "year": "2025",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1734,
+    "title": "Ambiguous",
+    "artist": "GARNiDELiA",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1735,
+    "title": "Jet Lag",
+    "artist": "Simple Plan ft. Natasha Bedingfield",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1736,
+    "title": "Love Yourself",
+    "artist": "Justin Bieber",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1737,
+    "title": "Just Give Me A Reason",
+    "artist": "Pink Ft. Nate Ruess",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1738,
+    "title": "Just Give Me A Reason",
+    "artist": "Pink Ft. Nate Ruess",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1739,
+    "title": "Sweet Dreams",
+    "artist": "Eurythmics",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1740,
+    "title": "Piratas del Bar Caribe",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1741,
+    "title": "All Summer Long",
+    "artist": "Kid Rock",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1742,
+    "title": "PonPonPon!",
+    "artist": "Kyary Pamyu Pamyu",
+    "language": "Japanese - Romaji",
+    "genre": "J-Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1743,
+    "title": "PonPonPon! (ひらがな）",
+    "artist": "きゃりーぱみゅぱみゅ",
+    "language": "Japanese - Hiragana",
+    "genre": "J-Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1744,
+    "title": "PonPonPon! (漢字)",
+    "artist": "きゃりーぱみゅぱみゅ",
+    "language": "Japanese - Kanji",
+    "genre": "J-Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1745,
+    "title": "Nobody",
+    "artist": "OneRepublic",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1746,
+    "title": "Crazy 4 U",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1747,
+    "title": "Alcohol-Free",
+    "artist": "TWICE",
+    "language": "Korean",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1748,
+    "title": "Outnumbered",
+    "artist": "Dermot Kennedy",
+    "language": "English",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1749,
+    "title": "Blurred Lines",
+    "artist": "Robin Thicke, Pharrell Williams & T.I.",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1750,
+    "title": "I'm gonna be (500 miles)",
+    "artist": "The Proclaimers",
+    "language": "English",
+    "genre": null,
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1751,
+    "title": "La raja de tu falda",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Rumba Catalana",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1752,
+    "title": "Kiss",
+    "artist": "Prince",
+    "language": "English",
+    "genre": "Funk Rock",
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1753,
+    "title": "Dancing in the Moonlight [VIDEO]",
+    "artist": "Toploader",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1754,
+    "title": "Happier",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1755,
+    "title": "Me quedaré (acústico)",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Rock Catalán",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1756,
+    "title": "Tsukiakari no Michishirube (TV)",
+    "artist": "STEREOPONY",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1757,
+    "title": "Is This Love",
+    "artist": "Whitesnake",
+    "language": "English",
+    "genre": "rock",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1758,
+    "title": "Sopa fría",
+    "artist": "M Clan",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1759,
+    "title": "Tabi no Tochuu (TV)",
+    "artist": "Natsumi Kiyoura",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1760,
+    "title": "Silencio",
+    "artist": "David Bisbal",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1761,
+    "title": "Si no estás",
+    "artist": "El sueño de Morfeo",
+    "language": "Español",
+    "genre": "Pop Rock",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1762,
+    "title": "Supercalifragilisticoespialidoso",
+    "artist": "Mary Poppins",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "1964",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1763,
+    "title": "Duvet (TV)",
+    "artist": "Bôa",
+    "language": "English",
+    "genre": "Rock / alternative pop-rock",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1764,
+    "title": "He wasn't",
+    "artist": "Avril Lavigne",
+    "language": "English",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1765,
+    "title": "Tallulah",
+    "artist": "Sonata Arctica",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1766,
+    "title": "Can't Feel My Face",
+    "artist": "The Weeknd",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1767,
+    "title": "No tears left to cry",
+    "artist": "Ariana Grande",
+    "language": "English",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1768,
+    "title": "As It Was",
+    "artist": "Harry Styles",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1769,
+    "title": "Breeze (TV)",
+    "artist": "Megumi Hayashibara",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1770,
+    "title": "Solamente tú",
+    "artist": "Pablo Alborán",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1771,
+    "title": "I'm Just A Kid",
+    "artist": "Simple Plan",
+    "language": "English",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1772,
+    "title": "Somebody Told Me",
+    "artist": "The Killers",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1773,
+    "title": "Ropa cara",
+    "artist": "Camilo",
+    "language": "Español",
+    "genre": "Reggaetón",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1774,
+    "title": "Devuélveme La Vida",
+    "artist": "Antonio Orozco",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1775,
+    "title": "Stay",
+    "artist": "The Kid Laroi & Justin Bieber",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1776,
+    "title": "Want To Want Me",
+    "artist": "Jason Derulo",
+    "language": "English",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1777,
+    "title": "The Day (TV)",
+    "artist": "Porno Graffitti",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1778,
+    "title": "Californication",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1779,
+    "title": "Mi carro",
+    "artist": "Manolo Escobar",
+    "language": "Español",
+    "genre": null,
+    "year": "1969",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1780,
+    "title": "Outside",
+    "artist": "Calvin Harris feat. Ellie Goulding",
+    "language": "English",
+    "genre": "Electrodance",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1781,
+    "title": "yes, and?",
+    "artist": "Ariana Grande",
+    "language": "English",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1782,
+    "title": "Si amaneciera",
+    "artist": "Saratoga",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1783,
+    "title": "Nothing Breaks Like a Heart",
+    "artist": "Mark Ronson ft  Miley Cyrus",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1784,
+    "title": "Entre poetas y presos",
+    "artist": "La Raíz",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1785,
+    "title": "New Born",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Rock Alternative",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1786,
+    "title": "Have a nice day",
+    "artist": "Bon Jovi",
+    "language": "English",
+    "genre": "Hard Rock",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1787,
+    "title": "Fuel",
+    "artist": "Metallica",
+    "language": "English",
+    "genre": "Hard Rock",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1788,
+    "title": "Call Me Maybe",
+    "artist": "Carly Rae Jepsen",
+    "language": "English",
+    "genre": null,
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1789,
+    "title": "Víveme",
+    "artist": "Laura Pausini y Alejandro Sanz",
+    "language": "Español",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1790,
+    "title": "Víveme",
+    "artist": "Laura Pausini y Alejandro Sanz",
+    "language": "Español",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1791,
+    "title": "Innocent ~Mujaki na Mama de~ (TV)",
+    "artist": "Kouji Wada",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1792,
+    "title": "History Maker (TV)",
+    "artist": "Dean Fujioka",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1793,
+    "title": "I'm not okay (I promise)",
+    "artist": "My Chemical Romance",
+    "language": "English",
+    "genre": "Pop Punk",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1794,
+    "title": "Pero a tu lado",
+    "artist": "Los Secretos",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1795,
+    "title": "Otra vez",
+    "artist": "Coti",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1796,
+    "title": "How Soon is Now",
+    "artist": "The Smiths",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1797,
+    "title": "1/3 no junjô na kanjô",
+    "artist": "Siam Shade",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1798,
+    "title": "Warriors",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": "Alternative rock",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1799,
+    "title": "Vida de rico",
+    "artist": "Camilo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1800,
+    "title": "Cómo te atreves",
+    "artist": "Morat",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1801,
+    "title": "C.h.a.o.s.m.y.t.h.",
+    "artist": "ONE OK ROCK",
+    "language": "Japanese",
+    "genre": "Jrock",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1802,
+    "title": "Porque te vas",
+    "artist": "Jeanette",
+    "language": "Español",
+    "genre": null,
+    "year": "1974",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1803,
+    "title": "Hijos de Caín",
+    "artist": "Barón Rojo",
+    "language": "Español",
+    "genre": "Heavy metal",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1804,
+    "title": "Together Forever",
+    "artist": "Rick Astley",
+    "language": "English",
+    "genre": null,
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1805,
+    "title": "Puede ser",
+    "artist": "Conchita",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1806,
+    "title": "El Aleph",
+    "artist": "Nena Daconte",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1807,
+    "title": "Message in a bottle",
+    "artist": "The Police",
+    "language": "English",
+    "genre": "New Wave",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1808,
+    "title": "Tik tok",
+    "artist": "Ke$ha",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1809,
+    "title": "SloMo",
+    "artist": "Chanel",
+    "language": "Español",
+    "genre": "Dance, pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1810,
+    "title": "Un mundo ideal",
+    "artist": "Aladdín",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1811,
+    "title": "Here With Me",
+    "artist": "Marshmello feat. CHVRCHES",
+    "language": "English",
+    "genre": "Electronic",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1812,
+    "title": "Frente a frente",
+    "artist": "Jeanette",
+    "language": "Español",
+    "genre": null,
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1813,
+    "title": "With or without you",
+    "artist": "U2",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1814,
+    "title": "Me quedaré solo",
+    "artist": "Amistades Peligrosas",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1815,
+    "title": "Me quedaré solo",
+    "artist": "Amistades Peligrosas",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1996",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1816,
+    "title": "Cold Heart",
+    "artist": "Elton John and Dua Lipa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1817,
+    "title": "Cold Heart",
+    "artist": "Elton John and Dua Lipa",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1818,
+    "title": "Corazón contento",
+    "artist": "Marisol",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1968",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1819,
+    "title": "Adiós papá",
+    "artist": "Los Ronaldos",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1820,
+    "title": "Die with a smile",
+    "artist": "Lady Gaga & Bruno Mars",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1821,
+    "title": "Rocket Man",
+    "artist": "Elton John",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1972",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1822,
+    "title": "War Pigs",
+    "artist": "Black Sabbath",
+    "language": "English",
+    "genre": "Heavy Metal",
+    "year": "1970",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1823,
+    "title": "My Head & My Heart",
+    "artist": "Ava Max",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1824,
+    "title": "Ode to my family",
+    "artist": "The Cranberries",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1825,
+    "title": "You are not alone",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1826,
+    "title": "Don't Call Me Up",
+    "artist": "Mabel",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1827,
+    "title": "Heroes",
+    "artist": "Måns Zelmerlöw",
+    "language": "English",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1828,
+    "title": "No es lo mismo",
+    "artist": "Alejandro Sanz",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1829,
+    "title": "Jiyuu no Tsubasa (TV)",
+    "artist": "Linked Horizon",
+    "language": "Japanese",
+    "genre": "J-Rock",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1830,
+    "title": "Ya nada volverá a ser como antes",
+    "artist": "El canto del loco",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1831,
+    "title": "Cabecera",
+    "artist": "David, el gnomo",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1832,
+    "title": "Just can't get enough",
+    "artist": "Depeche Mode",
+    "language": "English",
+    "genre": "Synthpop",
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1833,
+    "title": "Judas",
+    "artist": "Lady GaGa",
+    "language": "English",
+    "genre": "Dance",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1834,
+    "title": "The Show Must Go On",
+    "artist": "Nicole Kidman & Jim Broadbent (Moulin Rouge)",
+    "language": "English",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1835,
+    "title": "Stupid little things",
+    "artist": "Anastacia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1836,
+    "title": "Cabecera",
+    "artist": "Digimon",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1837,
+    "title": "Cheque al portamor",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": "Balada",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1838,
+    "title": "Haven't Met You Yet",
+    "artist": "Michael Bublé",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1839,
+    "title": "Promise",
+    "artist": "Kohmi Hirose",
+    "language": "Japanese",
+    "genre": null,
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1840,
+    "title": "Sargento Keroro (TV)",
+    "artist": "Eba Ojanguren",
+    "language": "Español",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1841,
+    "title": "Tractor amarillo",
+    "artist": "Zapato Veloz",
+    "language": "Español",
+    "genre": null,
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1842,
+    "title": "Hablame de ti",
+    "artist": "Los Pecos",
+    "language": "Español",
+    "genre": null,
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1843,
+    "title": "Asterisk (TV)",
+    "artist": "Orange Range",
+    "language": "Japanese",
+    "genre": "J-Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1844,
+    "title": "I Love It",
+    "artist": "Icona Pop & Charli XCX",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1845,
+    "title": "Mune ga doki doki (TV)",
+    "artist": "The High-Lows",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1846,
+    "title": "Bulería",
+    "artist": "David Bisbal",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1847,
+    "title": "Nakushita Kotoba (TV)",
+    "artist": "No Regret Life",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1848,
+    "title": "The emptiness machine",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1849,
+    "title": "Eres Un Enfermo",
+    "artist": "Las Supremas de Móstoles",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1850,
+    "title": "Baton Road (TV)",
+    "artist": "KANA-BOON",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1851,
+    "title": "Sweet but Psycho",
+    "artist": "Ava Max",
+    "language": "English",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1852,
+    "title": "The game of love",
+    "artist": "Santana Feat. Michelle Branch",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1853,
+    "title": "Sobakasu (TV)",
+    "artist": "Judy And Mary",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1854,
+    "title": "Change the World (TV)",
+    "artist": "V6",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1855,
+    "title": "Who Let The Dogs Out?",
+    "artist": "Baha Men",
+    "language": "English",
+    "genre": "Raggae Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1856,
+    "title": "Training Season",
+    "artist": "Dua Lipa",
+    "language": "English",
+    "genre": "Pop, Dance-Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1857,
+    "title": "Save your tears",
+    "artist": "The Weeknd",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1858,
+    "title": "Hoshi no Utsuwa",
+    "artist": "Sukima Switch",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1859,
+    "title": "Cherish",
+    "artist": "Ai Otsuka",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1860,
+    "title": "Peaches",
+    "artist": "Jack Black",
+    "language": "English",
+    "genre": "Comedy",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1862,
+    "title": "Nunca volverá",
+    "artist": "El sueño de Morfeo",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1863,
+    "title": "Stand by me",
+    "artist": "Ben E. King",
+    "language": "English",
+    "genre": "Clásicos",
+    "year": "1961",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1864,
+    "title": "La promesa",
+    "artist": "Melendi",
+    "language": "Español",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1865,
+    "title": "Party!! (TV)",
+    "artist": "Ryokuoushoku Shakai",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1866,
+    "title": "Yume Tourou",
+    "artist": "RADWIMPS",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1867,
+    "title": "¿Qué pides tú?",
+    "artist": "Alex Ubago",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1868,
+    "title": "Dollhouse",
+    "artist": "Melanie Martinez",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1869,
+    "title": "Stan",
+    "artist": "Eminem ft. Dido",
+    "language": "English",
+    "genre": "HipHop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1870,
+    "title": "Telephone",
+    "artist": "Lady GaGa Ft. Beyoncé",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1871,
+    "title": "Pieces Of Me",
+    "artist": "Ashlee Simpson",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1872,
+    "title": "Let it be",
+    "artist": "The Beatles",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1873,
+    "title": "Hana ni natte (TV)",
+    "artist": "Ryokuoushoku Shakai",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1874,
+    "title": "Mocatriz",
+    "artist": "Ojete Calor",
+    "language": "Español",
+    "genre": "Subnopop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1875,
+    "title": "París",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1876,
+    "title": "La Puerta de Alcalá",
+    "artist": "Ana Belén y Victor Manuel",
+    "language": "Español",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1877,
+    "title": "La Puerta de Alcalá",
+    "artist": "Ana Belén y Victor Manuel",
+    "language": "Español",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1878,
+    "title": "Lean On",
+    "artist": "Major Lazer & DJ Snake feat. MØ",
+    "language": "English",
+    "genre": "EDM",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1879,
+    "title": "Brave Heart",
+    "artist": "Ayumi Miyazaki",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1880,
+    "title": "Baka Survivor (TV)",
+    "artist": "Ulfuls",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1881,
+    "title": "Ay mamá",
+    "artist": "Rigoberta Bandini",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1882,
+    "title": "Contando lunares",
+    "artist": "Don Patricio y Cruz Cafuné",
+    "language": "Español",
+    "genre": "Pop / Rap",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1883,
+    "title": "Kesenai tsumi",
+    "artist": "Nana Kitade",
+    "language": "Japanese",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1884,
+    "title": "La costa del silencio",
+    "artist": "Mägo de Oz",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1885,
+    "title": "Oniria e insomnia",
+    "artist": "Love Of Lesbian",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1886,
+    "title": "Geografía",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Latin Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1887,
+    "title": "Ambivalent (TV)",
+    "artist": "Uru",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1888,
+    "title": "What is love",
+    "artist": "Haddaway",
+    "language": "English",
+    "genre": "Eurodance",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1889,
+    "title": "Bet On It",
+    "artist": "High School Musical 2",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1890,
+    "title": "Kogarashi Sentiment (TV)",
+    "artist": "Chiwa Saito & Shinichiro Miki",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1891,
+    "title": "Kogarashi Sentiment (TV)",
+    "artist": "Chiwa Saito & Shinichiro Miki",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2013",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1892,
+    "title": "Idol (TV)",
+    "artist": "YOASOBI",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1893,
+    "title": "Bam Bam",
+    "artist": "Camila Cabello ft. Ed Sheeran",
+    "language": "English",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1894,
+    "title": "Bam Bam",
+    "artist": "Camila Cabello ft. Ed Sheeran",
+    "language": "English",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1895,
+    "title": "Astronaut",
+    "artist": "Simple Plan",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1896,
+    "title": "Zorra",
+    "artist": "Nebulossa",
+    "language": "Español",
+    "genre": "Dance & DJ",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1897,
+    "title": "B.Y.O.B.",
+    "artist": "System Of A Down",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1898,
+    "title": "Gurenge (TV)",
+    "artist": "LiSA",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1899,
+    "title": "Satellite",
+    "artist": "Rise Against",
+    "language": "English",
+    "genre": "Punk Rock",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1900,
+    "title": "Por mi tripa",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": "Rock Español",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1901,
+    "title": "Con calma",
+    "artist": "Daddy Yankee con Snow",
+    "language": "Español",
+    "genre": null,
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1902,
+    "title": "Sakura (K)",
+    "artist": "Ikimono Gakari",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1903,
+    "title": "Sakura",
+    "artist": "Ikimono Gakari",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1904,
+    "title": "Un velero llamado libertad",
+    "artist": "José Luis Perales",
+    "language": "Español",
+    "genre": null,
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1905,
+    "title": "Xana",
+    "artist": "Avalanch",
+    "language": "Español",
+    "genre": "Power Metal",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1906,
+    "title": "Shoujo S",
+    "artist": "SCANDAL",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1907,
+    "title": "I'm with you",
+    "artist": "Avril Lavigne",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1908,
+    "title": "Pussy",
+    "artist": "Rammstein",
+    "language": "English",
+    "genre": null,
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1909,
+    "title": "Get Lucky",
+    "artist": "Daft Punk",
+    "language": "English",
+    "genre": "Electronic Music",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1910,
+    "title": "Despechá",
+    "artist": "Rosalía",
+    "language": "Español",
+    "genre": "Mambo, electropop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1911,
+    "title": "feelslikeimfallinginlove",
+    "artist": "Coldplay",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1912,
+    "title": "From Yesterday",
+    "artist": "30 Seconds To Mars",
+    "language": "English",
+    "genre": "Other",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1913,
+    "title": "Orgullo",
+    "artist": "El Barrio",
+    "language": "Español",
+    "genre": "Flamenco",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1914,
+    "title": "In the stars",
+    "artist": "Benson Boone",
+    "language": "English",
+    "genre": null,
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1915,
+    "title": "Lush Life",
+    "artist": "Zara Larsson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1916,
+    "title": "Canción del negrito (La canción del Cola-Cao)",
+    "artist": "Cola-Cao",
+    "language": "Español",
+    "genre": null,
+    "year": "1956",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1917,
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1918,
+    "title": "Man on the Moon",
+    "artist": "R.E.M.",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "1992",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1919,
+    "title": "Starman",
+    "artist": "David Bowie",
+    "language": "English",
+    "genre": "Glam Rock",
+    "year": "1972",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1920,
+    "title": "American Woman",
+    "artist": "Lenny Kravitz",
+    "language": "English",
+    "genre": "Funk rock",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1921,
+    "title": "I CAN'T STOP ME",
+    "artist": "TWICE",
+    "language": "Korean",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1922,
+    "title": "Perfect",
+    "artist": "Simple Plan",
+    "language": "English",
+    "genre": "Punk",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1923,
+    "title": "Antes que ver el sol",
+    "artist": "Coti",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1924,
+    "title": "Can't fight the moonlight",
+    "artist": "LeAnn Rimes",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1925,
+    "title": "Try",
+    "artist": "Pink",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1926,
+    "title": "La razón",
+    "artist": "Ana Mena y GALE",
+    "language": "Español",
+    "genre": "Dance pop",
+    "year": "2024",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1927,
+    "title": "La razón",
+    "artist": "Ana Mena y GALE",
+    "language": "Español",
+    "genre": "Dance pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1928,
+    "title": "Netsujou no Spectrum (TV)",
+    "artist": "Ikimono Gakari",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1929,
+    "title": "9 to 5",
+    "artist": "Dolly Parton",
+    "language": "English",
+    "genre": "Country",
+    "year": "1980",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1930,
+    "title": "Lego House",
+    "artist": "Ed Sheeran",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1931,
+    "title": "Terra",
+    "artist": "Tanxugueiras",
+    "language": "Galician",
+    "genre": "Folklore, Urbano, Elecrónico",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1932,
+    "title": "The Beginning",
+    "artist": "ONE OK ROCK",
+    "language": "Japanese",
+    "genre": "Jrock",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1933,
+    "title": "Sueños rotos",
+    "artist": "La Quinta Estación",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1934,
+    "title": "Dance Monkey",
+    "artist": "Tones and I",
+    "language": "English",
+    "genre": "Alternative",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1935,
+    "title": "Sore wa Chiisana Hikari no You na (TV)",
+    "artist": "Sayuri",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1936,
+    "title": "Left Outside Alone",
+    "artist": "Anastacia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1937,
+    "title": "Geometría polisentimental",
+    "artist": "Fangoria",
+    "language": "Español",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1938,
+    "title": "Puede ser",
+    "artist": "El Canto del Loco y Amaia Montero",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1939,
+    "title": "Puede ser",
+    "artist": "El Canto del Loco y Amaia Montero",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1940,
+    "title": "Who's That Chick",
+    "artist": "David Guetta feat. Rihanna",
+    "language": "English",
+    "genre": "Electro-Pop",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1941,
+    "title": "Sakura Saku (español)",
+    "artist": "Ana Orra (BSO Love Hina)",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1942,
+    "title": "Jueves",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1943,
+    "title": "Siempre estoy soñando",
+    "artist": "Fito & Fitipaldis",
+    "language": "Español",
+    "genre": null,
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1944,
+    "title": "Veneno en la piel",
+    "artist": "Radio Futura",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1945,
+    "title": "El regalo más grande",
+    "artist": "Tiziano Ferro y Amaia Montero",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1946,
+    "title": "Without You",
+    "artist": "The Kid Laroi and Miley Cyrus",
+    "language": "English",
+    "genre": "Folk-pop, rap emo",
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1947,
+    "title": "Without You",
+    "artist": "The Kid Laroi and Miley Cyrus",
+    "language": "English",
+    "genre": "Folk-pop, rap emo",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1948,
+    "title": "Flash",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1949,
+    "title": "Nunca me acuerdo de olvidarte",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1950,
+    "title": "Koi no Dance Site",
+    "artist": "Morning Musume",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1951,
+    "title": "Passion",
+    "artist": "Utada Hikaru",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1952,
+    "title": "Standby",
+    "artist": "Extremoduro",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1953,
+    "title": "Love of my life",
+    "artist": "Queen",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1954,
+    "title": "Livin' On The Edge",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": null,
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1955,
+    "title": "Hay un amigo en mí",
+    "artist": "Disney (BSO Toy Story (Juguetes))",
+    "language": "Español",
+    "genre": null,
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1956,
+    "title": "Don't Stop Me Now",
+    "artist": "Queen",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1957,
+    "title": "La revolución sexual",
+    "artist": "La Casa Azul",
+    "language": "Español",
+    "genre": "Indie Pop",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1958,
+    "title": "My Generation (Live at Leeds)",
+    "artist": "The Who",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1965",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1959,
+    "title": "Gabriela",
+    "artist": "KATSEYE",
+    "language": "English",
+    "genre": null,
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1960,
+    "title": "Don't stop 'till you get enough",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Disco",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1961,
+    "title": "Burn (TV)",
+    "artist": "YamaxWurtS",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1962,
+    "title": "Dream on",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": "Other",
+    "year": "1973",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1963,
+    "title": "Hadaka no Yuusha (TV)",
+    "artist": "Vaundy",
+    "language": "Japanese",
+    "genre": "Rock",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1964,
+    "title": "I Want You Back",
+    "artist": "The Jackson 5",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1969",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1965,
+    "title": "Q&A Recital! (TV)",
+    "artist": "Haruka Tomatsu",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1966,
+    "title": "Final Countdown",
+    "artist": "Europe",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1967,
+    "title": "Man! I Feel Like a Woman!",
+    "artist": "Shania Twain",
+    "language": "English",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1968,
+    "title": "Cada vez cadáver",
+    "artist": "Fito y Fitipaldis",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1969,
+    "title": "Sakura Drops",
+    "artist": "Utada Hikaru",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1970,
+    "title": "The Pretender",
+    "artist": "Foo Fighters",
+    "language": "English",
+    "genre": null,
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1971,
+    "title": "Young Folks",
+    "artist": "Peter Bjorn And John Featuring Victoria Bergsman",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1972,
+    "title": "Angels",
+    "artist": "Robbie Williams",
+    "language": "English",
+    "genre": null,
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1973,
+    "title": "Jet Lag (Duett)",
+    "artist": "Simple Plan ft. Natasha Bedingfield",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2011",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1974,
+    "title": "Real Emotion",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "Other",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1975,
+    "title": "Celestial",
+    "artist": "Ed Sheeran & Pokémon",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1976,
+    "title": "Las 12",
+    "artist": "Ana Mena y Belinda",
+    "language": "Español",
+    "genre": "Urbano latino",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1977,
+    "title": "Las 12",
+    "artist": "Ana Mena y Belinda",
+    "language": "Español",
+    "genre": "Urbano latino",
+    "year": "2022",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 1978,
+    "title": "True Love",
+    "artist": "P!nk ft. Lily Allen",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1979,
+    "title": "Finesse (Remix)",
+    "artist": "Bruno Mars & Cardi B",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1980,
+    "title": "After dark (TV)",
+    "artist": "Asian Kung-fu Generation",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1981,
+    "title": "Step you",
+    "artist": "Ayumi Hamasaki",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1982,
+    "title": "homura",
+    "artist": "LiSA",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1983,
+    "title": "Borro Cassette",
+    "artist": "Maluma",
+    "language": "Español",
+    "genre": "Reggaetón",
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1984,
+    "title": "What's My Age Again?",
+    "artist": "Blink 182",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1985,
+    "title": "Yonaguni",
+    "artist": "Bad Bunny",
+    "language": "Español",
+    "genre": "Reggaetón",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1986,
+    "title": "Suzume",
+    "artist": "Radwimps feat. Toaka",
+    "language": "Japanese",
+    "genre": "Soundtrack",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1987,
+    "title": "Everybody Hurts",
+    "artist": "R.E.M.",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1996",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1988,
+    "title": "Boom, Boom, Boom, Boom!!",
+    "artist": "Vengaboys",
+    "language": "English",
+    "genre": "Dance",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1989,
+    "title": "Déjame",
+    "artist": "Los Secretos",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1981",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1990,
+    "title": "The Drug In Me Is You",
+    "artist": "Falling In Reverse",
+    "language": "English",
+    "genre": "Pop Punk",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1991,
+    "title": "Hold Me Now (TV)",
+    "artist": "Nai Br.XX and Celeina Ann",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1992,
+    "title": "Bad",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1993,
+    "title": "Akari (TV)",
+    "artist": "Soushi Sakiyama",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1994,
+    "title": "Dramas y comedias",
+    "artist": "Fangoria",
+    "language": "Español",
+    "genre": null,
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1995,
+    "title": "Perdóname",
+    "artist": "La Oreja de Van Gogh",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1996,
+    "title": "¡Carnaval mágico!",
+    "artist": "Blanca Rada",
+    "language": "Español",
+    "genre": "Anime",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1997,
+    "title": "Let me hear (TV)",
+    "artist": "Fear, and Loathing in Las Vegas",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1998,
+    "title": "Melodies of Life",
+    "artist": "Final Fantasy",
+    "language": "English",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 1999,
+    "title": "19 días y 500 noches",
+    "artist": "Joaquín Sabina",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2000,
+    "title": "Rock DJ",
+    "artist": "Robbie Williams",
+    "language": "English",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2001,
+    "title": "Dancing Queen",
+    "artist": "ABBA",
+    "language": "English",
+    "genre": null,
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2002,
+    "title": "Volverte a ver",
+    "artist": "Juanes",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2003,
+    "title": "Lovesick Girls",
+    "artist": "BLACKPINK",
+    "language": "Korean",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2004,
+    "title": "El burrito sabanero",
+    "artist": "David Bisbal",
+    "language": "Español",
+    "genre": "Carol, Villancico",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2005,
+    "title": "Crazy",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2006,
+    "title": "Crazy",
+    "artist": "Aerosmith",
+    "language": "English",
+    "genre": null,
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2007,
+    "title": "With You",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2008,
+    "title": "With You",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2000",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2009,
+    "title": "Burn",
+    "artist": "Ellie Goulding",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2010,
+    "title": "Me enamora",
+    "artist": "Juanes",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2011,
+    "title": "When You Were Young",
+    "artist": "The Killers",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2012,
+    "title": "Hanabi",
+    "artist": "Ikimono gakari",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2013,
+    "title": "READY STEADY GO",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2014,
+    "title": "Chop Suey!",
+    "artist": "System of a Down",
+    "language": "English",
+    "genre": "Metal Alternativo",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2015,
+    "title": "Besos",
+    "artist": "El canto del loco",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2016,
+    "title": "Mighty Long Fall",
+    "artist": "ONE OK ROCK",
+    "language": "English",
+    "genre": "Jrock",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2017,
+    "title": "Blank Space",
+    "artist": "Taylor Swift",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2018,
+    "title": "Moriría por vos",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": null,
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2019,
+    "title": "Escándalo",
+    "artist": "Raphael",
+    "language": "Español",
+    "genre": null,
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2020,
+    "title": "Poker Face",
+    "artist": "Lady GaGa",
+    "language": "English",
+    "genre": null,
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2021,
+    "title": "Let Me Entertain You",
+    "artist": "Robbie Williams",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2022,
+    "title": "Through the fire and flames",
+    "artist": "DragonForce",
+    "language": "English",
+    "genre": "Other",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2023,
+    "title": "Hysteria",
+    "artist": "Muse",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "2003",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2024,
+    "title": "Revolución (En directo)",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2025,
+    "title": "Uso (TV)",
+    "artist": "Sid",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2026,
+    "title": "Before I Forget",
+    "artist": "Slipknot",
+    "language": "English",
+    "genre": "Metal Alternativo",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2027,
+    "title": "Dame veneno",
+    "artist": "Los Chunguitos",
+    "language": "Español",
+    "genre": "Rumba Flamenca",
+    "year": "1977",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2028,
+    "title": "Bailaré sobre tu tumba",
+    "artist": "Siniestro Total",
+    "language": "Español",
+    "genre": "Punk Rock",
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2029,
+    "title": "Formentera",
+    "artist": "Aitana y Nicki Nicole",
+    "language": "Español",
+    "genre": "Reguetón",
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2030,
+    "title": "Formentera",
+    "artist": "Aitana y Nicki Nicole",
+    "language": "Español",
+    "genre": "Reguetón",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2031,
+    "title": "Lobo-hombre en París",
+    "artist": "La Unión",
+    "language": "Español",
+    "genre": null,
+    "year": "1984",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2032,
+    "title": "Parallel Universe",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2033,
+    "title": "La bicicleta",
+    "artist": "Carlos Vives y Shakira",
+    "language": "Español",
+    "genre": "Vallenato",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2034,
+    "title": "La bicicleta",
+    "artist": "Carlos Vives y Shakira",
+    "language": "Español",
+    "genre": "Vallenato",
+    "year": "2016",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2035,
+    "title": "The nights",
+    "artist": "Avicii",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2036,
+    "title": "KICK BACK (TV)",
+    "artist": "Kenshi Yonezu",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2037,
+    "title": "No callaré (Parte 1)",
+    "artist": "Aladdín",
+    "language": "Español",
+    "genre": "OST",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2038,
+    "title": "Como Camarón",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": "Pop Rock",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2039,
+    "title": "Blurry eyes (TV)",
+    "artist": "L'Arc~en~Ciel",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2040,
+    "title": "Titanium",
+    "artist": "David Guetta & Sia",
+    "language": "English",
+    "genre": "Electronic",
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2041,
+    "title": "Mujer contra mujer",
+    "artist": "Mecano",
+    "language": "Español",
+    "genre": null,
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2042,
+    "title": "City of Stars",
+    "artist": "Ryan Gosling & Emma Stone",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2043,
+    "title": "City of Stars",
+    "artist": "Ryan Gosling & Emma Stone",
+    "language": "English",
+    "genre": "Soundtrack",
+    "year": "2016",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2044,
+    "title": "The one I love",
+    "artist": "R.E.M.",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2045,
+    "title": "Sympathy For The Devil",
+    "artist": "The Rolling Stones",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1968",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2046,
+    "title": "Ice Cream",
+    "artist": "BLACKPINK & Selena Gomez",
+    "language": "English",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2047,
+    "title": "Peace Sign (TV)",
+    "artist": "Kenshi Yonezu",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2048,
+    "title": "The Trooper",
+    "artist": "Iron Maiden",
+    "language": "English",
+    "genre": "Heavy Metal",
+    "year": "1983",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2049,
+    "title": "Stacy's Mom",
+    "artist": "Fountains Of Wayne",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2050,
+    "title": "Sin documentos",
+    "artist": "Los Rodríguez",
+    "language": "Español",
+    "genre": null,
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2051,
+    "title": "Stayin' Alive",
+    "artist": "Bee Gees",
+    "language": "English",
+    "genre": "Disco",
+    "year": "1977",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2052,
+    "title": "Baby One More Time",
+    "artist": "Britney Spears",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2053,
+    "title": "Marihuana",
+    "artist": "Porretas",
+    "language": "Español",
+    "genre": "Rock Nacional",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2054,
+    "title": "Yume no naka e",
+    "artist": "Yosui Inoue",
+    "language": "Japanese",
+    "genre": "Folk rock",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2055,
+    "title": "Corazón partío",
+    "artist": "Alejandro Sanz",
+    "language": "Español",
+    "genre": null,
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2056,
+    "title": "Chicken Attack",
+    "artist": "Takeo Ischi",
+    "language": "English",
+    "genre": "Other",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2057,
+    "title": "Búscate Un Hombre Que Te Quiera",
+    "artist": "El Arrebato",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2058,
+    "title": "Answer (TV)",
+    "artist": "BUMP OF CHICKEN",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2059,
+    "title": "Cántame",
+    "artist": "María del Monte",
+    "language": "Español",
+    "genre": "Flamenco",
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2060,
+    "title": "Que me quedes tú",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Other",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2061,
+    "title": "Lo siento",
+    "artist": "Beret",
+    "language": "Español",
+    "genre": "Ballad",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2062,
+    "title": "Soltera",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Latin pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2063,
+    "title": "I Could Be The One (Nicktim)",
+    "artist": "Avicii vs. Nicky Romero",
+    "language": "English",
+    "genre": "Electronic",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2064,
+    "title": "Todo",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": null,
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2065,
+    "title": "Come and get your Love",
+    "artist": "Redbone",
+    "language": "English",
+    "genre": "Pop-Folk",
+    "year": "1973",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2066,
+    "title": "FREAKY",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2007",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2067,
+    "title": "White Light (TV)",
+    "artist": "Superfly",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2015",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2068,
+    "title": "Nunca el tiempo es perdido",
+    "artist": "Manolo García",
+    "language": "Español",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2069,
+    "title": "Points of authority",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2070,
+    "title": "Life is a highway",
+    "artist": "Rascal Flatts",
+    "language": "English",
+    "genre": "Pop",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2071,
+    "title": "Vicio",
+    "artist": "Reincidentes",
+    "language": "Español",
+    "genre": "Rock-Punk",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2072,
+    "title": "Dan dan kokoro hikareteku (español)",
+    "artist": "Dragon Ball GT",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2073,
+    "title": "Digimon 3",
+    "artist": "Digimon",
+    "language": "Español",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2074,
+    "title": "Es por ti",
+    "artist": "Juanes",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2075,
+    "title": "Treasure",
+    "artist": "Bruno Mars",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2076,
+    "title": "Undo (TV)",
+    "artist": "Cool Joke",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2077,
+    "title": "Music Sessions #52",
+    "artist": "Quevedo con Bizarrap",
+    "language": "Español",
+    "genre": "Trap, electrodance",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2078,
+    "title": "Rape Me",
+    "artist": "Nirvana",
+    "language": "English",
+    "genre": "Grunge",
+    "year": "1993",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2079,
+    "title": "Torito guapo",
+    "artist": "El Fary",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2080,
+    "title": "Carmen",
+    "artist": "Stromae",
+    "language": "French",
+    "genre": "Chanson",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2081,
+    "title": "Pen Pineapple Apple Pen",
+    "artist": "Piko Taro",
+    "language": "English",
+    "genre": null,
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2082,
+    "title": "Everybody (Backstreet's Back)",
+    "artist": "Backstreet Boys",
+    "language": "English",
+    "genre": "Pop Internacional",
+    "year": "1997",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2083,
+    "title": "Volaré",
+    "artist": "Russian Red",
+    "language": "Español",
+    "genre": "Soundtrack",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2084,
+    "title": "Anytime Anywhere (TV)",
+    "artist": "milet",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2085,
+    "title": "Rayando el sol",
+    "artist": "Maná",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1990",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2086,
+    "title": "I Could Have Lied",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Rock Alternativo",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2087,
+    "title": "Todos quieren ser ya gatos jazz",
+    "artist": "Los Aristogatos",
+    "language": "Español",
+    "genre": null,
+    "year": "1970",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2088,
+    "title": "We Are Young",
+    "artist": "Fun & Janelle Monáe",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2089,
+    "title": "No woman no cry",
+    "artist": "Bob Marley",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1976",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2090,
+    "title": "La barbacoa",
+    "artist": "Georgie Dann",
+    "language": "Español",
+    "genre": "Pachanga",
+    "year": "1994",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2091,
+    "title": "Aquí no hay playa",
+    "artist": "The Refrescos",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2092,
+    "title": "Where Have You Been",
+    "artist": "Rihanna",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2093,
+    "title": "TT",
+    "artist": "TWICE",
+    "language": "Korean",
+    "genre": "Kpop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2094,
+    "title": "Cabecera",
+    "artist": "Doraemon",
+    "language": "Español",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2095,
+    "title": "Youngblood",
+    "artist": "5 Seconds of Summer",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2096,
+    "title": "5 sentidos",
+    "artist": "Dvicio y Taburete",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2097,
+    "title": "5 sentidos",
+    "artist": "Dvicio y Taburete",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2098,
+    "title": "Sanpo (TV)",
+    "artist": "Azumi Inoue",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "1988",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2099,
+    "title": "September",
+    "artist": "Earth, Wind & Fire",
+    "language": "English",
+    "genre": "Dance",
+    "year": "1978",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2100,
+    "title": "Antes de que cuente diez",
+    "artist": "Fito & Fitipaldis",
+    "language": "Español",
+    "genre": "Rock Nacional",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2101,
+    "title": "Build me up buttercup",
+    "artist": "The Foundations",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2102,
+    "title": "LET IT OUT",
+    "artist": "Miho Fukuhara",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2103,
+    "title": "Quiero ser",
+    "artist": "Amaia Montero",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2104,
+    "title": "Morenamía",
+    "artist": "Miguel Bosé",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2105,
+    "title": "The Adults Are Talking",
+    "artist": "The Strokes",
+    "language": "English",
+    "genre": "New wave, indie rock, post-punk",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2106,
+    "title": "Vas a quedarte",
+    "artist": "Aitana",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2107,
+    "title": "Music",
+    "artist": "Madonna",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2108,
+    "title": "Up from the bottom",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": "Nu Metal",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2109,
+    "title": "Heroes",
+    "artist": "David Bowie",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2110,
+    "title": "Afterlife",
+    "artist": "Evanescence",
+    "language": "English",
+    "genre": "Alternative Rock",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2111,
+    "title": "I'm a believer",
+    "artist": "Smash Mouth",
+    "language": "English",
+    "genre": "Banda sonora",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2112,
+    "title": "Chocolate Disco",
+    "artist": "Perfume",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2113,
+    "title": "Pareja del año",
+    "artist": "Sebastián Yatra, Myke Towers",
+    "language": "Español",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2114,
+    "title": "Pareja del año",
+    "artist": "Sebastián Yatra, Myke Towers",
+    "language": "Español",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2115,
+    "title": "We Will Rock You",
+    "artist": "Queen",
+    "language": "English",
+    "genre": null,
+    "year": "1977",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2116,
+    "title": "GO!!! (versión corta)",
+    "artist": "FLOW (BSO Naruto)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2117,
+    "title": "Cuando amanece",
+    "artist": "Estopa",
+    "language": "Español",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2118,
+    "title": "Hard Times",
+    "artist": "Paramore",
+    "language": "English",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2119,
+    "title": "Ya no quiero ná",
+    "artist": "Lola Indigo",
+    "language": "Español",
+    "genre": "Funk Brasileño",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2120,
+    "title": "Dos hombres y un destino",
+    "artist": "David Bustamante y Àlex Casademunt",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2121,
+    "title": "Dos hombres y un destino",
+    "artist": "David Bustamante y Àlex Casademunt",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2122,
+    "title": "This Is The Last Time",
+    "artist": "Keane",
+    "language": "English",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2123,
+    "title": "Con altura",
+    "artist": "ROSALÍA feat. J Balvin & El Guincho",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2124,
+    "title": "Diez mil maneras",
+    "artist": "David Bisbal",
+    "language": "Español",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2125,
+    "title": "Ciudad de los gitanos",
+    "artist": "Marea",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2126,
+    "title": "The Greatest",
+    "artist": "Sia",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2127,
+    "title": "Papaoutai",
+    "artist": "Stromae",
+    "language": "French",
+    "genre": "R&B",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2128,
+    "title": "Pegasus Fantasy (TV)",
+    "artist": "MAKE-UP",
+    "language": "Japanese",
+    "genre": null,
+    "year": "1986",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2129,
+    "title": "Break Free",
+    "artist": "Ariana Grande & Zedd",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2130,
+    "title": "Salir corriendo",
+    "artist": "Amaral",
+    "language": "Español",
+    "genre": "Pop Nacional",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2131,
+    "title": "Lifeline",
+    "artist": "Papa Roach",
+    "language": "English",
+    "genre": "Pop Rock",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2132,
+    "title": "Johnny B. Goode",
+    "artist": "Chuck Berry",
+    "language": "English",
+    "genre": "Rock",
+    "year": "1958",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2133,
+    "title": "Felices los 4",
+    "artist": "Maluma",
+    "language": "Español",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2134,
+    "title": "Safe And Sound",
+    "artist": "Capital Cities",
+    "language": "English",
+    "genre": "Electronic",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2135,
+    "title": "Meet me halfway",
+    "artist": "Black Eyed Peas",
+    "language": "English",
+    "genre": null,
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2136,
+    "title": "Estando contigo",
+    "artist": "Conchita Bautista",
+    "language": "Español",
+    "genre": "Copla",
+    "year": "1961",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2137,
+    "title": "Mayores",
+    "artist": "Becky G ft. Bad Bunny",
+    "language": "Español",
+    "genre": null,
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2138,
+    "title": "In Your Eyes",
+    "artist": "Kylie Minogue",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2139,
+    "title": "Provenza",
+    "artist": "Karol G",
+    "language": "Español",
+    "genre": "Reggaetón",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2140,
+    "title": "Oath Sign (TV)",
+    "artist": "LiSA",
+    "language": "Japanese",
+    "genre": null,
+    "year": "2011",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2141,
+    "title": "crossing field (TV)",
+    "artist": "LiSA",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2012",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2142,
+    "title": "Todos me miran",
+    "artist": "Gloria Trevi",
+    "language": "Español",
+    "genre": null,
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2143,
+    "title": "The Best",
+    "artist": "Tina Turner",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2144,
+    "title": "La tormenta de arena",
+    "artist": "Dorian",
+    "language": "Español",
+    "genre": "Indie",
+    "year": "2009",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2145,
+    "title": "SG",
+    "artist": "DJ Snake, Ozuna, Megan Thee Stallion, LISA of BLACKPINK",
+    "language": "Español",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2146,
+    "title": "Love Tropicana",
+    "artist": "Jungle wa itsumo Hale nochi Guu",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2147,
+    "title": "So payaso",
+    "artist": "Extremoduro",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2148,
+    "title": "Ao no Sumika (TV)",
+    "artist": "Tatsuya Kitani",
+    "language": "Japanese",
+    "genre": "Pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2149,
+    "title": "Lovesong",
+    "artist": "The Cure",
+    "language": "English",
+    "genre": "Gothic Rock",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2150,
+    "title": "Black Rover (TV)",
+    "artist": "VickeBlanka",
+    "language": "Japanese",
+    "genre": "J-Rock",
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2151,
+    "title": "Todo de ti",
+    "artist": "Rauw Alejandro",
+    "language": "Español",
+    "genre": null,
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2152,
+    "title": "Someone You Loved",
+    "artist": "Lewis Capaldi",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2019",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2153,
+    "title": "Chantaje",
+    "artist": "Shakira y Maluma",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2016",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2154,
+    "title": "Chantaje",
+    "artist": "Shakira y Maluma",
+    "language": "Español",
+    "genre": "Latin",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2155,
+    "title": "No estamos lokos (kalikeño)",
+    "artist": "Ketama",
+    "language": "Español",
+    "genre": "flamenco-fusión",
+    "year": "1995",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2156,
+    "title": "Roxanne",
+    "artist": "The Police",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2157,
+    "title": "I kissed a girl",
+    "artist": "Katy Perry",
+    "language": "English",
+    "genre": "House",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2158,
+    "title": "The Middle",
+    "artist": "Zedd ft. Maren Morris & Grey",
+    "language": "English",
+    "genre": null,
+    "year": "2018",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2159,
+    "title": "Santa tell me",
+    "artist": "Ariana Grande",
+    "language": "English",
+    "genre": null,
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2160,
+    "title": "Jamming",
+    "artist": "Bob Marley",
+    "language": "English",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2161,
+    "title": "The Number of the Beast",
+    "artist": "Iron Maiden",
+    "language": "English",
+    "genre": "Heavy Metal",
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2162,
+    "title": "Atrapados En La Red",
+    "artist": "Tam Tam Go",
+    "language": "Español",
+    "genre": null,
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2163,
+    "title": "Monochrome Effect",
+    "artist": "Perfume",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2164,
+    "title": "モノクローム エフェクト",
+    "artist": "Perfume (パフューム)",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2004",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2165,
+    "title": "Beautiful World",
+    "artist": "Utada Hikaru",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2010",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2166,
+    "title": "El límite",
+    "artist": "La Frontera",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2167,
+    "title": "Dime",
+    "artist": "Beth",
+    "language": "Spanish",
+    "genre": null,
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2168,
+    "title": "Abyss (TV)",
+    "artist": "YUNGBLUD",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2169,
+    "title": "Back to friends",
+    "artist": "sombr",
+    "language": "English",
+    "genre": "Alternative, Indie",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2170,
+    "title": "White Noise (TV)",
+    "artist": "Official HIGE DANdism",
+    "language": "Japanese",
+    "genre": "J-pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2171,
+    "title": "Fiesta pagana",
+    "artist": "Mägo de Oz",
+    "language": "Español",
+    "genre": "Folk-Rock",
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2172,
+    "title": "Bailando",
+    "artist": "Enrique Iglesias, Descemer Bueno y Gente de Zona",
+    "language": "Español",
+    "genre": "Reggaeton",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2173,
+    "title": "Bailando",
+    "artist": "Enrique Iglesias, Descemer Bueno y Gente de Zona",
+    "language": "Español",
+    "genre": "Reggaeton",
+    "year": "2014",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2174,
+    "title": "Scar Tissue",
+    "artist": "Red Hot Chili Peppers",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1999",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2175,
+    "title": "Bolillón",
+    "artist": "No me pises que llevo chanclas",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1989",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2176,
+    "title": "Música ligera",
+    "artist": "Ana Mena",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2177,
+    "title": "Princesas",
+    "artist": "Pereza",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2005",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2178,
+    "title": "Let me out",
+    "artist": "Dover",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2179,
+    "title": "El último adiós",
+    "artist": "Paulina Rubio",
+    "language": "Español",
+    "genre": null,
+    "year": "2000",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2180,
+    "title": "Sour Candy",
+    "artist": "Lady Gaga & BLACKPINK",
+    "language": "English",
+    "genre": null,
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2181,
+    "title": "Nochentera",
+    "artist": "Vicco",
+    "language": "Español",
+    "genre": "Pop eléctrico",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2182,
+    "title": "Yo contigo, tú conmigo",
+    "artist": "Morat y Álvaro Soler",
+    "language": "Español",
+    "genre": "BSO",
+    "year": "2017",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2183,
+    "title": "Yo contigo, tú conmigo",
+    "artist": "Morat y Álvaro Soler",
+    "language": "Español",
+    "genre": "BSO",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2184,
+    "title": "Back to School (Mini Maggit)",
+    "artist": "Deftones",
+    "language": "English",
+    "genre": "Alternative metal",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2185,
+    "title": "Un Beso Y Una Flor",
+    "artist": "Nino Bravo",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "1972",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2186,
+    "title": "Digital Love",
+    "artist": "Daft Punk",
+    "language": "English",
+    "genre": null,
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2187,
+    "title": "Te aviso, te anuncio (Tango)",
+    "artist": "Shakira",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2188,
+    "title": "Favorito",
+    "artist": "Camilo",
+    "language": "Español",
+    "genre": "POP",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2189,
+    "title": "Two faced",
+    "artist": "Linkin Park",
+    "language": "English",
+    "genre": null,
+    "year": "2024",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2190,
+    "title": "Quisiera ser",
+    "artist": "Dúo Dinámico",
+    "language": "Español",
+    "genre": null,
+    "year": "1961",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2191,
+    "title": "Over soul (versión corta)",
+    "artist": "Megumi Hayashibara (BSO Shaman King)",
+    "language": "Japanese",
+    "genre": "Anime",
+    "year": "2001",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2192,
+    "title": "Paco, Paco, Paco",
+    "artist": "Encarnita Polo",
+    "language": "Español",
+    "genre": "Flamenco pop",
+    "year": "1969",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2193,
+    "title": "Take on me",
+    "artist": "a-ha",
+    "language": "English",
+    "genre": null,
+    "year": "1985",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2194,
+    "title": "Mercy",
+    "artist": "Duffy",
+    "language": "English",
+    "genre": null,
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2195,
+    "title": "Follow you",
+    "artist": "Imagine Dragons",
+    "language": "English",
+    "genre": "Alternative",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2196,
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "language": "English",
+    "genre": null,
+    "year": "1975",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2197,
+    "title": "El bien",
+    "artist": "Viva Suecia",
+    "language": "Español",
+    "genre": "Indie",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2198,
+    "title": "Besos en guerra",
+    "artist": "Morat & Juanes",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2017",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2199,
+    "title": "Vivid Vice (TV)",
+    "artist": "Who-ya Extended",
+    "language": "Japanese",
+    "genre": "J-rock",
+    "year": "2021",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2200,
+    "title": "This One's For You",
+    "artist": "David Guetta feat. Zara Larsson",
+    "language": "English",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2201,
+    "title": "Colores en el viento",
+    "artist": "Disney (BSO Pocahontas)",
+    "language": "Español",
+    "genre": "",
+    "year": null,
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2202,
+    "title": "Salir",
+    "artist": "Extremoduro",
+    "language": "Español",
+    "genre": "Rock",
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2203,
+    "title": "NIGHT DANCER (TV)",
+    "artist": "imase",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2204,
+    "title": "Cabecera",
+    "artist": "Lola Lola (BSO Chicho Terremoto)",
+    "language": "Español",
+    "genre": "Dibujos animados",
+    "year": "1991",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2205,
+    "title": "Una vez más",
+    "artist": "David Otero",
+    "language": "Español",
+    "genre": "Pop",
+    "year": "2016",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2206,
+    "title": "Gimme! Gimme! Gimme! (A Man After Midnight)",
+    "artist": "ABBA",
+    "language": "English",
+    "genre": null,
+    "year": "1979",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2207,
+    "title": "Ima Sugu Hoshii (Karaoke)",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2208,
+    "title": "Ima Sugu Hoshii",
+    "artist": "Koda Kumi",
+    "language": "Japanese",
+    "genre": "J-Pop",
+    "year": "2006",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2209,
+    "title": "Malibu",
+    "artist": "Hole",
+    "language": "English",
+    "genre": null,
+    "year": "1998",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2210,
+    "title": "Destripando la historia - Perséfone - No es tan malo",
+    "artist": "Pascu y Rodri con Laura Pastor",
+    "language": "Spanish",
+    "genre": null,
+    "year": "2026",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2211,
+    "title": "6 de febrero",
+    "artist": "Aitana",
+    "language": "Spanish",
+    "genre": "Pop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2212,
+    "title": "La salvación",
+    "artist": "Arde Bogotá",
+    "language": "Spanish",
+    "genre": "Indie",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2213,
+    "title": "Los perros",
+    "artist": "Arde Bogotá",
+    "language": "Spanish",
+    "genre": "Indie",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2214,
+    "title": "Tequiero",
+    "artist": "Abraham Mateo y Vicco",
+    "language": "Spanish",
+    "genre": "Hit pop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2215,
+    "title": "Tequiero",
+    "artist": "Abraham Mateo y Vicco",
+    "language": "Spanish",
+    "genre": "Hit pop",
+    "year": "2023",
+    "cover": "",
+    "duet": true
+  },
+  {
+    "id": 2216,
+    "title": "Tabun",
+    "artist": "YOASOBI",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2020",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2217,
+    "title": "Qué dolor",
+    "artist": "Raffaella Carrà",
+    "language": "Spanish",
+    "genre": null,
+    "year": "1982",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2218,
+    "title": "BIBBIDIBA",
+    "artist": "Suisei Hoshimachi",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2219,
+    "title": "Dernière danse",
+    "artist": "Indila",
+    "language": "French",
+    "genre": "Pop",
+    "year": "2013",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2220,
+    "title": "Crecí en los ochenta",
+    "artist": "El Reno Renardo",
+    "language": "Spanish",
+    "genre": "Rock",
+    "year": "2008",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2221,
+    "title": "Man In The Mirror",
+    "artist": "Michael Jackson",
+    "language": "English",
+    "genre": null,
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2222,
+    "title": "Value",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2024",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2223,
+    "title": "Propose",
+    "artist": "natori",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2025",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2224,
+    "title": "Overdose",
+    "artist": "natori",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2225,
+    "title": "Love Story",
+    "artist": "Indila",
+    "language": "French",
+    "genre": "Pop",
+    "year": "2014",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2226,
+    "title": "Obsesión",
+    "artist": "Aventura",
+    "language": "Spanish",
+    "genre": "Misc",
+    "year": "2002",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2227,
+    "title": "Show",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2023",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2228,
+    "title": "Odo",
+    "artist": "Ado",
+    "language": "Japanese",
+    "genre": "Jpop",
+    "year": "2022",
+    "cover": "",
+    "duet": false
+  },
+  {
+    "id": 2229,
+    "title": "Got my mind set on you",
+    "artist": "George Harrison",
+    "language": "English",
+    "genre": "Pop",
+    "year": "1987",
+    "cover": "",
+    "duet": false
+  }
+];
 
 SONGS.sort((x, y) => {
   const byArtist = (x.artist ?? "").localeCompare(y.artist ?? "", undefined, { sensitivity: "base" });
